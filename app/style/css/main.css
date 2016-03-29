@@ -140,3 +140,7 @@ section.nav {
 .nextprevbottom {
   color: lightblue;
 }
+
+.nextnextbottom {
+  background: green;
+}
