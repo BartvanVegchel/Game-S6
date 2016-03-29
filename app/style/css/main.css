@@ -52,10 +52,6 @@ table {
   border-spacing: 0;
 }
 
-background {
-  color: lightblue;
-}
-
 body {
   background: red !important;
 }
