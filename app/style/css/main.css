@@ -57,6 +57,10 @@ h1 {
 }
 
 /* Geen lelijke background voor Frenk */
+body {
+  background: yellow !important;
+}
+
 /* Structure */
 html, body {
   height: 100%;
