@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+/* Structure */
+
+html, body 				{ height: 100% }
+body					{ font-family: OpenSansRegular, sans-serif; background: #FFF; color: #333; font-size: 16px; height: 100%; width: 100%; /*overflow: hidden;*/ }
+
+
+/* Views */
+
+h1		{  }
+h2		{  }
+h3		{  }
+
+form			{ width: 100%; }
+input			{ width: 90%; padding: 15px 5%; margin: 20px 0 0 0; font-size: 16px; }
+textarea		{  }
+input.btn		{ width: 100%; margin: 20px 0 0 0; font-size: 16px; border: none; background: #333333; color: #FFFFFF; cursor: pointer; transition: opacity ease-in-out 0.3s; }
+input.btn:hover	{ opacity: 0.7; }
+
+/* Login/Register */
+
+section.register,
+section.login		{ width: 90%; margin: 0 auto; padding: 50px 0 0 0; text-align: center; }
+
+
+/* Map */
+
+.map { position: relative; width: 3000px; height: 3000px; border: 1px black solid; overflow: hidden; background:url(../images/map.jpg); background-size: cover; cursor: pointer; }
+.user { position: absolute; width:40px; height:40px; left: 50%; top: 50%; background-color:red; transition: left .5s cubic-bezier(0,0,0,0), top .5s cubic-bezier(0,0,0,0); }
