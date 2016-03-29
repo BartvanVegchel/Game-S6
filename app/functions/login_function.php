@@ -32,7 +32,7 @@ function login(){
 		}
 	  
 	  if(isset($_SESSION["logged_in"])){ //Session logged_in wordt hierboven gezet
-		  header("Refresh: 3; url=home.php"); //stuur door naar de profielpagina
+		  header("Refresh: 0; url=home.php"); //stuur door naar de profielpagina
 		  echo "Welkom " . $_SESSION["username"];
 	  }
 	  

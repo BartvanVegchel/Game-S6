@@ -1,6 +1,6 @@
 <?php
 // Verbinden met MySQL Database
-$host = "185.13.226.244"; // Welke server : localhost 
+$host = "localhost"; // Welke server : localhost 
 $username = "fensiig115_game"; // Geberuikersnaam
 $password = "12TsQfdh"; // Wachtwoord
 $dbnaam = "fensiig115_game"; // Naam van de database
