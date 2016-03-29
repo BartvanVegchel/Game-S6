@@ -20,41 +20,51 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline; }
+  vertical-align: baseline;
+}
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block; }
+  display: block;
+}
 
 body {
-  line-height: 1.15; }
+  line-height: 1.15;
+}
 
 ol, ul {
-  list-style: none; }
+  list-style: none;
+}
 
 blockquote, q {
-  quotes: none; }
+  quotes: none;
+}
 
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
-  content: none; }
+  content: none;
+}
 
 table {
   border-collapse: collapse;
-  border-spacing: 0; }
+  border-spacing: 0;
+}
 
 h1 {
-  color: green; }
+  color: green;
+}
 
 /* Geen lelijke background voor Frenk */
 body {
-  background: yellow !important; }
+  background: yellow !important;
+}
 
 /* Structure */
 html, body {
-  height: 100%; }
+  height: 100%;
+}
 
 body {
   font-family: OpenSansRegular, sans-serif;
@@ -63,17 +73,20 @@ body {
   font-size: 16px;
   height: 100%;
   width: 100%;
-  /*overflow: hidden;*/ }
+  /*overflow: hidden;*/
+}
 
 /* Views */
 form {
-  width: 100%; }
+  width: 100%;
+}
 
 input {
   width: 90%;
   padding: 15px 5%;
   margin: 20px 0 0 0;
-  font-size: 16px; }
+  font-size: 16px;
+}
 
 input.btn {
   width: 100%;
@@ -83,10 +96,12 @@ input.btn {
   background: #333333;
   color: #FFFFFF;
   cursor: pointer;
-  transition: opacity ease-in-out 0.3s; }
+  transition: opacity ease-in-out 0.3s;
+}
 
 input.btn:hover {
-  opacity: 0.7; }
+  opacity: 0.7;
+}
 
 /* Login/Register */
 section.register,
@@ -94,37 +109,46 @@ section.login {
   width: 90%;
   margin: 0 auto;
   padding: 50px 0 0 0;
-  text-align: center; }
+  text-align: center;
+}
 
 /* Home */
 section.nav {
   width: 100%;
   height: 50px;
-  position: fixed; }
+  position: fixed;
+}
 
 .top {
   background: teal;
-  top: 0; }
+  top: 0;
+}
 
 .bottom {
   background: grey;
-  bottom: 0; }
+  bottom: 0;
+}
 
 .upperbotoom {
-  background: lightgrey; }
+  background: lightgrey;
+}
 
 .nextbottom {
-  background: red; }
+  background: red;
+}
 
 .nextprevbottom {
-  color: lightblue; }
+  color: lightblue;
+}
 
 .geertjebottom {
   color: pink;
 }
 
 .nextnextbottom {
-  background: green; }
+  background: green;
+}
 
 .nextnextnexttop {
-  background-color: red; }
+  background-color: red;
+}
