@@ -1,8 +1,11 @@
 // ============== Variables =================
 $jippie:yellow!important;
+$joppie:pink!important;
 // ============== Mixins =================
 
-body{background:$jippie;}
+body{
+  background: $joppie;
+}
 
 
 

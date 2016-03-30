@@ -57,7 +57,7 @@ h1 {
 }
 
 body {
-  background: yellow !important;
+  background: pink !important;
 }
 
 body {
@@ -154,4 +154,8 @@ section.nav {
 
 .nextnextnexttop {
   background-color: red;
+}
+
+.test {
+  color: #8aff92;
 }
