@@ -1,1 +1,3 @@
-/* Geen lelijke background voor Frenk */
+body {
+  background: red !important;
+}
