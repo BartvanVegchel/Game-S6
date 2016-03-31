@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+
+<?
+include('../../includes/header.php');
+include '../../includes/topmenu.php';
+include '../../includes/bottommenu.php';
+?>
+
 <body>
 
 <h1>Planeten</h1>
