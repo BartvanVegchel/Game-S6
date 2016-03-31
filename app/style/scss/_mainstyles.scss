@@ -24,32 +24,6 @@ h2 {
 h3 {
 }
 
-form {
-  width: 100%;
-}
-
-input {
-  width: 90%;
-  padding: 15px 5%;
-  margin: 20px 0 0 0;
-  font-size: 16px;
-
-  .btn {
-    width: 100%;
-    margin: 20px 0 0 0;
-    font-size: 16px;
-    border: none;
-    background: #333333;
-    color: #FFFFFF;
-    cursor: pointer;
-    transition: opacity ease-in-out 0.3s;
-
-    &:hover {
-      opacity: 0.7;
-    }
-  }
-}
-
 /* Home */
 
 section.nav {
