@@ -24,7 +24,7 @@ h2 {
 h3 {
 }
 
-/* Home */
+/* Home (Map) */
 
 section.nav {
   width: 100%;
@@ -42,5 +42,20 @@ section.bottom {
   bottom: 0;
 }
 
+/* Screen overs */
 
+section.screenOver {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: yellow;
+  z-index: 99;
+}
 
+section.slideUp {
+  top: 100%;
+}
+
+section.slideDown {
+  bottom: 100%;
+}
