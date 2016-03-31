@@ -1,3 +1,13 @@
 <section class="nav bottom">
-	Bottom
+
+	<div class="bottomBtn">
+	</div>
+
+	<div class="bottomBtn questmaster">
+		<img src="images/questmaster_still.png">
+	</div>
+
+	<div class="bottomBtn">
+	</div>
+
 </section>

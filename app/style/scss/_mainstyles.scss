@@ -42,6 +42,24 @@ section.bottom {
   bottom: 0;
 }
 
+div.bottomBtn {
+  height: 90%;
+  float: left;
+  background: blue;
+  width: 25%;
+
+  &.questmaster {
+    width: 50%;
+    background: white;
+    position: relative;
+      img {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+      }
+  }
+}
+
 /* Screen overs */
 
 section.screenOver {
