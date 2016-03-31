@@ -10,6 +10,10 @@
 	<h1>Schermen van boven naar beneden</h1>
 </section>
 
+<section class="screenOver slideUp">
+	<h1>Schermen van onder naar beneden</h1>
+</section>
+
 <section class="map">
 	<?php
 	if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd
@@ -19,11 +23,7 @@
 		echo "Je bent niet ingelogd.";
 	}
 	?>
-	
-</section>
 
-<section class="screenOver slideUp">
-	<h1>Schermen van onder naar beneden</h1>
 </section>
 
 <? 
