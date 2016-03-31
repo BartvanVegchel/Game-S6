@@ -4,7 +4,7 @@
 ?>
 
 <section class="login">
-	<h1>Inloggen 3</h1>
+	<h1>Inloggen 23</h1>
 
 	<?php login(); ?>
     <form method="POST" action="" id="register">
