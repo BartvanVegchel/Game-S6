@@ -46,10 +46,10 @@ div.bottomBtn {
   height: 90%;
   float: left;
   background: blue;
-  width: 25%;
+  width: 30%;
 
   &.questmaster {
-    width: 50%;
+    width: 40%;
     background: white;
     position: relative;
       img {
@@ -62,16 +62,13 @@ div.bottomBtn {
 
 /* Screen overs */
 
-section.screenOver {
+section.socialScreenUp {
   position: fixed;
+  top: 100%;
   height: 100%;
   width: 100%;
   background: yellow;
   z-index: 99;
-}
-
-section.slideUp {
-  top: 100%;
 }
 
 section.slideDown {

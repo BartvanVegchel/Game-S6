@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
-    $(".screenUp").click(function() {
-        $(".slideUp").animate({top: "0"});
+    $(".socialbtn").click(function() {
+        $(".socialScreenUp").animate({top: "0"});
     });
 
 });

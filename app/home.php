@@ -6,8 +6,8 @@
 	include 'includes/bottommenu.php';
 ?>
 
-<section class="screenOver slideDown">
-	<h1>Schermen van boven naar beneden</h1>
+<section class="socialScreenUp">
+	<? include 'modules/screenover/social.php'; ?>
 </section>
 
 <section class="screenOver slideUp">
@@ -16,6 +16,9 @@
 
 <section class="map">
 	<?php
+	include 'modules/map/map.php';
+
+
 	if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd
 		echo "Je bent ingelogd als " . $_SESSION['username'];
 	}
