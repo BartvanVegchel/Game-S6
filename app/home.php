@@ -13,7 +13,7 @@
 	<? include 'modules/screenover/social.php'; ?>
 </section>
 
-<section class="socialScreenUp">
+<section class="socialScreenUpout">
 	<h1>Schermen van onder naar beneden</h1>
 </section>
 
