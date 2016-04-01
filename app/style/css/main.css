@@ -124,7 +124,7 @@ section.slideDown {
 
 .map1 {
   width: 4000px;
-  height: 4000px;
+  height: 1000px;
   background: teal;
 }
 
@@ -179,7 +179,6 @@ section.map {
   width: 2000px;
   height: 1000px;
   z-index: 0;
-  position: relative;
 }
 
 section.map div.part {
