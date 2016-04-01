@@ -53,11 +53,13 @@ table {
 }
 
 /* Structure */
+html,
 body {
   font-family: OpenSansRegular, sans-serif;
   background: #FFF;
   color: #333;
   font-size: 16;
+  height: 100%;
 }
 
 /* Views */
@@ -116,6 +118,12 @@ section.socialScreenUp {
 
 section.slideDown {
   bottom: 100%;
+}
+
+.map1 {
+  width: 4000px;
+  height: 4000px;
+  background: teal;
 }
 
 /* Login/Register */

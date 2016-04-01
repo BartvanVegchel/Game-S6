@@ -5,15 +5,16 @@
 	include 'includes/topmenu.php';
 	include 'includes/bottommenu.php';
 ?>
-	<section class="map">
-		<?php //include 'modules/map/map.php'; ?>
+	<section class="map1">
+		<?php include 'modules/map/map.php'; ?>
+
 	</section>
 
 <section class="socialScreenUp">
 	<? include 'modules/screenover/social.php'; ?>
 </section>
 
-<section class="screenOver slideUp">
+<section class="socialScreenUp">
 	<h1>Schermen van onder naar beneden</h1>
 </section>
 
