@@ -6,7 +6,7 @@
 	include 'includes/bottommenu.php';
 ?>
 	<section class="map">
-		<?php include 'modules/map/map.php'; ?>
+		<?php //include 'modules/map/map.php'; ?>
 	</section>
 
 <section class="socialScreenUp">
