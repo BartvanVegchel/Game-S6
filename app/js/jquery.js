@@ -9,10 +9,10 @@ $(document).ready(function() {
     });
 
     //grid maken
-    for (var i = 0; i < 100; i++)
-    {
-        $("section.map").append("<div class='part'><div class='overlay'></div><div class='background'></div></div>");
-    }
+    // for (var i = 0; i < 100; i++)
+    // {
+    //     $("section.map").append("<div class='part' id='"+ i +"'><div class='overlay'></div><div class='background'></div></div>");
+    // }
 
     $('.part').click(function(){
         $(this).find(".overlay").hide();
