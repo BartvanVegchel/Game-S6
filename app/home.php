@@ -2,8 +2,6 @@
 	include('includes/header.php');
 	include('functions/login_function.php');
 	
-	include 'includes/topmenu.php';
-	include 'includes/bottommenu.php';
 ?>
 
 <section class="socialScreenUp">
