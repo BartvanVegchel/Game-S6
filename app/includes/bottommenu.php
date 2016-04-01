@@ -6,6 +6,7 @@
 		<img src="images/questmaster_still.png">
 	</div>
 	<div class="bottomBtn">
-		<span class="socialbtn">Social</span>
+		<span class="socialbtn"></span>
+		<img src="images/social_icon.png">
 	</div>
 </section>
