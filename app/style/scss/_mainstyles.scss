@@ -38,12 +38,13 @@ section.top {
 }
 
 section.bottom {
-  background: grey;
   bottom: 0;
 }
 
+
+/* Subnav (Bottom) */
 div.bottomBtn {
-  height: 90%;
+  height: 100%;
   float: left;
   background: blue;
   width: 30%;
@@ -58,6 +59,13 @@ div.bottomBtn {
         bottom: 0;
       }
   }
+}
+
+span.socialbtn {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
 }
 
 /* Screen overs */
