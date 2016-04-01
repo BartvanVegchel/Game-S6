@@ -1,1 +1,1 @@
-Social <span class="close">Close</span>
+Social <span class="closeDown">Close</span>
