@@ -5,8 +5,7 @@
 	include 'includes/topmenu.php';
 	include 'includes/bottommenu.php';
 ?>
-	<section class="map1">
-		<?php include 'modules/map/map.php'; ?>
+	<section class="map">
 
 	</section>
 
