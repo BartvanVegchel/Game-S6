@@ -35,6 +35,7 @@ if (isset($_GET['code'])) {
     }
 
     echo '<br> ja';
+    echo '<br>' . $username;
     echo '<Br>UserId is' . $userId;
     echo '<br>huidige stappenDB is' . $currentStepAmount;
     echo '<br>nieuwe stappen is' . $stepAmount;
