@@ -1,6 +1,7 @@
 
 <?php
 include_once '../../includes/db_connection.php';
+include_once '../../includes/header.php';
 include_once 'Moves.php';
 include_once 'config.php';
 
@@ -23,7 +24,6 @@ if (isset($_GET['code'])) {
     $keyWalking = array_search('walking', array_column($summaryArray[0]['summary'], 'activity'));
     $stepAmount = $summaryArray[0]['summary'][$keyWalking]["steps"];
 
-
     $username = $_SESSION["username"];
     //$username = 'admin';
 
@@ -35,7 +35,7 @@ if (isset($_GET['code'])) {
     }
 
     echo '<br> ja';
-    echo '<br>' . $username;
+    echo '<br>Username is' . $username;
     echo '<Br>UserId is' . $userId;
     echo '<br>huidige stappenDB is' . $currentStepAmount;
     echo '<br>nieuwe stappen is' . $stepAmount;
