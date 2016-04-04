@@ -23,7 +23,6 @@ if (isset($_GET['code'])) {
     $keyWalking = array_search('walking', array_column($summaryArray[0]['summary'], 'activity'));
     $stepAmount = $summaryArray[0]['summary'][$keyWalking]["steps"];
 
-    $userId = 1;
 
     $username = $_SESSION["username"];
     //$username = 'admin';
