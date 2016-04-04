@@ -1,0 +1,1 @@
+<a href="moves://app/authorize?client_id=6ztbE_n0485hLBbCC80XmklXAD3dlJD7&redirect_uri=http://www.arnoclassens.nl/game/example/data.php&scope=activity">Sync data</a>

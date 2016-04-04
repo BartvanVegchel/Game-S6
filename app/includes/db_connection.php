@@ -10,11 +10,11 @@ $db=mysqli_connect($host, $username, $password, $dbnaam);
 
 // Verbinden met Database
 if (mysqli_connect_errno()){
-	//echo "Verbinden met db is mislukt: " . mysqli_connect_error();
+	echo "Verbinden met db is mislukt: " . mysqli_connect_error();
 }
 
 else{
-	//echo "Verbinden met db is gelukt";
+	echo "Verbinden met db is gelukt";
 }
 
 ?>
