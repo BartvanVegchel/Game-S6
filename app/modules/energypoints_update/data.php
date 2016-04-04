@@ -34,6 +34,12 @@ if (isset($_GET['code'])) {
         //$userId = 7;
     }
 
+    echo '<br> ja';
+    echo '<Br>UserId is' . $userId;
+    echo '<br>huidige stappenDB is' . $currentStepAmount;
+    echo '<br>nieuwe stappen is' . $stepAmount;
+
+
     //check Current Step Amount
     $getCurrentStepAmount = mysqli_query($db, "SELECT * FROM steps WHERE userId = '$userId'") or die("FOUT: " . mysqli_error($dblink));
     while($step = mysqli_fetch_assoc($getCurrentStepAmount)) {
