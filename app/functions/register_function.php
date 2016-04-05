@@ -16,6 +16,8 @@ function register(){
 				$gender 		= mysqli_real_escape_string($db, $_POST["gender"]);
 				$password     	= mysqli_real_escape_string($db, md5($_POST["password"]));
 				$registerDate  	= date('Y/m/d', time());
+                $unlockedFields = array('1_14', '1_15', '1_20', '1_21');
+				$fieldArray = serialize($unlockedFields);
 				
 				$result = mysqli_query($db, "SELECT * FROM users WHERE username = '$username'"); //kijken of de ingevulde gebruikersnaam in de database staat
 	
@@ -42,6 +44,9 @@ function register(){
 										
 					mysqli_query($db, "INSERT INTO steps (userId, stepAmount, totalAmount)
 										VALUES ('$userId', '0', '0') ");
+
+					mysqli_query($db, "INSERT INTO userProgress (userId, unlockedFields)
+										VALUES ('$userId', '$fieldArray') ");
 										
 					//header("Refresh: 3; url=index.php");
 					echo "Je bent succesvol geregistreerd! Je kunt je nu inloggen."; // als het succesvol naar de database is geplaatst

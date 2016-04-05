@@ -1,4 +1,3 @@
-
 <?php
 include_once '../../includes/db_connection.php';
 include_once '../../includes/header.php';
@@ -34,13 +33,6 @@ if (isset($_GET['code'])) {
         //$userId = 7;
     }
 
-    echo '<br> ja';
-    echo '<br>Username is' . $username;
-    echo '<Br>UserId is' . $userId;
-    echo '<br>huidige stappenDB is' . $currentStepAmount;
-    echo '<br>nieuwe stappen is' . $stepAmount;
-
-
     //check Current Step Amount
     $getCurrentStepAmount = mysqli_query($db, "SELECT * FROM steps WHERE userId = '$userId'") or die("FOUT: " . mysqli_error($dblink));
     while($step = mysqli_fetch_assoc($getCurrentStepAmount)) {
@@ -61,7 +53,16 @@ if (isset($_GET['code'])) {
     elseif($stepAmount < $currentStepAmount){
         echo '<br><br>Eerste update van de dag';
         mysqli_query($db, "UPDATE steps SET stepAmount = '$stepAmount', totalAmount = (totalAmount + '$stepAmount') WHERE userId = '$userId'");
+        //mysqli_query($db, "UPDATE energyPoints SET amount = '$stepAmount', totalAmount = (totalAmount + '$stepAmount') WHERE userId = '$userId'");
     }
+
+    echo '<br> ja';
+    echo '<br>Username is' . $username;
+    echo '<Br>UserId is' . $userId;
+    echo '<br>huidige stappenDB is' . $currentStepAmount;
+    echo '<br>nieuwe stappen is' . $stepAmount;
+
+
 
 }
 ?>
