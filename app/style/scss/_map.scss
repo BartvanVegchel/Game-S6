@@ -14,7 +14,7 @@ section.map{
     div.overlay{
       width: 98px;
       height: 98px;
-      background-color: indianred;
+      background-color: #5CFD98;
       border: 1px solid #fff;
       float: left;
       content: '';
@@ -33,4 +33,9 @@ section.map{
       z-index: 1;
     }
   }
+}
+
+.huis{
+  height: 98px;
+  width: 98px;
 }

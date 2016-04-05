@@ -9,9 +9,11 @@ while ($row = mysqli_fetch_array($getMapResult)) {
 
     echo "<section class='map' style='width:" . sqrt($count) . "00px; height:" . sqrt($count) . "00px; '>";
     for ($i = 0; $i < $count; $i++) {
-        $element = "<div class='part' id='" . $i . "'><div class='overlay'></div><div class='background'></div></div>";
+        $element = "<div class='part' id='" . $i . "'><div class='overlay'></div><div class='background'><img class='huis' src='images/house2.png'></div></div>";
         echo $element;
     }
     echo "</section>";
 }
 ?>
+
+
