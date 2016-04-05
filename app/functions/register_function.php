@@ -30,6 +30,19 @@ function register(){
 				else { 
 					mysqli_query($db, "INSERT INTO users (id, username, email, password, age, gender, registerDate)
 										VALUES ('', '$username', '$email', '$password', '', '$gender', '$registerDate') ");
+										
+					$getUserId = mysqli_query($db, "SELECT * FROM users WHERE username = '$username'") or die("FOUT: " . mysqli_error($dblink)); //kijken of de ingevulde gebruikersnaam in de database staat
+					while($row = mysqli_fetch_assoc($getUserId)) {
+						$userId = $row["id"];
+						//echo "Your user id = " . $userId;
+					}
+										
+					mysqli_query($db, "INSERT INTO energyPoints (userId, amount, totalEarned, totalSpend)
+										VALUES ('$userId', '1000', '1000', '0') ");
+										
+					mysqli_query($db, "INSERT INTO steps (userId, stepAmount, totalAmount)
+										VALUES ('$userId', '0', '0') ");
+										
 					//header("Refresh: 3; url=index.php");
 					echo "Je bent succesvol geregistreerd! Je kunt je nu inloggen."; // als het succesvol naar de database is geplaatst
 				}

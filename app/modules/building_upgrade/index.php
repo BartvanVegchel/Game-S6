@@ -23,6 +23,10 @@
 <header>
 	<?php getEnergyPoints(); ?>
 	<i class="fa fa-bolt"></i> <strong><?php echo $energyPoints; ?></strong>
+	<?php
+	if(isset($_SESSION["logged_in"])){ ?>
+		<a href="../../functions/logout_function.php">Logout</a>
+	<?php } ?>
 </header>
 
 <?php
