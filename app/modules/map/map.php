@@ -13,25 +13,22 @@ while($row = mysqli_fetch_assoc($getUserId)) {
 }
 
 $getUnlockedFields = mysqli_query($db, "SELECT * FROM userProgress WHERE userId = '$userId'") or die("FOUT: " . mysqli_error($dblink));
-
-while($rij = mysqli_fetch_assoc($getUnlockedFields)) {
-    //echo 'hoi';
-    $unlockedFields = $rij["unlockedFields"];
+while($row = mysqli_fetch_assoc($getUnlockedFields)) {
+    $unlockedFields = $row["unlockedFields"];
     $unlockedFieldsArray = unserialize( $unlockedFields );
 }
 
 
 while ($row = mysqli_fetch_array($getMapResult)) {
     $count = $row['worldSize'];
-
     echo "<section class='map' style='width:" . sqrt($count) . "00px; height:" . sqrt($count) . "00px; '>";
     for ($i = 0; $i < $count; $i++) {
         $partId = $worldId.'_'.$i;
 
         if (in_array("$partId", $unlockedFieldsArray)) {
-            $element = "<div class='part' id='" . $partId . "'><div class='overlay' style=\"display: none;\"></div><div class='background'><img class='huis' src='images/house2.png'></div></div>";
+            $element = "<div class='part' id='" . $partId . "'><div class='background'></div></div>";
         } else{
-            $element = "<div class='part' id='" . $partId . "'><div class='overlay'></div><div class='background'><img class='huis' src='images/house2.png'></div></div>";
+            $element = "<div class='part' id='" . $partId . "'><div class='locked'></div><div class='background'></div></div>";
         }
 
         echo $element;

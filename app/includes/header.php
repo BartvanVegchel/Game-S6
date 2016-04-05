@@ -30,12 +30,13 @@
 <meta name="msapplication-TileColor" content="#FFFFFF">
 <meta name="msapplication-TileImage" content="images/icons/favicon-144.png">
 
-
 <!-- Scripts -->
 <script src="js/jquery-v2.0.3.js"></script>
-<script src="js/jquery.js"></script> 
+<script src="js/jquery.js"></script>
+<script src="js/sweetalert-dev.js"></script>
 
 <link rel="stylesheet" type="text/css" href="style/css/main.css" />
+<link rel="stylesheet" href="style/css/sweetalert.css">
 <link rel="stylesheet" type="text/css" href="fonts/opensans/opensans.css" />
 
 </head>
