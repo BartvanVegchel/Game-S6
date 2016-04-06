@@ -4,7 +4,7 @@ function getEnergyPoints(){
 
 	if(isset($_SESSION["logged_in"])){
 
-		include('../../includes/db_connection.php');
+		include('./includes/db_connection.php');
 	
 		$username = $_SESSION["username"];
 		

@@ -38,6 +38,9 @@
 <link rel="stylesheet" type="text/css" href="style/css/main.css" />
 <link rel="stylesheet" href="style/css/sweetalert.css">
 <link rel="stylesheet" type="text/css" href="fonts/opensans/opensans.css" />
+		
+<!-- FontAwesome -->
+<link rel="stylesheet" type="text/css" href="style/css/font-awesome.min.css"/>
 
 </head>
 <body>

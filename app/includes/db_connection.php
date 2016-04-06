@@ -14,7 +14,7 @@ if (mysqli_connect_errno()){
 }
 
 else{
-	echo "Verbinden met db is gelukt";
+	//echo "Verbinden met db is gelukt";
 }
 
 ?>
