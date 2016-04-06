@@ -22,16 +22,38 @@ section.map{
       z-index: 2;
     }
 
-    div.background{
+    div.background,
+    div.homebackground,
+    div.townhallbackground,
+    div.bankbackground,
+    div.transportbackground{
       width: 98px;
       height: 98px;
       background-color: blueviolet;
-      border: 1px solid #fff;
+      //border: 1px solid #fff;
       float: left;
       content: '';
       position: absolute;
       z-index: 1;
     }
+
+    div.homebackground{
+      background-color:saddlebrown;
+    }
+
+    div.townhallbackground{
+      background-color:red;
+    }
+
+    div.bankbackground{
+      background-color:gold;
+    }
+
+    div.transportbackground{
+      background-color:grey;
+    }
+
+
   }
 }
 

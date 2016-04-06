@@ -219,15 +219,34 @@ section.map div.part div.locked {
   z-index: 2;
 }
 
-section.map div.part div.background {
+section.map div.part div.background,
+section.map div.part div.homebackground,
+section.map div.part div.townhallbackground,
+section.map div.part div.bankbackground,
+section.map div.part div.transportbackground {
   width: 98px;
   height: 98px;
   background-color: blueviolet;
-  border: 1px solid #fff;
   float: left;
   content: '';
   position: absolute;
   z-index: 1;
+}
+
+section.map div.part div.homebackground {
+  background-color: saddlebrown;
+}
+
+section.map div.part div.townhallbackground {
+  background-color: red;
+}
+
+section.map div.part div.bankbackground {
+  background-color: gold;
+}
+
+section.map div.part div.transportbackground {
+  background-color: grey;
 }
 
 .huis {
