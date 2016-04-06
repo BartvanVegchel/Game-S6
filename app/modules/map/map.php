@@ -59,9 +59,9 @@ while ($row = mysqli_fetch_array($getMapResult)) {
             }
         } else{
             if (in_array("$partId", $homeLocationsArray)) {
-                $element = "<div class='part' id='" . $partId . "'><div class='locked'></div><div class='homebackground'></div></div>";
+                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='homebackground'></div></div>";
             } else{
-                $element = "<div class='part' id='" . $partId . "'><div class='locked'></div><div class='background'></div></div>";
+                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='background'></div></div>";
             }
         }
 

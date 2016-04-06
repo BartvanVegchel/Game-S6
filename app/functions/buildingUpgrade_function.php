@@ -21,7 +21,6 @@ function buildingUpgrade(){
 				$upgradecost 		= mysqli_real_escape_string($db, $_POST["upgradecost"]);
 				
 				if(isset($_SESSION["logged_in"])){
-
 					include('../../includes/db_connection.php');
 				
 					$username = $_SESSION["username"];

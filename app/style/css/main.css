@@ -265,6 +265,7 @@ section.map div.part div.transportbackground {
   width: 98px;
   height: 98px;
   background-color: blueviolet;
+  border: 1px solid #fff;
   float: left;
   content: '';
   position: absolute;

@@ -10,7 +10,7 @@
 			
 				<nav>
 					<ul>
-						<li>
+						<li class="personalEnergypoints">
 							<?php getEnergyPoints(); ?>
 							<i class="fa fa-bolt"></i><strong><?php echo $energyPoints; ?></strong>
 						</li><li>
