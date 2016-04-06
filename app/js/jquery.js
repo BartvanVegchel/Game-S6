@@ -46,11 +46,11 @@ $(document).ready(function() {
                         $personalEnergy.text($updatedEnergyPoints);
                     })
                     .error(function (data) {
-                        swal("Oops", "We couldn't connect to the server!", "error");
+                        swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
                     });
             });
         } else{
-            sweetAlert("Oeps...", "Je hebt niet voldoende energypoint!", "error");
+            sweetAlert("Oeps...", "Je hebt niet voldoende energypoints!", "error");
         }
     });
 });
