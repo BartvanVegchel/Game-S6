@@ -9,6 +9,7 @@ var _interopRequireWildcard = function (obj) { return obj && obj.__esModule ? ob
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
+    
 // SweetAlert
 // 2014-2015 (c) - Tristan Edwards
 // github.com/t4t5/sweetalert
