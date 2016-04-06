@@ -48,7 +48,7 @@ if (isset($_GET['code'])) {
     //If walked
     elseif($stepAmount > $currentStepAmount){
         echo '<br><br> db moet worden geupdate';
-        mysqli_query($db, "UPDATE steps SET stepAmount = '$stepAmount', totalAmount = (totalAmount + '$stepAmount') WHERE userId = '$userId'");
+        mysqli_query($db, "UPDATE steps SET stepAmount = (stepAmount - '$currentStepAmount') , totalAmount = (totalAmount + '$stepAmount') WHERE userId = '$userId'");
         mysqli_query($db, "UPDATE energyPoints SET amount = (amount + '$energyPoints') WHERE userId = '$userId'");
     }
 
