@@ -60,6 +60,12 @@ while ($row = mysqli_fetch_array($getMapResult)) {
         } else{
             if (in_array("$partId", $homeLocationsArray)) {
                 $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='homebackground'></div></div>";
+            } elseif (in_array("$partId", $townHallLocationsArray)) {
+                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='townhallbackground'></div></div>";
+            } elseif (in_array("$partId", $bankLocationsArray)) {
+                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='bankbackground'></div></div>";
+            } elseif (in_array("$partId", $transportLocationsArray)) {
+                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='transportbackground'></div></div>";
             } else{
                 $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='background'></div></div>";
             }
