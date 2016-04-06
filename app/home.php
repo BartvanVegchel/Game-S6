@@ -1,11 +1,11 @@
 <? 
-if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd
 	include('includes/header.php');
 	include('functions/login_function.php');
 	
 	include 'includes/topmenu.php';
 	include 'includes/bottommenu.php';
-
+	
+if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd
 	
 	?>
 
@@ -20,13 +20,11 @@ if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd
 		<!-- include the map -->
 		<? include 'modules/map/map.php'; ?>
 
-
 <? 
+}
+else {
+	header("Refresh: 0; url=index.php");
+}
+
 include 'includes/footer.php'; 
-
-
-		}
-	else {
-		header("Refresh: 0; url=index.php");
-	}
 ?>
