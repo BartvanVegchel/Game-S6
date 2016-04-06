@@ -32,10 +32,8 @@ $(document).ready(function() {
                 $.ajax(
                         {
                             type: "get",
-                            url: "http://localhost:8888/Game-S6/app/functions/unlock_function.php",
-                            //data: {"fieldid": $fieldId},
-                            //data: {"fieldid": $fieldId, "dataenergy": $personalEnergyValue},
-                            data: {'fieldid': $fieldId},
+                            url: "functions/unlock_function.php",
+                            data: {'fieldid': $fieldId , 'dataenergy': $price},
                             success: function (data) {
                             }
                         }
