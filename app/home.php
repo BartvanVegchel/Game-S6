@@ -18,7 +18,7 @@ if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd
 		</section>
 
 		<!-- include the map -->
-		<? include 'modules/map/map.php'; ?>
+		<? include 'modules/map/map.php'; ?> 
 
 <? 
 }
