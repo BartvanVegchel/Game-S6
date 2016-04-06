@@ -22,6 +22,7 @@ if (isset($_GET['code'])) {
     $summaryArray = array_values($summary);
     $keyWalking = array_search('walking', array_column($summaryArray[0]['summary'], 'activity'));
     $stepAmount = $summaryArray[0]['summary'][$keyWalking]["steps"];
+	$energyPoints = $stepAmount;
 
     $username = $_SESSION["username"];
     //$username = 'admin';
@@ -47,12 +48,14 @@ if (isset($_GET['code'])) {
     elseif($stepAmount > $currentStepAmount){
         echo '<br><br> db moet worden geupdate';
         mysqli_query($db, "UPDATE steps SET stepAmount = '$stepAmount', totalAmount = (totalAmount + '$stepAmount') WHERE userId = '$userId'");
+        mysqli_query($db, "UPDATE energyPoints SET amount = (amount + '$stepAmount') WHERE userId = '$userId'");
     }
 
     //If new day is started
     elseif($stepAmount < $currentStepAmount){
         echo '<br><br>Eerste update van de dag';
         mysqli_query($db, "UPDATE steps SET stepAmount = '$stepAmount', totalAmount = (totalAmount + '$stepAmount') WHERE userId = '$userId'");
+        mysqli_query($db, "UPDATE energyPoints SET amount = (amount + '$stepAmount') WHERE userId = '$userId'");
         //mysqli_query($db, "UPDATE energyPoints SET amount = '$stepAmount', totalAmount = (totalAmount + '$stepAmount') WHERE userId = '$userId'");
     }
 
