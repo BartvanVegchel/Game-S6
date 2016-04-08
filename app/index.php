@@ -5,6 +5,9 @@
 
 <section class="login">
 	<h1>Inloggen</h1>
+	
+	<div class="">
+	</div>
 
 	<?php login(); ?>
     <form method="POST" action="" id="register">
