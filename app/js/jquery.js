@@ -9,7 +9,6 @@ $(document).ready(function() {
     });
 
 
-
     $('.locked').click(function() {
 
         $fieldId = $(this).parent().attr("id");

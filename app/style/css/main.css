@@ -20,37 +20,30 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+  display: block; }
 
 body {
-  line-height: 1.15;
-}
+  line-height: 1.15; }
 
 ol, ul {
-  list-style: none;
-}
+  list-style: none; }
 
 blockquote, q {
-  quotes: none;
-}
+  quotes: none; }
 
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
-  content: none;
-}
+  content: none; }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 /* Structure */
 html,
@@ -62,109 +55,81 @@ body {
   height: 100%;
   width: 100%;
   margin: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 /* Views */
 /* Home (Map) */
 section.nav {
   width: 100%;
   position: fixed;
-  z-index: 999;
-}
+  z-index: 999; }
 
 section.top {
   background: #3388CC;
   color: #fff;
   top: 0;
-  padding: 10px 0;
-}
-
-section.top nav ul li {
-  display: inline-block;
-  width: 33%;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-section.top nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-section.top nav ul li .fa {
-  font-size: 30px;
-  margin-right: 5px;
-}
+  padding: 10px 0; }
+  section.top nav ul li {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    text-transform: uppercase; }
+    section.top nav ul li a {
+      color: #fff;
+      text-decoration: none; }
+    section.top nav ul li .fa {
+      font-size: 30px;
+      margin-right: 5px; }
 
 section.bottom {
   bottom: 0;
   padding: 10px 0;
   margin-top: -10px;
-  background: #333;
-}
-
-section.bottom nav ul li {
-  display: inline-block;
-  width: 33%;
-  text-align: center;
-  text-transform: uppercase;
-  max-height: 50px;
-}
-
-section.bottom nav ul li.questmaster-wrapper {
-  position: relative;
-  text-align: center;
-}
-
-section.bottom nav ul li img {
-  width: 100%;
-}
-
-section.bottom nav ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-section.bottom nav ul li a.questmaster {
-  position: absolute;
-  bottom: 0;
-  left: 25%;
-  right: 25%;
-  width: 50%;
-}
-
-section.bottom nav ul li .fa {
-  font-size: 30px;
-  margin-right: 5px;
-}
+  background: #333; }
+  section.bottom nav ul li {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    text-transform: uppercase;
+    max-height: 50px; }
+    section.bottom nav ul li.questmaster-wrapper {
+      position: relative;
+      text-align: center; }
+    section.bottom nav ul li img {
+      width: 100%; }
+    section.bottom nav ul li a {
+      color: #fff;
+      text-decoration: none; }
+      section.bottom nav ul li a.questmaster {
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        right: 25%;
+        width: 50%; }
+    section.bottom nav ul li .fa {
+      font-size: 30px;
+      margin-right: 5px; }
 
 /* Subnav (Bottom) */
 div.bottomBtn {
   height: 100%;
   float: left;
   width: 30%;
-  padding: 10px 0;
-}
-
-div.bottomBtn.questmaster {
-  width: 40%;
-  background: white;
-  position: relative;
-}
-
-div.bottomBtn.questmaster img {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
+  padding: 10px 0; }
+  div.bottomBtn.questmaster {
+    width: 40%;
+    background: white;
+    position: relative; }
+    div.bottomBtn.questmaster img {
+      width: 100%;
+      position: absolute;
+      bottom: 0; }
 
 span.socialbtn {
   position: absolute;
   height: 100%;
   width: 100%;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 /* Screen overs */
 section.socialScreenUp {
@@ -173,18 +138,15 @@ section.socialScreenUp {
   height: 100%;
   width: 100%;
   background: yellow;
-  z-index: 99;
-}
+  z-index: 99; }
 
 section.slideDown {
-  bottom: 100%;
-}
+  bottom: 100%; }
 
 .map1 {
   width: 4000px;
   height: 4000px;
-  background: teal;
-}
+  background: teal; }
 
 /* Login/Register */
 section.register,
@@ -192,103 +154,86 @@ section.login {
   width: 90%;
   margin: 0 auto;
   padding: 50px 0 0 0;
-  text-align: center;
-}
+  text-align: center; }
 
 form {
-  width: 100%;
-}
+  width: 100%; }
 
 input {
   width: 90%;
   padding: 15px 5%;
   margin: 20px 0 0 0;
-  font-size: 16px;
-}
-
-input.btn {
-  width: 100%;
-  margin: 20px 0 0 0;
-  font-size: 16px;
-  border: none;
-  background: #333333;
-  color: #FFFFFF;
-  cursor: pointer;
-  transition: opacity ease-in-out 0.3s;
-}
-
-input.btn:hover {
-  opacity: 0.7;
-}
+  font-size: 16px; }
+  input.btn {
+    width: 100%;
+    margin: 20px 0 0 0;
+    font-size: 16px;
+    border: none;
+    background: #333333;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: opacity ease-in-out 0.3s; }
+    input.btn:hover {
+      opacity: 0.7; }
 
 div {
-  color: black;
-}
+  color: black; }
 
 div {
-  color: #000000;
-}
+  color: #000000; }
 
 div {
-  color: #000000;
-}
+  color: #000000; }
 
 section.map {
-  z-index: 0;
-  padding: 50px 0 40px 0;
-}
-
-section.map div.part {
-  width: 100px;
-  height: 100px;
-  background-color: mediumpurple;
-  float: left;
-  position: relative;
-}
-
-section.map div.part div.locked {
-  width: 98px;
-  height: 98px;
-  background-color: #5CFD98;
-  border: 1px solid #fff;
-  float: left;
-  content: '';
-  position: absolute;
-  z-index: 2;
-}
-
-section.map div.part div.background,
-section.map div.part div.homebackground,
-section.map div.part div.townhallbackground,
-section.map div.part div.bankbackground,
-section.map div.part div.transportbackground {
-  width: 98px;
-  height: 98px;
-  background-color: blueviolet;
-  border: 1px solid #fff;
-  float: left;
-  content: '';
-  position: absolute;
   z-index: 1;
-}
-
-section.map div.part div.homebackground {
-  background-color: saddlebrown;
-}
-
-section.map div.part div.townhallbackground {
-  background-color: red;
-}
-
-section.map div.part div.bankbackground {
-  background-color: gold;
-}
-
-section.map div.part div.transportbackground {
-  background-color: grey;
-}
+  padding: 50px 0 40px 0; }
+  section.map div.part {
+    width: 100px;
+    height: 100px;
+    background-color: mediumpurple;
+    float: left;
+    position: relative;
+    z-index: 1; }
+    section.map div.part div.locked {
+      width: 98px;
+      height: 98px;
+      background-color: #5CFD98;
+      border: 1px solid #fff;
+      float: left;
+      content: '';
+      position: absolute;
+      z-index: 2; }
+    section.map div.part div.background,
+    section.map div.part div.homebackground,
+    section.map div.part div.townhallbackground,
+    section.map div.part div.bankbackground,
+    section.map div.part div.transportbackground {
+      width: 98px;
+      height: 98px;
+      background-color: blueviolet;
+      border: 1px solid #fff;
+      float: left;
+      content: '';
+      position: absolute;
+      z-index: 1; }
+      section.map div.part div.background img,
+      section.map div.part div.homebackground img,
+      section.map div.part div.townhallbackground img,
+      section.map div.part div.bankbackground img,
+      section.map div.part div.transportbackground img {
+        width: 100%;
+        position: absolute;
+        bottom: 0; }
+    section.map div.part div.homebackground {
+      background-color: saddlebrown; }
+    section.map div.part div.townhallbackground {
+      background-color: red; }
+    section.map div.part div.bankbackground {
+      background-color: gold; }
+    section.map div.part div.transportbackground {
+      background-color: grey; }
 
 .huis {
   height: 98px;
-  width: 98px;
-}
+  width: 98px; }

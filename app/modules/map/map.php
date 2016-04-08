@@ -47,7 +47,7 @@ while ($row = mysqli_fetch_array($getMapResult)) {
         $partId = $worldId.'_'.$i;
         if (in_array("$partId", $unlockedFieldsArray)) {
             if (in_array("$partId", $homeLocationsArray)) {
-                $element = "<div class='part' id='" . $partId . "'><div class='homebackground'></div></div>";
+                $element = "<div class='part' id='" . $partId . "'><div class='homebackground'><img src='images/towncenter.png' /></div></div>";
             } elseif (in_array("$partId", $townHallLocationsArray)) {
                 $element = "<div class='part' id='" . $partId . "'><div class='townhallbackground'></div></div>";
             } elseif (in_array("$partId", $bankLocationsArray)) {
@@ -59,7 +59,7 @@ while ($row = mysqli_fetch_array($getMapResult)) {
             }
         } else{
             if (in_array("$partId", $homeLocationsArray)) {
-                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='homebackground'></div></div>";
+                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='homebackground'><img src='images/towncenter.png' /></div></div></div>";
             } elseif (in_array("$partId", $townHallLocationsArray)) {
                 $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='townhallbackground'></div></div>";
             } elseif (in_array("$partId", $bankLocationsArray)) {

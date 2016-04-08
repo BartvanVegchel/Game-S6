@@ -1,7 +1,7 @@
 section.map{
   //width: 1000px;
   //height: 1000px;
-  z-index: 0;
+  z-index: 1;
   padding: 50px 0 40px 0;
 
   div.part{
@@ -10,6 +10,7 @@ section.map{
     background-color: mediumpurple;
     float: left;
     position: relative;
+    z-index: 1;
 
     div.locked{
       width: 98px;
@@ -35,6 +36,12 @@ section.map{
       content: '';
       position: absolute;
       z-index: 1;
+
+      img{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+      }
     }
 
     div.homebackground{
