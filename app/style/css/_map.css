@@ -1,0 +1,39 @@
+section.map {
+  z-index: 0;
+  padding: 50px 0;
+}
+
+section.map div.part {
+  width: 100px;
+  height: 100px;
+  background-color: mediumpurple;
+  float: left;
+  position: relative;
+}
+
+section.map div.part div.locked {
+  width: 98px;
+  height: 98px;
+  background-color: #5CFD98;
+  border: 1px solid #fff;
+  float: left;
+  content: '';
+  position: absolute;
+  z-index: 2;
+}
+
+section.map div.part div.background {
+  width: 98px;
+  height: 98px;
+  background-color: blueviolet;
+  border: 1px solid #fff;
+  float: left;
+  content: '';
+  position: absolute;
+  z-index: 1;
+}
+
+.huis {
+  height: 98px;
+  width: 98px;
+}

@@ -40,6 +40,7 @@ $(document).ready(function() {
                     .done(function (data) {
                         swal("Gefeliciteerd!", "Je bent weer een stapje verder in het ontdekken van deze wereld", "success");
 
+                        $('#' + $fieldId).find('.locked').next('div').find('img').show();
                         $('#' + $fieldId).find('.locked').removeClass('locked');
                         $updatedEnergyPoints = $personalEnergyValue - $price;
                         $personalEnergy.text($updatedEnergyPoints);
