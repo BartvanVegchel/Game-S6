@@ -35,7 +35,7 @@
 				<form method="POST" action="" id="register">
 					<input type="text" name="username" id="username" placeholder="Typ je naam hier" tabindex="1">
 					<input type="password" name="password" id="password" placeholder="En hier je wachtwoord" tabindex="5">
-					<input class="btn" type="submit" name="submit" value="Laat me spelen!">
+					<input class="btn" type="submit" name="submit" value="Laat me spelen!" id="1">
 				</form>
 				
 				<a class="btn btn-secondary btn-small" href="register.php">Ik ben een nieuwe speler</a>

@@ -8,6 +8,19 @@ $(document).ready(function() {
         $(".socialScreenUp").animate({top: "100%"});
     });
 
+    //hide townhall popup
+    $('.townhall-popup').hide();
+
+    // show townhall popup
+    $('div.part img').click(function(){
+        $('.townhall-popup').show("fast");
+    });
+
+    //hide townhall popup
+    $('.townhall-popup a').click(function(){
+        $('.townhall-popup').hide("fast");
+    });
+
 
     $('.locked').click(function() {
         //get the right divs

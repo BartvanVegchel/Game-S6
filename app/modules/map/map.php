@@ -1,5 +1,10 @@
 <?php
-$worldId = 2;
+// get the id of the selected world
+$selectedWorld = $_GET['id'];
+$_SESSION['selectedWorld']=$selectedWorld;
+//echo $selectedWorld;
+
+$worldId = $selectedWorld;
 
 $getMap = "SELECT * FROM worlds WHERE id = '$worldId'";
 $getMapResult = mysqli_query($db, $getMap) or die ("queryfout" . mysqli_error($db));
@@ -53,7 +58,7 @@ while($row = mysqli_fetch_assoc($getMonsterLocations)) {
 // Build the map
 while ($row = mysqli_fetch_array($getMapResult)) {
     $count = $row['worldSize'];
-    echo "<section class='map' style='width:" . sqrt($count) . "00px; height:" . sqrt($count) . "00px; '>";
+    echo "<section class='map' style='width:" . sqrt($count) . "00px; height:" . sqrt($count) . "00px; background-image:url(\"images/" .$row['worldName']. ".png\")'>";
     for ($i = 0; $i < $count; $i++) {
         $partId = $worldId.'_'.$i;
         if (in_array("$partId", $unlockedFieldsArray)) {

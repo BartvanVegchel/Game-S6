@@ -1,3 +1,5 @@
+</section><!-- end container-->
+
 <section class="nav bottom">
 
 	<nav>
@@ -11,8 +13,8 @@
 					<img src="images/tutorial_guy.png">
 				</a>
 			</li><li>
-				<a href="">
-					Social
+				<a href="worlds.php">
+					Werelden
 				</a>
 			</li>
 		</ul>

@@ -17,7 +17,7 @@ function register(){
 				$password     	= mysqli_real_escape_string($db, md5($_POST["password"]));
 				$registerDate  	= date('Y/m/d', time());
 
-				$unlockedFields = array('1_14', '1_15', '1_20', '1_21');
+				$unlockedFields = array('1_14', '1_15', '1_20', '1_21', '2_14', '2_15', '2_20', '2_21');
 				$unlockedMonsters = array('');
 
 				$fieldArray = serialize($unlockedFields);

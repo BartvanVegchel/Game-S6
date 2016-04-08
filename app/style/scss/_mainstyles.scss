@@ -102,7 +102,7 @@ section.top {
   background: #3388CC;
   color: #fff;
   top: 0;
-  padding: 10px 0;
+	height: 50px;
   
   nav {
 	ul {
@@ -128,9 +128,9 @@ section.top {
 
 section.bottom {
   bottom: 0;
-  padding: 10px 0;
   margin-top: -10px;
   background: #333;
+	height: 50px;
   
   nav {
 	ul {
@@ -156,7 +156,7 @@ section.bottom {
 			
 				&.questmaster {
 					position: absolute;
-					bottom: 17px;
+					bottom: 7px;
 					left: 13%;
 					right: 13%;
 					width: 74%;
@@ -218,4 +218,36 @@ section.slideDown {
   width: 4000px;
   height: 4000px;
   background: teal;
+}
+
+section.container{
+	width: 100%;
+	margin-top: 50px;
+}
+
+.townhall-popup{
+	height: 60%;
+	width: 80%;
+	background-color: white;
+	z-index: 99;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	.monster{
+		width: 100%;
+		height: 100px;
+
+		img{
+			width: 100px;
+			height: 100px;
+			float: left;
+		}
+
+		h2{
+			float: left;
+			line-height: 100px;
+		}
+	}
 }

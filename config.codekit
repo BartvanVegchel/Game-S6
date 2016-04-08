@@ -83,6 +83,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/app\/functions\/update_monsters.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/functions\/update_monsters.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/app\/home.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -91,6 +100,94 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/app\/images\/desertWorld.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 88548,
+		"inputAbbreviatedPath": "\/app\/images\/desertWorld.png",
+		"outputAbbreviatedPath": "\/app\/images\/desertWorld.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/egg_droplet.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6884,
+		"inputAbbreviatedPath": "\/app\/images\/egg_droplet.png",
+		"outputAbbreviatedPath": "\/app\/images\/egg_droplet.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/egg_droplet_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9352,
+		"inputAbbreviatedPath": "\/app\/images\/egg_droplet_broken.png",
+		"outputAbbreviatedPath": "\/app\/images\/egg_droplet_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/egg_fury.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6165,
+		"inputAbbreviatedPath": "\/app\/images\/egg_fury.png",
+		"outputAbbreviatedPath": "\/app\/images\/egg_fury.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/egg_fury_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8407,
+		"inputAbbreviatedPath": "\/app\/images\/egg_fury_broken.png",
+		"outputAbbreviatedPath": "\/app\/images\/egg_fury_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/egg_leefy.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8441,
+		"inputAbbreviatedPath": "\/app\/images\/egg_leefy.png",
+		"outputAbbreviatedPath": "\/app\/images\/egg_leefy.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/egg_leefy_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11873,
+		"inputAbbreviatedPath": "\/app\/images\/egg_leefy_broken.png",
+		"outputAbbreviatedPath": "\/app\/images\/egg_leefy_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/Hometown.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 71050,
+		"inputAbbreviatedPath": "\/app\/images\/Hometown.png",
+		"outputAbbreviatedPath": "\/app\/images\/Hometown.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/app\/images\/locked.png": {
 		"fileType": 32768,
@@ -121,6 +218,17 @@
 		"initialSize": 172043,
 		"inputAbbreviatedPath": "\/app\/images\/monster_fury.png",
 		"outputAbbreviatedPath": "\/app\/images\/monster_fury.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/monster_leefy.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 214903,
+		"inputAbbreviatedPath": "\/app\/images\/monster_leefy.png",
+		"outputAbbreviatedPath": "\/app\/images\/monster_leefy.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -245,6 +353,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/app\/js\/jquery.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/js\/jquery.js",
+		"outputAbbreviatedPath": "\/app\/js\/min\/jquery-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 0
+		},
 	"\/app\/js\/min\/jquery-min.js": {
 		"fileType": 64,
 		"ignore": 1,
@@ -361,6 +480,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/app\/modules\/energypoints_update\/Moves.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/app\/modules\/map\/map.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/modules\/map\/map.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -615,6 +743,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/app\/style\/scss\/_worlds.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/style\/scss\/_worlds.scss",
+		"outputAbbreviatedPath": "\/app\/style\/css\/_worlds.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/app\/style\/scss\/main.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -630,6 +774,15 @@
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
+		},
+	"\/app\/worlds.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/worlds.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/promo\/hello.html": {
 		"fileType": 8192,

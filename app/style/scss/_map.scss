@@ -2,12 +2,11 @@ section.map{
   //width: 1000px;
   //height: 1000px;
   z-index: 1;
-  padding: 50px 0 40px 0;
+  background-size: cover;
 
   div.part{
     width: 100px;
     height: 100px;
-    background-color: mediumpurple;
     float: left;
     position: relative;
     z-index: 1;
@@ -15,7 +14,7 @@ section.map{
     div.locked{
       width: 98px;
       height: 98px;
-      background-color: rgba(0,0,0,0.95);
+      background-color: #333333;
       border: 1px solid #fff;
       float: left;
       content: '';
@@ -43,8 +42,6 @@ section.map{
     div.monsterbackground{
       width: 98px;
       height: 98px;
-      background-color: blueviolet;
-      border: 1px solid #fff;
       float: left;
       content: '';
       position: absolute;
@@ -58,11 +55,11 @@ section.map{
     }
 
     div.homebackground{
-      background-color:saddlebrown;
+      //background-color:saddlebrown;
     }
 
     div.monsterbackground{
-      background-color:hotpink;
+      //background-color:hotpink;
     }
 
     div.townhallbackground{
