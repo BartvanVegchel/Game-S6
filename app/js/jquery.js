@@ -22,12 +22,14 @@ $(document).ready(function() {
         //if you have enough points
         if($personalEnergyValue >= $price) {
             swal({
-                title: "Weet je zeker dat je dit wilt kopen?",
+                title: "Het kost "+$price+" om dit gebied te ontdekken",
                 text: "",
-                type: "info",
+                type: "",
                 showCancelButton: true,
                 closeOnConfirm: false,
                 showLoaderOnConfirm: true,
+                confirmButtonText: "Oke",
+                cancelButtonText: "Nee"
             }, function () {
                 $.ajax(
                         {
@@ -40,14 +42,13 @@ $(document).ready(function() {
                         }
                     )
                     .done(function (data) {
-                        //swal("Goed zo!", "", "success","timer:"+2000);
                         swal({
                             title: "Goed zo!",
                             text: "",
                             type: "success",
                             timer: 2000,
                             showConfirmButton: false
-                            });
+                        });
 
                         //show image, remove locked block
                         $('#' + $fieldId).find('.locked').next('div').find('img').show();
@@ -66,13 +67,35 @@ $(document).ready(function() {
         }
     }); // end .locked click
 
-    $('.monsterEgg').click(function() {
+    //monster updaten
+    $('img.monsterEgg').click(function() {
         $monsterName = $(this).attr('monster-name');
+        $parentId = $(this).parent().parent().attr('id');
         swal({
             title: $monsterName,
-            text: "Hallo vriendje!",
-            imageUrl: "images/monster_"+$monsterName+".png"
-        })
-
-    });
+            text: "Je hebt "+$monsterName+" toegevoegd aan je collectie!",
+            type: "",
+            imageUrl: "images/monster_"+$monsterName+".png",
+            showCancelButton: false,
+            closeOnConfirm: true,
+            showLoaderOnConfirm: true,
+            confirmButtonText: "Super!"
+        }, function () {
+            $.ajax(
+                    {
+                        type: "get",
+                        url: "functions/update_monsters.php",
+                        data: {'monstername': $monsterName},
+                        success: function (data) {}
+                    }
+                )
+                .done(function (data) {
+                    console.log($parentId);
+                    $('#' + $parentId).find('.monsterEgg').removeClass('monsterEgg').addClass('noclick');
+                })
+                .error(function (data) {
+                    swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
+                });
+        });
+    });//end monsterEgg clicked
 });
