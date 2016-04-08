@@ -15,7 +15,7 @@ while($row = mysqli_fetch_assoc($getUserId)) {
 $fieldId = $_GET["fieldid"];
 $dataenergy = $_GET["dataenergy"];
 
-echo 'dataenergy is ' . $dataenergy;
+//echo 'dataenergy is ' . $dataenergy;
 
 //Get Personal unlockedFields in array
 $getUnlockedFields = mysqli_query($db, "SELECT * FROM userProgress WHERE userId = '$userId'") or die("FOUT: " . mysqli_error($dblink));

@@ -70,6 +70,7 @@ $(document).ready(function() {
     //monster updaten
     $('img.monsterEgg').click(function() {
         $monsterName = $(this).attr('monster-name');
+        $monsterNameLowerCase = $monsterName.toLowerCase();
         $parentId = $(this).parent().parent().attr('id');
         swal({
             title: $monsterName,
@@ -91,7 +92,8 @@ $(document).ready(function() {
                 )
                 .done(function (data) {
                     console.log($parentId);
-                    $('#' + $parentId).find('.monsterEgg').removeClass('monsterEgg').addClass('noclick');
+                    $('#' + $parentId).find('.monsterEgg').hide();
+                    $('#' + $parentId).find('.monsterbackground').append('<img src="images/egg_'+$monsterNameLowerCase+'_broken.png" monster-name='+$monsterName+'>');
                 })
                 .error(function (data) {
                     swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");

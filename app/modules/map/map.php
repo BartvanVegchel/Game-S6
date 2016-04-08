@@ -12,11 +12,14 @@ while($row = mysqli_fetch_assoc($getUserId)) {
     $userId = $row["id"];
 }
 
-//Get unlockedfields from user in array
+//Get unlockedfields and undlocked monsters from user in array
 $getUnlockedFields = mysqli_query($db, "SELECT * FROM userProgress WHERE userId = '$userId'") or die("FOUT: " . mysqli_error($dblink));
 while($row = mysqli_fetch_assoc($getUnlockedFields)) {
     $unlockedFields = $row["unlockedFields"];
     $unlockedFieldsArray = unserialize( $unlockedFields );
+
+    $unlockedMonsters = $row["unlockedMonsters"];
+    $unlockedMonstersArray = unserialize( $unlockedMonsters );
 }
 
 //Get locations in array
@@ -44,7 +47,6 @@ $getMonsterLocations = mysqli_query($db, "SELECT * FROM monsters") or die("FOUT:
 $monsterLocationsArray = [];
 while($row = mysqli_fetch_assoc($getMonsterLocations)) {
     //Get monster locations and names in array
-    //array_push($monsterLocationsArray, array($row['monsterLocation'] => $row['monsterName']));
     $monsterLocationsArray = array_merge($monsterLocationsArray, array($row['monsterLocation'] => $row['monsterName']));
 }
 
@@ -66,7 +68,15 @@ while ($row = mysqli_fetch_array($getMapResult)) {
             } elseif (array_key_exists("$partId", $monsterLocationsArray)) {
                 $imageName = strtolower($monsterLocationsArray[$partId]);
                 $monsterName = $monsterLocationsArray[$partId];
-                $element = "<div class='part' id='" . $partId . "'><div class='monsterbackground'><img src='images/egg_".$imageName .".png' class='monsterEgg' monster-name='".$monsterName."'></div></div>";
+                //$eggImage = "<img src='images/egg_" . $imageName . ".png' class='monsterEgg' monster-name='" . $monsterName . "'>";
+                if (in_array("$monsterName", $unlockedMonstersArray)) {
+                    $eggImage = "<img src='images/egg_" . $imageName . "_broken.png' monster-name='" . $monsterName . "'>";
+                } else{
+                    $eggImage = "<img src='images/egg_" . $imageName . ".png' class='monsterEgg' monster-name='" . $monsterName . "'>";
+
+                }
+
+                $element = "<div class='part' id='" . $partId . "'><div class='monsterbackground'>".$eggImage."</div></div>";
             } else{
                 $element = "<div class='part' id='" . $partId . "'><div class='background'></div></div>";
             }

@@ -16,8 +16,12 @@ function register(){
 				$gender 		= mysqli_real_escape_string($db, $_POST["gender"]);
 				$password     	= mysqli_real_escape_string($db, md5($_POST["password"]));
 				$registerDate  	= date('Y/m/d', time());
-                $unlockedFields = array('1_14', '1_15', '1_20', '1_21');
+
+				$unlockedFields = array('1_14', '1_15', '1_20', '1_21');
+				$unlockedMonsters = array('');
+
 				$fieldArray = serialize($unlockedFields);
+				$monsterArray = serialize($unlockedMonsters);
 				
 				$result = mysqli_query($db, "SELECT * FROM users WHERE username = '$username'"); //kijken of de ingevulde gebruikersnaam in de database staat
 	
@@ -36,7 +40,6 @@ function register(){
 					$getUserId = mysqli_query($db, "SELECT * FROM users WHERE username = '$username'") or die("FOUT: " . mysqli_error($dblink)); //kijken of de ingevulde gebruikersnaam in de database staat
 					while($row = mysqli_fetch_assoc($getUserId)) {
 						$userId = $row["id"];
-						//echo "Your user id = " . $userId;
 					}
 										
 					mysqli_query($db, "INSERT INTO energyPoints (userId, amount, totalEarned, totalSpend)
@@ -45,8 +48,9 @@ function register(){
 					mysqli_query($db, "INSERT INTO steps (userId, stepAmount, totalAmount)
 										VALUES ('$userId', '0', '0') ");
 
-					mysqli_query($db, "INSERT INTO userProgress (userId, unlockedFields)
-										VALUES ('$userId', '$fieldArray') ");
+					mysqli_query($db, "INSERT INTO userProgress (userId, unlockedFields, unlockedMonsters)
+										VALUES ('$userId', '$fieldArray', '$monsterArray') ");
+
 										
 					//header("Refresh: 3; url=index.php");
 					echo "Je bent succesvol geregistreerd! Je kunt je nu inloggen."; // als het succesvol naar de database is geplaatst
