@@ -92,101 +92,57 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/app\/images\/map.jpg": {
-		"fileType": 16384,
+	"\/app\/images\/locked.png": {
+		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 188370,
-		"inputAbbreviatedPath": "\/app\/images\/map.jpg",
-		"outputAbbreviatedPath": "\/app\/images\/map.jpg",
+		"initialSize": 3517,
+		"inputAbbreviatedPath": "\/app\/images\/locked.png",
+		"outputAbbreviatedPath": "\/app\/images\/locked.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/app\/images\/P1.png": {
+	"\/app\/images\/monster_droplet.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 398687,
-		"inputAbbreviatedPath": "\/app\/images\/P1.png",
-		"outputAbbreviatedPath": "\/app\/images\/P1.png",
+		"initialSize": 304943,
+		"inputAbbreviatedPath": "\/app\/images\/monster_droplet.png",
+		"outputAbbreviatedPath": "\/app\/images\/monster_droplet.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/app\/images\/P2.png": {
+	"\/app\/images\/monster_fury.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 92009,
-		"inputAbbreviatedPath": "\/app\/images\/P2.png",
-		"outputAbbreviatedPath": "\/app\/images\/P2.png",
+		"initialSize": 172043,
+		"inputAbbreviatedPath": "\/app\/images\/monster_fury.png",
+		"outputAbbreviatedPath": "\/app\/images\/monster_fury.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/app\/images\/P3.png": {
+	"\/app\/images\/questmaster_demo.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 110467,
-		"inputAbbreviatedPath": "\/app\/images\/P3.png",
-		"outputAbbreviatedPath": "\/app\/images\/P3.png",
+		"initialSize": 971127,
+		"inputAbbreviatedPath": "\/app\/images\/questmaster_demo.png",
+		"outputAbbreviatedPath": "\/app\/images\/questmaster_demo.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/app\/images\/P4.png": {
+	"\/app\/images\/questmaster_demo1.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 141725,
-		"inputAbbreviatedPath": "\/app\/images\/P4.png",
-		"outputAbbreviatedPath": "\/app\/images\/P4.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/app\/images\/P5.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 96506,
-		"inputAbbreviatedPath": "\/app\/images\/P5.png",
-		"outputAbbreviatedPath": "\/app\/images\/P5.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/app\/images\/P6.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 122276,
-		"inputAbbreviatedPath": "\/app\/images\/P6.png",
-		"outputAbbreviatedPath": "\/app\/images\/P6.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/app\/images\/questmaster_still.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 34372,
-		"inputAbbreviatedPath": "\/app\/images\/questmaster_still.png",
-		"outputAbbreviatedPath": "\/app\/images\/questmaster_still.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/app\/images\/social_icon.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 2025,
-		"inputAbbreviatedPath": "\/app\/images\/social_icon.png",
-		"outputAbbreviatedPath": "\/app\/images\/social_icon.png",
+		"initialSize": 809218,
+		"inputAbbreviatedPath": "\/app\/images\/questmaster_demo1.png",
+		"outputAbbreviatedPath": "\/app\/images\/questmaster_demo1.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -198,6 +154,28 @@
 		"initialSize": 14240,
 		"inputAbbreviatedPath": "\/app\/images\/towncenter.png",
 		"outputAbbreviatedPath": "\/app\/images\/towncenter.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/tutorial_guy.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 70357,
+		"inputAbbreviatedPath": "\/app\/images\/tutorial_guy.jpg",
+		"outputAbbreviatedPath": "\/app\/images\/tutorial_guy.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/tutorial_guy.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 207485,
+		"inputAbbreviatedPath": "\/app\/images\/tutorial_guy.png",
+		"outputAbbreviatedPath": "\/app\/images\/tutorial_guy.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -266,17 +244,6 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
-		},
-	"\/app\/js\/jquery.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/app\/js\/jquery.js",
-		"outputAbbreviatedPath": "\/app\/js\/min\/jquery-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 0
 		},
 	"\/app\/js\/min\/jquery-min.js": {
 		"fileType": 64,
@@ -398,15 +365,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/app\/modules\/map\/map.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/app\/modules\/map\/map.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/app\/modules\/monsterdex\/monsterdex.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -448,6 +406,24 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/app\/register.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/app\/style\/css\/_mainstyles.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/style\/css\/_mainstyles.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/app\/style\/css\/_map.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/style\/css\/_map.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
