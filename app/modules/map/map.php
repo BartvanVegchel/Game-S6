@@ -48,8 +48,6 @@ while($row = mysqli_fetch_assoc($getMonsterLocations)) {
     $monsterLocationsArray = array_merge($monsterLocationsArray, array($row['monsterLocation'] => $row['monsterName']));
 }
 
-var_dump($monsterLocationsArray);
-
 // Build the map
 while ($row = mysqli_fetch_array($getMapResult)) {
     $count = $row['worldSize'];
@@ -66,8 +64,9 @@ while ($row = mysqli_fetch_array($getMapResult)) {
             } elseif (in_array("$partId", $transportLocationsArray)) {
                 $element = "<div class='part' id='" . $partId . "'><div class='transportbackground'></div></div>";
             } elseif (array_key_exists("$partId", $monsterLocationsArray)) {
-                $imagenaam = strtolower($monsterLocationsArray[$partId]);
-                $element = "<div class='part' id='" . $partId . "'><div class='monsterbackground'><img src='images/egg_".$imagenaam .".png'></div></div>";
+                $imageName = strtolower($monsterLocationsArray[$partId]);
+                $monsterName = strtolower($monsterLocationsArray[$partId]);
+                $element = "<div class='part' id='" . $partId . "'><div class='monsterbackground'><img src='images/egg_".$imageName .".png' class='monsterEgg' monster-name='".$monsterName."'></div></div>";
             } else{
                 $element = "<div class='part' id='" . $partId . "'><div class='background'></div></div>";
             }
@@ -81,12 +80,12 @@ while ($row = mysqli_fetch_array($getMapResult)) {
             } elseif (in_array("$partId", $transportLocationsArray)) {
                 $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='transportbackground'></div></div>";
             } elseif (array_key_exists("$partId", $monsterLocationsArray)) {
-                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='monsterbackground'></div></div>";
+                $imageName = strtolower($monsterLocationsArray[$partId]);
+                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='monsterbackground'><img src='images/egg_".$imageName .".png' class='monsterEgg' data-energy='200'></div></div>";
             } else{
                 $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='background'></div></div>";
             }
         }
-
         echo $element;
     }
     echo "</section>";
