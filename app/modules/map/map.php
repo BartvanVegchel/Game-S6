@@ -1,6 +1,10 @@
 <?php
 // get the id of the selected world
 $selectedWorld = $_GET['id'];
+//if selectedWorld is empty, give it value 1
+if($selectedWorld == ''){
+    $selectedWorld = 1;
+}
 $_SESSION['selectedWorld']=$selectedWorld;
 //echo $selectedWorld;
 
