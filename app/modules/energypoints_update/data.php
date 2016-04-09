@@ -66,10 +66,10 @@ if (isset($_GET['code'])) {
     echo '<Br>UserId is' . $userId;
     echo '<br>huidige stappenDB is' . $currentStepAmount;
     echo '<br>nieuwe stappen is' . $stepAmount;
+
+    header("Refresh: 0; url=home.php");
 }
 
-header("Refresh: 0; url=index.php");
-}
 
 
 include '../../includes/bottommenu.php';
