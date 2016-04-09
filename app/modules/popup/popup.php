@@ -11,7 +11,7 @@
         $unlockedMonstersArray = unserialize( $unlockedMonsters );
 
         foreach ($unlockedMonstersArray as $key => $value) {
-            echo "<div class='item'><img src='images/monster_" .$value. ".png'><h2>".$value."</h2></div>";
+            echo "<div class='item'><img src='images/monster_" .strtolower($value). ".png'><h2>".$value."</h2></div>";
         }
     }
     ?>
