@@ -45,18 +45,20 @@ if (isset($_GET['code'])) {
     if($stepAmount == $currentStepAmount){
         echo '<br><br>Loop eerst meters en probeer het dan opnieuw';
     }
+
+    $newSteps = ($stepAmount - $currentStepAmount);
     
     //If walked
     elseif($stepAmount > $currentStepAmount){
         echo '<br><br> db moet worden geupdate';
-        mysqli_query($db, "UPDATE steps SET stepAmount = '$stepAmount' , totalAmount = (totalAmount + '$stepAmount') WHERE userId = '$userId'");
+        mysqli_query($db, "UPDATE steps SET stepAmount = '$stepAmount' , totalAmount = (totalAmount + '$newSteps') WHERE userId = '$userId'");
         mysqli_query($db, "UPDATE energyPoints SET amount = (amount + '$energyPoints') WHERE userId = '$userId'");
     }
 
     //If new day is started
     elseif($stepAmount < $currentStepAmount){
         echo '<br><br>Eerste update van de dag';
-        mysqli_query($db, "UPDATE steps SET stepAmount = '$stepAmount', totalAmount = (totalAmount + '$stepAmount') WHERE userId = '$userId'");
+        mysqli_query($db, "UPDATE steps SET stepAmount = '$stepAmount', totalAmount = (totalAmount + '$newSteps') WHERE userId = '$userId'");
         mysqli_query($db, "UPDATE energyPoints SET amount = (amount + '$energyPoints') WHERE userId = '$userId'");
         //mysqli_query($db, "UPDATE energyPoints SET amount = '$stepAmount', totalAmount = (totalAmount + '$stepAmount') WHERE userId = '$userId'");
     }
