@@ -6,11 +6,20 @@ if($selectedWorld == ''){
     $selectedWorld = 1;
 }
 
-if($selectedWorld = 1){
-    echo "<script>alert('Hello World');
-    location.href=location.href.replace(/&?id=([^&]$|[^&]*)/i, \"\");
-    </script>";
+//Check if there is a get
+if($_GET['points']) {
+    $newEnergyPoints = $_GET['points'];
+} else{
+    $newEnergyPoints = '';
+}
 
+// if there are new energypoints
+if($newEnergyPoints !== ''){
+    echo "<script>
+    swal(\"Goed zo\", \"+ $newEnergyPoints energypoints\")
+    //remove get value
+    location.href=location.href.replace(/&?points=([^&]$|[^&]*)/i, \"\");
+    </script>";
 }
 
 $_SESSION['selectedWorld']=$selectedWorld;
