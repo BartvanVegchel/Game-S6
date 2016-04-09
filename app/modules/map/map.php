@@ -16,9 +16,16 @@ if($_GET['points']) {
 // if there are new energypoints
 if($newEnergyPoints !== ''){
     echo "<script>
-    swal(\"Goed zo\", \"+ $newEnergyPoints energypoints\")
-    //remove get value
-    location.href=location.href.replace(/&?points=([^&]$|[^&]*)/i, \"\");
+    swal({   
+        title: \"Goed zo\",   
+        text: \"+ $newEnergyPoints energypoints!\",   
+        type: \"success\",   
+        showCancelButton: false,    
+        confirmButtonText: \"Oke!\",   
+        closeOnConfirm: false }, 
+        function(){   
+            location.href=location.href.replace(/&?points=([^&]$|[^&]*)/i, \"\");
+        });
     </script>";
 }
 
