@@ -1,6 +1,8 @@
 <?php
-include_once '../../includes/db_connection.php';
 include_once '../../includes/header.php';
+include_once '../../includes/db_connection.php';
+
+include '../../includes/topmenu.php';
 include_once 'Moves.php';
 include_once 'config.php';
 
@@ -60,14 +62,17 @@ if (isset($_GET['code'])) {
         //mysqli_query($db, "UPDATE energyPoints SET amount = '$stepAmount', totalAmount = (totalAmount + '$stepAmount') WHERE userId = '$userId'");
     }
 
-    echo '<br> ja';
     echo '<br>Username is' . $username;
     echo '<Br>UserId is' . $userId;
     echo '<br>huidige stappenDB is' . $currentStepAmount;
     echo '<br>nieuwe stappen is' . $stepAmount;
-
-
-
 }
+
+header("Refresh: 0; url=index.php");
+}
+
+
+include '../../includes/bottommenu.php';
+include '../../includes/footer.php';
 ?>
 

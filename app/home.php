@@ -43,10 +43,7 @@ if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd
 
 
 }
-else {
-	header("Refresh: 0; url=index.php");
-}
-
+	header("Refresh: 0; url=home.php");
 
 include 'includes/bottommenu.php';
 include 'includes/footer.php'; 
