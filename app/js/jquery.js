@@ -8,17 +8,23 @@ $(document).ready(function() {
         $(".socialScreenUp").animate({top: "100%"});
     });
 
+
     //hide townhall popup
-    $('.townhall-popup').hide();
+    $('.popup').hide();
 
     // show townhall popup
-    $('div.part img').click(function(){
-        $('.townhall-popup').show("fast");
+    $('div.part .townhallbackground img').click(function(){
+        $('.popup.monsters').show("fast");
     });
 
-    //hide townhall popup
-    $('.townhall-popup a').click(function(){
-        $('.townhall-popup').hide("fast");
+    // show worlds popup
+    $('div.part .transportbackground img').click(function(){
+        $('.popup.worlds').show("fast");
+    });
+
+    //hide popup
+    $('.popup a').click(function(){
+        $('.popup').hide("fast");
     });
 
 

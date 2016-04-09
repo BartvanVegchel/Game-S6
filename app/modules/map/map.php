@@ -89,13 +89,13 @@ while ($row = mysqli_fetch_array($getMapResult)) {
         $partId = $worldId.'_'.$i;
         if (in_array("$partId", $unlockedFieldsArray)) {
             if (in_array("$partId", $homeLocationsArray)) {
-                $element = "<div class='part' id='" . $partId . "'><div class='homebackground'><img src='images/towncenter.png' /></div></div>";
+                $element = "<div class='part' id='" . $partId . "'><div class='homebackground'></div></div>";
             } elseif (in_array("$partId", $townHallLocationsArray)) {
-                $element = "<div class='part' id='" . $partId . "'><div class='townhallbackground'></div></div>";
+                $element = "<div class='part' id='" . $partId . "'><div class='townhallbackground'><img src='images/towncenter.png' /></div></div>";
             } elseif (in_array("$partId", $bankLocationsArray)) {
                 $element = "<div class='part' id='" . $partId . "'><div class='bankbackground'></div></div>";
             } elseif (in_array("$partId", $transportLocationsArray)) {
-                $element = "<div class='part' id='" . $partId . "'><div class='transportbackground'></div></div>";
+                $element = "<div class='part' id='" . $partId . "'><div class='transportbackground'><img src='images/rocket_base.png' /></div></div>";
             } elseif (array_key_exists("$partId", $monsterLocationsArray)) {
                 $imageName = strtolower($monsterLocationsArray[$partId]);
                 $monsterName = $monsterLocationsArray[$partId];
@@ -113,13 +113,13 @@ while ($row = mysqli_fetch_array($getMapResult)) {
             }
         } else{
             if (in_array("$partId", $homeLocationsArray)) {
-                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='homebackground'><img src='images/towncenter.png' style='display:none;' /></div></div></div>";
+                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='homebackground'></div></div></div>";
             } elseif (in_array("$partId", $townHallLocationsArray)) {
-                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='townhallbackground'></div></div>";
+                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='townhallbackground'><img src='images/towncenter.png' style='display:none;' /></div></div>";
             } elseif (in_array("$partId", $bankLocationsArray)) {
                 $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='bankbackground'></div></div>";
             } elseif (in_array("$partId", $transportLocationsArray)) {
-                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='transportbackground'></div></div>";
+                $element = "<div class='part' id='" . $partId . "'><div class='locked' data-energy='200'></div><div class='transportbackground'><img src='images/rocket_base.png' style='display:none;' /></div></div>";
             } elseif (array_key_exists("$partId", $monsterLocationsArray)) {
                 $imageName = strtolower($monsterLocationsArray[$partId]);
                 $monsterName = $monsterLocationsArray[$partId];

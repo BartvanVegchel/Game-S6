@@ -55,7 +55,7 @@ section.map{
     }
 
     div.homebackground{
-      //background-color:saddlebrown;
+      background-color:saddlebrown;
     }
 
     div.monsterbackground{
@@ -63,7 +63,7 @@ section.map{
     }
 
     div.townhallbackground{
-      background-color:red;
+      //background-color:red;
     }
 
     div.bankbackground{
@@ -71,7 +71,14 @@ section.map{
     }
 
     div.transportbackground{
-      background-color:grey;
+
+      img{
+        width:200%;
+        height:200%;
+        position: absolute;
+        top:0;
+        left: 0;
+      }
     }
 
 

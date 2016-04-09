@@ -195,26 +195,6 @@ section.container {
   width: 100%;
   margin-top: 50px; }
 
-.townhall-popup {
-  height: 60%;
-  width: 80%;
-  background-color: white;
-  z-index: 99;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); }
-  .townhall-popup .monster {
-    width: 100%;
-    height: 100px; }
-    .townhall-popup .monster img {
-      width: 100px;
-      height: 100px;
-      float: left; }
-    .townhall-popup .monster h2 {
-      float: left;
-      line-height: 100px; }
-
 /* Login/Register */
 section.register,
 section.login {
@@ -281,6 +261,42 @@ input {
   margin-bottom: 10px;
   font-size: 16px; }
 
+.popup {
+  height: 60%;
+  width: 80%;
+  background-color: white;
+  overflow: scroll;
+  z-index: 99;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+  .popup .top {
+    width: 100%;
+    height: 40px;
+    background-color: deepskyblue; }
+    .popup .top h2 {
+      text-align: center;
+      line-height: 40px; }
+    .popup .top a {
+      position: absolute;
+      right: 5px;
+      top: 3px;
+      font-size: 30px; }
+  .popup .item {
+    width: 100%;
+    height: 100px;
+    margin-top: 15px; }
+    .popup .item img {
+      width: 100px;
+      height: 100px;
+      float: left;
+      margin-left: 15px; }
+    .popup .item h2 {
+      float: left;
+      line-height: 100px;
+      margin-left: 15px; }
+
 div {
   color: black; }
 
@@ -340,28 +356,17 @@ section.map {
         width: 100%;
         position: absolute;
         bottom: 0; }
-    section.map div.part div.townhallbackground {
-      background-color: red; }
+    section.map div.part div.homebackground {
+      background-color: saddlebrown; }
     section.map div.part div.bankbackground {
       background-color: gold; }
-    section.map div.part div.transportbackground {
-      background-color: grey; }
+    section.map div.part div.transportbackground img {
+      width: 200%;
+      height: 200%;
+      position: absolute;
+      top: 0;
+      left: 0; }
 
 .huis {
   height: 98px;
   width: 98px; }
-
-.level {
-  width: 100%;
-  height: 150px;
-  margin-top: 25px; }
-  .level img {
-    width: 150px;
-    border-radius: 150px;
-    float: left; }
-  .level a {
-    line-height: 150px;
-    float: left;
-    margin-left: 25px;
-    text-decoration: none;
-    font-size: 20px; }

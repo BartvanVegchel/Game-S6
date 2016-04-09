@@ -13,8 +13,8 @@
 					<img src="images/tutorial_guy.png">
 				</a>
 			</li><li>
-				<a href="worlds.php">
-					Werelden
+				<a href="#">
+					Vriendjes
 				</a>
 			</li>
 		</ul>
