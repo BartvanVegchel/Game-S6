@@ -2,7 +2,6 @@
 include_once '../../includes/header.php';
 include_once '../../includes/db_connection.php';
 
-include '../../includes/topmenu.php';
 include_once 'Moves.php';
 include_once 'config.php';
 
