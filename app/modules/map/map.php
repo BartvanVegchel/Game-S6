@@ -5,9 +5,15 @@ $selectedWorld = $_GET['id'];
 if($selectedWorld == ''){
     $selectedWorld = 1;
 }
-$_SESSION['selectedWorld']=$selectedWorld;
-//echo $selectedWorld;
 
+if($selectedWorld = 1){
+    echo "<script>alert('Hello World');
+    location.href=location.href.replace(/&?id=([^&]$|[^&]*)/i, \"\");
+    </script>";
+
+}
+
+$_SESSION['selectedWorld']=$selectedWorld;
 $worldId = $selectedWorld;
 
 $getMap = "SELECT * FROM worlds WHERE id = '$worldId'";

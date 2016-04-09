@@ -43,6 +43,7 @@ if (isset($_GET['code'])) {
 
     //No new steps
     if($stepAmount == $currentStepAmount){
+        $newSteps = 0;
         echo '<br><br>Loop eerst meters en probeer het dan opnieuw';
     }
     
@@ -68,7 +69,7 @@ if (isset($_GET['code'])) {
     echo '<br>huidige stappenDB is' . $currentStepAmount;
     echo '<br>nieuwe stappen is' . $stepAmount;
 
-    header("Refresh: 4; url=../../home.php");
+    header("Refresh: 4; url=../../home.php?points=$newSteps");
 }
 
 
