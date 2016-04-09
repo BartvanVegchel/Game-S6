@@ -46,7 +46,7 @@ if (isset($_GET['code'])) {
         echo '<br><br>Loop eerst meters en probeer het dan opnieuw';
     }
 
-    $newSteps = ($stepAmount - $currentStepAmount);
+    $newSteps = 9;
     
     //If walked
     elseif($stepAmount > $currentStepAmount){
