@@ -19,7 +19,7 @@ if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd?>
 		<? include 'modules/map/map.php'; ?> 
 
 		<!-- include tutorial -->
-		<? include 'functions/tutorial_function.php'; ?>
+		<? //include 'functions/tutorial_function.php'; ?>
 
         <!-- include the popup -->
         <? include 'modules/popup/popup.php'; ?>

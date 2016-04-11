@@ -20,6 +20,7 @@ $(document).ready(function() {
     // show worlds popup
     $('.pinda').click(function(){
         $('.popup.worlds').show("fast");
+		
     });
 
     //hide popup

@@ -147,13 +147,13 @@ section.top {
   background: #3388CC;
   color: #fff;
   top: 0;
-  height: 50px;
+  padding: 10px 0;
   position: fixed;
 }
 
 section.top nav ul li {
   display: inline-block;
-  width: 20%;
+  width: 33.33%;
   text-align: center;
   text-transform: uppercase;
 }
@@ -172,7 +172,7 @@ section.bottom {
   bottom: 0;
   margin-top: -10px;
   background: #333;
-  height: 50px;
+  padding: 10px 0;
 }
 
 section.bottom nav ul li {
@@ -188,6 +188,10 @@ section.bottom nav ul li.questmaster-wrapper {
   text-align: center;
 }
 
+section.bottom nav ul li.questmaster-wrapper a {
+  display: block !important;
+}
+
 section.bottom nav ul li img {
   width: 100%;
 }
@@ -195,6 +199,7 @@ section.bottom nav ul li img {
 section.bottom nav ul li a {
   color: #fff;
   text-decoration: none;
+  display: none;
 }
 
 section.bottom nav ul li a.questmaster {
