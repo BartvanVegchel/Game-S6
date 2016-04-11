@@ -70,7 +70,7 @@ if (isset($_GET['code'])) {
     echo '<br>huidige stappenDB is' . $currentStepAmount;
     echo '<br>nieuwe stappen is' . $stepAmount;
 
-    //header("Refresh: 4; url=../../home.php?points=$newSteps");
+    header("Refresh: 1; url=../../home.php?points=$newSteps");
 }
 
 
