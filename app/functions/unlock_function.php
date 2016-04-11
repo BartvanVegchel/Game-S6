@@ -3,6 +3,9 @@
 include_once '../includes/db_connection.php';
 include_once '../includes/header.php';
 
+//include_once 'includes/db_connection.php';
+//include_once 'includes/header.php';
+
 $username = $_SESSION["username"];
 
 //check userId
@@ -14,6 +17,7 @@ while($row = mysqli_fetch_assoc($getUserId)) {
 //Get fieldId from URL
 $fieldId = $_GET["fieldid"];
 $dataenergy = $_GET["dataenergy"];
+$selectedWorld = $_GET['id'];
 
 //echo 'dataenergy is ' . $dataenergy;
 
@@ -22,8 +26,11 @@ $getUnlockedFields = mysqli_query($db, "SELECT * FROM userProgress WHERE userId 
 while($row = mysqli_fetch_assoc($getUnlockedFields)) {
     $unlockedFields = $row["unlockedFields"];
     $unlockedFieldsArray = unserialize( $unlockedFields );
+
+    $matches = preg_grep('/^' . $selectedWorld . '_/', $unlockedFieldsArray);
 }
 
+// Get personal enerypoints in array
 $getPersonalEnergyPoints = mysqli_query($db, "SELECT * FROM energyPoints WHERE userId = '$userId'") or die("FOUT: " . mysqli_error($dblink));
 while($row = mysqli_fetch_assoc($getPersonalEnergyPoints)) {
     $amount = $row["amount"];

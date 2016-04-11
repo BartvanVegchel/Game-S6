@@ -1,6 +1,8 @@
 <?php
 	include('functions/getEnergyPoints_function.php');
+    //include('functions/unlock_function.php');
 $selectedWorld = $_GET['id'];
+$username = $_SESSION["username"];
 ?>
 
 <section class="nav top">
@@ -15,32 +17,30 @@ $selectedWorld = $_GET['id'];
 							<?php getEnergyPoints(); ?>
 							<i class="fa fa-bolt"></i><strong><?php echo $energyPoints; ?></strong>
 						</li>
-                        <li>
+                        <li class="personalUnlockedFields">
                             <?php
 
-                                $getUnlockedFields = mysqli_query($db, "SELECT * FROM userProgress WHERE userId = '31'") or die("FOUT: " . mysqli_error($dblink));
+                                $getUserId = mysqli_query($db, "SELECT * FROM users WHERE username = '$username'") or die("FOUT: " . mysqli_error($dblink));
+                                while($row = mysqli_fetch_assoc($getUserId)) {
+                                    $userId = $row["id"];
+                                }
+                            
+                                //Get Personal unlockedFields in array
+                                $getUnlockedFields = mysqli_query($db, "SELECT * FROM userProgress WHERE userId = '$userId'") or die("FOUT: " . mysqli_error($dblink));
                                 while($row = mysqli_fetch_assoc($getUnlockedFields)) {
                                     $unlockedFields = $row["unlockedFields"];
                                     $unlockedFieldsArray = unserialize( $unlockedFields );
 
-                                    //echo count($unlockedFieldsArray);
-
-                                    foreach ($unlockedFieldsArray as $key => $value) {
-                                        if(preg_match('/^' . $selectedWorld . '_/', $value))
-                                        {
-                                            //echo $value;
-                                            echo count($value);
-                                        }
-                                    }
-
+                                    $matches = preg_grep('/^' . $selectedWorld . '_/', $unlockedFieldsArray);
+                                    echo "<span class='unlocked'>".count($matches)."</span>";
                                 }
+
+                                //get worldsize
                                 $getWorldSize = mysqli_query($db, "SELECT * FROM worlds WHERE id = '$selectedWorld'") or die("FOUT: " . mysqli_error($db));
                                 while($row = mysqli_fetch_assoc($getWorldSize)) {
                                     $worldSize = $row["worldSize"];
-                                    echo " / " .$worldSize . " gebieden ontdekt";
+                                    echo " / " .$worldSize . "";
                                 }
-
-
                             ?>
                         </li>
                         <li>

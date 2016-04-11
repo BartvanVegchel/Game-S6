@@ -38,6 +38,11 @@ $(document).ready(function() {
         $personalEnergy = $('.personalEnergypoints').find('strong');
         $personalEnergyValue = $($personalEnergy).text();
 
+
+        $personalUnlockedFields = $('.personalUnlockedFields').find('span');
+        $personalUnlockedFieldsValue = $($personalUnlockedFields).text();
+        $personalUnlockedFieldsValueInt = parseInt($personalUnlockedFieldsValue);
+
         //if you have enough points
         if($personalEnergyValue >= $price) {
             swal({
@@ -74,6 +79,10 @@ $(document).ready(function() {
                         $('#' + $fieldId).find('.locked').removeClass('locked');
                         $updatedEnergyPoints = $personalEnergyValue - $price;
                         $personalEnergy.text($updatedEnergyPoints);
+
+                        // unlocked fiedls
+                        $updatedUnlockedFields = ($personalUnlockedFieldsValueInt + 1);
+                        $personalUnlockedFields.text($updatedUnlockedFields);
                     })
                     .error(function (data) {
                         swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");

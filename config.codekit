@@ -112,6 +112,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/app\/images\/egg_bolt.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7252,
+		"inputAbbreviatedPath": "\/app\/images\/egg_bolt.png",
+		"outputAbbreviatedPath": "\/app\/images\/egg_bolt.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/egg_bolt_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8426,
+		"inputAbbreviatedPath": "\/app\/images\/egg_bolt_broken.png",
+		"outputAbbreviatedPath": "\/app\/images\/egg_bolt_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/egg_boomer.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5948,
+		"inputAbbreviatedPath": "\/app\/images\/egg_boomer.png",
+		"outputAbbreviatedPath": "\/app\/images\/egg_boomer.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/egg_boomer_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7211,
+		"inputAbbreviatedPath": "\/app\/images\/egg_boomer_broken.png",
+		"outputAbbreviatedPath": "\/app\/images\/egg_boomer_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/app\/images\/egg_droplet.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -174,6 +218,28 @@
 		"initialSize": 11873,
 		"inputAbbreviatedPath": "\/app\/images\/egg_leefy_broken.png",
 		"outputAbbreviatedPath": "\/app\/images\/egg_leefy_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/egg_pinky.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7639,
+		"inputAbbreviatedPath": "\/app\/images\/egg_pinky.png",
+		"outputAbbreviatedPath": "\/app\/images\/egg_pinky.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/images\/egg_pinky_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9664,
+		"inputAbbreviatedPath": "\/app\/images\/egg_pinky_broken.png",
+		"outputAbbreviatedPath": "\/app\/images\/egg_pinky_broken.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -406,7 +472,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
+		"syntaxCheckerStyle": 0
 		},
 	"\/app\/js\/min\/jquery-min.js": {
 		"fileType": 64,
@@ -811,15 +877,6 @@
 		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
-		},
-	"\/promo\/hello.html": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/promo\/hello.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
 		}
 	},
 "hooks": [
