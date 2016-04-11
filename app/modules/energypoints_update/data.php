@@ -52,7 +52,7 @@ if (isset($_GET['code'])) {
         $newSteps = $stepAmount - $currentStepAmount;
         echo '<br><br> db moet worden geupdate';
         mysqli_query($db, "UPDATE steps SET stepAmount = '$stepAmount' , totalAmount = (totalAmount + '$newSteps') WHERE userId = '$userId'");
-        mysqli_query($db, "UPDATE energyPoints SET amount = (amount + '$energyPoints') WHERE userId = '$userId'");
+        mysqli_query($db, "UPDATE energyPoints SET amount = (amount + '$newSteps') WHERE userId = '$userId'");
     }
 
     //If new day is started
@@ -60,15 +60,15 @@ if (isset($_GET['code'])) {
         $newSteps = $stepAmount;
         echo '<br><br>Eerste update van de dag';
         mysqli_query($db, "UPDATE steps SET stepAmount = '$stepAmount', totalAmount = (totalAmount + '$newSteps') WHERE userId = '$userId'");
-        mysqli_query($db, "UPDATE energyPoints SET amount = (amount + '$energyPoints') WHERE userId = '$userId'");
+        mysqli_query($db, "UPDATE energyPoints SET amount = (amount + '$newSteps') WHERE userId = '$userId'");
     }
 
-    print_r($summary);
+    //print_r($summary);
 
-    echo '<br>Username is' . $username;
-    echo '<Br>UserId is' . $userId;
-    echo '<br>huidige stappenDB is' . $currentStepAmount;
-    echo '<br>nieuwe stappen is' . $stepAmount;
+    //echo '<br>Username is' . $username;
+    //echo '<Br>UserId is' . $userId;
+    //echo '<br>huidige stappenDB is' . $currentStepAmount;
+    //echo '<br>nieuwe stappen is' . $stepAmount;
 
     header("Refresh: 1; url=../../home.php?points=$newSteps");
 }
