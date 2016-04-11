@@ -2,6 +2,7 @@
 	include('functions/getEnergyPoints_function.php');
     //include('functions/unlock_function.php');
 $selectedWorld = $_GET['id'];
+$selectedWorld = 2;
 $username = $_SESSION["username"];
 ?>
 
@@ -33,6 +34,7 @@ $username = $_SESSION["username"];
                                     $unlockedFieldsArray = unserialize( $unlockedFields );
 
                                     $matches = preg_grep('/^' . $selectedWorld . '_/', $unlockedFieldsArray);
+									//print_r($matches);
                                     echo "<span class='unlocked'>".count($matches)."</span>";
                                 }
 
