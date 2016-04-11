@@ -35,7 +35,7 @@ if (isset($_GET['code'])) {
         //$userId = 7;
     }
 
-    //check Current Step Amount
+    //check Current Step Amount in dB
     $getCurrentStepAmount = mysqli_query($db, "SELECT * FROM steps WHERE userId = '$userId'") or die("FOUT: " . mysqli_error($dblink));
     while($step = mysqli_fetch_assoc($getCurrentStepAmount)) {
         $currentStepAmount = $step["stepAmount"];
@@ -47,7 +47,7 @@ if (isset($_GET['code'])) {
         echo '<br><br>Loop eerst meters en probeer het dan opnieuw';
     }
     
-    //If walked
+    //If walked, $stepAmount from Moves is higher then DB
     elseif($stepAmount > $currentStepAmount){
         $newSteps = $stepAmount - $currentStepAmount;
         echo '<br><br> db moet worden geupdate';
@@ -61,15 +61,16 @@ if (isset($_GET['code'])) {
         echo '<br><br>Eerste update van de dag';
         mysqli_query($db, "UPDATE steps SET stepAmount = '$stepAmount', totalAmount = (totalAmount + '$newSteps') WHERE userId = '$userId'");
         mysqli_query($db, "UPDATE energyPoints SET amount = (amount + '$energyPoints') WHERE userId = '$userId'");
-        //mysqli_query($db, "UPDATE energyPoints SET amount = '$stepAmount', totalAmount = (totalAmount + '$stepAmount') WHERE userId = '$userId'");
     }
+
+    print_r($summary);
 
     echo '<br>Username is' . $username;
     echo '<Br>UserId is' . $userId;
     echo '<br>huidige stappenDB is' . $currentStepAmount;
     echo '<br>nieuwe stappen is' . $stepAmount;
 
-    header("Refresh: 4; url=../../home.php?points=$newSteps");
+    //header("Refresh: 4; url=../../home.php?points=$newSteps");
 }
 
 
