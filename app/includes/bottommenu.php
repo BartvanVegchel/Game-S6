@@ -9,7 +9,7 @@
 					<span class="screenup">Settings</span>
 				</a>
 			</li><li class="questmaster-wrapper">&nbsp;
-				<a href="" class="questmaster">
+				<a class="questmaster">
 					<img src="images/tutorial_guy.png">
 				</a>
 			</li><li>
@@ -21,3 +21,17 @@
 	</nav>
 	
 </section>
+
+<script>
+
+	$('.questmaster').click(function() {
+
+		swal({
+			title: "Hallo <? echo $_SESSION['username']; ?>",
+			text: "Heb je een vraag over het spel? Vraag een begeleider om hulp.",
+			imageUrl: "images/tutorial_guy.png"
+		});
+		
+	});
+
+</script>
