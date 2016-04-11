@@ -105,7 +105,7 @@ $(document).ready(function() {
             title: $monsterName,
             text: "Je hebt "+$monsterName+" toegevoegd aan je collectie!",
             type: "",
-            imageUrl: "images/monster_"+$monsterName+".png",
+            imageUrl: "images/monster_"+$monsterNameLowerCase+".png",
             showCancelButton: false,
             closeOnConfirm: true,
             showLoaderOnConfirm: true,
