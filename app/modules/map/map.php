@@ -84,6 +84,7 @@ while($row = mysqli_fetch_assoc($getMonsterLocations)) {
 // Build the map
 while ($row = mysqli_fetch_array($getMapResult)) {
     $count = $row['worldSize'];
+    echo "<section class='mapContainer'>";
     echo "<section class='map' style='width:" . sqrt($count) . "00px; height:" . sqrt($count) . "00px; background-image:url(\"images/" .$row['worldName']. ".png\")'>";
     for ($i = 0; $i < $count; $i++) {
         $partId = $worldId.'_'.$i;
@@ -130,6 +131,7 @@ while ($row = mysqli_fetch_array($getMapResult)) {
         }
         echo $element;
     }
+    echo "</section>";
     echo "</section>";
 }
 ?>

@@ -23,7 +23,6 @@
 		-->
 		
 		<div class="column">
-		
 			<div class="column-header">
 				<img src="images/monster_droplet.png" />
 				<h1>Wil je mij je naam vertellen?</h1>

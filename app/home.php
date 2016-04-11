@@ -5,9 +5,7 @@
 	include 'includes/topmenu.php';
 	include 'includes/bottommenu.php';
 	
-if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd
-	
-	?>
+if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd?>
 
 		<section class="socialScreenUp">
 			<? include 'modules/screenover/social.php'; ?>
