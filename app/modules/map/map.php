@@ -6,6 +6,9 @@ if($selectedWorld == ''){
     $selectedWorld = 1;
 }
 
+//Alleen voor de test
+$selectedWorld = 2;
+
 //Check if there is a get
 if($_GET['points']) {
     $newEnergyPoints = $_GET['points'];

@@ -18,10 +18,10 @@ $(document).ready(function() {
     });
 
     // show worlds popup
-    $('.pinda').click(function(){
-        $('.popup.worlds').show("fast");
-		
-    });
+    // uit voor de test
+    //$('.pinda').click(function(){
+        //$('.popup.worlds').show("fast");
+    //});
 
     //hide popup
     $('.popup a').click(function(){
