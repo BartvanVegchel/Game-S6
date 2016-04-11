@@ -39,7 +39,7 @@ $username = $_SESSION["username"];
                                 $getWorldSize = mysqli_query($db, "SELECT * FROM worlds WHERE id = '$selectedWorld'") or die("FOUT: " . mysqli_error($db));
                                 while($row = mysqli_fetch_assoc($getWorldSize)) {
                                     $worldSize = $row["worldSize"];
-                                    echo " / " .$worldSize . "";
+                                    echo "<span> / " .$worldSize . "</span>";
                                 }
                             ?>
                         </li>

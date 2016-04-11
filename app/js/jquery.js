@@ -18,7 +18,7 @@ $(document).ready(function() {
     });
 
     // show worlds popup
-    $('div.part .transportbackground img').click(function(){
+    $('.pinda').click(function(){
         $('.popup.worlds').show("fast");
     });
 
@@ -39,7 +39,7 @@ $(document).ready(function() {
         $personalEnergyValue = $($personalEnergy).text();
 
 
-        $personalUnlockedFields = $('.personalUnlockedFields').find('span');
+        $personalUnlockedFields = $('.personalUnlockedFields').find('span.unlocked');
         $personalUnlockedFieldsValue = $($personalUnlockedFields).text();
         $personalUnlockedFieldsValueInt = parseInt($personalUnlockedFieldsValue);
 
