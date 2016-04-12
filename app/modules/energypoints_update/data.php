@@ -63,12 +63,12 @@ if (isset($_GET['code'])) {
         mysqli_query($db, "UPDATE energyPoints SET amount = (amount + '$newSteps') WHERE userId = '$userId'");
     }
 
-    //print_r($summary);
+    print_r($summary);
 
-    //echo '<br>Username is' . $username;
-    //echo '<Br>UserId is' . $userId;
-    //echo '<br>huidige stappenDB is' . $currentStepAmount;
-    //echo '<br>nieuwe stappen is' . $stepAmount;
+    echo '<br>Username is' . $username;
+    echo '<Br>UserId is' . $userId;
+    echo '<br>huidige stappenDB is' . $currentStepAmount;
+    echo '<br>nieuwe stappen is' . $stepAmount;
 
     header("Refresh: 1; url=../../home.php?points=$newSteps");
 }
