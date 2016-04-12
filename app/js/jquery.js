@@ -54,7 +54,8 @@ $(document).ready(function() {
                 closeOnConfirm: false,
                 showLoaderOnConfirm: true,
                 confirmButtonText: "Oke",
-                cancelButtonText: "Nee"
+                cancelButtonText: "Nee",
+                html: true
             }, function () {
                 $.ajax(
                         {
