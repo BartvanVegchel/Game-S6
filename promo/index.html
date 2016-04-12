@@ -27,10 +27,7 @@
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
 </head>
 
@@ -66,39 +63,22 @@
     </nav>
 
     <header>
-        <video class=fill controls autoplay loop mute>
-            <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4">
-                         Your browser does not support the video tag.
-        </video>
-
-        <div class="header-content">
+    <div class="videoWrapper">
+    <iframe class="fill" src="https://player.vimeo.com/video/160994809?color=ffffff&title=0&byline=0&portrait=0&badge=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div>
+        <div class="header-content" id="about">
             <div class="header-content-inner">
-                <h1>Your Favorite Source of Free Bootstrap Themes</h1>
-                <hr>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <h1>Moving Monsters, een game die bewegen beloond!</h1>
+                <hr>                <p>Bewegen is leuk én essentieel voor de lichamelijke, sociale en mentale ontwikkeling van kinderen. Door samen te bewegen ontwikkelen kinderen zelfbewustzijn en flexibiliteit.</p>
             </div>
         </div>
     </header>
 
-    <section class="bg-primary" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">We've got what you need!</h2>
-                    <hr class="light">
-                    <p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
-                    <a href="#" class="btn btn-default btn-xl">Get Started!</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services">
+    <section class="bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">The Game</h2>
+                    <h2 class="section-heading">De Game</h2>
                     <hr class="primary">
                 </div>
             </div>
@@ -108,33 +88,32 @@
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-diamond wow bounceIn text-primary"></i>
-                        <h3>Sart moving and collecting energy points</h3>
-                        <p class="text-muted">Turn on the movement meter and collect your points!</p>
+                        <h3>Sart met bewegen en begin met energie punten sparen.</h3>
+                        <p class="text-muted">Zet de stappenteller aan en begin met bewegen.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Trade your energy points for exploration of new worlds</h3>
-                        <p class="text-muted">Move around on the map to find building sites and monsters</p>
+                        <h3>Gebruik je energie punten om gebieden te verkennen.</h3>
+                        <p class="text-muted">Klik op een gebied dat je wil unlocken in ruil voor energie punten.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-newspaper-o wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Use your spare energypoints to upgrade your buildings</h3>
-                        <p class="text-muted">Upgraded buildings are usefull to store your monster population</p>
+                        <h3>Gebruik je overige energie punten om gebouwen te upgraden</h3>
+                        <p class="text-muted">In je nieuwe gebouwen kunnen meer monsters wonen.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-heart wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <h3>Compare your population to others and your friends</h3>
-                        <p class="text-muted">Achieve the biggest monster population!</p>
+                        <h3>Vergelijk je monster populatie met vrienden</h3>
+                        <p class="text-muted">Ga voor de grootste en meest diverse monster populatie!</p>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <section class="no-padding" id="portfolio">
@@ -237,8 +216,9 @@
     <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
-                <h2>Free Download at Start Bootstrap!</h2>
-                <a href="#" class="btn btn-default btn-xl wow tada">Download Now!</a>
+                <h2>Neem een kijkje op onze kickstarter pagina.</h2>
+                <p>donaties worden zeer op prijs gesteld!</p>
+                <a href="#" class="btn btn-default btn-xl wow tada">Kickstarter</a>
             </div>
         </div>
     </aside>
