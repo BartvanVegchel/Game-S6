@@ -47,7 +47,7 @@ $(document).ready(function() {
         //if you have enough points
         if($personalEnergyValue >= $price) {
             swal({
-                title: "Dit kost <i class='fa fa-bolt'>'"+$price+" ",
+                title: "Dit kost <i class='fa fa-bolt'></i> "+$price+" ",
                 text: "",
                 type: "",
                 showCancelButton: true,
