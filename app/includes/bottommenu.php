@@ -48,7 +48,7 @@
             if ($key === 0){
             }
             else{
-                echo "<li style='list-style: none; padding: 5px; border-bottom: 1px solid #ccc'><img src='images/monster_" .strtolower($value). ".png' style='width: 50px;'><strong>".$value."</strong></li>";
+                echo "<li style='list-style: none; padding: 5px; border-bottom: 1px solid #ccc;'><img src='images/monster_" .strtolower($value). ".png' style='width: 75px;'><strong>".$value."</strong></li>";
             }
 
         }
