@@ -28,7 +28,8 @@ body.stop-scrolling {
   top: 50%;
   margin-left: -256px;
   margin-top: -200px;
-  overflow: hidden;
+  /*overflow: hidden; */
+  overflow: scroll !important;
   display: none;
   z-index: 99999; }
   @media all and (max-width: 540px) {
