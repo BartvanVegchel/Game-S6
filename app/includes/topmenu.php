@@ -1,7 +1,7 @@
 <?php
 	include('functions/getEnergyPoints_function.php');
     //include('functions/unlock_function.php');
-$selectedWorld = $_GET['id'];
+//$selectedWorld = $_GET['id'];
 $selectedWorld = 2;
 $username = $_SESSION["username"];
 ?>
@@ -19,7 +19,7 @@ $username = $_SESSION["username"];
 							<i class="fa fa-bolt"></i><strong><?php echo $energyPoints; ?></strong>
 						</li><li>
 							<a href="moves://app/authorize?client_id=6ztbE_n0485hLBbCC80XmklXAD3dlJD7&redirect_uri=http://game.onlineops.nl/app/modules/energypoints_update/data.php&scope=activity"><i class="fa fa-refresh"></i>Sync</a>
-						</li><li class="personalUnlockedFields"><i class='fa fa-globe'></i>
+						</li><?php if($selectedWorld != 1){?><li class="personalUnlockedFields"><i class='fa fa-globe'></i>
                             <?php
 
                                 $getUserId = mysqli_query($db, "SELECT * FROM users WHERE username = '$username'") or die("FOUT: " . mysqli_error($dblink));
@@ -45,7 +45,19 @@ $username = $_SESSION["username"];
                                     echo "<span> / " .$worldSize . "</span>";
                                 }
                             ?>
-                        </li>
+                        </li> <?php } else{ ?><li>
+								<?php
+								$getUserId = mysqli_query($db, "SELECT * FROM users WHERE username = '$username'") or die("FOUT: " . mysqli_error($dblink));
+								while($row = mysqli_fetch_assoc($getUserId)) {
+									$userId = $row["id"];
+								}
+								$getPopulation = mysqli_query($db, "SELECT * FROM userProgress WHERE userId = '$userId'") or die("FOUT: " . mysqli_error($db));
+								while($row = mysqli_fetch_assoc($getPopulation)) {
+									$population = $row["population"];
+									echo "<i class='fa fa-child'></i><span>" .$population . "</span>";
+								}?>
+							</li>
+						<?php } ?>
                         <!-- LOGOUT ALLEEN VOOR TESTING -->
 						<!--<li>
 							<a href="functions/logout_function.php">Uitloggen</a>

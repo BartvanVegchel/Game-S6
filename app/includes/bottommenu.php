@@ -78,7 +78,9 @@
             ?>
             title: "<?php echo $dailyChallengeName;?>",
             text: "<?php echo $dailyChallengeDescription;?>",
-            confirmButtonText: "Start challenge!"
+            confirmButtonText: "Start",
+            showCancelButton: true,
+            cancelButtonText: "Nu niet",
             },
             function(){
                 window.location.href = 'daily_challenge.php?challengeid=<?php echo $chosenChallenge;?>';
