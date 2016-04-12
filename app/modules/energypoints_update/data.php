@@ -14,7 +14,6 @@ if (isset($_GET['code'])) {
     $access_token = $tokens['access_token'];
     //Save this token for refeshing the token in the future
     $refresh_token = $tokens['refresh_token'];
-    //echo 'token is' . $access_token;
 
     $start = date("Ymd");
     $end = date("Ymd");
@@ -72,7 +71,6 @@ if (isset($_GET['code'])) {
 
     header("Refresh: 4; url=../../home.php?points=$newSteps");
 }
-
 
 
 include '../../includes/bottommenu.php';

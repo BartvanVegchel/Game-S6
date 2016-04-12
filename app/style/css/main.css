@@ -179,7 +179,6 @@ section.bottom nav ul li {
   display: inline-block;
   width: 33%;
   text-align: center;
-  text-transform: uppercase;
   max-height: 50px;
 }
 
@@ -199,7 +198,6 @@ section.bottom nav ul li img {
 section.bottom nav ul li a {
   color: #fff;
   text-decoration: none;
-  display: none;
 }
 
 section.bottom nav ul li a.questmaster {
@@ -248,7 +246,7 @@ section.socialScreenUp {
   top: 100%;
   height: 100%;
   width: 100%;
-  background: yellow;
+  background: #fff;
   z-index: 99;
 }
 
@@ -318,6 +316,10 @@ section.container {
   animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+#dailyChallenge {
+  text-align: center;
 }
 
 /* Login/Register */

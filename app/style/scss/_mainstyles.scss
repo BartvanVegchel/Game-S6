@@ -150,7 +150,6 @@ section.bottom {
 			display: inline-block;
 			width: 33%;
 			text-align: center;
-			text-transform: uppercase;
 			max-height: 50px;
 			
 			&.questmaster-wrapper {
@@ -169,7 +168,6 @@ section.bottom {
 			a {
 				color: #fff;
 				text-decoration: none;
-				display: none; //ALLEEN VOOR EERSTE TESTS
 			
 				&.questmaster {
 					position: absolute;
@@ -223,7 +221,7 @@ section.socialScreenUp {
   top: 100%;
   height: 100%;
   width: 100%;
-  background: yellow;
+  background: #fff;
   z-index: 99;
 }
 
@@ -293,5 +291,9 @@ section.container{
 	animation-timing-function: linear;
 	-webkit-animation-iteration-count: infinite;
 	animation-iteration-count: infinite;
+}
+
+#dailyChallenge{
+	text-align:center;
 }
 
