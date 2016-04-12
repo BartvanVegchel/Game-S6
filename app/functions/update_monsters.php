@@ -32,6 +32,7 @@ $unlockedMonstersUpdated = serialize($unlockedMonstersArray);
 
 //Update the database
 mysqli_query($db, "UPDATE userProgress SET unlockedMonsters = '$unlockedMonstersUpdated' WHERE userId = '$userId'");
+mysqli_query($db, "UPDATE userProgress SET population = (population + 1) WHERE userId = '$userId'");
 
 include_once '../includes/footer.php';
 ?>
