@@ -47,7 +47,7 @@ $(document).ready(function() {
         //if you have enough points
         if($personalEnergyValue >= $price) {
             swal({
-                title: "Het kost "+$price+" om dit gebied te ontdekken",
+                title: "Dit kost <i class='fa fa-bolt'>'"+$price+" ",
                 text: "",
                 type: "",
                 showCancelButton: true,
