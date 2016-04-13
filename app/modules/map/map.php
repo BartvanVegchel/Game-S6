@@ -91,6 +91,7 @@ while ($row = mysqli_fetch_array($getMapResult)) {
     echo "<section class='map' style='width:" . sqrt($count) . "00px; height:" . sqrt($count) . "00px; background-image:url(\"images/" .$row['worldName']. ".png\")'>";
     for ($i = 0; $i < $count; $i++) {
         $partId = $worldId.'_'.$i;
+        //check if this part is unlocked
         if (in_array("$partId", $unlockedFieldsArray)) {
             if (in_array("$partId", $homeLocationsArray)) {
                 $element = "<div class='part' id='" . $partId . "'><div class='homebackground'></div></div>";
@@ -136,7 +137,26 @@ while ($row = mysqli_fetch_array($getMapResult)) {
     }
     echo "</section>";
     echo "</section>";
-}
+}//endwhile
 ?>
+
+<script>
+    $('img.monsterEgg').click(function() {
+        $monsterName = $(this).attr('monster-name');
+        $monsterNameLowerCase = $monsterName.toLowerCase();
+
+        swal({
+                title: $monsterName,
+                text: "Speel "+$monsterName+" nu vrij",
+                imageUrl: "images/monster_"+$monsterNameLowerCase+".png",
+                confirmButtonText: "Start",
+                showCancelButton: true,
+                cancelButtonText: "Nu niet",
+            },
+            function(){
+                window.location.href = 'monster_challenge.php?monstername='+$monsterName;
+            });
+    });    
+</script>
 
 

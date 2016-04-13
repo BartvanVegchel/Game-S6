@@ -98,36 +98,36 @@ $(document).ready(function() {
     }); // end .locked click
 
     //monster updaten
-    $('img.monsterEgg').click(function() {
-        $monsterName = $(this).attr('monster-name');
-        $monsterNameLowerCase = $monsterName.toLowerCase();
-        $parentId = $(this).parent().parent().attr('id');
-        swal({
-            title: $monsterName,
-            text: "Je hebt "+$monsterName+" toegevoegd aan je collectie!",
-            type: "",
-            imageUrl: "images/monster_"+$monsterNameLowerCase+".png",
-            showCancelButton: false,
-            closeOnConfirm: true,
-            showLoaderOnConfirm: true,
-            confirmButtonText: "Super!"
-        }, function () {
-            $.ajax(
-                    {
-                        type: "get",
-                        url: "functions/update_monsters.php",
-                        data: {'monstername': $monsterName},
-                        success: function (data) {}
-                    }
-                )
-                .done(function (data) {
-                    console.log($parentId);
-                    $('#' + $parentId).find('.monsterEgg').hide();
-                    $('#' + $parentId).find('.monsterbackground').append('<img src="images/egg_'+$monsterNameLowerCase+'_broken.png" monster-name='+$monsterName+'>');
-                })
-                .error(function (data) {
-                    swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
-                });
-        });
-    });//end monsterEgg clicked
+    // $('img.monsterEgg').click(function() {
+    //     $monsterName = $(this).attr('monster-name');
+    //     $monsterNameLowerCase = $monsterName.toLowerCase();
+    //     $parentId = $(this).parent().parent().attr('id');
+    //     swal({
+    //         title: $monsterName,
+    //         text: "Je hebt "+$monsterName+" toegevoegd aan je collectie!",
+    //         type: "",
+    //         imageUrl: "images/monster_"+$monsterNameLowerCase+".png",
+    //         showCancelButton: false,
+    //         closeOnConfirm: true,
+    //         showLoaderOnConfirm: true,
+    //         confirmButtonText: "Super!"
+    //     }, function () {
+    //         $.ajax(
+    //                 {
+    //                     type: "get",
+    //                     url: "functions/update_monsters.php",
+    //                     data: {'monstername': $monsterName},
+    //                     success: function (data) {}
+    //                 }
+    //             )
+    //             .done(function (data) {
+    //                 console.log($parentId);
+    //                 $('#' + $parentId).find('.monsterEgg').hide();
+    //                 $('#' + $parentId).find('.monsterbackground').append('<img src="images/egg_'+$monsterNameLowerCase+'_broken.png" monster-name='+$monsterName+'>');
+    //             })
+    //             .error(function (data) {
+    //                 swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
+    //             });
+    //     });
+    // });//end monsterEgg clicked
 });

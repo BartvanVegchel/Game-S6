@@ -66,7 +66,7 @@ $username = $_SESSION["username"];
 				</nav>
 			
 			<?php
-	    }
+		}
 	    else {
 	        echo "<p>Je bent niet ingelogd.</p>";
 	    }
