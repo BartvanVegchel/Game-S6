@@ -6,15 +6,15 @@
 		<ul>
 			<li>
 				<a href="#"  class="dailychallenge-popup">
-					<i class="fa fa-trophy" aria-hidden="true" style="font-size: 90%;"></i> Challenge
+					<i class="fa fa-trophy" aria-hidden="true"></i>
 				</a>
 			</li><li class="questmaster-wrapper">&nbsp;
 				<a class="questmaster">
 					<img src="images/tutorial_guy.png">
 				</a>
 			</li><li>
-				<a href="#" class="monsters-popup">
-					<i class="fa fa-th-list" aria-hidden="true" style="font-size: 90%;"></i> Monsters
+				<a href="monsters.php" class="monsters-popup">
+					<img src="images/monster_icon.png" style="height: 30px; width: auto;;">
 				</a>
 			</li>
 		</ul>
@@ -34,28 +34,28 @@
 		
 	});
 
-	$('.monsters-popup').click(function() {
-		swal({
-			title: "Dit zijn jouw monsters",
-			text: "<div><ul style='width:100%;'><?
-			$getMonsters = mysqli_query($db, "SELECT * FROM userProgress WHERE userId = '$userId'") or die("FOUT: " . mysqli_error($dblink));
-			while($row = mysqli_fetch_assoc($getMonsters)) {
-				$unlockedMonsters = $row["unlockedMonsters"];
-				$unlockedMonstersArray = unserialize( $unlockedMonsters );
-
-				foreach ($unlockedMonstersArray as $key => $value) {
-					if ($key === 0){
-					}
-					else{
-						echo "<li style='list-style: none; padding: 5px; border-bottom: 1px solid #ccc; width: 43%; float: left;'><img src='images/monster_" .strtolower($value). ".png' style='width: 75px;'></li>";
-					}
-
-				}
-			}
-			?></ul></div><div style='clear: both;'></div>",
-			html: true
-		});
-	});
+//	$('.monsters-popup').click(function() {
+//		swal({
+//			title: "Dit zijn jouw monsters",
+//			text: "<div><ul style='width:100%;'><?//
+//			$getMonsters = mysqli_query($db, "SELECT * FROM userProgress WHERE userId = '$userId'") or die("FOUT: " . mysqli_error($dblink));
+//			while($row = mysqli_fetch_assoc($getMonsters)) {
+//				$unlockedMonsters = $row["unlockedMonsters"];
+//				$unlockedMonstersArray = unserialize( $unlockedMonsters );
+//
+//				foreach ($unlockedMonstersArray as $key => $value) {
+//					if ($key === 0){
+//					}
+//					else{
+//						echo "<li style='list-style: none; padding: 5px; border-bottom: 1px solid #ccc; width: 43%; float: left;'><img src='images/monster_" .strtolower($value). ".png' style='width: 75px;'></li>";
+//					}
+//
+//				}
+//			}
+//			?>//</ul></div><div style='clear: both;'></div>",
+//			html: true
+//		});
+//	});
 
 	$('.dailychallenge-popup').click(function() {
 		<?php

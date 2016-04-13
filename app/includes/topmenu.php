@@ -18,7 +18,7 @@ $username = $_SESSION["username"];
 							<?php getEnergyPoints(); ?>
 							<i class="fa fa-bolt"></i><strong><?php echo $energyPoints; ?></strong>
 						</li><li>
-							<a href="moves://app/authorize?client_id=6ztbE_n0485hLBbCC80XmklXAD3dlJD7&redirect_uri=http://game.onlineops.nl/app/modules/energypoints_update/data.php&scope=activity"><i class="fa fa-refresh"></i>Sync</a>
+							<a href="moves://app/authorize?client_id=6ztbE_n0485hLBbCC80XmklXAD3dlJD7&redirect_uri=http://game.onlineops.nl/app/modules/energypoints_update/data.php&scope=activity"><i class="fa fa-refresh"></i></a>
 						</li><?php if($selectedWorld != 1){?><li class="personalUnlockedFields"><i class='fa fa-globe'></i>
                             <?php
 

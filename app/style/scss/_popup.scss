@@ -1,14 +1,19 @@
 .popup{
   height: auto;
+  max-height: 90%; //fallback
+  max-height: calc(100% - 30px);
   width: auto;
+  max-width: 90%; //fallback
+  max-width: calc(100% - 30px);
   background-color: white;
-  position: fixed;
   top: 50%;
   left: 15px;
   right: 15px;
   transform: translate(0, -50%);
   border-radius: 5px;
-  padding: 15px;
+  overflow-x: scroll;
+  position: relative;
+  text-align: center;
 
     h1{
       color: #575757;

@@ -6,8 +6,10 @@ include 'includes/topmenu.php';
 
 ?>
 
-    <section class="container">
+        <div class="popup">
+        <ul class="monsterlist">
         <?php
+        
         $getMonsters = mysqli_query($db, "SELECT * FROM userProgress WHERE userId = '$userId'") or die("FOUT: " . mysqli_error($dblink));
         while($row = mysqli_fetch_assoc($getMonsters)) {
             $unlockedMonsters = $row["unlockedMonsters"];
@@ -17,14 +19,18 @@ include 'includes/topmenu.php';
                 if ($key === 0){
                 }
                 else{
-                    echo "<li style='list-style: none; padding: 5px; border-bottom: 1px solid #ccc; width: 43%; float: left;'><img src='images/monster_" .strtolower($value). ".png' style='width: 75px;'></li>";
+                    echo "    <li>
+                                <img src='images/monster_" .strtolower($value). ".png'>
+                                <h2>" .($value). "</h2>
+                              </li>";
                 }
 
             }
         }
         ?>
-
-    </section>
+        </ul>
+            <a href="home.php" class="terug">Verder ontdekken!</a>
+        </div>
 <?php
 
 include 'includes/bottommenu.php';
