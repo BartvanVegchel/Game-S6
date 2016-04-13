@@ -1,29 +1,42 @@
 .popup{
-  height: 60%;
-  width: 80%;
+  height: auto;
+  width: auto;
   background-color: white;
-  overflow: scroll;
-  z-index: 99;
   position: fixed;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 15px;
+  right: 15px;
+  transform: translate(0, -50%);
+  border-radius: 5px;
+  padding: 15px;
 
-  .top{
-    width: 100%;
-    height: 40px;
-    background-color: deepskyblue;
+    h1{
+      color: #575757;
+      font-size: 30px;
+      text-align: center;
+      font-weight: 600;
+      text-transform: none;
+      position: relative;
+      margin: 25px 0;
+      padding: 0;
+      line-height: 40px;
+      display: block;
+    }
 
     h2{
       text-align: center;
-      line-height: 40px;
     }
 
-    a{
-      position: absolute;
-      right: 5px;
-      top:3px;
-      font-size: 30px;
+    #countdown{
+      background-color: #7ecff4;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 50px;
+      display: block;
+      margin: 20px auto;
+      color: #ffffff;
     }
   }
 
@@ -45,4 +58,3 @@
       margin-left: 15px;
     }
   }
-}

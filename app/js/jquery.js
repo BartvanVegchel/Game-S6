@@ -10,7 +10,7 @@ $(document).ready(function() {
 
 
     //hide townhall popup
-    $('.popup').hide();
+    //$('.popup').hide();
 
     // show townhall popup
     $('div.part .townhallbackground img').click(function(){

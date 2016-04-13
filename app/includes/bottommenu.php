@@ -35,7 +35,6 @@
 	});
 
 	$('.monsters-popup').click(function() {
-
 		swal({
 			title: "Dit zijn jouw monsters",
 			text: "<div><ul style='width:100%;'><?

@@ -3,7 +3,7 @@
 	include('functions/login_function.php');
 	
 	include 'includes/topmenu.php';
-	include 'includes/bottommenu.php';
+
 	
 if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd?>
 
@@ -22,12 +22,13 @@ if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd?>
 		<? //include 'functions/tutorial_function.php'; ?>
 
         <!-- include the popup -->
-        <? include 'modules/popup/popup.php'; ?>
+<!--        --><?// include 'modules/popup/popup.php'; ?>
 <?
 }
     else {
         header("Refresh: 0; url=index.php");
     }
 
+include 'includes/bottommenu.php';
 include 'includes/footer.php'; 
 ?>

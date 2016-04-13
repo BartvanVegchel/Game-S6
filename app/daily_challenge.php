@@ -3,7 +3,7 @@ include('includes/header.php');
 include('functions/login_function.php');
 
 include 'includes/topmenu.php';
-include 'includes/bottommenu.php';
+
 ?>
 
     <section id="dailyChallenge" class="container">
@@ -18,11 +18,12 @@ include 'includes/bottommenu.php';
             $dailyChallengeReward = $row['reward'];
         }
         ?>
-
-        <h1><?php echo $dailyChallengeName;?></h1>
-        <p><?php echo $dailyChallengeDescription;?><br><br></p>
-        <h2>Resterende tijd:</h2>
-        <div id="countdown"></div>
+        <div class="popup">
+            <h1><?php echo $dailyChallengeName;?></h1>
+            <p><?php echo $dailyChallengeDescription;?><br><br></p>
+            <h2>Resterende tijd:</h2>
+            <div id="countdown"></div>
+        </div>
 
         <script>
             (function countdown(remaining) {
@@ -45,4 +46,7 @@ include 'includes/bottommenu.php';
     mysqli_query($db, "UPDATE energyPoints SET amount = (amount + '$dailyChallengeReward') WHERE userId = '$userId'");
     ?>
 
-<? include 'includes/footer.php'; ?>
+<?
+    include 'includes/bottommenu.php';
+    include 'includes/footer.php';
+?>
