@@ -43,7 +43,7 @@ function register(){
 					}
 										
 					mysqli_query($db, "INSERT INTO energyPoints (userId, amount, totalEarned, totalSpend)
-										VALUES ('$userId', '1000', '1000', '0') ");
+										VALUES ('$userId', '1800', '1800', '0') ");
 										
 					mysqli_query($db, "INSERT INTO steps (userId, stepAmount, totalAmount)
 										VALUES ('$userId', '0', '0') ");
