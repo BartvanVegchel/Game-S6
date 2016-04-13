@@ -61,6 +61,7 @@ if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd?>
 						 console.log($parentId);
 						 $('#' + $parentId).find('.monsterEgg').hide();
 						 $('#' + $parentId).find('.monsterbackground').append('<img src="images/egg_'+$monsterNameLowerCase+'_broken.png" monster-name='+$monsterName+'>');
+						 window.location.href = 'home.php';
 					 })
 					 .error(function (data) {
 						 swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");

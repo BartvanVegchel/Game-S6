@@ -6,7 +6,7 @@ include 'includes/topmenu.php';
 include 'includes/bottommenu.php';
 ?>
 
-    <section id="dailyChallenge" class="container">
+    <section id="monsterChallenge" class="container">
         <?php
         $monsterName = $_GET['monstername'];
 
@@ -23,11 +23,13 @@ include 'includes/bottommenu.php';
             $monsterChallengeReward = $row['reward'];
         }
         ?>
+        <div class="popup">
+            <h1><?php echo $monsterChallengeName;?></h1>
+            <p><?php echo $monsterChallengeDescription;?><br><br></p>
+            <h2>Resterende tijd:</h2>
+            <div id="countdown"></div>
+        </div>
 
-        <h1><?php echo $monsterChallengeName;?></h1>
-        <p><?php echo $monsterChallengeDescription;?><br><br></p>
-        <h2>Resterende tijd:</h2>
-        <div id="countdown"></div>
 
         <script>
             (function countdown(remaining) {
