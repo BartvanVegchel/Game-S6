@@ -3,10 +3,9 @@ include('includes/header.php');
 include('functions/login_function.php');
 
 include 'includes/topmenu.php';
-include 'includes/bottommenu.php';
 ?>
 
-    <section id="monsterChallenge" class="container">
+    <section id="dailyChallenge" class="container">
         <?php
         $monsterName = $_GET['monstername'];
 
@@ -52,4 +51,7 @@ while($row = mysqli_fetch_assoc($getUserId)) {
 mysqli_query($db, "UPDATE energyPoints SET amount = (amount + '$monsterChallengeReward') WHERE userId = '$userId'");
 ?>
 
-<? include 'includes/footer.php'; ?>
+<?
+
+include 'includes/bottommenu.php';
+include 'includes/footer.php'; ?>
