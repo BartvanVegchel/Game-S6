@@ -34,14 +34,12 @@ body {
  */
 
 ::-moz-selection {
-    background: #8bab4b;
-	color: #fff;
+    background: #b3d4fc;
     text-shadow: none;
 }
 
 ::selection {
-    background: #8bab4b;
-	color: #fff;
+    background: #b3d4fc;
     text-shadow: none;
 }
 
@@ -445,7 +443,7 @@ width: 102px;}
 .gallery-img{}
 .gallery-items-text{}
 .gallery-items-text p{color: #9ea5a5; font-size: 14px; margin: 0; padding-top: 45px;font-family: 'Raleway', sans-serif; font-weight: 400;}
-#gallery .owl-carousel .owl-controls{left: 0; margin-top: -40px; position: absolute; text-align: left; top: 50%; 
+#gallery .owl-carousel .owl-controls{left: 0; margin-top: -40px; position: absolute; text-align: left; top: 50%;
 width: 100%;}
 #gallery .owl-carousel .owl-controls .owl-buttons{}
 #gallery .owl-carousel .owl-controls .owl-buttons div{color: #9fa9a9;font-size: 50px; display: inline-block}
@@ -537,7 +535,7 @@ margin-left: 24px;
 font-size: 14px; color:#8C9494; font-family: 'Raleway', sans-serif; font-weight: 400;
 background: #FFFFFF; width: 555px;}
 .submit-bottom form input[type=submit]{border: none; padding: 21px 55px; background: #8bab4b; color:#fff; font-size: 20px;font-family: 'Proxima Nova Regular'; font-weight: 700; text-transform: uppercase;border-radius: 40px;}
-	
+
 /*=========================
 	 Submit CLOSE
 ===========================*/
@@ -575,8 +573,8 @@ width: 42px;}
 #service .service-tab ul li{ border-right: 1px solid #DBE2E2;}
 #service .service-tab ul li a{color: #9FA9A9; padding-top: 23px; padding-bottom: 17px;font-size: 20px; font-family: 'Raleway', sans-serif; font-weight: 400;display: block; padding-right: 60px}
 #service .service-tab ul li a i{font-size: 45px; width: 75px; position: relative;top: 10px;}
-#service .service-tab ul li a:hover,#service .service-tab ul li.active a{border-right: 10px solid #8bab4b;padding-right: 50px}
-#service .service-tab ul li a:hover i,#service .service-tab ul li.active a{color: #8bab4b}
+#service .service-tab ul li a:hover{border-right: 10px solid #8bab4b;padding-right: 50px}
+#service .service-tab ul li a:hover i{color: #8bab4b}
 
 .edit-tab{overflow: hidden;}
 .edit-tab h1{color: #636C6C; font-size: 24px; font-family: 'Raleway', sans-serif; font-weight: 700; margin: 0px;margin: 0px;padding-bottom: 30px; padding-top:50px;}
@@ -587,12 +585,10 @@ width: 42px;}
 .teb-icon-edit i{font-size: 170px}
 
 /*=========================
-	 KICKSTARTER PLACEHOLDER
+	 VIDEO
 ===========================*/
 
-.kickstarter_placeholder {
-	margin-top: 100px;
-}
+
 
 
 
