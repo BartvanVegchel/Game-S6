@@ -449,8 +449,8 @@
 
 
 
-		<div id="log" style='position:fixed; bottom:100%; right:0px; width:200px;'>
-			<img src="img/monster_droplet.png" />
+		<div class="fixedMonster">
+			<img src="img/monster3.png" />
 		</div>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -492,11 +492,11 @@
 
 				if (scroll >= 450) {
 
-					$('#log').css({bottom: '0px'});
+					$('.fixedMonster').css({bottom: '0px'});
 					
 				}
 				else {
-					$('#log').css({bottom: '100%'});
+					$('.fixedMonster').css({bottom: '-230px'});
 				}
 			});
 			

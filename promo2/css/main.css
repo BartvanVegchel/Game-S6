@@ -103,7 +103,7 @@ textarea {
 
 
 
-
+div.fixedMonster    { position:fixed; bottom:-200px; right:20px; height: 158px; width: 150px; transition-duration: 0.2s; }
 
 
 
