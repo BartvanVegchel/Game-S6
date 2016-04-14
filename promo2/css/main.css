@@ -405,7 +405,7 @@ h1, h2, h3, h4, h5, h6 {font-weight:normal;margin:0 0 15px;}
 	5) contant Start
 ===========================*/
 
-#contant-1{background: #F2F9FE;padding: 80px 0px}
+#contant-1{  background: url("../img/graphic1.jpg") no-repeat; background-position: bottom;  padding: 60px 0 150px 0}
 .block-left{}
 .contant-1-text ul { padding: 0; margin: 0; }
 .contant-1-text li { list-style: none; line-height: 2em; }
