@@ -36,8 +36,5 @@ if(isset($_POST["submit"])) {
             echo "error";
         }
     }
-} else{
-    echo "error";
 }
-
 ?>
