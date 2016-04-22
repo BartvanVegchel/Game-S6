@@ -48,13 +48,13 @@
 <form><Br><br><br><br>
     <input type="text" name="username" id="username" placeholder="Typ hier je naam" tabindex="1">
     <input type="email" name="email" id="email" placeholder="Typ hier je e-mailadres" tabindex="2">
-    <!--<div class="radio-wrapper">
+    <div class="radio-wrapper">
         <label for="jongen">Ik ben een jongen</label>
         <input type="radio" name="gender" id="jongen" value="Jongen" tabindex="3">
     </div><div class="radio-wrapper">
-    <label for="meisje">Ik ben een meisje</label>
-    <input type="radio" name="gender" id="meisje" value="Meisje" tabindex="4">
-</div>-->
+        <label for="meisje">Ik ben een meisje</label>
+        <input type="radio" name="gender" id="meisje" value="Meisje" tabindex="4">
+    </div>
     <input type="password" name="password" id="password" placeholder="Kies hier je wachtwoord" tabindex="6">
     <input type="password" name="password2" id="password2" placeholder="Typ hier je wachtwoord nog een keer" tabindex="7">
 
@@ -76,11 +76,11 @@
             var email=$("#email").val();
             var password=$("#password").val();
             var password2=$("#password2").val();
-            var dataString="username="+username+"&email="+email+"&password="+password+"&password2="+password2+"&submit=";
+            var gender=$('input:radio[name=gender]:checked').val();
+            var dataString="username="+username+"&email="+email+"&password="+password+"&gender="+gender+"&password2="+password2+"&submit=";
             //var dataString="Test";
             if($.trim(username).length>0 & $.trim(email).length>0 & $.trim(password).length>0 & $.trim(password2).length>0)
             {
-                    //alert(username);
                 $.ajax({
                     type:"POST",
                     url:"http://game.onlineops.nl/phonegap_php/signup.php",
@@ -90,30 +90,26 @@
                     beforeSend: function(){ $("#submit").val('Connecting...');},
                     success: function(data){
                         if(data=="ok")
-                        {
+                        {// if register is succesfull
                             alert("inserted");
-                            $("#submit").val('submit');
-                        }
-                        else if(data=="deze")
-                        {
-                            alert("DEZE FUNCTIE");
+                            $("#submit").val('Succesvol geregistreerd');
                         }
                         else if(data=="error")
                         {
-                            alert("error");
+                            alert("error");                            
+                            $("#submit").val('Probeer het nog eens');
                         }
-                        else if(data=="oh")
+                        else if(data=="username_exists")
                         {
-                            alert("gebruikersnaam is oh");
+                            alert("Gebruikersnaam bestaat al");
                         }
-                        else if(data=="wwerror")
+                        else if(data=="password_error")
                         {
-                            alert("Wachtwoord niet gelijk");
+                            alert("Wachtwoorden niet gelijk");
                         }
                     },
                     error: function () {
-                        var url = window.location.href;     // Returns full URL
-                        alert(url);
+                        alert("Er gaat iets verkeerd, neem contact met ons op");
                     }
                 })
                 //alert('na ajax');
