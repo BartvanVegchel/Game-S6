@@ -40,70 +40,87 @@
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Moving Monsters</title>
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function()
-        {
-            $("#register").click(function(){
-                //alert('ja');
-                var username=$("#username").val();
-                var email=$("#email").val();
-                var password=$("#password").val();
-                var password2=$("#password2").val();
-                var dataString="username="+username+"&email="+email+"&password="+password+"&password2="+password2+"$submit=";
-                if($.trim(username).length>0 & $.trim(email).length>0 & $.trim(password).length>0 & $.trim(password2).length>0)
-                {
-                    //alert('hja');
-                    $.ajax({
-                        type:"POST",
-                        url:"http://192.168.1.6/signup.php",
-                        data: dataString,
-                        crossDomain: true,
-                        cache: false,
-                        beforeSend: function(){ $("#register").val('Connecting...');},
-                        success: function(data){
-                            if(data=="ok")
-                            {
-                                alert("inserted");
-                                $("#register").val('submit');
-                            }
-                            else if(data=="error")
-                            {
-                                alert("error");
-                            }
-                        }
-                    }).fail(function() {
-                        alert( "nothing" );
-                    });
-                }return false;
-            });
-        });
-    </script>
+    <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
 </head>
 
 <body>
 
-    <form><Br><br><br><br>
-        <input type="text" name="username" id="username" placeholder="Typ hier je naam" tabindex="1">
-        <input type="email" name="email" id="email" placeholder="Typ hier je e-mailadres" tabindex="2">
-        <!--<div class="radio-wrapper">
-            <label for="jongen">Ik ben een jongen</label>
-            <input type="radio" name="gender" id="jongen" value="Jongen" tabindex="3">
-        </div><div class="radio-wrapper">
-        <label for="meisje">Ik ben een meisje</label>
-        <input type="radio" name="gender" id="meisje" value="Meisje" tabindex="4">
-    </div>-->
-        <input type="password" name="password" id="password" placeholder="Kies hier je wachtwoord" tabindex="6">
-        <input type="password" name="password2" id="password2" placeholder="Typ hier je wachtwoord nog een keer" tabindex="7">
+<form><Br><br><br><br>
+    <input type="text" name="username" id="username" placeholder="Typ hier je naam" tabindex="1">
+    <input type="email" name="email" id="email" placeholder="Typ hier je e-mailadres" tabindex="2">
+    <!--<div class="radio-wrapper">
+        <label for="jongen">Ik ben een jongen</label>
+        <input type="radio" name="gender" id="jongen" value="Jongen" tabindex="3">
+    </div><div class="radio-wrapper">
+    <label for="meisje">Ik ben een meisje</label>
+    <input type="radio" name="gender" id="meisje" value="Meisje" tabindex="4">
+</div>-->
+    <input type="password" name="password" id="password" placeholder="Kies hier je wachtwoord" tabindex="6">
+    <input type="password" name="password2" id="password2" placeholder="Typ hier je wachtwoord nog een keer" tabindex="7">
 
-        <input class="btn" id="register" type="submit" name="submit" value="Laat me nu spelen!">
-    </form>
+    <input class="btn" id="submit" type="submit" name="submit" value="Laat me nu spelen!">
+</form>
+<script>
+    //var pathname = window.location.pathname; // Returns path only
+    //var url      = window.location.href;     // Returns full URL
+    //console.log(pathname);
+    //console.log(url);
+</script>
 
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $("#submit").click(function(){
+            //alert('ja');
+            var username=$("#username").val();
+            var email=$("#email").val();
+            var password=$("#password").val();
+            var password2=$("#password2").val();
+            var dataString="username="+username+"&email="+email+"&password="+password+"&password2="+password2+"&submit=";
+            //var dataString="Test";
+            if($.trim(username).length>0 & $.trim(email).length>0 & $.trim(password).length>0 & $.trim(password2).length>0)
+            {
+                    //alert(username);
+                $.ajax({
+                    type:"POST",
+                    url:"http://game.onlineops.nl/phonegap_php/signup.php",
+                    data: dataString,
+                    crossDomain: true,
+                    cache: false,
+                    beforeSend: function(){ $("#submit").val('Connecting...');},
+                    success: function(data){
+                        if(data=="ok")
+                        {
+                            alert("inserted");
+                            $("#submit").val('submit');
+                        }
+                        else if(data=="deze")
+                        {
+                            alert("DEZE FUNCTIE");
+                        }
+                        else if(data=="error")
+                        {
+                            alert("error");
+                        }
+                        else if(data=="oh")
+                        {
+                            alert("gebruikersnaam is oh");
+                        }
+                        else if(data=="wwerror")
+                        {
+                            alert("Wachtwoord niet gelijk");
+                        }
+                    },
+                    error: function () {
+                        var url = window.location.href;     // Returns full URL
+                        alert(url);
+                    }
+                })
+                //alert('na ajax');
+            }return false;
+        });
+    });
+</script>
 </body>
 
 </html>
