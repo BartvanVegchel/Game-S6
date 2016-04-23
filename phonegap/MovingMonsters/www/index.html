@@ -87,24 +87,26 @@
                     data: dataString,
                     crossDomain: true,
                     cache: false,
+                    dataType: 'json',
                     beforeSend: function(){ $("#submit").val('Connecting...');},
                     success: function(data){
-                        if(data=="ok")
+                        //alert(data['error']);
+                        if(data['error']=="username_exists")
                         {// if register is succesfull
                             alert("inserted");
                             $("#submit").val('Succesvol geregistreerd');
                         }
-                        else if(data=="error")
-                        {
+                        else if(data['error']=="error")
+                        {//if somterhing goes wrong
                             alert("error");                            
                             $("#submit").val('Probeer het nog eens');
                         }
-                        else if(data=="username_exists")
-                        {
+                        else if(data['error']=="username_exists")
+                        {//if username exists
                             alert("Gebruikersnaam bestaat al");
                         }
-                        else if(data=="password_error")
-                        {
+                        else if(data['error']=="password_error")
+                        {//if password is not 
                             alert("Wachtwoorden niet gelijk");
                         }
                     },
