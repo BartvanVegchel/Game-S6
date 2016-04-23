@@ -58,7 +58,7 @@
     <input type="password" name="password" id="password" placeholder="Kies hier je wachtwoord" tabindex="6">
     <input type="password" name="password2" id="password2" placeholder="Typ hier je wachtwoord nog een keer" tabindex="7">
 
-    <input class="btn" id="submit" type="submit" name="submit" value="Laat me nu spelen!">
+    <input class="btn" id="registerBtn" type="submit" name="submit" value="Laat me nu spelen!">
 </form>
 <script>
     //var pathname = window.location.pathname; // Returns path only
@@ -70,7 +70,7 @@
 <script type="text/javascript">
     $(document).ready(function()
     {
-        $("#submit").click(function(){
+        $("#registerBtn").click(function(){
             //alert('ja');
             var username=$("#username").val();
             var email=$("#email").val();
@@ -88,18 +88,19 @@
                     crossDomain: true,
                     cache: false,
                     dataType: 'json',
-                    beforeSend: function(){ $("#submit").val('Connecting...');},
+                    beforeSend: function(){ $("#registerBtn").val('Connecting...');},
                     success: function(data){
                         alert(data['error']);
                         if(data['error']=="succesfull")
                         {// if register is succesfull
                             alert("inserted");
-                            $("#submit").val('Succesvol geregistreerd');
+                            $("#registerBtn").val('Succesvol geregistreerd');
+                            window.location.href = "inloggen.html"
                         }
                         else if(data['error']=="error")
                         {//if somterhing goes wrong
                             alert("error");                            
-                            $("#submit").val('Probeer het nog eens');
+                            $("#registerBtn").val('Probeer het nog eens');
                         }
                         else if(data['error']=="username_exists")
                         {//if username exists
