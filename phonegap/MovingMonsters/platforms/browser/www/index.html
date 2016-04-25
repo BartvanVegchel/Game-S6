@@ -44,66 +44,43 @@
 </head>
 
 <body>
+<section class="top-bar">
+    <span class="world-name">Desertworld</span>
+    <span class="menu-icon fa fa-bars"></span>
+</section>
+
+<div class="energy-points">
+    <span class="personalEnergypoints">999999</span>
+    <span class="fa fa-bolt"></span>
+</div>
+<div class="world-progress">
+    <span class="fa fa-globe"></span>
+    <span class="personalUnlockedFields">999/999</span>
+</div>
+
+<section class="container">
+    <div class="map-container">
+        <div class="map" style="width:600px; height:600px; background-image:url('img/desertWorld.png'); background-size: cover;">
+
+        </div>
+    </div>
+</section>
+<section class="bottom-bar">
+    <ul>
+        <li><span class="fa fa-bars"></span></li>
+        <li><span class="fa fa-bars"></span></li>
+        <li><span class="fa fa-bars"></span></li>
+        <li><span class="fa fa-bars"></span></li>
+    </ul>
+</section>
 
 <script type="text/javascript">
     if(localStorage.getItem('userInfo') == null){
         alert('je bent niet ingelogd');
         window.location.href = "inloggen.html";
     } else{
-        alert('je bent ingelogd');
+        //alert('je bent ingelogd');
     }
-
-    $(document).ready(function()
-    {
-        $("#registerBtn").click(function(){
-            //alert('ja');
-            var username=$("#username").val();
-            var email=$("#email").val();
-            var password=$("#password").val();
-            var password2=$("#password2").val();
-            var gender=$('input:radio[name=gender]:checked').val();
-            var dataString="username="+username+"&email="+email+"&password="+password+"&gender="+gender+"&password2="+password2+"&submit=";
-            //var dataString="Test";
-            if($.trim(username).length>0 & $.trim(email).length>0 & $.trim(password).length>0 & $.trim(password2).length>0)
-            {
-                $.ajax({
-                    type:"POST",
-                    url:"http://game.onlineops.nl/phonegap_php/signup.php",
-                    data: dataString,
-                    crossDomain: true,
-                    cache: false,
-                    dataType: 'json',
-                    beforeSend: function(){ $("#registerBtn").val('Connecting...');},
-                    success: function(data){
-                        alert(data['error']);
-                        if(data['error']=="succesfull")
-                        {// if register is succesfull
-                            alert("inserted");
-                            $("#registerBtn").val('Succesvol geregistreerd');
-                            window.location.href = "inloggen.html"
-                        }
-                        else if(data['error']=="error")
-                        {//if somterhing goes wrong
-                            alert("error");
-                            $("#registerBtn").val('Probeer het nog eens');
-                        }
-                        else if(data['error']=="username_exists")
-                        {//if username exists
-                            alert("Gebruikersnaam " + data['username'] + " bestaat al");
-                        }
-                        else if(data['error']=="password_error")
-                        {//if password is not
-                            alert("Wachtwoorden niet gelijk");
-                        }
-                    },
-                    error: function () {
-                        alert("Er gaat iets verkeerd, neem contact met ons op");
-                    }
-                })
-                //alert('na ajax');
-            }return false;
-        });
-    });
 </script>
 </body>
 
