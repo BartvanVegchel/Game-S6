@@ -1,0 +1,8 @@
+
+/* General */
+
+body    { font-family: OpenSansRegular, Arial, sans-serif; color: #333333; box-sizing: border-box; display: block; overflow-x:hidden; height: 100%; }
+
+/* Col */
+
+div.col-xs-6    { background: red; }
