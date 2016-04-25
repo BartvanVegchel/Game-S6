@@ -3,7 +3,6 @@
 <div class="col-xs-6">
     <h2>General</h2>
     <div class="container">
-        <div class="row">
             <div class="col-md-6">
                 <div class="panel with-nav-tabs panel-default">
                     <div class="panel-heading">
@@ -24,14 +23,12 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 </div>
 
 <div class="col-xs-6">
     <h2>Social</h2>
     <div class="container">
-        <div class="row">
             <div class="col-md-6">
                 <div class="panel with-nav-tabs panel-default">
                     <div class="panel-heading">
@@ -53,7 +50,6 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
 
 </div>
