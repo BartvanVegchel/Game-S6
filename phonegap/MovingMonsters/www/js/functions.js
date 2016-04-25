@@ -66,7 +66,7 @@ function getWorldSize(){
             success: function (data) {
                 if (data['error'] == "error") {// if register is succesfull
                     alert("error");
-                    $(".personalUnlockedFields").html(0);
+                    $(".personalUnlockedFields").html(0); 
                 } else if (data['energypoints'] !== "") {
                     $(".personalUnlockedFields").html(data['worldsize']);
                 }
