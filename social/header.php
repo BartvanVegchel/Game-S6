@@ -1,3 +1,12 @@
+<? 
+	session_start();
+	ob_start();
+	
+	include('includes/db_core.php');
+	include('includes/db_social.php');
+	include('functions/login_function.php');
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -51,43 +60,63 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="index.php">Home</a></li>
                     <li><a href="#">Social</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Inloggen</b> <span class="caret"></span></a>
-                        <ul id="login-dp" class="dropdown-menu">
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="login-nav">
-                                            <div class="form-group">
-                                                <label class="sr-only" for="exampleInputEmail2">Email address</label>
-                                                <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="sr-only" for="exampleInputPassword2">Password</label>
-                                                <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
-                                                <div class="help-block text-right"><a href="">Wachtwoord vergeten?</a></div>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-primary btn-block">Inloggen</button>
-                                            </div>
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox">Ingelogd blijven
-                                                </label>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="bottom text-center">
-                                        Nieuw hier? <a href="#"><b>Wat is Moving Monsters?</b></a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
+				
+					<?php
+						if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd
+					?>
+					
+						<li><a href="#">Ingelogd als: <?php echo $_SESSION["username"]; ?></a></li>
+						<li><a href="functions/logout_function.php">Uitloggen</a></li>
+							
+					<?php
+						}
+						else {
+						?>
+				
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Inloggen</b> <span class="caret"></span></a>
+								<ul id="login-dp" class="dropdown-menu">
+									<li>
+										<div class="row">
+											<div class="col-md-12">
+												<?php login(); ?>
+												<form class="form" role="form" method="post" action="" accept-charset="UTF-8" id="login-nav">
+													<div class="form-group">
+														<label class="sr-only" for="username">Email address</label>
+														<input type="text" name="username" id="username" class="form-control" placeholder="Typ je naam hier" tabindex="1" required>
+													</div>
+													<div class="form-group">
+														<label class="sr-only" for="password">Password</label>
+														<input type="password" name="password" id="password" class="form-control" placeholder="En hier je wachtwoord" tabindex="2" required>
+														<div class="help-block text-right"><a href="">Wachtwoord vergeten?</a></div>
+													</div>
+													<div class="form-group">
+														<button type="submit" name="submit" class="btn btn-primary btn-block">Inloggen</button>
+													</div>
+													<div class="checkbox">
+														<label>
+															<input type="checkbox">Ingelogd blijven
+														</label>
+													</div>
+												</form>
+											</div>
+											<div class="bottom text-center">
+												Nieuw hier?<br />
+												<a href="#"><b>Wat is Moving Monsters?</b></a>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</li>
+							
+					<?php	
+						}
+					?>
+					
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

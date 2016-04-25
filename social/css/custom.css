@@ -5,10 +5,23 @@ body            { font-family: OpenSansRegular, Arial, sans-serif; color: #33333
 div.container   { width: 100%; }
 
 /* Col */
+/* NIET DOEN FRANKIE
 
 div.col-xs-6    {  }
 div.col-md-6    { margin: 0 auto; width: 100%; display: block; }
 
+*/
+
+.navbar {
+	border-radius: 0;
+}
+
+.col-white {
+	background: #fff;
+	padding: 20px;
+	border-radius: 6px;
+	border: 1px solid #ccc;
+}
 
 /* Login */
 
