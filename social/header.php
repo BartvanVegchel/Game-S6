@@ -29,7 +29,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/custom.css" />
-    <link rel="stylesheet" type="text/css" href="fonts/opensans/opensans.css" />
+    <link rel="stylesheet" type="text/css" href="./fonts/opensans/opensans.css" />
 
 </head>
 <body>
