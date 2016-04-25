@@ -235,6 +235,7 @@ section.bottom-bar ul li .circle{
     left: 50%;
     transform: translate(-50%);
     z-index: -2;
+    line-height: 50px;
 }
 
 section.bottom-bar ul li .fa{
@@ -265,6 +266,10 @@ section.map div.part div.locked {
     content: '';
     position: absolute;
     z-index: 2;
+    line-height: 98px;
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
 }
 
 section.map div.part div.locked:before {
