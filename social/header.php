@@ -24,9 +24,9 @@
     <!-- Scripts -->
     <script src="js/jquery-v2.0.3.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="style/css/main.css" />
-    <link rel="stylesheet" href="style/css/sweetalert.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="fonts/opensans/opensans.css" />
 
     <!-- FontAwesome -->
