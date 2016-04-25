@@ -33,5 +33,3 @@
 
 </head>
 <body>
-
-gay

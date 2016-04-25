@@ -44,9 +44,9 @@
                     </div>
                     <div class="panel-body">
                         <div class="tab-content">
-                            <div class="tab-pane fade in active" id="tab1default">Default 1</div>
-                            <div class="tab-pane fade" id="tab2default">Default 2</div>
-                            <div class="tab-pane fade" id="tab3default">Default 3</div>
+                            <div class="tab-pane fade in active" id="tab1default"><?php include('tabincludes/social_all.php'); ?></div>
+                            <div class="tab-pane fade" id="tab2default"><?php include('tabincludes/social_help.php'); ?></div>
+                            <div class="tab-pane fade" id="tab3default"><?php include('tabincludes/social_ideas.php'); ?></div>
                             <div class="tab-pane fade" id="tab4default">Default 4</div>
                             <div class="tab-pane fade" id="tab5default">Default 5</div>
                         </div>
