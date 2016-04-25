@@ -16,6 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+@font-face {
+    font-family: Oduda;
+    src: url(../fonts/ODUDA-BOLD-DEMO.OTF);
+}
+
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
@@ -36,7 +42,7 @@ body {
         color-stop(0.51, #E4E4E4)
     );
     background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-family: 'Oduda', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:12px;
     height:100%;
     margin:0px;
@@ -113,3 +119,105 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+/*new styles*/
+
+section.top-bar{
+    position: fixed;
+    top:0;
+    height: 40px;
+    width: 100%;
+    background-color: #516f72;
+    text-align: center;
+    line-height: 40px;
+    color: #ffffff;
+    z-index: 99;
+    font-size: 20px;
+}
+
+section.top-bar .menu-icon{
+    height:40px;
+    width: 40px;
+    position: absolute;
+    right:0;
+    top:0;
+    text-align: center;
+    line-height: 40px;
+}
+
+div.energy-points{
+    height: 50px;
+    width:100px;
+    background-color: #9dc9d0;
+    position: fixed;
+    left: 0;
+    top: 50px;
+    z-index: 99;
+    border-radius: 0 25px 25px 0;
+    line-height: 50px;
+    color: #FFFFFF;
+    text-align: right;
+    font-size: 18px;
+    padding: 0 15px 0 5px;
+    -webkit-box-shadow: 1px 1px 2px 0px rgba(81, 111, 114, 1);
+    -moz-box-shadow:    1px 1px 2px 0px rgba(81, 111, 114, 1);
+    box-shadow:         1px 1px 2px 0px rgba(81, 111, 114, 1);
+}
+
+div.world-progress{
+    height: 50px;
+    width:100px;
+    background-color: #8bab4b;
+    position: fixed;
+    right: 0;
+    top: 50px;
+    z-index: 99;
+    border-radius: 25px 0 0 25px;
+    line-height: 50px;
+    color: #FFFFFF;
+    text-align: left;
+    font-size: 18px;
+    padding: 0 5px 0 15px;
+    -webkit-box-shadow: -1px 1px 2px 0px rgba(81, 111, 114, 1);
+    -moz-box-shadow:    -1px 1px 2px 0px rgba(81, 111, 114, 1);
+    box-shadow:         -1px 1px 2px 0px rgba(81, 111, 114, 1);
+}
+
+section.container{
+    position: fixed;
+    height: calc(100vh - 80px);
+    width: 100%;
+    margin: 40px 0;
+    background-color: green;
+}
+
+section.container .map-container{
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+}
+
+section.bottom-bar{
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+    background-color: #516f72;
+    z-index: 99;
+    line-height:40px;
+}
+
+section.bottom-bar ul{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+section.bottom-bar ul li{
+    height: 100%;
+    width: 24%;
+    list-style: none;
+    display: inline-block;
+}
+section.bottom-bar ul li a{}

@@ -78,7 +78,7 @@
                             alert("Welkom " + data['username']);
                             $("#loginBtn").val('Succesvol ingelogd');
                             window.location.href = "index.html";
-                            localStorage.setItem('userName', data['username']);
+                            localStorage.setItem('userInfo', data['username']);
                         }
                         else if(data['error']=="error")
                         {//if somterhing goes wrong
