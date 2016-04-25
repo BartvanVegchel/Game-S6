@@ -53,31 +53,6 @@ function getUnlockedFields(){
     }
 }
 
-function getWorldSize(){
-    var dataString="username="+$userId+"&submit=";
-    if(localStorage.getItem('userInfo') !== null) {
-        $.ajax({
-            type: "POST",
-            url: "http://game.onlineops.nl/phonegap_php/getWorldSize.php",
-            data: dataString,
-            crossDomain: true,
-            cache: false,
-            dataType: 'json',
-            success: function (data) {
-                if (data['error'] == "error") {// if register is succesfull
-                    alert("error");
-                    $(".personalUnlockedFields").html(0); 
-                } else if (data['energypoints'] !== "") {
-                    $(".personalUnlockedFields").html(data['worldsize']);
-                }
-            },
-            error: function () {
-                alert("Er gaat iets verkeerd, neem contact met ons op!");
-            }
-        })
-    }
-}
-
 function buildMap(){
     var dataString="worldid="+$worldId+"&username="+$userId+"&submit=";
     if(localStorage.getItem('userInfo') !== null) {
