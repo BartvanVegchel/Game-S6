@@ -1,12 +1,14 @@
 <?php
-	include('../header.php');
+	include('header.php');
+			
+			echo "hello?";
 ?>
 
 <?php if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier verzonden is
         if (!empty($_POST['username']) &&
 			!empty($_POST['userId']) &&
 			!empty($_POST['title']) &&
-            !empty($_POST['content'])  { // Controleer of benodigde velden wel ingevuld zijn
+            !empty($_POST['content']))  { // Controleer of benodigde velden wel ingevuld zijn
 
         $username 		= mysqli_real_escape_string($db_social, $_POST["username"]);
         $userId        	= mysqli_real_escape_string($db_social, $_POST["userId"]);
@@ -95,5 +97,5 @@
 ?>
 
 <?php
-    include('../footer.php');
+    include('footer.php');
 ?>

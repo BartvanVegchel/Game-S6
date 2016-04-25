@@ -12,7 +12,7 @@
 
 					<div class="login-form">
 					
-						<form method="POST" action="functions/create_post_function.php" id="create_post" enctype="multipart/form-data">
+						<form method="POST" action="create_post_function.php" id="create_post" enctype="multipart/form-data">
 					
 							<?php
 								if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd
@@ -47,7 +47,7 @@
 								</div>
 							</div>
 							
-							<input type="submit" value="Upload bericht" class="btn btn-primary btn-lg btn-block">
+							<input type="submit" name="submit" id="submit" value="Upload bericht" class="btn btn-primary btn-lg btn-block">
 							
 						</form>
 						
