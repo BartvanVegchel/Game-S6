@@ -40,9 +40,13 @@
 
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+
     <title>Moving Monsters</title>
     <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
+    <script src="js/sweetalert-dev.js"></script>
+
+    <link rel="stylesheet" href="css/sweetalert.css">
 </head>
 
 <body>
@@ -52,17 +56,17 @@
 </section>
 
 <div class="energy-points">
-    <span class="personalEnergypoints"><script>getEnergypoints();</script></span>
+    <span class="personalEnergypoints"><script>$( document ).ready(function() { getEnergypoints(); });</script></span>
     <span class="fa fa-bolt"></span>
 </div>
 <div class="world-progress">
     <span class="fa fa-globe"></span>
-    <span class="personalUnlockedFields"><script>getUnlockedFields();</script></span>
+    <span class="personalUnlockedFields"><script>$( document ).ready(function() { getUnlockedFields(); });</script></span>
 </div>
 
 <section class="container">
     <section class='map-container'>
-        <script> buildMap(); </script>
+        <script> $( document ).ready(function() { buildMap(); }); </script>
     </section>
 </section>
 <section class="bottom-bar">

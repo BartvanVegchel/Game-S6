@@ -38,8 +38,7 @@ $(document).ready(function() {
         $price = parseInt($(this).attr('data-energy'));
         $personalEnergy = $('.personalEnergypoints').find('strong');
         $personalEnergyValue = $($personalEnergy).text();
-
-
+        
         $personalUnlockedFields = $('.personalUnlockedFields').find('span.unlocked');
         $personalUnlockedFieldsValue = $($personalUnlockedFields).text();
         $personalUnlockedFieldsValueInt = parseInt($personalUnlockedFieldsValue);
