@@ -108,13 +108,13 @@ h1 {
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
+
 @-webkit-keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
 }
- 
+
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
@@ -207,6 +207,7 @@ section.bottom-bar{
     background-color: #516f72;
     z-index: 99;
     line-height:40px;
+    text-align: center;
 }
 
 section.bottom-bar ul{
@@ -221,5 +222,23 @@ section.bottom-bar ul li{
     width: 24%;
     list-style: none;
     display: inline-block;
+    position: relative;
 }
+
+section.bottom-bar ul li .circle{
+    height: 50px;
+    width: 50px;
+    background-color: #516f72;
+    border-radius: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -2;
+}
+
+section.bottom-bar ul li .fa{
+    font-size: 20px;
+}
+
 section.bottom-bar ul li a{}
