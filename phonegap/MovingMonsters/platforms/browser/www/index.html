@@ -45,29 +45,14 @@
 
 <body>
 
-<form><Br><br><br><br>
-    <input type="text" name="username" id="username" placeholder="Typ hier je naam" tabindex="1">
-    <input type="email" name="email" id="email" placeholder="Typ hier je e-mailadres" tabindex="2">
-    <div class="radio-wrapper">
-        <label for="jongen">Ik ben een jongen</label>
-        <input type="radio" name="gender" id="jongen" value="Jongen" tabindex="3">
-    </div><div class="radio-wrapper">
-        <label for="meisje">Ik ben een meisje</label>
-        <input type="radio" name="gender" id="meisje" value="Meisje" tabindex="4">
-    </div>
-    <input type="password" name="password" id="password" placeholder="Kies hier je wachtwoord" tabindex="6">
-    <input type="password" name="password2" id="password2" placeholder="Typ hier je wachtwoord nog een keer" tabindex="7">
-
-    <input class="btn" id="registerBtn" type="submit" name="submit" value="Laat me nu spelen!">
-</form>
-<script>
-    //var pathname = window.location.pathname; // Returns path only
-    //var url      = window.location.href;     // Returns full URL
-    //console.log(pathname);
-    //console.log(url);
-</script>
-
 <script type="text/javascript">
+    if(localStorage.getItem('userInfo') == null){
+        alert('je bent niet ingelogd');
+    } else{
+        //window.location.href = "inloggen.html"
+        alert('je bent ingelogd');
+    }
+
     $(document).ready(function()
     {
         $("#registerBtn").click(function(){
@@ -99,7 +84,7 @@
                         }
                         else if(data['error']=="error")
                         {//if somterhing goes wrong
-                            alert("error");                            
+                            alert("error");
                             $("#registerBtn").val('Probeer het nog eens');
                         }
                         else if(data['error']=="username_exists")
@@ -107,7 +92,7 @@
                             alert("Gebruikersnaam " + data['username'] + " bestaat al");
                         }
                         else if(data['error']=="password_error")
-                        {//if password is not 
+                        {//if password is not
                             alert("Wachtwoorden niet gelijk");
                         }
                     },

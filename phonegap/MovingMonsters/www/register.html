@@ -44,52 +44,78 @@
 </head>
 
 <body>
-    <form id="login"><Br><br><br><br>
-        <input type="text" name="username" id="username" placeholder="Typ je naam hier" tabindex="1">
-        <input type="password" name="password" id="password" placeholder="En hier je wachtwoord" tabindex="5">
-        <input class="btn" id="loginBtn" type="submit" name="submit" value="Laat me spelen!">
-    </form>
-    <a class="btn btn-secondary btn-small" href="index.html">Ik ben een nieuwe speler</a>
 
+<form><Br><br><br><br>
+    <input type="text" name="username" id="username" placeholder="Typ hier je naam" tabindex="1">
+    <input type="email" name="email" id="email" placeholder="Typ hier je e-mailadres" tabindex="2">
+    <div class="radio-wrapper">
+        <label for="jongen">Ik ben een jongen</label>
+        <input type="radio" name="gender" id="jongen" value="Jongen" tabindex="3">
+    </div><div class="radio-wrapper">
+        <label for="meisje">Ik ben een meisje</label>
+        <input type="radio" name="gender" id="meisje" value="Meisje" tabindex="4">
+    </div>
+    <input type="password" name="password" id="password" placeholder="Kies hier je wachtwoord" tabindex="6">
+    <input type="password" name="password2" id="password2" placeholder="Typ hier je wachtwoord nog een keer" tabindex="7">
+
+    <input class="btn" id="registerBtn" type="submit" name="submit" value="Laat me nu spelen!">
+</form>
+<script>
+    //var pathname = window.location.pathname; // Returns path only
+    //var url      = window.location.href;     // Returns full URL
+    //console.log(pathname);
+    //console.log(url);
+</script>
 
 <script type="text/javascript">
     $(document).ready(function()
     {
-        $("#loginBtn").click(function(){
+        $("#registerBtn").click(function(){
+            //alert('ja');
             var username=$("#username").val();
+            var email=$("#email").val();
             var password=$("#password").val();
-
-            var dataString="username="+username+"&password="+password+"&submit=";
-
-            if($.trim(username).length>0 & $.trim(password).length>0)
+            var password2=$("#password2").val();
+            var gender=$('input:radio[name=gender]:checked').val();
+            var dataString="username="+username+"&email="+email+"&password="+password+"&gender="+gender+"&password2="+password2+"&submit=";
+            //var dataString="Test";
+            if($.trim(username).length>0 & $.trim(email).length>0 & $.trim(password).length>0 & $.trim(password2).length>0)
             {
                 $.ajax({
                     type:"POST",
-                    url:"http://game.onlineops.nl/phonegap_php/login.php",
+                    url:"http://game.onlineops.nl/phonegap_php/signup.php",
                     data: dataString,
                     crossDomain: true,
                     cache: false,
                     dataType: 'json',
-                    beforeSend: function(){ $("#loginBtn").val('Connecting...');},
+                    beforeSend: function(){ $("#registerBtn").val('Connecting...');},
                     success: function(data){
                         alert(data['error']);
                         if(data['error']=="succesfull")
                         {// if register is succesfull
-                            alert("Welkom " + data['username']);
-                            $("#loginBtn").val('Succesvol ingelogd');
-                            window.location.href = "index.html";
-                            localStorage.setItem('userInfo', data['username']);
+                            alert("inserted");
+                            $("#registerBtn").val('Succesvol geregistreerd');
+                            window.location.href = "inloggen.html"
                         }
                         else if(data['error']=="error")
                         {//if somterhing goes wrong
-                            alert("Inloggen mislukt");
-                            $("#loginBtn").val('Probeer het nog eens');
+                            alert("error");                            
+                            $("#registerBtn").val('Probeer het nog eens');
+                        }
+                        else if(data['error']=="username_exists")
+                        {//if username exists
+                            alert("Gebruikersnaam " + data['username'] + " bestaat al");
+                        }
+                        else if(data['error']=="password_error")
+                        {//if password is not 
+                            alert("Wachtwoorden niet gelijk");
                         }
                     },
                     error: function () {
                         alert("Er gaat iets verkeerd, neem contact met ons op");
                     }
                 })
+                //alert('na ajax');
             }return false;
         });
     });
