@@ -41,9 +41,9 @@ function getUnlockedFields(){
             success: function (data) {
                 if (data['error'] == "error") {// if register is succesfull
                     alert("error");
-                    $(".personalUnlockedFields").html(0);
+                    $(".personalUnlockedFields").html("0 / 0");
                 } else if (data['energypoints'] !== "") {
-                    $(".personalUnlockedFields").html(data['unlockedfields']);
+                    $(".personalUnlockedFields").html(data['unlockedfields'] + "/" + data['worldsize']);
                 }
             },
             error: function () {
