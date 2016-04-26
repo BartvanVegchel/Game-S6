@@ -42,9 +42,10 @@
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
 
     <title>Moving Monsters</title>
-    <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
     <script src="js/sweetalert-dev.js"></script>
+    <script src="js/cordova.js"></script>
 
     <link rel="stylesheet" href="css/sweetalert.css">
 </head>
@@ -66,7 +67,7 @@
 
 <section class="container">
     <section class='map-container'>
-        <script> $( document ).ready(function() { buildMap(); }); </script>
+
     </section>
 </section>
 <section class="bottom-bar">
@@ -93,6 +94,10 @@
         </li>
     </ul>
 </section>
+<div id="deviceready" class="blink">
+    <p class="event listening">Connecting to Device</p>
+    <p class="event received">Device is Ready</p>
+</div>
 
 <script type="text/javascript">
     if(localStorage.getItem('userInfo') == null){
@@ -101,6 +106,10 @@
     } else{
         console.log('je bent ingelogd');
     }
+</script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+    app.initialize();
 </script>
 </body>
 

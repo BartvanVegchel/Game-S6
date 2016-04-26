@@ -55,7 +55,67 @@ function getUnlockedFields(){
     }
 }
 
-// buildMap function
+function unlockFunction(id, element){
+    //get the parameters from the function inside buildMap function
+    $fieldId = id;
+    $clickedelement = element;
+
+    //get the costs and personal energypoints
+    $price = parseInt($clickedelement.attr('data-energy'));
+    $personalEnergy = $('.personalEnergypoints');
+    $personalEnergyValue = $($personalEnergy).text();
+
+    $personalUnlockedFields = $('.personalUnlockedFields').find('span.unlocked');
+    $personalUnlockedFieldsValue = $($personalUnlockedFields).text();
+    $personalUnlockedFieldsValueInt = parseInt($personalUnlockedFieldsValue);
+
+    //if you have enough points
+    if($personalEnergyValue >= $price) {
+        swal({
+            title: "Dit kost <i class='fa fa-bolt'></i> "+$price+" ",
+            text: "",
+            type: "",
+            showCancelButton: true,
+            closeOnConfirm: true,
+            showLoaderOnConfirm: true,
+            confirmButtonText: "Oke",
+            cancelButtonText: "Nee",
+            html: true
+        }, function () {
+            $.ajax(
+                {
+                    type: "get",
+                    url: "http://game.onlineops.nl/phonegap_php/unlockFields.php",
+                    data: {'fieldid': $fieldId , 'dataenergy': $price, 'id': $worldId, 'username' : $userName},
+                    timer: 2000,
+                    success: function (data) {
+                    }
+                }
+                )
+                .done(function (data) {
+                    //show image, remove locked block
+                    $('#' + $fieldId).find('.locked').next('div').find('img').show();
+                    $('#' + $fieldId).find('.locked').find('.fa').hide();
+                    $('#' + $fieldId).find('.locked').removeClass('locked');
+
+                    $updatedEnergyPoints = $personalEnergyValue - $price;
+                    $personalEnergy.text($updatedEnergyPoints);
+
+                    // unlocked fiedls
+                    $updatedUnlockedFields = ($personalUnlockedFieldsValueInt + 1);
+                    $personalUnlockedFields.text($updatedUnlockedFields);
+                })
+                .error(function (data) {
+                    swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
+                });
+        });
+    }
+    // if you dont have enough points
+    else{
+        sweetAlert("Oeps...", "Je hebt niet voldoende energypoints!", "error");
+    }
+}// end .locked click
+
 function buildMap(){
     var dataString="worldid="+$worldId+"&username="+$userName+"&submit=";
     if(localStorage.getItem('userInfo') !== null) {
@@ -67,6 +127,12 @@ function buildMap(){
             cache: false,
             success: function (data) {
                 $(".map-container").html(data);
+                countClickItems();
+                $(".locked").click(function(){
+                    $fieldId = $(this).parent().attr("id");
+                    $element = $(this);
+                    unlockFunction($fieldId, $element);
+                });
 
             },
             error: function () {
@@ -76,69 +142,23 @@ function buildMap(){
     }
 }
 
-$(document).ready(function() {
-    //alert('hier');
-    var numItems = $('.world-progress').length;
 
-    console.log( "ready!" + numItems );
-    $('body').on('click', '.locked', function () {
-            //get the right divs
-            $fieldId = $(this).parent().attr("id");
-            $parentItem = $(this).parent();
+document.addEventListener("deviceready",onDeviceReady,false);
 
-            //get the costs and personal energypoints
-            $price = parseInt($(this).attr('data-energy'));
-            $personalEnergy = $('.personalEnergypoints');
-            $personalEnergyValue = $($personalEnergy).text();
+function onDeviceReady(){
+    buildMap();
+}
 
-            $personalUnlockedFields = $('.personalUnlockedFields').find('span.unlocked');
-            $personalUnlockedFieldsValue = $($personalUnlockedFields).text();
-            $personalUnlockedFieldsValueInt = parseInt($personalUnlockedFieldsValue);
+function countClickItems(){
+    var numItems = $('.locked').length;
+    //alert(numItems);
+}
 
-            //if you have enough points
-            if($personalEnergyValue >= $price) {
-                swal({
-                    title: "Dit kost <i class='fa fa-bolt'></i> "+$price+" ",
-                    text: "",
-                    type: "",
-                    showCancelButton: true,
-                    closeOnConfirm: true,
-                    showLoaderOnConfirm: true,
-                    confirmButtonText: "Oke",
-                    cancelButtonText: "Nee",
-                    html: true
-                }, function () {
-                    $.ajax(
-                        {
-                            type: "get",
-                            url: "http://game.onlineops.nl/phonegap_php/unlockFields.php",
-                            data: {'fieldid': $fieldId , 'dataenergy': $price, 'id': $worldId, 'username' : $userName},
-                            timer: 2000,
-                            success: function (data) {
-                            }
-                        }
-                        )
-                        .done(function (data) {
-                            //show image, remove locked block
-                            $('#' + $fieldId).find('.locked').next('div').find('img').show();
-                            $('#' + $fieldId).find('.locked').find('.fa').hide();
-                            $('#' + $fieldId).find('.locked').removeClass('locked');
+    $(window).load(function() {
+        $(".world-name").click(function(){
+            localStorage.clear();
+            window.location.href = "inloggen.html";
+        });
 
-                            $updatedEnergyPoints = $personalEnergyValue - $price;
-                            $personalEnergy.text($updatedEnergyPoints);
-
-                            // unlocked fiedls
-                            $updatedUnlockedFields = ($personalUnlockedFieldsValueInt + 1);
-                            $personalUnlockedFields.text($updatedUnlockedFields);
-                        })
-                        .error(function (data) {
-                            swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
-                        });
-                });
-            }
-            // if you dont have enough points
-            else{
-                sweetAlert("Oeps...", "Je hebt niet voldoende energypoints!", "error");
-            }
-    });// end .locked click
-});
+        console.log( "ready!");
+    });
