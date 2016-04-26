@@ -1,10 +1,10 @@
-$userId = localStorage.getItem('userInfo');
+$userName = localStorage.getItem('userInfo');
 $worldId = 2;
 
-console.log('functions ingeladen voor ' + $userId);
+console.log('functions ingeladen voor ' + $userName);
 
 function getEnergypoints(){
-    var dataString="username="+$userId+"&submit=";
+    var dataString="username="+$userName+"&submit=";
     if(localStorage.getItem('userInfo') !== null) {
         $.ajax({
             type: "POST",
@@ -29,7 +29,7 @@ function getEnergypoints(){
 }
 
 function getUnlockedFields(){
-    var dataString="username="+$userId+"&submit=";
+    var dataString="username="+$userName+"&submit=";
     if(localStorage.getItem('userInfo') !== null) {
         $.ajax({
             type: "POST",
@@ -54,7 +54,7 @@ function getUnlockedFields(){
 }
 
 function buildMap(){
-    var dataString="worldid="+$worldId+"&username="+$userId+"&submit=";
+    var dataString="worldid="+$worldId+"&username="+$userName+"&submit=";
     if(localStorage.getItem('userInfo') !== null) {
         $.ajax({
             type: "POST",
@@ -99,7 +99,7 @@ $(document).ready(function() {
                     text: "",
                     type: "",
                     showCancelButton: true,
-                    closeOnConfirm: false,
+                    closeOnConfirm: true,
                     showLoaderOnConfirm: true,
                     confirmButtonText: "Oke",
                     cancelButtonText: "Nee",
@@ -109,21 +109,13 @@ $(document).ready(function() {
                         {
                             type: "get",
                             url: "http://game.onlineops.nl/phonegap_php/unlockFields.php",
-                            data: {'fieldid': $fieldId , 'dataenergy': $price, 'id': $worldId, 'username' : $userId},
+                            data: {'fieldid': $fieldId , 'dataenergy': $price, 'id': $worldId, 'username' : $userName},
                             timer: 2000,
                             success: function (data) {
                             }
                         }
                         )
                         .done(function (data) {
-                            swal({
-                                title: "Goed zo!",
-                                text: "",
-                                type: "success",
-                                timer: 2000,
-                                showConfirmButton: false
-                            });
-
                             //show image, remove locked block
                             $('#' + $fieldId).find('.locked').next('div').find('img').show();
                             $('#' + $fieldId).find('.locked').find('.fa').hide();
@@ -145,5 +137,5 @@ $(document).ready(function() {
             else{
                 sweetAlert("Oeps...", "Je hebt niet voldoende energypoints!", "error");
             }
-    }); // end .locked click
+    });// end .locked click
 });
