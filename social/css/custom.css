@@ -15,6 +15,11 @@ div.container   { width: 100%; }
 	border-radius: 0;
 }
 
+.admin-nav {
+	display: block;
+	width: 100%;
+}
+
 .col-white {
 	background: #fff;
 	padding: 20px;

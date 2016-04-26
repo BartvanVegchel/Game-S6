@@ -113,6 +113,16 @@
 					?>
 					
                 </ul>
+				<?php
+					if($_SESSION['username'] == "admin") {
+				?>
+						<ul class="nav navbar-nav admin-nav">
+							<li><a href="add_post.php">Bericht toevoegen</a></li>
+							<li><a href="#">Ga naar dashboard</a></li>
+						</ul>
+				<?php
+					}
+				?>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>

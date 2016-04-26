@@ -8,14 +8,16 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier verzonden is
 
 	if (!empty($_POST['username']) &&
-			!empty($_POST['userId']) &&
-			!empty($_POST['title']) &&
-            !empty($_POST['content']))  { // Controleer of benodigde velden wel ingevuld zijn
+		!empty($_POST['userId']) &&
+		!empty($_POST['title']) &&
+        !empty($_POST['content']) &&
+		!empty($_POST['radio1'])) { // Controleer of benodigde velden wel ingevuld zijn
 
         $username 		= mysqli_real_escape_string($db_social, $_POST["username"]);
         $userId        	= mysqli_real_escape_string($db_social, $_POST["userId"]);
         $title 			= mysqli_real_escape_string($db_social, $_POST["title"]);
         $content        = mysqli_real_escape_string($db_social, $_POST["content"]);
+        $category       = mysqli_real_escape_string($db_social, $_POST["radio1"]);
         $postDate  		= date('Y/m/d', time());
 
 
@@ -27,8 +29,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier verzo
             "<p>Please choose a different title.</p></div></div>";
         }
         else {
-            mysqli_query($db_social, "INSERT INTO posts (id, username, userId, title, content, postDate, image)
-                                VALUES ('', '$username', '$userId', '$title', '$content', '$postDate', '') ");
+            mysqli_query($db_social, "INSERT INTO posts (id, username, userId, title, content, category, postDate, image)
+                                VALUES ('', '$username', '$userId', '$title', '$content', '$category', '$postDate', '') ");
 		
 			//printf ("New Record has id %d.\n", mysqli_insert_id($db));
 			$postId = mysqli_insert_id($db_social);
