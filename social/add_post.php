@@ -41,6 +41,31 @@
 								<textarea class="form-control" rows="5" id="content" name="content" placeholder="Content van het bericht" tabindex="2"></textarea>
 							</div>
 							
+							<div class="row">
+							
+								<div class="form-group">
+								
+									<div class="col-xs-offset-1 col-xs-11">
+										<div class="radio radio-primary">
+											<input type="radio" name="radio1" id="radio1" value="news">
+											<label for="radio1">
+												News
+											</label>
+										</div>
+									</div>
+									<div class="col-xs-offset-1 col-xs-11">
+										<div class="radio radio-primary">
+											<input type="radio" name="radio1" id="radio2" value="events">
+											<label for="radio2">
+												Events
+											</label>
+										</div>
+									</div>
+								
+								</div>
+							
+							</div>
+							
 							<div class="form-group">
 								<div class="form-control" style="padding-bottom: 32px;">
 									<input type="file" name="photo" size="25" />
