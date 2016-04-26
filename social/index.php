@@ -7,24 +7,48 @@
 				<div class="row">
 					<!-- while loop = -->
 					<article class="col-xs-12 col-md-6">
-						<img src="img/social_bg.png" height="100px" width="100%" alt="#">
-						<h1>Titel bericht</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quia nec honesto quic quam honestius nec turpi turpius. Quae quidem vel cum periculo est quaerenda vobis; Omnia contraria, quos etiam insanos esse vultis. Multa sunt dicta ab antiquis de contemnendis ac despiciendis rebus humanis; Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Duo Reges: constructio interrete. Nam prius a se poterit quisque discedere quam appetitum earum rerum, </p>
-						<span>12-12-2012</span>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<img src="img/social_bg.png" height="100px" width="100%" alt="#">
+							</div>
+							<div class="panel-body">
+								<h1>Titel bericht</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quia nec honesto quic quam honestius nec turpi turpius. Quae quidem vel cum periculo est quaerenda vobis; Omnia contraria, quos etiam insanos esse vultis. Multa sunt dicta ab antiquis de contemnendis ac despiciendis rebus humanis; Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Duo Reges: constructio interrete. Nam prius a se poterit quisque discedere quam appetitum earum rerum.</p>
+							</div>
+							<div class="panel-footer">
+								<span>12-12-2012</span>
+							</div>
+						</div>
 					</article>
-
+					
 					<article class="col-xs-12 col-md-6">
-						<img src="img/social_bg.png" height="100px" width="100%" alt="#">
-						<h1>Titel bericht</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quia nec honesto quic quam honestius nec turpi turpius. Quae quidem vel cum periculo est quaerenda vobis; Omnia contraria, quos etiam insanos esse vultis. Multa sunt dicta ab antiquis de contemnendis ac despiciendis rebus humanis; Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Duo Reges: constructio interrete. Nam prius a se poterit quisque discedere quam appetitum earum rerum, </p>
-						<span>12-12-2012</span>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<img src="img/social_bg.png" height="100px" width="100%" alt="#">
+							</div>
+							<div class="panel-body">
+								<h1>Titel bericht</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quia nec honesto quic quam honestius nec turpi turpius. Quae quidem vel cum periculo est quaerenda vobis; Omnia contraria, quos etiam insanos esse vultis. Multa sunt dicta ab antiquis de contemnendis ac despiciendis rebus humanis; Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Duo Reges: constructio interrete. Nam prius a se poterit quisque discedere quam appetitum earum rerum.</p>
+							</div>
+							<div class="panel-footer">
+								<span>12-12-2012</span>
+							</div>
+						</div>
 					</article>
-
+					
 					<article class="col-xs-12 col-md-6">
-						<img src="img/social_bg.png" height="100px" width="100%" alt="#">
-						<h1>Titel bericht</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quia nec honesto quic quam honestius nec turpi turpius. Quae quidem vel cum periculo est quaerenda vobis; Omnia contraria, quos etiam insanos esse vultis. Multa sunt dicta ab antiquis de contemnendis ac despiciendis rebus humanis; Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Duo Reges: constructio interrete. Nam prius a se poterit quisque discedere quam appetitum earum rerum, </p>
-						<span>12-12-2012</span>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<img src="img/social_bg.png" height="100px" width="100%" alt="#">
+							</div>
+							<div class="panel-body">
+								<h1>Titel bericht</h1>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quia nec honesto quic quam honestius nec turpi turpius. Quae quidem vel cum periculo est quaerenda vobis; Omnia contraria, quos etiam insanos esse vultis. Multa sunt dicta ab antiquis de contemnendis ac despiciendis rebus humanis; Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Duo Reges: constructio interrete. Nam prius a se poterit quisque discedere quam appetitum earum rerum.</p>
+							</div>
+							<div class="panel-footer">
+								<span>12-12-2012</span>
+							</div>
+						</div>
 					</article>
 				</div>
 			</section>
