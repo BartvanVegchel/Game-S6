@@ -79,3 +79,20 @@ div.container   { width: 100%; }
         border-top:0 none;
     }
 }
+
+/* ARTICLES */
+
+.panel-heading {
+	position: relative;
+}
+
+.category-overlay {
+	background: teal;
+	color: #fff;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 6px 18px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
