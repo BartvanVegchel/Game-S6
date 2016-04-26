@@ -116,6 +116,25 @@ function unlockFunction(id, element){
     }
 }// end .locked click
 
+
+function unlockMonsters(monstername){
+    alert('monster klik' + monstername);
+    $monsterName = monstername
+    $monsterNameLowerCase = $monsterName.toLowerCase();
+
+    swal({
+            title: $monsterName,
+            text: "Speel "+$monsterName+" nu vrij",
+            imageUrl: "images/monster_"+$monsterNameLowerCase+".png",
+            confirmButtonText: "Start",
+            showCancelButton: true,
+            cancelButtonText: "Nu niet",
+        },
+        function(){
+            window.location.href = 'monster_challenge.html?monstername='+$monsterName;
+        });
+}
+
 function buildMap(){
     var dataString="worldid="+$worldId+"&username="+$userName+"&submit=";
     if(localStorage.getItem('userInfo') !== null) {
@@ -128,12 +147,19 @@ function buildMap(){
             success: function (data) {
                 $(".map-container").html(data);
                 countClickItems();
+
+                //unlock field
                 $(".locked").click(function(){
                     $fieldId = $(this).parent().attr("id");
                     $element = $(this);
                     unlockFunction($fieldId, $element);
                 });
 
+                //unlock monsters
+                $('img.monsterEgg').click(function() {
+                    $monsterName = $(this).attr('monster-name');
+                    unlockMonsters($monsterName);
+                });
             },
             error: function () {
                 alert("Er gaat iets verkeerd, neem contact met ons op!");
