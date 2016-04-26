@@ -107,6 +107,50 @@
         console.log('je bent ingelogd');
     }
 </script>
+
+<script>
+    $monsterName = getUrlParameter('monstername');
+    $requirement = getUrlParameter('requirement');
+    $username = getUrlParameter('username');
+
+    if($monsterName && $requirement) {
+        $monsterNameLowerCase = $monsterName.toLowerCase();
+        $monsterImage = $("img[monster-name='" + $monsterName + "']");
+        $parentId = $($monsterImage).parent().parent().attr('id');
+
+        swal({
+            title: "Gefeliciteerd!",
+            text: "<img src='img/star_rating.png'> <br>Je hebt de challenge voltooid",
+            type: "",
+            showCancelButton: false,
+            closeOnConfirm: true,
+            showLoaderOnConfirm: true,
+            confirmButtonText: "Super!",
+            html: true
+        }, function () {
+            $.ajax(
+                {
+                    type: "get",
+                    url: "http://game.onlineops.nl/phonegap_php/unlockMonsters.php",
+                    data: {'monstername': $monsterName, 'username': $username},
+                    success: function (data) {
+                        alert('goedzo');
+                    }
+                }
+                )
+                .done(function (data) {
+                    console.log($parentId);
+                    $('#' + $parentId).find('.monsterEgg').hide();
+                    $('#' + $parentId).find('.monsterbackground').append('<img src="images/egg_' + $monsterNameLowerCase + '_broken.png" monster-name=' + $monsterName + '>');
+                    window.location.href = 'index.html';
+                })
+                .error(function (data) {
+                    swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
+                });
+        });
+    }
+</script>
+
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript">
     app.initialize();

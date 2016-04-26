@@ -180,11 +180,29 @@ function countClickItems(){
     //alert(numItems);
 }
 
-    $(window).load(function() {
-        $(".world-name").click(function(){
-            localStorage.clear();
-            window.location.href = "inloggen.html";
-        });
-
-        console.log( "ready!");
+$(window).load(function() {
+    $(".world-name").click(function(){
+        localStorage.clear();
+        window.location.href = "inloggen.html";
     });
+
+    console.log( "ready!");
+});
+
+
+//get url of paramater
+
+var getUrlParameter = function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+    }
+};

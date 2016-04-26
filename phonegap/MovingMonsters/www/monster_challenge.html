@@ -66,22 +66,13 @@
 </div>
 
 <section id="dailyChallenge" class="container">
-    <?php
-        $monsterName = $_GET['monstername'];
+    <script>
+        //$monsterName = $_GET['monstername'];
+        $userName = localStorage.getItem('userInfo');
+        $monsterName = getUrlParameter('monstername');
+        console.log('monstername is ' + $monsterName);
+    </script>
 
-        $getMonsterId = mysqli_query($db, "SELECT * FROM monsters WHERE monsterName = '$monsterName'") or die("FOUT: " . mysqli_error($dblink));
-        while($row = mysqli_fetch_assoc($getMonsterId)) {
-            $monsterId = $row['monsterId'];
-        }
-
-        $getMonsterChallenge = mysqli_query($db, "SELECT * FROM monsterChallenges WHERE id = '$monsterId'") or die("FOUT: " . mysqli_error($dblink));
-        while($row = mysqli_fetch_assoc($getMonsterChallenge)) {
-            $monsterChallengeName = $row['name'];
-            $monsterChallengeDescription = $row['description'];
-            $monsterChallengeTimelimit = $row['timeLimit'];
-            $monsterChallengeReward = $row['reward'];
-        }
-        ?>
     <div class="popup">
         <h1><?php echo $monsterChallengeName;?></h1>
         <p><?php echo $monsterChallengeDescription;?><br><br></p>
@@ -93,12 +84,12 @@
     <script>
         (function countdown(remaining) {
             if(remaining === -1) {
-                window.location.replace("index.html.php?monstername="++"&requirement=3");
+                window.location.replace("index.html?monstername="+$monsterName+"&requirement=3&username="+$userName);
             }else{
                 document.getElementById('countdown').innerHTML = remaining;
                 setTimeout(function(){ countdown(remaining - 1); }, 1000);
             }
-        })(<?php echo $monsterChallengeTimelimit; ?>);
+        })(5);
     </script>
 </section>
 
