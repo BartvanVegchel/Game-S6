@@ -16,7 +16,6 @@ function getEnergypoints(){
             dataType: 'json',
             success: function (data) {
                 if (data['error'] == "error") {// if register is succesfull
-                    alert("error");
                     $(".personalEnergypoints").html(0);
                 } else if (data['energypoints'] !== "") {
                     $(".personalEnergypoints").html(data['energypoints']);
@@ -55,19 +54,19 @@ function getUnlockedFields(){
     }
 }
 
+//unlock elements
 function unlockFunction(id, element){
     //get the parameters from the function inside buildMap function
-    $fieldId = id;
-    $clickedelement = element;
+    $fieldId = id; // get id of clicked parent-element
+    $clickedelement = element; //get clicked div
 
-    //get the costs and personal energypoints
-    $price = parseInt($clickedelement.attr('data-energy'));
-    $personalEnergy = $('.personalEnergypoints');
-    $personalEnergyValue = $($personalEnergy).text();
+    $price = parseInt($clickedelement.attr('data-energy')); //get price of element
+    $personalEnergy = $('.personalEnergypoints'); // get personal energypoints box
+    $personalEnergyValue = $($personalEnergy).text(); // get personal energypoints value
 
-    $personalUnlockedFields = $('.personalUnlockedFields').find('span.unlocked');
-    $personalUnlockedFieldsValue = $($personalUnlockedFields).text();
-    $personalUnlockedFieldsValueInt = parseInt($personalUnlockedFieldsValue);
+    $personalUnlockedFields = $('.personalUnlockedFields').find('span.unlocked'); // unlocked fields box
+    $personalUnlockedFieldsValue = $($personalUnlockedFields).text(); // unlocked fields box value
+    $personalUnlockedFieldsValueInt = parseInt($personalUnlockedFieldsValue); // convert value to integer
 
     //if you have enough points
     if($personalEnergyValue >= $price) {
@@ -98,12 +97,12 @@ function unlockFunction(id, element){
                     $('#' + $fieldId).find('.locked').find('.fa').hide();
                     $('#' + $fieldId).find('.locked').removeClass('locked');
 
-                    $updatedEnergyPoints = $personalEnergyValue - $price;
-                    $personalEnergy.text($updatedEnergyPoints);
+                    $updatedEnergyPoints = $personalEnergyValue - $price; //the new energypoints value
+                    $personalEnergy.text($updatedEnergyPoints); //set the new value
 
                     // unlocked fiedls
-                    $updatedUnlockedFields = ($personalUnlockedFieldsValueInt + 1);
-                    $personalUnlockedFields.text($updatedUnlockedFields);
+                    $updatedUnlockedFields = ($personalUnlockedFieldsValueInt + 1); //unlockedfields value update
+                    $personalUnlockedFields.text($updatedUnlockedFields); // set the new value
                 })
                 .error(function (data) {
                     swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
@@ -148,17 +147,17 @@ function buildMap(){
                 $(".map-container").html(data);
                 countClickItems();
 
-                //unlock field
+                // click event for locked field
                 $(".locked").click(function(){
                     $fieldId = $(this).parent().attr("id");
                     $element = $(this);
-                    unlockFunction($fieldId, $element);
+                    unlockFunction($fieldId, $element); // call function with params
                 });
 
-                //unlock monsters
+                // click event for locked monsters
                 $('img.monsterEgg').click(function() {
                     $monsterName = $(this).attr('monster-name');
-                    unlockMonsters($monsterName);
+                    unlockMonsters($monsterName); // call function with param
                 });
             },
             error: function () {
@@ -169,15 +168,16 @@ function buildMap(){
 }
 
 
-document.addEventListener("deviceready",onDeviceReady,false);
+document.addEventListener("deviceready",onDeviceReady,false);// call first function if device is ready
 
 function onDeviceReady(){
-    buildMap();
+    buildMap(); //build map if device is ready
+    getEnergypoints(); //set energypoints in div
+    getUnlockedFields(); //set unlocked fields in div
 }
 
 function countClickItems(){
     var numItems = $('.locked').length;
-    //alert(numItems);
 }
 
 $(window).load(function() {
@@ -190,8 +190,7 @@ $(window).load(function() {
 });
 
 
-//get url of paramater
-
+//callable function for get vars out of url in jquery
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
         sURLVariables = sPageURL.split('&'),
