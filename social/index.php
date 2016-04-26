@@ -1,53 +1,47 @@
 <?php include('header.php'); ?>
 
-<div class="col-xs-6">
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 col-md-8"
+			<section class="blog">
+				<div class="row">
+					<!-- while loop = -->
+					<article class="col-xs-12 col-md-6">
+						<img src="img/social_bg.png" height="100px" width="100%" alt="#">
+						<h1>Titel bericht</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quia nec honesto quic quam honestius nec turpi turpius. Quae quidem vel cum periculo est quaerenda vobis; Omnia contraria, quos etiam insanos esse vultis. Multa sunt dicta ab antiquis de contemnendis ac despiciendis rebus humanis; Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Duo Reges: constructio interrete. Nam prius a se poterit quisque discedere quam appetitum earum rerum, </p>
+						<span>12-12-2012</span>
+					</article>
 
-    <h2>General</h2>
-	<div class="panel with-nav-tabs panel-default">
-		<div class="panel-heading">
-			<ul class="nav nav-tabs">
-				<li class="active"><a href="#tab1general" data-toggle="tab">Alles</a></li>
-				<li><a href="#tab2general" data-toggle="tab">Nieuws</a></li>
-				<li><a href="#tab3general" data-toggle="tab">Events</a></li>
-				<li><a href="#tab4general" data-toggle="tab">Updates</a></li>
-			</ul>
+					<article class="col-xs-12 col-md-6">
+						<img src="img/social_bg.png" height="100px" width="100%" alt="#">
+						<h1>Titel bericht</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quia nec honesto quic quam honestius nec turpi turpius. Quae quidem vel cum periculo est quaerenda vobis; Omnia contraria, quos etiam insanos esse vultis. Multa sunt dicta ab antiquis de contemnendis ac despiciendis rebus humanis; Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Duo Reges: constructio interrete. Nam prius a se poterit quisque discedere quam appetitum earum rerum, </p>
+						<span>12-12-2012</span>
+					</article>
+
+					<article class="col-xs-12 col-md-6">
+						<img src="img/social_bg.png" height="100px" width="100%" alt="#">
+						<h1>Titel bericht</h1>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quia nec honesto quic quam honestius nec turpi turpius. Quae quidem vel cum periculo est quaerenda vobis; Omnia contraria, quos etiam insanos esse vultis. Multa sunt dicta ab antiquis de contemnendis ac despiciendis rebus humanis; Tollitur beneficium, tollitur gratia, quae sunt vincla concordiae. Duo Reges: constructio interrete. Nam prius a se poterit quisque discedere quam appetitum earum rerum, </p>
+						<span>12-12-2012</span>
+					</article>
+				</div>
+			</section>
 		</div>
-		<div class="panel-body">
-			<div class="tab-content">
-				<div class="tab-pane fade in active" id="tab1general"><?php include('tabincludes/general_all.php'); ?></div>
-				<div class="tab-pane fade" id="tab2general"><?php include('tabincludes/general_news.php'); ?></div>
-				<div class="tab-pane fade" id="tab3general"><?php include('tabincludes/general_events.php'); ?></div>
-				<div class="tab-pane fade" id="tab4general"><?php include('tabincludes/general_updates.php'); ?></div>
-			</div>
-		</div>
-	</div>
-				
-</div>
 
-<div class="col-xs-6">
+		<div class="col-xs-12 col-md-4">
+			<section class="sidebar">
 
-    <h2>Social</h2>
-	<div class="panel with-nav-tabs panel-default">
-		<div class="panel-heading">
-			<ul class="nav nav-tabs">
-				<li class="active"><a href="#tab1default" data-toggle="tab">Alles</a></li>
-				<li><a href="#tab2default" data-toggle="tab">Hulp vragen</a></li>
-				<li><a href="#tab3default" data-toggle="tab">Ideeën</a></li>
+				<h2>Sidebar</h2>
+				dsojfsd\vsj
 
-			</ul>
-		</div>
-		<div class="panel-body">
-			<div class="tab-content">
-				<div class="tab-pane fade in active" id="tab1default"><?php include('tabincludes/social_all.php'); ?></div>
-				<div class="tab-pane fade" id="tab2default"><?php include('tabincludes/social_help.php'); ?></div>
-				<div class="tab-pane fade" id="tab3default"><?php include('tabincludes/social_ideas.php'); ?></div>
-				<div class="tab-pane fade" id="tab4default">Default 4</div>
-				<div class="tab-pane fade" id="tab5default">Default 5</div>
-			</div>
+			</section>
 		</div>
 	</div>
-
 </div>
+
+
 
 <?php include('footer.php'); ?>
 

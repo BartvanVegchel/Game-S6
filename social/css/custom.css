@@ -4,11 +4,8 @@
 body            { font-family: OpenSansRegular, Arial, sans-serif; color: #333333; box-sizing: border-box; display: block; overflow-x:hidden; height: 100%; background: url("../img/social_bg.png") no-repeat; background-size: cover; }
 div.container   { width: 100%; }
 
-/* Col */
-/* NIET DOEN FRANKIE
+/* Blog posts */
 
-div.col-xs-6    {  }
-div.col-md-6    { margin: 0 auto; width: 100%; display: block; }
 
 */
 

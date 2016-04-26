@@ -97,11 +97,6 @@
 													<div class="form-group">
 														<button type="submit" name="submit" class="btn btn-primary btn-block">Inloggen</button>
 													</div>
-													<div class="checkbox">
-														<label>
-															<input type="checkbox">Ingelogd blijven
-														</label>
-													</div>
 												</form>
 											</div>
 											<div class="bottom text-center">
