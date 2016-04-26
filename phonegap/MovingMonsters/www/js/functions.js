@@ -3,6 +3,7 @@ $worldId = 2;
 
 console.log('functions ingeladen voor ' + $userName);
 
+// getEnergyPoints function
 function getEnergypoints(){
     var dataString="username="+$userName+"&submit=";
     if(localStorage.getItem('userInfo') !== null) {
@@ -28,6 +29,7 @@ function getEnergypoints(){
     }
 }
 
+// getUnlockedFields function
 function getUnlockedFields(){
     var dataString="username="+$userName+"&submit=";
     if(localStorage.getItem('userInfo') !== null) {
@@ -53,6 +55,7 @@ function getUnlockedFields(){
     }
 }
 
+// buildMap function
 function buildMap(){
     var dataString="worldid="+$worldId+"&username="+$userName+"&submit=";
     if(localStorage.getItem('userInfo') !== null) {

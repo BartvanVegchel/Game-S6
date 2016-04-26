@@ -242,8 +242,6 @@ section.bottom-bar ul li .fa{
     font-size: 20px;
 }
 
-section.bottom-bar ul li a{}
-
 section.map {
     z-index: 1;
     background-size: cover;
@@ -255,6 +253,10 @@ section.map div.part {
     float: left;
     position: relative;
     z-index: 1;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
 }
 
 section.map div.part div.locked {
@@ -271,12 +273,6 @@ section.map div.part div.locked {
     text-align: center;
     font-size: 18px;
 }
-
-section.map div.part div.locked:hover{
-    background:Red;
-}
-
-
 
 section.map div.part div.locked:before {
     content: '';
@@ -317,4 +313,47 @@ section.map div.part div.transportbackground img {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+@-webkit-keyframes pulse {
+    25% {
+        -webkit-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    75% {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}
+
+@keyframes pulse {
+    25% {
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+    }
+    75% {
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
+    }
+}
+
+.monsterEgg{
+    display: inline-block;
+    -webkit-transform: translateZ(0);
+    -ms-transform: translateZ(0);
+    transform: translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+}
+
+.monsterEgg {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
 }
