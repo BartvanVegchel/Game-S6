@@ -17,7 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
-
+    <script src="assets/js/common-scripts.js"></script>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -294,35 +294,52 @@
               <div class="col-lg-12">
                 <div class="form-panel">
                     <div class="input-group image-preview">
-                      <h4 class="mb"><i class="fa fa-angle-right"></i>Monster challenge aanmaken</h4>
+                      <h4 class="mb"><i class="fa fa-angle-right"></i>Daily challenge aanmaken</h4>
 
                       <div class="form-group">
-                          <input type="text" class="form-control" placeholder="Challenge naam">
-                      </div><br><br>
+                          <input type="text" class="form-control" placeholder="Challenge naam" id="challengenaamd">
+                      </div>
 
                       <div class="form-group">
-                      <textarea class="form-control" rows="5" id="comment" placeholder="beschrijving"></textarea>
-                      </div><br><br>
-
-                      <select class="form-control">
-                        <option value="" disabled selected>Monster</option>
-                        <option>Droplet</option>
-                        <option>Fury</option>
-                        <option>Leefy</option>
-                        <option>Bolt</option>              
-                        <option>Boomer</option>
-                        <option>Pinky</option>            
-                      </select><br><br><br>
+                      <textarea class="form-control" rows="5" id="commentd" placeholder="beschrijving"></textarea>
+                      </div>
                       
                           <div class="form-group1">
-                              <label class="sr-only" >reps</label>
-                              <input type="email" class="form-control" id="repsd" placeholder="Repetities">
-                          </div><br><br><br>
+                              <label class="sr-only" >tijdslimiet seconden</label>
+                              <input type="number" class="form-control" id="tijdslimietds" placeholder="Seconden" max="59">
+                          </div>
                           <div class="form-group1">
-                              <label class="sr-only" >tijdslimiet</label>
-                              <input type="password" class="form-control" id="tijdd" placeholder="Tijdslimiet">
-                          </div><br><br><br>                      
-                      <button type="submit" class="btn btn-theme1">Verstuur</button>
+                              <label class="sr-only" >tijdslimiet minuten</label>
+                              <input type="number" class="form-control" id="tijdslimietd" placeholder="Minuten">
+                          </div>
+
+                        <select class="form-control" id="gifttype">
+                            <option value="0" disabled selected>Beloning</option>
+                            <option value="1">Monster</option>
+                            <option value="2">Energypoints</option>
+                        </select>
+
+                        <select class="form-control" id="monstergift">
+                            <option value="" disabled selected>Monster</option>
+                            <option>Droplet</option>
+                            <option>Fury</option>
+                            <option>Leefy</option>
+                            <option>Bolt</option>
+                            <option>Boomer</option>
+                            <option>Pinky</option>
+                        </select>
+
+                        <select class="form-control" id="energygift">
+                            <option value="" disabled selected>Energypoints</option>
+                            <option>50</option>
+                            <option>100</option>
+                            <option>250</option>
+                            <option>500</option>
+                            <option>1000</option>
+                        </select>
+                      <div id="knopchallengem">  
+                        <button type="submit" class="btn btn-theme">Verstuur</button>
+                      </div>  
                   </div> 
                 </div><!-- /form-panel -->
               </div><!-- /col-lg-12 -->

@@ -92,14 +92,113 @@ a, a:hover, a:focus {
 
 .btn-theme {
   color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-}
-
-.btn-theme1 {
-  color: #fff;
   background-color: #5cb85c;
   border-color: #10AB55;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/*monster form*/
+#naamm{
+    margin-bottom: 20px;
+}
+
+#wereldm{
+    margin-bottom: 20px;
+}
+
+#locatiem{
+    margin-bottom: 20px;
+}
+
+#rarity{
+    margin-bottom: 20px;
+}
+
+/*wereld form*/
+#naamw{
+    margin-bottom: 20px;
+}
+
+#wereldw{
+    margin-bottom: 20px;
+}
+
+#formaat{
+    margin-bottom: 20px;
+}
+
+/*Monster challenge form*/
+#challengenaamm{
+    margin-bottom: 20px;    
+}
+
+#commentm{
+   margin-bottom: 20px; 
+}
+
+#repetitiem{
+   margin-bottom: 20px; 
+}
+
+#tijdslimietm{
+   margin-bottom: 20px; 
+}
+
+#tijdslimietms{
+   margin-bottom: 20px; 
+}
+
+#monstergiftm{
+   margin-bottom: 20px; 
+}
+
+/*Daily challenge form*/
+#challengenaamd{
+    margin-bottom: 20px;    
+}
+
+#commentd{
+   margin-bottom: 20px; 
+}
+
+#repetitied{
+   margin-bottom: 20px; 
+}
+
+#tijdslimietd{
+   margin-bottom: 20px; 
+}
+
+#tijdslimietds{
+   margin-bottom: 20px; 
+}
+
+#gifttype{
+   margin-bottom: 20px; 
+}
+
+#monstergift{
+   margin-bottom: 20px;
+   display: none; 
+}
+
+#energygift{
+   margin-bottom: 20px;
+   display: none; 
+}
+
+/*Energypoint form*/
+#naam{
+   margin-bottom: 20px; 
+}
+
+#user{
+   margin-bottom: 20px; 
+}
+
+#energy{
+   margin-bottom: 20px; 
 }
 
 .btn-theme:hover,
@@ -192,8 +291,8 @@ hr {
 
 .mt {
 	margin-top: 25px;
-    padding-right: 8px;
-    padding-left: 8px;    
+    padding-right: 15px;
+    padding-left: 15px;    
 }
 
 .mb {
@@ -2274,8 +2373,7 @@ label {
     margin-left:2px;
 }
 
-.formwrap1{
-    margin-bottom: 28px;
+input{
+    margin-bottom: 10px;
 }
 
-textarea { vertical-align: top; }

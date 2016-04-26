@@ -1,3 +1,30 @@
+/*---SELECT GIFT---*/
+$(document).ready(function(){
+    $('#gifttype').on('change', function() {
+      if ( this.value == '1')
+      {
+        $("#monstergift").show();
+      }
+      else
+      {
+        $("#monstergift").hide();
+      }
+    });
+});
+
+$(document).ready(function(){
+    $('#gifttype').on('change', function() {
+      if ( this.value == '2')
+      {
+        $("#energygift").show();
+      }
+      else
+      {
+        $("#energygift").hide();
+      }
+    });
+});
+
 /*---LEFT BAR ACCORDION----*/
 $(function() {
     $('#nav-accordion').dcAccordion({

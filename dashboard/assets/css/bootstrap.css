@@ -3495,13 +3495,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .input-group .form-control {
 }
 
-.input-group .form-control1 {
-  display: table-cell;
-  height: 34px;
-  width: 170px;
-  margin-bottom: 30px;
-}
-
 .input-group-addon:not(:first-child):not(:last-child),
 .input-group-btn:not(:first-child):not(:last-child),
 .input-group .form-control:not(:first-child):not(:last-child) {
@@ -3586,7 +3579,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group {
-  margin-left: -1px;
+  margin-left: 0px;
+  margin-top: 0px;
 }
 .nav {
   padding-left: 0;
