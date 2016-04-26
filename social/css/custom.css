@@ -6,25 +6,18 @@ div.container   { width: 100%; }
 
 /* Events */
 
-article.event .panel        { background: red; }
-
-/*
-div.event_date              { float: left; width: 20%; box-sizing: border-box; }
-div.event_date span.day     { float: left; font-size: 30px; font-family: OpenSansSemibold; }
-div.event_date span.month   { font-size: 20px; }
-div.event_date span.year    {  }
-*/
+article.event .panel        { background: #114775; }
 
 .calendar {
-    margin:.25em 10px 10px 0;
-    padding-top:5px;
+    margin: 0;
     float:left;
     width:20%;
+    padding: 7px 0 0 0;
     background:#FFFFFF;
-    font: 30px/60px OpenSansSemiBold,sans-serif;
+    font-size: 30px;
+    font-family: OpenSansSemiBold,sans-serif;
     text-align:center;
     color:#000;
-    text-shadow:#fff 0 1px 0;
     -moz-border-radius:3px;
     -webkit-border-radius:3px;
     border-radius:3px;
@@ -32,9 +25,10 @@ div.event_date span.year    {  }
 
 .calendar em {
     display:block;
+    margin: 2px 0 0 0;
     font: 11px/30px OpenSansSemiBold,sans-serif;
     color:#FFFFFF;
-    background:#04599a;
+    background:#e35b60;
     -moz-border-radius-bottomright:3px;
     -webkit-border-bottom-right-radius:3px;
     border-bottom-right-radius:3px;
@@ -42,8 +36,8 @@ div.event_date span.year    {  }
     -webkit-border-bottom-left-radius:3px;
 }
 
-
-div.event_title             { float: right; width: 70%; }
+div.event_title               { float: left; padding: 14px 0 0 5%; color: #FFFFFF; }
+div.event_title h2            { font-family:  OpenSansSemiBold,sans-serif; font-size: 19px; margin: 5px 0 0 0; }
 
 .panel .panel-heading {
 	padding: 0;

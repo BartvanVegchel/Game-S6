@@ -28,11 +28,11 @@
                             <div class="event_date">
 
                                 <div class="calendar">
-                                    <?php echo $postDate1; ?><em><?php echo $postDate2; ?></em>
+                                    <?php echo $postDate1; ?><em><?php //echo $postDate2; ?>januari</em>
                                 </div>
                                 
                             <div class="event_title">
-                                <h1><?php echo $title; ?></h1>
+                                <span>Live event</span><h2><?php echo $title; ?></h2>
                             </div>
                         </div>
                     </div>
