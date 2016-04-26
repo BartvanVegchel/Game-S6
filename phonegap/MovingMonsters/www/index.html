@@ -78,16 +78,18 @@
             </div>
         </li>
         <li>
-            <a href="#worldMenu">
+            <a href="#worldMenuPanel">
                 <div class="circle">
                     <span class="fa fa-rocket"></span>
                 </div>
             </a>
         </li>
         <li>
+            <a href="#challengeMenuPanel">
             <div class="circle">
                 <span class="fa fa-trophy"></span>
             </div>
+            </a>
         </li>
         <li>
             <div class="circle">
@@ -96,10 +98,15 @@
         </li>
     </ul>
 </section>
-<div id="deviceready" class="blink">
-    <p class="event listening">Connecting to Device</p>
-    <p class="event received">Device is Ready</p>
-</div>
+
+<section id="worldMenuPanel" class="menuPanel">
+    <p>Worlds</p>
+</section>
+
+<section id="challengeMenuPanel" class="menuPanel">
+    <p>Challenges</p>
+</section>
+
 
 <script type="text/javascript">
     if(localStorage.getItem('userInfo') == null){

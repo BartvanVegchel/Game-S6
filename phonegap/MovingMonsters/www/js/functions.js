@@ -174,6 +174,13 @@ function onDeviceReady(){
     buildMap(); //build map if device is ready
     getEnergypoints(); //set energypoints in div
     getUnlockedFields(); //set unlocked fields in div
+
+    $(".bottom-bar ul li a").click(function(){
+        $panel = $(this).attr('href');
+        alert($panel);
+        $('.menuPanel').removeClass('activePanel');
+        $($panel).addClass('activePanel');
+    });
 }
 
 function countClickItems(){
@@ -205,3 +212,6 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+
+//open submenu
+
