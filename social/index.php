@@ -3,6 +3,52 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12 col-md-8">
+			<section class="social">
+				<div class="row">
+					<!-- while loop -->					
+					<?php
+					
+						$getSocialPosts = mysqli_query($db_social, "SELECT * FROM social LIMIT 9") or die("FOUT: " . mysqli_error($dblink));
+										
+						while($rij = mysqli_fetch_assoc($getSocialPosts)) {
+							$postId = $rij["id"];
+							$username = $rij["username"];
+							$userId = $rij["userId"];
+							$title = $rij["title"];
+							$content = $rij["content"];
+							$category = $rij["category"];
+							$postDate = $rij["postDate"];
+							$image = $rij["image"];
+							
+							$postDate1 = substr($postDate, -2);
+							$postDate2 = substr($postDate, -5, -3);
+							$postDate3 = substr($postDate, 0, 4);
+							$postDate = $postDate1 . "-" . $postDate2 . "-" . $postDate3;
+							
+							?>
+								
+								<article class="col-xs-12 col-md-4">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<?php echo "<img src='./" . $image . "' height='200px' width='100%' alt='#' />"; ?>
+											<?php echo "<span class='category-overlay'>" . $category . "</span>"; ?>
+										</div>
+										<div class="panel-body">
+											<h1><a href="blog_item.php?id=<?php echo $postId; ?>"><?php echo $title; ?></a></h1>
+											<p><?php echo $content; ?></p>
+										</div>
+										<div class="panel-footer">
+											<span><?php echo "Geplaatst op: " . $postDate; ?></span>
+										</div>
+									</div>
+								</article>
+							
+							<?php
+						}
+					?>
+				</div>
+			</section>
+		
 			<section class="blog">
 				<div class="row">
 					<!-- while loop -->					
@@ -34,7 +80,7 @@
 											<?php echo "<span class='category-overlay'>" . $category . "</span>"; ?>
 										</div>
 										<div class="panel-body">
-											<h1><?php echo $title; ?></h1>
+											<h1><a href="blog_item.php?id=<?php echo $postId; ?>"><?php echo $title; ?></a></h1>
 											<p><?php echo $content; ?></p>
 										</div>
 										<div class="panel-footer">
