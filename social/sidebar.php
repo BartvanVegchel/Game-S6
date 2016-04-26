@@ -1,52 +1,48 @@
 <div class="col-xs-12 col-md-4">
-    <section class="sidebar">
+    <div class="row">
+        <section class="sidebar">
 
-        <?php
+            <?php
 
-        $getEventPosts = mysqli_query($db_social, "SELECT * FROM posts WHERE category = 'events' LIMIT 1") or die("FOUT: " . mysqli_error($dblink)); //selecteer rij waar gebruikersnaam gelijk is aan de variabele
+            $getEventPosts = mysqli_query($db_social, "SELECT * FROM posts WHERE category = 'events' LIMIT 1") or die("FOUT: " . mysqli_error($dblink)); //selecteer rij waar gebruikersnaam gelijk is aan de variabele
 
-        while($rij = mysqli_fetch_assoc($getEventPosts)) {
-            $postId = $rij["id"];
-            $username = $rij["username"];
-            $userId = $rij["userId"];
-            $title = $rij["title"];
-            $content = $rij["content"];
-            $category = $rij["category"];
-            $postDate = $rij["postDate"];
-            $image = $rij["image"];
+            while($rij = mysqli_fetch_assoc($getEventPosts)) {
+                $postId = $rij["id"];
+                $username = $rij["username"];
+                $userId = $rij["userId"];
+                $title = $rij["title"];
+                $content = $rij["content"];
+                $category = $rij["category"];
+                $postDate = $rij["postDate"];
 
-            $postDate1 = substr($postDate, -2);
-            $postDate2 = substr($postDate, -5, -3);
-            $postDate3 = substr($postDate, 0, 4);
-            $postDate = $postDate1 . "-" . $postDate2 . "-" . $postDate3;
+                $postDate1 = substr($postDate, -2);
+                $postDate2 = substr($postDate, -5, -3);
+                $postDate3 = substr($postDate, 0, 4);
+                $postDate = $postDate1 . "-" . $postDate2 . "-" . $postDate3;
+
+                ?>
+
+                <article class="col-xs-12 col-md-12 event">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="event_date">
+
+                                <div class="calendar">
+                                    <?php echo $postDate1; ?><em><?php echo $postDate2; ?></em>
+                                </div>
+                                
+                            <div class="event_title">
+                                <h1><?php echo $title; ?></h1>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <?php
+            }
 
             ?>
 
-            <article class="col-xs-12 col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <?php echo "<img src='./" . $image . "' height='180px' width='100%' alt='#' />"; ?>
-                        <?php echo "<span class='category-overlay'>" . $category . "</span>"; ?>
-                    </div>
-                    <div class="panel-body">
-                        <div class="post_date">
-                            <span class="date_day"><?php echo $postDate1; ?></span>
-                            <span class="date_month"><?php echo $postDate2; ?></span>
-                            <span class="date_year"><?php echo $postDate3; ?></span>
-                        </div>
-                        <h1><?php echo $title; ?></h1>
-                        <p><?php echo $content; ?></p>
-                    </div>
-                    <div class="panel-footer">
-                        <span><?php echo "Geplaatst op: " . $postDate; ?></span>
-                    </div>
-                </div>
-            </article>
-
-            <?php
-        }
-
-        ?>
-
-    </section>
+        </section>
+    </div>
 </div>

@@ -4,8 +4,46 @@
 body            { font-family: OpenSansRegular, Arial, sans-serif; color: #333333; box-sizing: border-box; display: block; overflow-x:hidden; height: 100%; background: url("../img/social_bg.png") no-repeat; background-size: cover; }
 div.container   { width: 100%; }
 
-/* Blog posts */
+/* Events */
 
+article.event .panel        { background: red; }
+
+/*
+div.event_date              { float: left; width: 20%; box-sizing: border-box; }
+div.event_date span.day     { float: left; font-size: 30px; font-family: OpenSansSemibold; }
+div.event_date span.month   { font-size: 20px; }
+div.event_date span.year    {  }
+*/
+
+.calendar {
+    margin:.25em 10px 10px 0;
+    padding-top:5px;
+    float:left;
+    width:20%;
+    background:#FFFFFF;
+    font: 30px/60px OpenSansSemiBold,sans-serif;
+    text-align:center;
+    color:#000;
+    text-shadow:#fff 0 1px 0;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+}
+
+.calendar em {
+    display:block;
+    font: 11px/30px OpenSansSemiBold,sans-serif;
+    color:#FFFFFF;
+    background:#04599a;
+    -moz-border-radius-bottomright:3px;
+    -webkit-border-bottom-right-radius:3px;
+    border-bottom-right-radius:3px;
+    -moz-border-radius-bottomleft:3px;
+    -webkit-border-bottom-left-radius:3px;
+}
+
+
+div.event_title             { float: right; width: 70%; }
 
 .panel .panel-heading {
 	padding: 0;
