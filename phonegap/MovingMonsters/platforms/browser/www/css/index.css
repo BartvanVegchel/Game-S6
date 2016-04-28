@@ -321,6 +321,40 @@ section.map div.part div.transportbackground img {
     left: 0;
 }
 
+/* custom classes for joyride */
+.custom1 .joyride-nub{
+}
+
+.custom2 .joyride-nub{
+    left: calc(50% - 14px) !important;
+}
+
+.custom3 .joyride-nub{
+    left: initial !important;
+    right: 22px !important;
+}
+
+.custom4 .joyride-nub{
+    left: 18px !important;
+}
+
+.custom5 .joyride-nub{
+    left: 98px !important;
+}
+
+.custom6 .joyride-nub{
+    left: initial !important;
+    right: 98px;
+}
+
+.custom7 .joyride-nub{
+    left: initial !important;
+    right: 18px;
+}
+
+
+
+/* floating eggs */
 @-webkit-keyframes pulse {
     25% {
         -webkit-transform: scale(1.1);
