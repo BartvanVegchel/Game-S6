@@ -52,26 +52,83 @@
 </head>
 
 <body>
-<!-- Top bar, energypoints, world prgress -->
+<!-- Top bar -->
 <section class="top-bar">
-    <span class="world-name" id="number2">Desertworld</span>
+    <span class="world-name" id="number2">Werelden</span>
     <span class="menu-icon fa fa-bars"></span>
 </section>
 
-<div class="energy-points" id="number1">
-    <span class="personalEnergypoints"><script>$( document ).ready(function() { getEnergypoints(); });</script></span>
-    <span class="fa fa-bolt"></span>
-</div>
-<div class="world-progress" id="number3">
-    <span class="fa fa-globe"></span>
-    <span class="personalUnlockedFields"><script>$( document ).ready(function() { getUnlockedFields(); });</script></span>
-</div>
-
 <!-- Map container -->
 <section class="container">
-    <section class='map-container'>
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
 
-    </section>
+            <div class="swiper-slide">
+                <div class="img" style="background-image: url('img/desertWorld.png');"></div>
+                <div class="desc">
+                    <div class="item">
+                        <h2>De woestijn</h2>
+                    </div>
+                    <div class="item">
+                        <span>Monsters</span>
+                        <span>4/6</span>
+                    </div>
+                    <div class="item">
+                        <span>Gebieden</span>
+                        <span>32/36</span>
+                    </div>
+                    <div class="item">
+                        <span>Sterren</span>
+                        <span>10/10</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="img" style="background-image: url('img/map_ice.png');"></div>
+                <div class="desc">
+                    <div class="item">
+                        <h2>De noordpool</h2>
+                    </div>
+                    <div class="item">
+                        <span>Monsters</span>
+                        <span>0/6</span>
+                    </div>
+                    <div class="item">
+                        <span>Gebieden</span>
+                        <span>3/36</span>
+                    </div>
+                    <div class="item">
+                        <span>Sterren</span>
+                        <span>1/10</span>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="lockedWorld"><span class="fa fa-lock"></span></div>
+                <div class="img" style="background-image: url('img/desertWorld.png');"></div>
+                <div class="desc">
+                    <div class="item">
+                        <h2>De woestijn</h2>
+                    </div>
+                    <div class="item">
+                        <span>Monsters</span>
+                        <span>0/6</span>
+                    </div>
+                    <div class="item">
+                        <span>Gebieden</span>
+                        <span>0/36</span>
+                    </div>
+                    <div class="item">
+                        <span>Sterren</span>
+                        <span>0/10</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- Bottom bar -->
@@ -91,9 +148,9 @@
         </li>
         <li>
             <a href="#challengeMenuPanel">
-            <div id="number6" class="circle">
-                <span class="fa fa-trophy"></span>
-            </div>
+                <div id="number6" class="circle">
+                    <span class="fa fa-trophy"></span>
+                </div>
             </a>
         </li>
         <li class="tutorial">
@@ -103,20 +160,6 @@
         </li>
     </ul>
 </section>
-
-<section id="worldMenuPanel" class="menuPanel">
-    <p>Worlds</p>
-</section>
-
-<section id="challengeMenuPanel" class="menuPanel">
-    <p>Challenges</p>
-</section>
-
-
-<!--<div id="deviceready" class="blink">-->
-    <!--<p class="event listening">Connecting to Device</p>-->
-    <!--<p class="event received">Device is Ready</p>-->
-<!--</div>-->
 
 <!-- content of joyride tips -->
 <ol id="joyRideTipContent" data-joyride>
@@ -181,6 +224,15 @@
             });
         });
     });
+
+    //initialize swiper when document ready
+    $(document).ready(function () {
+        var mySwiper = new Swiper ('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true
+        })
+    });
 </script>
 
 <script>
@@ -204,31 +256,31 @@
             html: true
         }, function () {
             $.ajax(
-                {
-                    type: "get",
-                    url: "http://game.onlineops.nl/phonegap_php/unlockMonsters.php",
-                    data: {'monstername': $monsterName, 'username': $username},
-                    success: function (data) {
-                        alert('goedzo');
+                    {
+                        type: "get",
+                        url: "http://game.onlineops.nl/phonegap_php/unlockMonsters.php",
+                        data: {'monstername': $monsterName, 'username': $username},
+                        success: function (data) {
+                            alert('goedzo');
+                        }
                     }
-                }
-                )
-                .done(function (data) {
-                    console.log($parentId);
-                    $('#' + $parentId).find('.monsterEgg').hide();
-                    $('#' + $parentId).find('.monsterbackground').append('<img src="images/egg_' + $monsterNameLowerCase + '_broken.png" monster-name=' + $monsterName + '>');
-                    window.location.href = 'index.html';
-                })
-                .error(function (data) {
-                    swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
-                });
+                    )
+                    .done(function (data) {
+                        console.log($parentId);
+                        $('#' + $parentId).find('.monsterEgg').hide();
+                        $('#' + $parentId).find('.monsterbackground').append('<img src="images/egg_' + $monsterNameLowerCase + '_broken.png" monster-name=' + $monsterName + '>');
+                        window.location.href = 'index.html';
+                    })
+                    .error(function (data) {
+                        swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
+                    });
         });
     }
 </script>
 
 <!--<script type="text/javascript" src="js/index.js"></script>-->
 <!--<script type="text/javascript">-->
-    <!--app.initialize();-->
+<!--app.initialize();-->
 <!--</script>-->
 </body>
 
