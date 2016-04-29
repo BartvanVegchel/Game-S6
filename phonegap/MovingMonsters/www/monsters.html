@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/joyride-master/joyride-2.1.css" />
+
+    <title>Moving Monsters</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script src="js/sweetalert-dev.js"></script>
+    <script src="js/cordova.js"></script>
+</head>
+
+<body>
+<!-- Top bar -->
+<section class="top-bar">
+    <span class="world-name" id="number2">Werelden</span>
+    <span class="menu-icon fa fa-bars"></span>
+</section>
+
+<!-- Map container -->
+<section class="container">
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+
+            <div class="swiper-slide">
+                <div class="monster" style="background-image: url('img/monster_boomer.png');">
+                    <div class="monstername">Boomer</div>
+                </div>
+
+            </div>
+            <div class="swiper-slide" data-element="5">
+                <div class="monster" style="background-image: url('img/monster_droplet.png');">
+                    <div class="monstername">Doplet</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bottom bar -->
+<section class="bottom-bar">
+    <ul>
+        <li>
+            <a href="monsters.html">
+                <div id="number4" class="circle">
+                    <span class="fa fa-paper-plane"></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="worlds.html">
+                <div id="number5" class="circle">
+                    <span class="fa fa-rocket"></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#challengeMenuPanel">
+                <div id="number6" class="circle">
+                    <span class="fa fa-trophy"></span>
+                </div>
+            </a>
+        </li>
+        <li class="tutorial">
+            <div id="number7" class="circle">
+                <span class="fa fa-question"></span>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<!-- content of joyride tips -->
+<ol id="joyRideTipContent" data-joyride>
+    <li data-id="number1" data-text="Volgende" class="custom1">
+        <h2>EnergyPointjes</h2>
+        <p>Hier zie je hoeveel EnergyPoints (EP) je nog hebt. Je kunt er meer verdienen door te bewegen!</p>
+    </li>
+    <li data-id="number2" data-text="Volgende" class="custom2">
+        <h2>Huidige wereld</h2>
+        <p>Hier staat de naam van de wereld waar je op dit moment bent.</p>
+    </li>
+    <li data-id="number3" data-text="Volgende" class="custom3">
+        <h2>Voortgang wereld</h2>
+        <p>Hier zie je het aantal ontdekte gebieden van de wereld</p>
+    </li>
+
+    <li data-id="number4" data-text="Volgende" class="custom4" data-options="tipLocation:top;">
+        <h2>Monsterdex</h2>
+        <p>Bekijk hier welke monsters je al hebt ontdekt en wilke je nog moet!</p>
+    </li>
+    <li data-id="number5" data-text="Volgende" class="custom5" data-options="tipLocation:top;">
+        <h2>Werelden</h2>
+        <p>Vanuit hier kun je reizen naar andere werelden!</p>
+    </li>
+    <li data-id="number6" data-text="Volgende" class="custom6" data-options="tipLocation:top;">
+        <h2>Scoreboard</h2>
+        <p>Hier kun je zien hoeveel je vrienden al hebben gevonden!</p>
+    </li>
+    <li data-id="number7" data-text="Volgende" class="custom7" data-options="tipLocation:top;">
+        <h2>Help?</h2>
+        <p>Als je vragen hebt, kun je op deze knop drukken!</p>
+    </li>
+
+</ol>
+
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+<script type="text/javascript" src="js/joyride-master/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/joyride-master/modernizr.mq.js"></script>
+<script type="text/javascript" src="js/joyride-master/jquery.joyride-2.1.js"></script>
+<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
+<script>
+
+    // initialize app
+    app.initialize();
+
+
+
+    // check if ingelogd
+    if(localStorage.getItem('userInfo') == null){
+        console.log('je bent niet ingelogd');
+        window.location.href = "inloggen.html";
+    } else{
+        console.log('je bent ingelogd');
+    }
+
+    // Joyride tip
+    $(window).load(function() {
+        $('.tutorial').click(function() {
+            $('#joyRideTipContent').joyride({
+                autoStart: true,
+                modal: true,
+                expose: true
+            });
+        });
+    });
+
+    //initialize swiper when document ready
+    $(document).ready(function () {
+        var mySwiper = new Swiper ('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            initialSlide: 0,
+            onSlideChangeStart: function(){
+                var value = $('.swiper-slide-active').attr('data-swiper-slide-index');
+                var newValue = parseInt(value) + 1;
+                if (newValue == 1){
+                    $('.container').css("background-color", "#fadcb9");
+                }
+                if (newValue == 2){
+                    $('.container').css("background-color", "#e0f3fb");
+                }
+            },
+            loop: true
+        });
+    });
+
+
+</script>
+
+<script>
+    $monsterName = getUrlParameter('monstername');
+    $requirement = getUrlParameter('requirement');
+    $username = getUrlParameter('username');
+
+    if($monsterName && $requirement) {
+        $monsterNameLowerCase = $monsterName.toLowerCase();
+        $monsterImage = $("img[monster-name='" + $monsterName + "']");
+        $parentId = $($monsterImage).parent().parent().attr('id');
+
+        swal({
+            title: "Gefeliciteerd!",
+            text: "<img src='img/star_rating.png'> <br>Je hebt de challenge voltooid",
+            type: "",
+            showCancelButton: false,
+            closeOnConfirm: true,
+            showLoaderOnConfirm: true,
+            confirmButtonText: "Super!",
+            html: true
+        }, function () {
+            $.ajax(
+                    {
+                        type: "get",
+                        url: "http://game.onlineops.nl/phonegap_php/unlockMonsters.php",
+                        data: {'monstername': $monsterName, 'username': $username},
+                        success: function (data) {
+                            alert('goedzo');
+                        }
+                    }
+                    )
+                    .done(function (data) {
+                        console.log($parentId);
+                        $('#' + $parentId).find('.monsterEgg').hide();
+                        $('#' + $parentId).find('.monsterbackground').append('<img src="images/egg_' + $monsterNameLowerCase + '_broken.png" monster-name=' + $monsterName + '>');
+                        window.location.href = 'index.html';
+                    })
+                    .error(function (data) {
+                        swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
+                    });
+        });
+    }
+</script>
+
+<!--<script type="text/javascript" src="js/index.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--app.initialize();-->
+<!--</script>-->
+</body>
+
+</html>

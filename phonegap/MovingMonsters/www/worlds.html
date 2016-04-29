@@ -108,7 +108,7 @@
             </div>
             <div class="swiper-slide">
                 <div class="lockedWorld"><span class="fa fa-lock"></span></div>
-                <div class="img" style="background-image: url('img/desertWorld.png');"></div>
+                <div class="img" style="background-image: url('img/hometown.png');"></div>
                 <div class="desc">
                     <div class="item">
                         <h2>De woestijn</h2>
@@ -135,9 +135,11 @@
 <section class="bottom-bar">
     <ul>
         <li>
-            <div id="number4" class="circle">
-                <span class="fa fa-paper-plane"></span>
-            </div>
+            <a href="monsters.html">
+                <div id="number4" class="circle">
+                    <span class="fa fa-paper-plane"></span>
+                </div>
+            </a>
         </li>
         <li>
             <a href="worlds.html">
@@ -230,8 +232,22 @@
         var mySwiper = new Swiper ('.swiper-container', {
             // Optional parameters
             direction: 'horizontal',
+            initialSlide: 0,
+            onSlideChangeStart: function(){
+                var value = $('.swiper-slide-active').attr('data-swiper-slide-index');
+                var newValue = parseInt(value) + 1;
+                if (newValue == 1){
+                    $('.container').css("background-color", "#fadcb9");
+                }
+                if (newValue == 2){
+                    $('.container').css("background-color", "#e0f3fb");
+                }
+                if (newValue == 3){
+                    $('.container').css("background-color", "#c0c0c0");
+                }
+            },
             loop: true
-        })
+        });
     });
 </script>
 
