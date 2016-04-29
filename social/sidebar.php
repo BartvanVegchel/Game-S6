@@ -22,7 +22,7 @@
 
                 ?>
 
-                <article class="col-xs-12 col-md-12 event">
+                <article class="col-xs-12 col-md-12 event wow slideInRight">
                     <div class="panel panel-default">
                         <div class="panel-body">
                             <div class="event_date">
@@ -31,9 +31,9 @@
                                     <?php echo $postDate1; ?><em><?php //echo $postDate2; ?>januari</em>
                                 </div>
                                 
-                            <div class="event_title">
-                                <span>Live event</span><h2><?php echo $title; ?></h2>
-                            </div>
+                                <div class="event_title">
+                                    <span>Live event</span><h2><?php echo $title; ?></h2>
+                                </div>
                         </div>
                     </div>
                 </article>

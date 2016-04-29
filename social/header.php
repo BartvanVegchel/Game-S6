@@ -38,6 +38,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/custom.css" />
+	<link rel="stylesheet" type="text/css" href="css/animate.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./fonts/opensans/opensans.css" />
 
 </head>
