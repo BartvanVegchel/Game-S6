@@ -29,7 +29,7 @@
 								<article class="col-xs-12 col-sm-6 col-md-4">
 									<div class="social_block">
 										<a href="social_item.php?id=<?php echo $postId; ?>"></a>
-										<div class="social_img">
+										<div class="social_img icon_<?php echo $category; ?>">
 											<img src='img/social/<?php echo $category; ?>.jpg' />
 										</div>
 										<div class="social_text">
