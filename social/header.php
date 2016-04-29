@@ -120,7 +120,9 @@
 				?>
 							<ul class="nav navbar-nav admin-nav">
 								<li><a href="add_post.php">Bericht toevoegen</a></li>
+								<li><a href="posts.php">Bericht overzicht</a></li>
 								<li><a href="add_social_post.php">Vraag toevoegen</a></li>
+								<li><a href="social_posts.php">Vraag overzicht</a></li>
 								<li><a href="#">Ga naar dashboard</a></li>
 							</ul>
 				<?php
