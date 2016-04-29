@@ -26,7 +26,6 @@
 							$postDate = $postDate1 . "-" . $postDate2 . "-" . $postDate3;
 							
 							?>
-								
 								<article class="col-xs-12 col-sm-6 col-md-4">
 									<div class="social_block">
 										<a href="social_item.php?id=<?php echo $postId; ?>"></a>
@@ -43,6 +42,17 @@
 							<?php
 						}
 					?>
+
+					<article class="col-xs-12 col-sm-6 col-md-4">
+						<div class="social_block goto">
+							<a href="#"></a>
+							<div class="social_text">
+								<p>Bekijk alle artikelen</p>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</article>
+
 				</div>
 			</section>
 		
