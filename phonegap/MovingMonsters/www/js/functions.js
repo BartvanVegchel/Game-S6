@@ -54,6 +54,31 @@ function getUnlockedFields(){
     }
 }
 
+// getUnlockedFields function
+function getWorlds(){
+    var dataString="username="+$userName+"&submit=";
+    if(localStorage.getItem('userInfo') !== null) {
+        $.ajax({
+            type: "POST",
+            url: "http://game.onlineops.nl/phonegap_php/getWorlds.php",
+            data: dataString,
+            crossDomain: true,
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+                if (data['error'] == "error") {
+                    //do nothing
+                } else if (data['worldid'] !== "") {
+                    $("#worldMenuPanel").html("<a href='index.html?worldid=" + data['worldid'] + "' class='worldItem'>" + data['worldtitle'] + "</a>");
+                }
+            },
+            error: function () {
+                alert("Er gaat iets verkeerd, neem contact met ons op!");
+            }
+        })
+    }
+}
+
 //unlock elements
 function unlockFunction(id, element){
     //get the parameters from the function inside buildMap function
@@ -174,12 +199,18 @@ function onDeviceReady(){
     buildMap(); //build map if device is ready
     getEnergypoints(); //set energypoints in div
     getUnlockedFields(); //set unlocked fields in div
+    getWorlds(); //set worlds in div menu
 
     $(".bottom-bar ul li a").click(function(){
         $panel = $(this).attr('href');
-        alert($panel);
-        $('.menuPanel').removeClass('activePanel');
-        $($panel).addClass('activePanel');
+        $activePanel = '#'+ $('.activePanel').attr('id');
+        //alert($activePanel);
+        if($panel == $activePanel){
+            $('.menuPanel').removeClass('activePanel');
+        } else{
+            $('.menuPanel').removeClass('activePanel');
+            $($panel).addClass('activePanel');
+        }
     });
 }
 
