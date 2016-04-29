@@ -3,6 +3,7 @@
 
 body            { font-family: OpenSansRegular, Arial, sans-serif; color: #333333; box-sizing: border-box; display: block; overflow-x:hidden; height: 100%; background: url("../img/social_bg.png") no-repeat; background-size: cover; }
 div.container   { width: 100%; }
+div.clear       { clear: both; }
 
 /* Events */
 
@@ -38,6 +39,14 @@ article.event .panel        { background: #114775; }
 
 div.event_title               { float: left; padding: 14px 0 0 5%; color: #FFFFFF; }
 div.event_title h2            { font-family:  OpenSansSemiBold,sans-serif; font-size: 19px; margin: 5px 0 0 0; }
+
+/* Social */
+
+div.social_block                  { background: #FFFFFF; }
+div.social_block a                { position: absolute; height: 100%; width: 100%; display: block; }
+div.social_block div.social_img   { float: left; width: 30%; height: 100px; background: red; }
+div.social_block div.social_text  { float: right; width: 65%; }
+div.social_block div.social_text p{ color: #333333; }
 
 .panel .panel-heading {
 	padding: 0;

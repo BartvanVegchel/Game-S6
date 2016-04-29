@@ -27,19 +27,16 @@
 							
 							?>
 								
-								<article class="col-xs-12 col-md-4">
-									<div class="panel panel-default">
-										<div class="panel-heading">
-											<?php echo "<img src='./" . $image . "' height='200px' width='100%' alt='#' />"; ?>
-											<?php echo $category; ?>
+								<article class="col-xs-12 col-sm-6 col-md-4">
+									<div class="social_block">
+										<a href="social_item.php?id=<?php echo $postId; ?>"></a>
+										<div class="social_img">
+											<img src='img/social/<?php echo $category; ?>.jpg' />
 										</div>
-										<div class="panel-body">
-											<h1><a href="social_item.php?id=<?php echo $postId; ?>"><?php echo $title; ?></a></h1>
-											<p><?php echo $content; ?></p>
+										<div class="social_text">
+										<p><?php echo $title; ?></p>
 										</div>
-										<div class="panel-footer">
-											<span><?php echo "Geplaatst op: " . $postDate; ?></span>
-										</div>
+										<div class="clear"></div>
 									</div>
 								</article>
 							
