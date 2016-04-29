@@ -54,6 +54,40 @@ function getUnlockedFields(){
     }
 }
 
+// getUnlockedFields function
+function getWorlds(){
+    var dataString="username="+$userName+"&submit=";
+    if(localStorage.getItem('userInfo') !== null) {
+        $.ajax({
+            type: "POST",
+            url: "http://game.onlineops.nl/phonegap_php/getWorlds.php",
+            data: dataString,
+            crossDomain: true,
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+                if (data['error'] == "error") {
+                    //do nothing
+                } else if (data['worldid'] !== "") {
+                    $numWorlds = data['numworlds'];
+                    $worldSize = data['worldsize'];
+                    $unlockFieldWorlds = data['unlockFieldWorlds'];
+                    
+                    console.log('numWorlds is' + $numWorlds);
+                    console.log($unlockFieldWorlds);
+                    console.log($worldSize);
+
+                    //console.log($unlockedFields.length);
+                    //$("#worldMenuPanel").html("<a href='index.html?worldid=" + data['worldid'] + "' class='worldItem'>" + data['worldtitle'] + "</a>");
+                }
+            },
+            error: function () {
+                alert("Er gaat iets verkeerd, neem contact met ons op!");
+            }
+        })
+    }
+}
+
 //unlock elements
 function unlockFunction(id, element){
     //get the parameters from the function inside buildMap function
