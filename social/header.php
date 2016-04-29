@@ -115,14 +115,16 @@
 					
                 </ul>
 				<?php
-					if($_SESSION['username'] == "admin") {
+					if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd
+						if($_SESSION['username'] == "admin") {
 				?>
-						<ul class="nav navbar-nav admin-nav">
-							<li><a href="add_post.php">Bericht toevoegen</a></li>
-							<li><a href="add_social_post.php">Vraag toevoegen</a></li>
-							<li><a href="#">Ga naar dashboard</a></li>
-						</ul>
+							<ul class="nav navbar-nav admin-nav">
+								<li><a href="add_post.php">Bericht toevoegen</a></li>
+								<li><a href="add_social_post.php">Vraag toevoegen</a></li>
+								<li><a href="#">Ga naar dashboard</a></li>
+							</ul>
 				<?php
+						}
 					}
 				?>
             </div><!-- /.navbar-collapse -->

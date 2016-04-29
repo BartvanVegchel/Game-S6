@@ -8,7 +8,7 @@
 					<!-- while loop -->					
 					<?php
 					
-						$getSocialPosts = mysqli_query($db_social, "SELECT * FROM social LIMIT 9") or die("FOUT: " . mysqli_error($dblink));
+						$getSocialPosts = mysqli_query($db_social, "SELECT * FROM social LIMIT 8") or die("FOUT: " . mysqli_error($dblink));
 										
 						while($rij = mysqli_fetch_assoc($getSocialPosts)) {
 							$postId = $rij["id"];
