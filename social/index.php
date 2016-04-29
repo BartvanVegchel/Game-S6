@@ -31,10 +31,10 @@
 									<div class="panel panel-default">
 										<div class="panel-heading">
 											<?php echo "<img src='./" . $image . "' height='200px' width='100%' alt='#' />"; ?>
-											<?php echo "<span class='category-overlay'>" . $category . "</span>"; ?>
+											<?php echo $category; ?>
 										</div>
 										<div class="panel-body">
-											<h1><a href="blog_item.php?id=<?php echo $postId; ?>"><?php echo $title; ?></a></h1>
+											<h1><a href="social_item.php?id=<?php echo $postId; ?>"><?php echo $title; ?></a></h1>
 											<p><?php echo $content; ?></p>
 										</div>
 										<div class="panel-footer">
