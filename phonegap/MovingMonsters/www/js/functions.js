@@ -55,38 +55,44 @@ function getUnlockedFields(){
 }
 
 // getUnlockedFields function
-function getWorlds(){
-    var dataString="username="+$userName+"&submit=";
-    if(localStorage.getItem('userInfo') !== null) {
-        $.ajax({
-            type: "POST",
-            url: "http://game.onlineops.nl/phonegap_php/getWorlds.php",
-            data: dataString,
-            crossDomain: true,
-            cache: false,
-            dataType: 'json',
-            success: function (data) {
-                if (data['error'] == "error") {
-                    //do nothing
-                } else if (data['worldid'] !== "") {
-                    $numWorlds = data['numworlds'];
-                    $worldSize = data['worldsize'];
-                    $unlockFieldWorlds = data['unlockFieldWorlds'];
-                    
-                    console.log('numWorlds is' + $numWorlds);
-                    console.log($unlockFieldWorlds);
-                    console.log($worldSize);
-
-                    //console.log($unlockedFields.length);
-                    //$("#worldMenuPanel").html("<a href='index.html?worldid=" + data['worldid'] + "' class='worldItem'>" + data['worldtitle'] + "</a>");
-                }
-            },
-            error: function () {
-                alert("Er gaat iets verkeerd, neem contact met ons op!");
-            }
-        })
-    }
-}
+// function getWorlds(){
+//     var dataString="username="+$userName+"&submit=";
+//     if(localStorage.getItem('userInfo') !== null) {
+//         $.ajax({
+//             type: "POST",
+//             url: "http://game.onlineops.nl/phonegap_php/getWorlds.php",
+//             data: dataString,
+//             crossDomain: true,
+//             cache: false,
+//             dataType: 'json',
+//             success: function (data) {
+//                 if (data['error'] == "error") {
+//                     //do nothing
+//                 } else if (data['worldid'] !== "") {
+//                     $numWorlds = data['numworlds'];
+//                     $worldSize = data['worldsize'];
+//                     $unlockFieldWorlds = data['unlockFieldWorlds'];
+//
+//                     console.log('numWorlds is' + $numWorlds);
+//                     console.log($unlockFieldWorlds);
+//                     console.log($worldSize);
+//
+//                     for (var i = 0; i < $numWorlds; i++) {
+//                         $process = ($unlockFieldWorlds[i]/$worldSize[i])*100;
+//                         console.log($process);
+//                         console.log('Unlocked is ' + $unlockFieldWorlds[i] + " / " + $worldSize[i]);
+//                     }
+//
+//                     //console.log($unlockedFields.length);
+//                     //$("#worldMenuPanel").html("<a href='index.html?worldid=" + data['worldid'] + "' class='worldItem'>" + data['worldtitle'] + "</a>");
+//                 }
+//             },
+//             error: function () {
+//                 alert("Er gaat iets verkeerd, neem contact met ons op!");
+//             }
+//         })
+//     }
+// }
 
 //unlock elements
 function unlockFunction(id, element){
@@ -208,7 +214,7 @@ function onDeviceReady(){
     buildMap(); //build map if device is ready
     getEnergypoints(); //set energypoints in div
     getUnlockedFields(); //set unlocked fields in div
-    getWorlds(); //set worlds in div menu
+    //getWorlds(); //set worlds in div menu
 
     $(".bottom-bar ul li a").click(function(){
         $panel = $(this).attr('href');
