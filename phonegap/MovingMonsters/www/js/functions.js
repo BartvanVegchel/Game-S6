@@ -1,5 +1,13 @@
 $userName = localStorage.getItem('userInfo');
-$worldId = 2;
+$worldId = localStorage.getItem('worldId');
+
+if(localStorage.getItem('worldId') == null){
+    $worldId = 1;
+    console.log('geen worldId gezet');
+} else{
+    $worldId = localStorage.getItem('worldId');
+    console.log('worldId ' + $worldId +' gezet');
+}
 
 console.log('functions ingeladen voor ' + $userName);
 
@@ -30,7 +38,7 @@ function getEnergypoints(){
 
 // getUnlockedFields function
 function getUnlockedFields(){
-    var dataString="username="+$userName+"&submit=";
+    var dataString="username="+$userName+"&worldid="+$worldId+"&submit=";
     if(localStorage.getItem('userInfo') !== null) {
         $.ajax({
             type: "POST",

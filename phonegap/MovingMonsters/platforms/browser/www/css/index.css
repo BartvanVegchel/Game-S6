@@ -485,7 +485,7 @@ section.map div.part div.transportbackground img {
 
 .desc .item{
     width: 80%;
-    height: 50px;
+    height: 40px;
     background-color: #516f72;
     margin: 10px auto 0 auto;
     border-radius: 5px;
@@ -497,7 +497,7 @@ section.map div.part div.transportbackground img {
 
 .desc .item h2{
     margin: 0;
-    line-height: 50px;
+    line-height: 40px;
     text-align: center;
     color: #fff;
 }
@@ -506,13 +506,22 @@ section.map div.part div.transportbackground img {
     display: inline-block;
     width: 49%;
     height: 100%;
-    line-height: 50px;
+    line-height: 40px;
     text-align: center;
     color: #fff;
 }
 
 .desc .item span:first-child{
     border-right: 1px solid white;
+}
+
+.desc .item button{
+    background:red;
+    color:#fff;
+    text-align:center;
+    border:none;
+    width:100%;
+    line-height:40px;
 }
 
 .monster{
