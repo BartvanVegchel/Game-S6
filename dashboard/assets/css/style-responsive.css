@@ -24,6 +24,10 @@
         position: absolute;
     }
 
+    .hidden-phone {
+        display: none !important;
+    }
+
     /*sidebar*/
 
     #sidebar {
