@@ -232,7 +232,7 @@
     $(document).ready(function () {
         //build items for swiper
         function getWorlds(){
-            var dataString="username="+$userName+"&submit=";
+            var dataString="username="+$userName+"&worldid="+$worldId+"&submit=";
             if(localStorage.getItem('userInfo') !== null) {
                 $.ajax({
                     type: "POST",
@@ -249,7 +249,10 @@
                             $worldSize = data['worldsize'];
                             $unlockFieldWorlds = data['unlockFieldWorlds'];
                             $worldNames = data['worldnames'];
-
+                            $totalMonsters = data['totalmonsters'];
+                            $yourmonsters = data['yourmonsters'];
+                            console.log($totalMonsters);
+                            console.log($yourmonsters);
                             //console.log('numWorlds is' + $numWorlds);
                             //console.log($unlockFieldWorlds);
                             //console.log($worldSize);
@@ -273,7 +276,7 @@
                                 "</div>" +
                                 "<div class='item'>" +
                                 "<span>Monsters</span>" +
-                                "<span>0/0</span>" +
+                                "<span>0/"+$totalMonsters[i]+"</span>" +
                                 "</div>" +
                                 "<div class='item'>" +
                                 "<span>Gebieden</span>" +
