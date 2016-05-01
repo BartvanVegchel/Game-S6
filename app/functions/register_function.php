@@ -50,8 +50,7 @@ function register(){
 
 					mysqli_query($db, "INSERT INTO userProgress (userId, unlockedFields, unlockedMonsters)
 										VALUES ('$userId', '$fieldArray', '$monsterArray') ");
-
-										
+					
 					header("Refresh: 3; url=index.php");
 					echo "Je bent succesvol geregistreerd! Je kunt je nu inloggen."; // als het succesvol naar de database is geplaatst
 				}
