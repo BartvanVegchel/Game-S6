@@ -67,6 +67,13 @@ a, a:hover, a:focus {
 	background-color: #ffffff;
 	outline: none !important;
 	text-decoration: none;
+}
+
+.label-Silver {
+	background-color: #ABB3B5;
+}
+.label-Gold {
+	background-color: #f0ad4e;
 }	
 
 
