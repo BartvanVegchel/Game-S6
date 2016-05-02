@@ -203,7 +203,7 @@ function buildMap(){
                 });
 
                 // click event for locked monsters
-                $('img.monsterEgg').click(function() {mo
+                $('img.monsterEgg').click(function() {
                     $monsterName = $(this).attr('monster-name');
                     unlockMonsters($monsterName); // call function with param
                 });
