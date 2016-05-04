@@ -196,28 +196,19 @@
                         if (data['error'] == "error") {
                             //do nothing
                         } else if (data['worldid'] !== "") {
-                            $worldNames = data['worldnames'];
-                            $numWorlds = data['numworlds'];
-                            $unlockedMonsters = data['unlockedmonsters'];
-                            $lockedMonsters = data['lockedmonsters'];
-                            console.log($worldNames);
-                            console.log($numWorlds);
-                            console.log($unlockedMonsters);
-                            console.log($lockedMonsters);
-                            //console.log('numWorlds is' + $numWorlds);
-                            //console.log($unlockFieldWorlds);
-                            //console.log($worldSize);
+                            $worldNames = data['worldnames']; //worlnames of all the worlds
+                            $numWorlds = data['numworlds']; //the number of worlds
+                            $unlockedMonsters = data['unlockedmonsters']; // unlocked monsters array
+                            $lockedMonsters = data['lockedmonsters']; //locked monsters array
 
+                            //define the slidecontainer
                             $swiperContainer = $('.swiper-wrapper');
 
-
-
                             for (var i = 0; i < $numWorlds; i++) {
-                                $thisId = i+1;//for through the array
-                                //$currentMonsters = array;
-                                //$currentMonsters = '';
-                                $thisUnlockedMonsters = $unlockedMonsters[$thisId];
-                                $thisLockedMonsters = $lockedMonsters[$thisId];
+                                $thisId = i+1;//id for through the array
+
+                                $thisUnlockedMonsters = $unlockedMonsters[$thisId]; //array with unlocked monsters for selected world
+                                $thisLockedMonsters = $lockedMonsters[$thisId]; //array with locked monsters for selected world
 
                                 //split string from function to array
                                 if ($unlockedMonsters[$thisId].length != '') {
@@ -233,8 +224,10 @@
                                     $thisLockedMonsterArray = '';
                                 }
 
+                                //open slideitem div
                                 $slideItem ="<div class='swiper-slide'>";
 
+                                //fill the current slideitem with unlocked monsters
                                 $.each($thisUnlockedMonsterArray, function(index, monster ){
                                     $monsterNameLowerCase = monster.toLowerCase();
                                     $slideItem = $slideItem +"<div class='monster' style='background-image: url(\"img/monster_"+$monsterNameLowerCase+".png\");'>" +
@@ -242,17 +235,18 @@
                                     "</div>";
                                 });
 
+                                //fill the current slideitem with locked monsters
                                 $.each($thisLockedMonsterArray, function(index, monster ){
                                     $monsterNameLowerCase = monster.toLowerCase();
                                     $slideItem = $slideItem +"<div class='monster' style='background-image: url(\"img/monster_"+$monsterNameLowerCase+"_locked.png\");'>" +
                                             "<div class='monstername'>??</div>" +
                                             "</div>";
                                 });
-
+                                //close the slideitem div
                                 $slideItem = $slideItem + "</div>";
 
+                                //add item to container
                                 $($swiperContainer).append($slideItem);
-                                console.log('item geplaatst');
                             }
                         }
                     },

@@ -253,17 +253,15 @@
                             $yourmonsters = data['yourmonsters'];
                             console.log($totalMonsters);
                             console.log($yourmonsters);
-                            //console.log('numWorlds is' + $numWorlds);
-                            //console.log($unlockFieldWorlds);
-                            //console.log($worldSize);
+                            console.log('numWorlds is' + $numWorlds);
+                            console.log($unlockFieldWorlds);
+                            console.log($worldSize);
 
                             $swiperContainer = $('.swiper-wrapper');
 
                             for (var i = 0; i < $numWorlds; i++) {
                                 $process = ($unlockFieldWorlds[i-1]/$worldSize[i-1])*100;
                                 $thisWorldId = i+1;
-                                //console.log($process);
-                                //console.log('Unlocked is ' + $unlockFieldWorlds[i] + " / " + $worldSize[i]);
 
                                 $slideItem ="<div class='swiper-slide'>";
                                     if($process < 15){
