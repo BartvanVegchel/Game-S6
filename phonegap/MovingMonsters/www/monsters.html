@@ -215,24 +215,38 @@
                             for (var i = 0; i < $numWorlds; i++) {
                                 $thisId = i+1;//for through the array
                                 //$currentMonsters = array;
-                                $currentMonsters = '';
-                                $currentMonsters = $unlockedMonsters[$thisId];
+                                //$currentMonsters = '';
+                                $thisUnlockedMonsters = $unlockedMonsters[$thisId];
+                                $thisLockedMonsters = $lockedMonsters[$thisId];
+
+                                //split string from function to array
                                 if ($unlockedMonsters[$thisId].length != '') {
-                                    $thisMonsterArray = $currentMonsters.split("_");
+                                    $thisUnlockedMonsterArray = $thisUnlockedMonsters.split("_");
                                 } else{
-                                    $thisMonsterArray = '';
+                                    $thisUnlockedMonsterArray = '';
                                 }
 
-                                console.log($thisMonsterArray);
-                                //console.log($process);
-                                //console.log('Unlocked is ' + $unlockFieldWorlds[i] + " / " + $worldSize[i]);
+                                //split string from function to array
+                                if ($lockedMonsters[$thisId].length != '') {
+                                    $thisLockedMonsterArray = $thisLockedMonsters.split("_");
+                                } else{
+                                    $thisLockedMonsterArray = '';
+                                }
 
                                 $slideItem ="<div class='swiper-slide'>";
 
-                                $.each($thisMonsterArray, function(monster ){
-                                    $slideItem = $slideItem +"<div class='monster' style='background-image: url(\'img/monster_boomer.png\');'>" +
+                                $.each($thisUnlockedMonsterArray, function(index, monster ){
+                                    $monsterNameLowerCase = monster.toLowerCase();
+                                    $slideItem = $slideItem +"<div class='monster' style='background-image: url(\"img/monster_"+$monsterNameLowerCase+".png\");'>" +
                                     "<div class='monstername'>"+ monster +"</div>" +
                                     "</div>";
+                                });
+
+                                $.each($thisLockedMonsterArray, function(index, monster ){
+                                    $monsterNameLowerCase = monster.toLowerCase();
+                                    $slideItem = $slideItem +"<div class='monster' style='background-image: url(\"img/monster_"+$monsterNameLowerCase+"_locked.png\");'>" +
+                                            "<div class='monstername'>??</div>" +
+                                            "</div>";
                                 });
 
                                 $slideItem = $slideItem + "</div>";
