@@ -508,6 +508,20 @@ section.map div.part div.transportbackground img {
     color: #fff;
 }
 
+.desc .itembig{
+    width: 80%;
+    height: auto;
+    background-color: #516f72;
+    margin: 10px auto 0 auto;
+    border-radius: 5px;
+}
+
+.desc .itembig p{
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+}
+
 .itemklein:nth-of-type(2){
     margin-left: 10%;
 }
