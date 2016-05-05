@@ -465,6 +465,11 @@ section.map div.part div.transportbackground img {
     border-top-right-radius: 10px;
 }
 
+.monster-detail .img{
+    padding-bottom: 80%;
+    height: 0;
+}
+
 .img{
     width: 80%;
     margin-left: 10%;
@@ -489,6 +494,22 @@ section.map div.part div.transportbackground img {
     background-color: #516f72;
     margin: 10px auto 0 auto;
     border-radius: 5px;
+}
+
+.desc .itemklein{
+    width: 40%;
+    height: 40px;
+    display: inline-block;
+    background-color: #516f72;
+    margin: 10px auto 0 auto;
+    border-radius: 5px;
+    font-size: 10px;
+    text-align: center;
+    color: #fff;
+}
+
+.itemklein:nth-of-type(2){
+    margin-left: 10%;
 }
 
 .desc .item:last-child{

@@ -54,7 +54,7 @@
 <body>
 <!-- Top bar -->
 <section class="top-bar">
-    <span class="world-name" id="number2">Monsters</span>
+    <span class="world-name" id="number2">Werelden</span>
     <span class="menu-icon fa fa-bars"></span>
 </section>
 
@@ -66,17 +66,23 @@
         <div class="swiper-wrapper">
             <!-- Slides -->
 
-            <!--<div class="swiper-slide">
-                <div class="monster" style="background-image: url('img/monster_boomer.png');">
-                    <div class="monstername">Boomer</div>
+            <div class="swiper-slide monster-detail">
+                <div class="img" style="background-image: url('img/monster_boomer.png');"></div>
+                <div class="desc">
+                    <div class="item">
+                        <h2>Boomer</h2>
+                    </div>
+                    <div class="itemklein">
+                        <h3>Over Boomer</h3>
+                    </div>
+                    <div class="itemklein">
+                        <h3>Challenge</h3>
+                    </div>
+                    <div class="item">
+                        <h2>Ter                    </div>
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="monster" style="background-image: url('img/monster_droplet.png');">
-                    <div class="monstername">Doplet</div>
-                </div>
 
-            </div>-->
         </div>
     </div>
 </section>
@@ -158,8 +164,6 @@
     // initialize app
     app.initialize();
 
-
-
     // check if ingelogd
     if(localStorage.getItem('userInfo') == null){
         console.log('je bent niet ingelogd');
@@ -182,97 +186,86 @@
     //initialize swiper when document ready
     $(document).ready(function () {
         //build items for swiper
-        function getMonsters(){
-            var dataString="username="+$userName+"&worldid="+$worldId+"&submit=";
-            if(localStorage.getItem('userInfo') !== null) {
-                $.ajax({
-                    type: "POST",
-                    url: "http://game.onlineops.nl/phonegap_php/getMonsters.php",
-                    data: dataString,
-                    crossDomain: true,
-                    cache: false,
-                    dataType: 'json',
-                    success: function (data) {
-                        if (data['error'] == "error") {
-                            //do nothing
-                        } else if (data['worldid'] !== "") {
-                            $worldNames = data['worldnames']; //worlnames of all the worlds
-                            $numWorlds = data['numworlds']; //the number of worlds
-                            $unlockedMonsters = data['unlockedmonsters']; // unlocked monsters array
-                            $lockedMonsters = data['lockedmonsters']; //locked monsters array
-
-                            //define the slidecontainer
-                            $swiperContainer = $('.swiper-wrapper');
-
-                            for (var i = 0; i < $numWorlds; i++) {
-                                $thisId = i+1;//id for through the array
-
-                                $thisUnlockedMonsters = $unlockedMonsters[$thisId]; //array with unlocked monsters for selected world
-                                $thisLockedMonsters = $lockedMonsters[$thisId]; //array with locked monsters for selected world
-
-                                //split string from function to array
-                                if ($unlockedMonsters[$thisId].length != '') {
-                                    $thisUnlockedMonsterArray = $thisUnlockedMonsters.split("_");
-                                } else{
-                                    $thisUnlockedMonsterArray = '';
-                                }
-
-                                //split string from function to array
-                                if ($lockedMonsters[$thisId].length != '') {
-                                    $thisLockedMonsterArray = $thisLockedMonsters.split("_");
-                                } else{
-                                    $thisLockedMonsterArray = '';
-                                }
-
-                                //open slideitem div
-                                $slideItem ="<div class='swiper-slide'>";
-
-                                $slideItem = $slideItem +"<div class='desc'>" +
-                                    "<div class='item'>" +
-                                    "<h2>" + $worldNames[i] + "</h2>" +
-                                    "</div>" +
-                                    "</div>";
-
-                                //fill the current slideitem with unlocked monsters
-                                $.each($thisUnlockedMonsterArray, function(index, monster ){
-                                    $monsterNameLowerCase = monster.toLowerCase();
-                                    $slideItem = $slideItem +"<div class='monster' style='background-image: url(\"img/monster_"+$monsterNameLowerCase+".png\");'>" +
-                                    "<div class='monstername'>"+ monster +"</div>" +
-                                    "</div>";
-                                });
-
-                                //fill the current slideitem with locked monsters
-                                $.each($thisLockedMonsterArray, function(index, monster ){
-                                    $monsterNameLowerCase = monster.toLowerCase();
-                                    $slideItem = $slideItem +"<div class='monster' style='background-image: url(\"img/monster_"+$monsterNameLowerCase+"_locked.png\");'>" +
-                                            "<div class='monstername'>??</div>" +
-                                            "</div>";
-                                });
-                                //close the slideitem div
-                                $slideItem = $slideItem + "</div>";
-
-                                //add item to container
-                                $($swiperContainer).append($slideItem);
-                            }
-                        }
-                    },
-                    error: function () {
-                        alert("Er gaat iets verkeerd, neem contact met ons op!");
-                    }
-                }).done(function(result){
-                    swiper();
-
-                    $(".changeWorldId").click(function(){
-                        $thisWorldId = $(this).attr("id");
-                        changeWorldId($thisWorldId);
-                    });
-                })
-            }
-
-
-        }
-        getMonsters();
-
+//        function getWorlds(){
+//            var dataString="username="+$userName+"&worldid="+$worldId+"&submit=";
+//            if(localStorage.getItem('userInfo') !== null) {
+//                $.ajax({
+//                    type: "POST",
+//                    url: "http://game.onlineops.nl/phonegap_php/getWorlds.php",
+//                    data: dataString,
+//                    crossDomain: true,
+//                    cache: false,
+//                    dataType: 'json',
+//                    success: function (data) {
+//                        if (data['error'] == "error") {
+//                            //do nothing
+//                        } else if (data['worldid'] !== "") {
+//                            $numWorlds = data['numworlds'];
+//                            $worldSize = data['worldsize'];
+//                            $unlockFieldWorlds = data['unlockFieldWorlds'];
+//                            $worldNames = data['worldnames'];
+//                            $totalMonsters = data['totalmonsters'];
+//                            $yourmonsters = data['yourmonsters'];
+//                            console.log($totalMonsters);
+//                            console.log($yourmonsters);
+//                            console.log('numWorlds is' + $numWorlds);
+//                            console.log($unlockFieldWorlds);
+//                            console.log($worldSize);
+//
+//                            $swiperContainer = $('.swiper-wrapper');
+//
+//                            for (var i = 0; i < $numWorlds; i++) {
+//                                $process = ($unlockFieldWorlds[i-1]/$worldSize[i-1])*100;
+//                                $thisWorldId = i+1;
+//
+//                                $slideItem ="<div class='swiper-slide'>";
+//                                if($process < 15){
+//                                    $slideItem = $slideItem + "<div class='lockedWorld'><span class='fa fa-lock'></span></div>";
+//                                }
+//                                $slideItem = $slideItem + "<div class='img' style='background-image: url(\"img/"+$worldNames[i] +".png\");'></div>" +
+//                                        "<div class='desc'>" +
+//                                        "<div class='item'>" +
+//                                        "<h2>" + $worldNames[i] + "</h2>" +
+//                                        "</div>" +
+//                                        "<div class='item'>" +
+//                                        "<span>Monsters</span>" +
+//                                        "<span>"+$yourmonsters[i] + " / " + $totalMonsters[i]+"</span>" +
+//                                        "</div>" +
+//                                        "<div class='item'>" +
+//                                        "<span>Gebieden</span>" +
+//                                        "<span>"+ $unlockFieldWorlds[i] + " / " + $worldSize[i] + "</span>" +
+//                                        "</div>" +
+//                                        "<div class='item'>" +
+//                                        "<span>Sterren</span>" +
+//                                        "<span>0/0</span>" +
+//                                        "</div>" +
+//                                        "<div class='item'>" +
+//                                        "<button id='" + $thisWorldId + "' class='changeWorldId'>Speel level</button>" +
+//                                        "</div>" +
+//                                        "</div>" +
+//                                        "</div>";
+//                                $($swiperContainer).append($slideItem);
+//                                console.log('item geplaatst');
+//                            }
+//                        }
+//                    },
+//                    error: function () {
+//                        alert("Er gaat iets verkeerd, neem contact met ons op!");
+//                    }
+//                }).done(function(result){
+//                    swiper();
+//
+//                    $(".changeWorldId").click(function(){
+//                        $thisWorldId = $(this).attr("id");
+//                        changeWorldId($thisWorldId);
+//                    });
+//                })
+//            }
+//
+//
+//        }
+        //getWorlds();
+        swiper();
     });
 </script>
 
@@ -283,6 +276,7 @@
             // Optional parameters
             direction: 'horizontal',
             initialSlide: 0,
+            loop: false,
             onSlideChangeStart: function () {
                 var value = $('.swiper-slide-active').attr('data-swiper-slide-index');
                 var newValue = parseInt(value) + 1;
@@ -295,12 +289,17 @@
                 if (newValue == 3) {
                     $('.container').css("background-color", "#c0c0c0");
                 }
-            },
-            loop: false
+            }
         });
     }
-</script>
 
+    function changeWorldId(thisWorldId){
+        $thisWorldId = thisWorldId;
+        localStorage.setItem('worldId', $thisWorldId);
+        window.location.href = "index.html";
+        //alert($thisWorldId);
+    }
+</script>
 
 
 <!--<script type="text/javascript" src="js/index.js"></script>-->
