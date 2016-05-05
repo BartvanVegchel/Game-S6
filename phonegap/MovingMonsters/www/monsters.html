@@ -227,6 +227,12 @@
                                 //open slideitem div
                                 $slideItem ="<div class='swiper-slide'>";
 
+                                $slideItem = $slideItem +"<div class='desc'>" +
+                                    "<div class='item'>" +
+                                    "<h2>" + $worldNames[i] + "</h2>" +
+                                    "</div>" +
+                                    "</div>";
+
                                 //fill the current slideitem with unlocked monsters
                                 $.each($thisUnlockedMonsterArray, function(index, monster ){
                                     $monsterNameLowerCase = monster.toLowerCase();
