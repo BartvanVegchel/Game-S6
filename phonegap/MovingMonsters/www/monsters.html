@@ -227,18 +227,16 @@
                                 //open slideitem div
                                 $slideItem ="<div class='swiper-slide'>";
 
-                                $slideItem = $slideItem +"<div class='desc'>" +
-                                    "<div class='item'>" +
+                                $slideItem = $slideItem + "<div class='item'>" +
                                     "<h2>" + $worldNames[i] + "</h2>" +
-                                    "</div>" +
                                     "</div>";
 
                                 //fill the current slideitem with unlocked monsters
                                 $.each($thisUnlockedMonsterArray, function(index, monster ){
                                     $monsterNameLowerCase = monster.toLowerCase();
-                                    $slideItem = $slideItem +"<div class='monster' style='background-image: url(\"img/monster_"+$monsterNameLowerCase+".png\");'>" +
+                                    $slideItem = $slideItem +"<a href='monsters-detail.html?monstername="+monster+"' class='monster' style='background-image: url(\"img/monster_"+$monsterNameLowerCase+".png\");'>" +
                                     "<div class='monstername'>"+ monster +"</div>" +
-                                    "</div>";
+                                    "</a>";
                                 });
 
                                 //fill the current slideitem with locked monsters

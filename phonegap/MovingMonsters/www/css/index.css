@@ -488,7 +488,8 @@ section.map div.part div.transportbackground img {
     overflow: scroll;
 }
 
-.desc .item{
+.desc .item,
+.item{
     width: 80%;
     height: 40px;
     background-color: #516f72;
@@ -496,7 +497,8 @@ section.map div.part div.transportbackground img {
     border-radius: 5px;
 }
 
-.desc .itemklein{
+.desc .itemklein,
+.itemklein{
     width: 40%;
     height: 40px;
     display: inline-block;
@@ -508,7 +510,8 @@ section.map div.part div.transportbackground img {
     color: #fff;
 }
 
-.desc .itembig{
+.desc .itembig,
+.itembig{
     width: 80%;
     height: auto;
     background-color: #516f72;
@@ -516,7 +519,8 @@ section.map div.part div.transportbackground img {
     border-radius: 5px;
 }
 
-.desc .itembig p{
+.desc .itembig p,
+.itembig p{
     padding: 10px;
     color: #fff;
     text-align: center;
@@ -530,23 +534,29 @@ section.map div.part div.transportbackground img {
     margin-bottom: 10px;
 }
 
-.desc .item button{
+.desc .item button,
+.item button,
+.item a{
     width: 100%;
     height: 100%;
     color: #fff;
     font-family: 'Oduda', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size: 12px;
     text-transform: uppercase;
+    text-align:center;
+    display: inline-block;
 }
 
-.desc .item h2{
+.desc .item h2,
+.item h2{
     margin: 0;
     line-height: 40px;
     text-align: center;
     color: #fff;
 }
 
-.desc .item span{
+.desc .item span,
+.item span{
     display: inline-block;
     width: 49%;
     height: 100%;
@@ -555,11 +565,10 @@ section.map div.part div.transportbackground img {
     color: #fff;
 }
 
-.desc .item span:first-child{
+.desc .item span:first-child,
+.item span:first-child{
     border-right: 1px solid white;
 }
-
-
 
 .monster{
     width: 50%;

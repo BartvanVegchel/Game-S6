@@ -65,69 +65,6 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
-
-            <!--<div class="swiper-slide">
-                <div class="img" style="background-image: url('img/desertWorld.png');"></div>
-                <div class="desc">
-                    <div class="item">
-                        <h2>De woestijn</h2>
-                    </div>
-                    <div class="item">
-                        <span>Monsters</span>
-                        <span>4/6</span>
-                    </div>
-                    <div class="item">
-                        <span>Gebieden</span>
-                        <span>32/36</span>
-                    </div>
-                    <div class="item">
-                        <span>Sterren</span>
-                        <span>10/10</span>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="img" style="background-image: url('img/map_ice.png');"></div>
-                <div class="desc">
-                    <div class="item">
-                        <h2>De noordpool</h2>
-                    </div>
-                    <div class="item">
-                        <span>Monsters</span>
-                        <span>0/6</span>
-                    </div>
-                    <div class="item">
-                        <span>Gebieden</span>
-                        <span>3/36</span>
-                    </div>
-                    <div class="item">
-                        <span>Sterren</span>
-                        <span>1/10</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="swiper-slide">
-                <div class="lockedWorld"><span class="fa fa-lock"></span></div>
-                <div class="img" style="background-image: url('img/hometown.png');"></div>
-                <div class="desc">
-                    <div class="item">
-                        <h2>De woestijn</h2>
-                    </div>
-                    <div class="item">
-                        <span>Monsters</span>
-                        <span>0/6</span>
-                    </div>
-                    <div class="item">
-                        <span>Gebieden</span>
-                        <span>0/36</span>
-                    </div>
-                    <div class="item">
-                        <span>Sterren</span>
-                        <span>0/10</span>
-                    </div>
-                </div>
-            </div>-->
         </div>
     </div>
 </section>
@@ -247,6 +184,7 @@
                         } else if (data['worldid'] !== "") {
                             $numWorlds = data['numworlds'];
                             $worldSize = data['worldsize'];
+                            $worldColors = data['worldcolors'];
                             $unlockFieldWorlds = data['unlockFieldWorlds'];
                             $worldNames = data['worldnames'];
                             $totalMonsters = data['totalmonsters'];
@@ -298,7 +236,7 @@
                         alert("Er gaat iets verkeerd, neem contact met ons op!");
                     }
                 }).done(function(result){
-                    swiper();
+                    swiper($worldColors, $numWorlds);
 
                     $(".changeWorldId").click(function(){
                         $thisWorldId = $(this).attr("id");
@@ -315,7 +253,11 @@
 </script>
 
 <script>
-    function swiper() {
+    function swiper(worldcolors, numworlds) {
+        $bgColors = worldcolors;
+        $worlds = numworlds;
+        console.log($bgColors);
+        console.log($worlds);
         console.log('swiper start');
         var mySwiper = new Swiper('.swiper-container', {
             // Optional parameters
@@ -324,6 +266,7 @@
             onSlideChangeStart: function () {
                 var value = $('.swiper-slide-active').attr('data-swiper-slide-index');
                 var newValue = parseInt(value) + 1;
+
                 if (newValue == 1) {
                     $('.container').css("background-color", "#fadcb9");
                 }
