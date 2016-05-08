@@ -61,8 +61,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.php">Home</a></li>
-                    <li><a href="#">Social</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li class="active"><a href="social.php">Social</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
 				
@@ -112,23 +112,7 @@
 					<?php	
 						}
 					?>
-					
                 </ul>
-				<?php
-					if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd
-						if($_SESSION['username'] == "admin") {
-				?>
-							<ul class="nav navbar-nav admin-nav">
-								<li><a href="add_post.php">Bericht toevoegen</a></li>
-								<li><a href="posts.php">Bericht overzicht</a></li>
-								<li><a href="add_social_post.php">Vraag toevoegen</a></li>
-								<li><a href="social_posts.php">Vraag overzicht</a></li>
-								<li><a href="#">Ga naar dashboard</a></li>
-							</ul>
-				<?php
-						}
-					}
-				?>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>

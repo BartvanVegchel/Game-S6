@@ -34,7 +34,7 @@ function login(){
 		}
 	  
 	  if(isset($_SESSION["logged_in"])){ //Session logged_in wordt hierboven gezet
-		  header('Refresh: 0; url=index.php'); //stuur door naar de homepagina
+		  header('Refresh: 0; url=social.php'); //stuur door naar de homepagina
 		  echo "Welkom " . $_SESSION["username"];
 	  }
 	  

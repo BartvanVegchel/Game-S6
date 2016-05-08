@@ -4,7 +4,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12 col-md-8">
+		<div class="col-wi-1 center-block">
 			<div class="row">
 
 				<?php
@@ -28,16 +28,15 @@
 							
 							<article class="col-xs-12 col-md-12">
 								<div class="panel panel-default">
-									<div class="panel-heading">
-										<?php echo "<img src='./" . $image . "' height='200px' width='100%' alt='#' />"; ?>
-										<?php echo "<span class='category-overlay'>" . $category . "</span>"; ?>
-									</div>
+
+									<?php echo "<span class='category-overlay nohead'>" . $category . "</span>"; ?>
 									<div class="panel-body">
 										<h1><?php echo $title; ?></h1>
 										<p><?php echo $content; ?></p>
 									</div>
 									<div class="panel-footer">
-										<span><?php echo "Geplaatst op: " . $postDate; ?></span>
+										<span class="username_post"><?php echo $username; ?></span> <span class="post_date"><?php echo $postDate; ?></span>
+										<div class="clear"></div>
 									</div>
 								</div>
 							</article>
@@ -48,7 +47,7 @@
 									<input type="hidden" name="userPostId" value="<?php echo $userId; ?>" />
 									<input type="hidden" name="userCommentId" value="<?php echo ''; ?>" />
 									<input type="hidden" name="userCommentName" value="<?php echo $_SESSION['username']; ?>" />
-									<textarea class="form-control" placeholder="Doe hier maar wat typen ofzo" ></textarea>
+									<textarea class="form-control" placeholder="Reageren" ></textarea>
 									<input class="btn btn-primary" type="submit" name="submit" value="Plaats reactie" />
 								</form>
 							</div>

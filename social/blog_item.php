@@ -21,18 +21,18 @@ if($blogId != ''){
 			$image = $rij["image"];
 			?>
 			
-			<article class="col-xs-12 col-md-6">
-				<div class="panel panel-default">
+			<article class="col-wi-1 center-block">
+				<div class="panel panel-default blog_page">
 					<div class="panel-heading">
 						<?php echo "<img src='./" . $image . "' height='200px' width='100%' alt='#' />"; ?>
-						<?php echo "<span class='category-overlay'>" . $category . "</span>"; ?>
 					</div>
 					<div class="panel-body">
 						<h1><?php echo $title; ?></h1>
 						<p><?php echo $content; ?></p>
 					</div>
 					<div class="panel-footer">
-						<span><?php echo "Geplaatst op: " . $postDate; ?></span>
+						</span><span class="post_date"><?php echo $postDate; ?></span>
+						<div class="clear"></div>
 					</div>
 				</div>
 			</article>

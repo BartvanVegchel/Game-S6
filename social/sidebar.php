@@ -38,6 +38,43 @@
                     </div>
                 </article>
 
+                <article class="col-xs-12 col-md-12 quicklinks">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="links">
+
+                                <?php if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd ?>
+
+                                <ul>
+                                    <h2>Monster Plaza</h2>
+                                    <li><a href="add_social_post.php">Berichtje plaatsen</a></li>
+                                    <li><a href="social_posts.php">Alle berichten bekijken</a></li>
+
+                                    <h2>Direct naar</h2>
+                                    <li><a href="#">Vraag stellen</a></li>
+
+                                    <?php if($_SESSION['username'] == "admin") { ?>
+                                    <h2>Admin tools</h2>
+                                        <li><a href="add_post.php">Blog plaatsen</a></li>
+                                        <li><a href="#">Naar dashboard</a></li>
+                                    <?php } ?>
+                                </ul>
+
+                                <? }else{ ?>
+                                <ul>
+                                    <h2>Monster Plaza</h2>
+                                    <li><a href="social_posts.php">Alle berichten bekijken</a></li>
+
+                                    <h2>Direct naar</h2>
+                                    <li><a href="#">Vraag stellen</a></li>
+
+                                </ul>
+                                <?php } ?>
+
+                            </div>
+                        </div>
+                </article>
+
                 <?php
             }
 
