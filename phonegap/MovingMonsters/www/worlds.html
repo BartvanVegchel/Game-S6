@@ -263,6 +263,7 @@
             // Optional parameters
             direction: 'horizontal',
             initialSlide: 0,
+            loop: false,
             onSlideChangeStart: function () {
                 var value = $('.swiper-slide-active').attr('data-swiper-slide-index');
                 var newValue = parseInt(value) + 1;
@@ -276,8 +277,8 @@
                 if (newValue == 3) {
                     $('.container').css("background-color", "#c0c0c0");
                 }
-            },
-            loop: false
+            }
+
         });
     }
 

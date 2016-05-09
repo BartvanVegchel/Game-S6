@@ -38,104 +38,294 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/joyride-master/joyride-2.1.css" />
 
     <title>Moving Monsters</title>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
     <script src="js/sweetalert-dev.js"></script>
     <script src="js/cordova.js"></script>
-
-    <link rel="stylesheet" href="css/sweetalert.css">
 </head>
 
 <body>
+<!-- Top bar -->
 <section class="top-bar">
-    <span class="world-name">Desertworld</span>
+    <span class="world-name" id="number2">Werelden</span>
     <span class="menu-icon fa fa-bars"></span>
 </section>
 
-<div class="energy-points">
-    <span class="personalEnergypoints"><script>$( document ).ready(function() { getEnergypoints(); });</script></span>
-    <span class="fa fa-bolt"></span>
-</div>
-<div class="world-progress">
-    <span class="fa fa-globe"></span>
-    <span class="personalUnlockedFields"><script>$( document ).ready(function() { getUnlockedFields(); });</script></span>
-</div>
+<!-- Map container -->
+<section class="container">
+    <!-- Slider main container -->
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <script>
+                    //$monsterName = $_GET['monstername'];
+                    $userName = localStorage.getItem('userInfo');
+                    $monsterName = getUrlParameter('monstername');
+                    console.log('monstername is ' + $monsterName);
+                </script>
 
-<section id="dailyChallenge" class="container">
-    <script>
-        //$monsterName = $_GET['monstername'];
-        $userName = localStorage.getItem('userInfo');
-        $monsterName = getUrlParameter('monstername');
-        console.log('monstername is ' + $monsterName);
-    </script>
+                <div class="popup">
+                    <div class="item">
+                        <h2>Touwtje springen</h2>
+                    </div>
+                    <div class="itembig">
+                        <p>Spring 10 keer</p>
+                    </div>
+                    <div class="itemknop">
+                        <script>
+                            $(document).ready(function(){
+                                $('span.start').on('click', function(){
+                                    myCounter.start();
+                                    //alert('hoi');
+                                });
+                            });
+                        </script>
+                        <span class="start">Start!</span>
+                        <span class="smallcountdown" id="smallcountdown"></span>
+                        <span class="countdown" id="countdown"></span>
+                    </div>
+                </div>
 
-    <div class="popup">
-        <h1><?php echo $monsterChallengeName;?></h1>
-        <p><?php echo $monsterChallengeDescription;?><br><br></p>
-        <h2>Resterende tijd:</h2>
-        <div id="countdown"></div>
+
+                <script>
+
+                </script>
+            </div>
+        </div>
     </div>
-
-
-    <script>
-        (function countdown(remaining) {
-            if(remaining === -1) {
-                window.location.replace("index.html?monstername="+$monsterName+"&requirement=3&username="+$userName);
-            }else{
-                document.getElementById('countdown').innerHTML = remaining;
-                setTimeout(function(){ countdown(remaining - 1); }, 1000);
-            }
-        })(5);
-    </script>
 </section>
 
+<!-- Bottom bar -->
 <section class="bottom-bar">
     <ul>
         <li>
-            <div class="circle">
-                <span class="fa fa-paper-plane"></span>
-            </div>
+            <a href="monsters.html">
+                <div id="number4" class="circle">
+                    <span class="fa fa-paper-plane"></span>
+                </div>
+            </a>
         </li>
         <li>
-            <div class="circle">
-                <span class="fa fa-rocket"></span>
-            </div>
+            <a href="worlds.html">
+                <div id="number5" class="circle">
+                    <span class="fa fa-rocket"></span>
+                </div>
+            </a>
         </li>
         <li>
-            <div class="circle">
-                <span class="fa fa-trophy"></span>
-            </div>
+            <a href="#challengeMenuPanel">
+                <div id="number6" class="circle">
+                    <span class="fa fa-trophy"></span>
+                </div>
+            </a>
         </li>
-        <li>
-            <div class="circle">
+        <li class="tutorial">
+            <div id="number7" class="circle">
                 <span class="fa fa-question"></span>
             </div>
         </li>
     </ul>
 </section>
 
+<!-- content of joyride tips -->
+<ol id="joyRideTipContent" data-joyride>
+    <li data-id="number1" data-text="Volgende" class="custom1">
+        <h2>EnergyPointjes</h2>
+        <p>Hier zie je hoeveel EnergyPoints (EP) je nog hebt. Je kunt er meer verdienen door te bewegen!</p>
+    </li>
+    <li data-id="number2" data-text="Volgende" class="custom2">
+        <h2>Huidige wereld</h2>
+        <p>Hier staat de naam van de wereld waar je op dit moment bent.</p>
+    </li>
+    <li data-id="number3" data-text="Volgende" class="custom3">
+        <h2>Voortgang wereld</h2>
+        <p>Hier zie je het aantal ontdekte gebieden van de wereld</p>
+    </li>
 
-<div id="deviceready" class="blink">
-    <p class="event listening">Connecting to Device</p>
-    <p class="event received">Device is Ready</p>
-</div>
+    <li data-id="number4" data-text="Volgende" class="custom4" data-options="tipLocation:top;">
+        <h2>Monsterdex</h2>
+        <p>Bekijk hier welke monsters je al hebt ontdekt en wilke je nog moet!</p>
+    </li>
+    <li data-id="number5" data-text="Volgende" class="custom5" data-options="tipLocation:top;">
+        <h2>Werelden</h2>
+        <p>Vanuit hier kun je reizen naar andere werelden!</p>
+    </li>
+    <li data-id="number6" data-text="Volgende" class="custom6" data-options="tipLocation:top;">
+        <h2>Scoreboard</h2>
+        <p>Hier kun je zien hoeveel je vrienden al hebben gevonden!</p>
+    </li>
+    <li data-id="number7" data-text="Volgende" class="custom7" data-options="tipLocation:top;">
+        <h2>Help?</h2>
+        <p>Als je vragen hebt, kun je op deze knop drukken!</p>
+    </li>
 
-<script type="text/javascript">
+</ol>
+
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+<script type="text/javascript" src="js/joyride-master/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/joyride-master/modernizr.mq.js"></script>
+<script type="text/javascript" src="js/joyride-master/jquery.joyride-2.1.js"></script>
+<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
+<script>
+
+    // initialize app
+    app.initialize();
+
+    // check if ingelogd
     if(localStorage.getItem('userInfo') == null){
         console.log('je bent niet ingelogd');
         window.location.href = "inloggen.html";
     } else{
         console.log('je bent ingelogd');
     }
+
+    // counter challenge
+    $('#smallcountdown').show();
+    var myCounter = new Countdown({
+        seconds:3,  // number of seconds to count down
+        onUpdateStatus: function(sec){
+            $('span.start').hide();
+            document.getElementById('smallcountdown').innerHTML = sec;
+        },
+        onCounterEnd: function(){
+            $('#smallcountdown').hide();
+            (function countdown(remaining) {
+                if(remaining === -1) {
+                    window.location.replace("index.html?monstername="+$monsterName+"&requirement=3&username="+$userName);
+                }else{
+                    document.getElementById('countdown').innerHTML = "Je hebt nog " + remaining + " seconden!";
+                    setTimeout(function(){ countdown(remaining - 1); }, 1000);
+                }
+            })(150);
+        }
+    });
+
+    // Joyride tip
+    $(window).load(function() {
+        $('.tutorial').click(function() {
+            $('#joyRideTipContent').joyride({
+                autoStart: true,
+                modal: true,
+                expose: true
+            });
+        });
+    });
+
+    //initialize swiper when document ready
+    $(document).ready(function () {
+        //build items for swiper
+        function getMonsterInfo(){
+            $currentmonster = getUrlParameter('monstername');
+            $currentmonsterLowerCase = $currentmonster.toLowerCase();
+
+            var dataString="monstername="+$currentmonster+"&submit=";
+            if(localStorage.getItem('userInfo') !== null) {
+                $.ajax({
+                    type: "POST",
+                    url: "http://game.onlineops.nl/phonegap_php/getMonsterInfo.php",
+                    data: dataString,
+                    crossDomain: true,
+                    cache: false,
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data['error'] == "error") {
+                            //do nothing
+                        } else if (data['monsterstory'] !== "") {
+                            //get the data
+                            $monsterStory = data['monsterstory'];
+
+                            //get the container
+                            $swiperContainer = $('.swiper-wrapper');
+
+                            $slideItem = '<div class="swiper-slide monster-detail">'+
+                                    '<div class="img" style="background-image: url(\'img/monster_'+$currentmonsterLowerCase+'.png\');"></div>'+
+                                    '<div class="desc">' +
+                                    '<div class="item">'+
+                                    '<h2>'+$currentmonster+'</h2>' +
+                                    '</div>' +
+                                    '<div id="monsterstory" class="itembig">' +
+                                    '<p>'+$monsterStory+'</p>'+
+                                    '</div>' +
+                                    '<div class="item">' +
+                                    '<h2>Challenge</h2>'+
+                                    '</div>' +
+                                    '<div class="item">' +
+                                    '<a href="monsters.html">Terug</a>' +
+                                    '</div>' +
+                                    '</div>' +
+                                    '</div>';
+
+                            //add item to container
+                            $($swiperContainer).append($slideItem);
+
+                        }
+                    },
+                    error: function () {
+                        alert("Er gaat iets verkeerd, neem contact met ons op!");
+                    }
+                }).done(function(result){
+                    swiper();
+
+                    $(".changeWorldId").click(function(){
+                        $thisWorldId = $(this).attr("id");
+                        changeWorldId($thisWorldId);
+                    });
+                })
+            }
+
+
+        }
+        getMonsterInfo();
+        swiper();
+    });
 </script>
-<script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript">
-    app.initialize();
+
+<script>
+    function swiper() {
+        console.log('swiper start');
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            direction: 'horizontal',
+            initialSlide: 0,
+            loop: false,
+            onSlideChangeStart: function () {
+                var value = $('.swiper-slide-active').attr('data-swiper-slide-index');
+                var newValue = parseInt(value) + 1;
+                if (newValue == 1) {
+                    $('.container').css("background-color", "#fadcb9");
+                }
+                if (newValue == 2) {
+                    $('.container').css("background-color", "#e0f3fb");
+                }
+                if (newValue == 3) {
+                    $('.container').css("background-color", "#c0c0c0");
+                }
+            }
+        });
+    }
+
+    function changeWorldId(thisWorldId){
+        $thisWorldId = thisWorldId;
+        localStorage.setItem('worldId', $thisWorldId);
+        window.location.href = "index.html";
+    }
 </script>
+
+
+<!--<script type="text/javascript" src="js/index.js"></script>-->
+<!--<script type="text/javascript">-->
+<!--app.initialize();-->
+<!--</script>-->
 </body>
 
 </html>
