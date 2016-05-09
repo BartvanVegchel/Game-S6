@@ -30,7 +30,7 @@
 									<div class="social_block">
 										<a href="social_item.php?id=<?php echo $postId; ?>"></a>
 										<div class="social_img icon_<?php echo $category; ?>">
-											<img src='img/social/<?php echo $category; ?>.jpg' />
+											<img src='img/social/<?php echo $category; ?>.png' />
 										</div>
 										<div class="social_text">
 											<p><?php echo $title; ?></p>
