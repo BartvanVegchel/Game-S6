@@ -29,7 +29,7 @@
 							<article class="col-xs-12 col-md-12">
 								<div class="panel panel-default">
 
-									<?php echo "<span class='category-overlay nohead'>" . $category . "</span>"; ?>
+									<span class="box_overlay <?php echo $category; ?>"><?php echo $category; ?></span>
 									<div class="panel-body">
 										<h1><?php echo $title; ?></h1>
 										<p><?php echo $content; ?></p>
@@ -40,7 +40,7 @@
 									</div>
 								</div>
 							</article>
-							
+
 							<div class="col-xs-12 col-md-12">
 								<form method="POST" action="send_comment_function.php" style="margin-bottom: 20px;">
 									<input type="hidden" name="postId" value="<?php echo $postId; ?>" />
