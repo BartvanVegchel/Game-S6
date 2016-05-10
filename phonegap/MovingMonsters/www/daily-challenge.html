@@ -54,7 +54,7 @@
 <body>
 <!-- Top bar -->
 <section class="top-bar">
-    <span class="world-name" id="number2">Werelden</span>
+    <span class="world-name" id="number2">Daily Challenges</span>
     <span class="menu-icon fa fa-bars"></span>
 </section>
 
@@ -65,40 +65,8 @@
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
-            <div class="swiper-slide">
-                <script>
-                    //$monsterName = $_GET['monstername'];
-                    $userName = localStorage.getItem('userInfo');
-                    $monsterName = getUrlParameter('monstername');
-                    console.log('monstername is ' + $monsterName);
-                </script>
+            <div class="slide-item">
 
-                <div class="popup">
-                    <div class="item">
-                        <h2>Touwtje springen</h2>
-                    </div>
-                    <div class="itembig">
-                        <p>Spring 10 keer</p>
-                    </div>
-                    <div class="itemknop">
-                        <script>
-                            $(document).ready(function(){
-                                $('span.start').on('click', function(){
-                                    myCounter.start();
-                                    //alert('hoi');
-                                });
-                            });
-                        </script>
-                        <span class="start">Start!</span>
-                        <span class="smallcountdown" id="smallcountdown"></span>
-                        <span class="countdown" id="countdown"></span>
-                    </div>
-                </div>
-
-
-                <script>
-
-                </script>
             </div>
         </div>
     </div>
@@ -189,27 +157,6 @@
         console.log('je bent ingelogd');
     }
 
-    // counter challenge
-    $('#smallcountdown').show();
-    var myCounter = new Countdown({
-        seconds:3,  // number of seconds to count down
-        onUpdateStatus: function(sec){
-            $('span.start').hide();
-            document.getElementById('smallcountdown').innerHTML = sec;
-        },
-        onCounterEnd: function(){
-            $('#smallcountdown').hide();
-            (function countdown(remaining) {
-                if(remaining === -1) {
-                    window.location.replace("index.html?monstername="+$monsterName+"&requirement=3&username="+$userName);
-                }else{
-                    document.getElementById('countdown').innerHTML = "Je hebt nog " + remaining + " seconden!";
-                    setTimeout(function(){ countdown(remaining - 1); }, 1000);
-                }
-            })(150);
-        }
-    });
-
     // Joyride tip
     $(window).load(function() {
         $('.tutorial').click(function() {
@@ -224,15 +171,16 @@
     //initialize swiper when document ready
     $(document).ready(function () {
         //build items for swiper
-        function getMonsterInfo(){
-            $currentmonster = getUrlParameter('monstername');
-            $currentmonsterLowerCase = $currentmonster.toLowerCase();
+        function getDailyChallenge(){
+            $date = new Date();
+            $day = $date.getDate();
+            console.log($day);
 
-            var dataString="monstername="+$currentmonster+"&submit=";
+            var dataString="currentday="+$day+"&submit=";
             if(localStorage.getItem('userInfo') !== null) {
                 $.ajax({
                     type: "POST",
-                    url: "http://game.onlineops.nl/phonegap_php/getMonsterInfo.php",
+                    url: "http://game.onlineops.nl/phonegap_php/getDailyChallenge.php",
                     data: dataString,
                     crossDomain: true,
                     cache: false,
@@ -240,27 +188,25 @@
                     success: function (data) {
                         if (data['error'] == "error") {
                             //do nothing
-                        } else if (data['monsterstory'] !== "") {
+                        } else if (data['description'] !== "") {
                             //get the data
-                            $monsterStory = data['monsterstory'];
+                            $name = data['name'];
+                            $description = data['description'];
+                            $time = data['timeLimit'];
 
                             //get the container
                             $swiperContainer = $('.swiper-wrapper');
 
-                            $slideItem = '<div class="swiper-slide monster-detail">'+
-                                    '<div class="img" style="background-image: url(\'img/monster_'+$currentmonsterLowerCase+'.png\');"></div>'+
+                            $slideItem = '<div class="swiper-slide">'+
                                     '<div class="desc">' +
                                     '<div class="item">'+
-                                    '<h2>'+$currentmonster+'</h2>' +
+                                    '<h2>'+$name+'</h2>' +
                                     '</div>' +
                                     '<div id="monsterstory" class="itembig">' +
-                                    '<p>'+$monsterStory+'</p>'+
+                                    '<p>'+$description+'</p>'+
                                     '</div>' +
                                     '<div class="item">' +
-                                    '<h2>Challenge</h2>'+
-                                    '</div>' +
-                                    '<div class="item">' +
-                                    '<a href="monsters.html">Terug</a>' +
+                                    '<a href="challenge.html?name='+$name+'&description='+$description+'&time='+$time+'">Start Challenge</a>' +
                                     '</div>' +
                                     '</div>' +
                                     '</div>';
@@ -285,7 +231,7 @@
 
 
         }
-        getMonsterInfo();
+        getDailyChallenge();
         swiper();
     });
 </script>

@@ -62,45 +62,6 @@ function getUnlockedFields(){
     }
 }
 
-// getUnlockedFields function
-// function getWorlds(){
-//     var dataString="username="+$userName+"&submit=";
-//     if(localStorage.getItem('userInfo') !== null) {
-//         $.ajax({
-//             type: "POST",
-//             url: "http://game.onlineops.nl/phonegap_php/getWorlds.php",
-//             data: dataString,
-//             crossDomain: true,
-//             cache: false,
-//             dataType: 'json',
-//             success: function (data) {
-//                 if (data['error'] == "error") {
-//                     //do nothing
-//                 } else if (data['worldid'] !== "") {
-//                     $numWorlds = data['numworlds'];
-//                     $worldSize = data['worldsize'];
-//                     $unlockFieldWorlds = data['unlockFieldWorlds'];
-//
-//                     console.log('numWorlds is' + $numWorlds);
-//                     console.log($unlockFieldWorlds);
-//                     console.log($worldSize);
-//
-//                     for (var i = 0; i < $numWorlds; i++) {
-//                         $process = ($unlockFieldWorlds[i]/$worldSize[i])*100;
-//                         console.log($process);
-//                         console.log('Unlocked is ' + $unlockFieldWorlds[i] + " / " + $worldSize[i]);
-//                     }
-//
-//                     //console.log($unlockedFields.length);
-//                     //$("#worldMenuPanel").html("<a href='index.html?worldid=" + data['worldid'] + "' class='worldItem'>" + data['worldtitle'] + "</a>");
-//                 }
-//             },
-//             error: function () {
-//                 alert("Er gaat iets verkeerd, neem contact met ons op!");
-//             }
-//         })
-//     }
-// }
 
 //unlock elements
 function unlockFunction(id, element){
@@ -165,7 +126,6 @@ function unlockFunction(id, element){
 
 
 function unlockMonsters(monstername){
-    alert('monster klik' + monstername);
     $monsterName = monstername
     $monsterNameLowerCase = $monsterName.toLowerCase();
 
@@ -179,6 +139,23 @@ function unlockMonsters(monstername){
         },
         function(){
             window.location.href = 'monster_challenge.html?monstername='+$monsterName;
+        });
+}
+
+function dailyChallenge(name, id){
+    $name = name;
+    $monsterName = '';//empty for check on challenge.html
+    $challengeId = id;
+
+    swal({
+            title: "Dagelijkse uitdaging",
+            text: $name,
+            confirmButtonText: "Start",
+            showCancelButton: true,
+            cancelButtonText: "Nu niet",
+        },
+        function(){
+            window.location.href = 'challenge.html?monstername='+$monsterName+'&challengeId='+$challengeId;
         });
 }
 
@@ -218,22 +195,37 @@ function buildMap(){
 
 document.addEventListener("deviceready",onDeviceReady,false);// call first function if device is ready
 
-function onDeviceReady(){
+function onDeviceReady() {
     buildMap(); //build map if device is ready
     getEnergypoints(); //set energypoints in div
     getUnlockedFields(); //set unlocked fields in div
     //getWorlds(); //set worlds in div menu
 
-    $(".bottom-bar ul li a").click(function(){
-        $panel = $(this).attr('href');
-        $activePanel = '#'+ $('.activePanel').attr('id');
-        //alert($activePanel);
-        if($panel == $activePanel){
-            $('.menuPanel').removeClass('activePanel');
-        } else{
-            $('.menuPanel').removeClass('activePanel');
-            $($panel).addClass('activePanel');
-        }
+    $('.dailyChallenge').click(function () {
+        $date = new Date();
+        $day = $date.getDate();
+
+        var dataString="currentday="+$day+"&submit=";
+        $.ajax({
+            type: "POST",
+            url: "http://game.onlineops.nl/phonegap_php/getDailyChallenge.php",
+            data: dataString,
+            crossDomain: true,
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+                if (data['error'] == "error") {
+                    //do nothing
+                } else if (data['description'] !== "") {
+                    //get the data
+                    $name = data['name'];
+                    //$description = data['description'];
+                    //$time = data['timeLimit'];
+                }
+            }
+        }).done(function (data) {
+            dailyChallenge($name, $day);
+        })
     });
 }
 
@@ -267,8 +259,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 
-//open submenu
-
+//countdown
 function Countdown(options) {
     var timer,
         instance = this,
@@ -296,5 +287,3 @@ function Countdown(options) {
         clearInterval(timer);
     };
 }
-
-
