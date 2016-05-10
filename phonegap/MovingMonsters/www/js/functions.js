@@ -158,7 +158,7 @@ function dailyChallenge(name, id, description, time, reward){
             cancelButtonText: "Nu niet",
         },
         function(){
-            window.location.href = 'challenge.html?monstername='+$monsterName+'&challengeId='+$challengeId+'&challengeName='+$name+'&time='+$time+'&description='+$description;
+            window.location.href = 'challenge.html?monstername='+$monsterName+'&challengeId='+$challengeId+'&challengeName='+$name+'&time='+$time+'&reward='+$reward+'&description='+$description;
         });
 }
 

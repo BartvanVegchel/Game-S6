@@ -190,7 +190,7 @@
             $('#smallcountdown').hide();
             (function countdown(remaining) {
                 if(remaining === -1) {
-                    window.location.replace("index.html?monstername="+$monsterName+"&requirement=3&username="+$userName);
+                    window.location.replace("index.html?monstername="+$monsterName+"&requirement=3&username="+$userName+"&reward="+$reward);
                 }else{
                     document.getElementById('countdown').innerHTML = "Je hebt nog " + remaining + " seconden!";
                     setTimeout(function(){ countdown(remaining - 1); }, 1000);
@@ -215,23 +215,27 @@
         $challengeName = getUrlParameter('challengeName');
         $challengeDescription = getUrlParameter('description');
         $reward = getUrlParameter('reward');
-
         $challengeContainer = $("#challengeContainer");
 
+        //check which challenge
         if($monsterName == ''){
             $challengeContent = '<div class="item">' +
             '<h2 id="challengeName">'+ $challengeName +'</h2>' +
             '</div>' +
-            '<div id="challengeDescription" class="itembig">' +
-            '<p>'+$challengeDescription+'</p></div>';
+            '<div class="itembig">' +
+            '<p>'+$challengeDescription+'</p></div>' +
+            '<div class="item">' +
+            '<p>'+ $reward +'</p>' +
+            '</div>';
 
             console.log('dailychallenge uitvoeren');
         } else{
             $challengeContent = '<div class="item">' +
-                '<h2 id="challengeName">'+ $challengeName +'</h2>' +
+                '<h2>'+ $challengeName +'</h2>' +
                 '</div>' +
-                '<div id="challengeDescription" class="itembig">' +
+                '<div class="itembig">' +
                 '<p>'+$challengeDescription+'</p></div>';
+
 
             console.log('monsterchallenge uitoveren');
         }
