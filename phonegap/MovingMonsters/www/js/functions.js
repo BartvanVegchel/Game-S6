@@ -125,27 +125,30 @@ function unlockFunction(id, element){
 }// end .locked click
 
 
-function unlockMonsters(monstername){
-    $monsterName = monstername
-    $monsterNameLowerCase = $monsterName.toLowerCase();
+// function unlockMonsters(monstername){
+//     $monsterName = monstername
+//     $monsterNameLowerCase = $monsterName.toLowerCase();
+//
+//     swal({
+//         title: $monsterName,
+//         text: "Speel "+$monsterName+" nu vrij",
+//         imageUrl: "images/monster_"+$monsterNameLowerCase+".png",
+//         confirmButtonText: "Start",
+//         showCancelButton: true,
+//         cancelButtonText: "Nu niet",
+//     },
+//     function(){
+//         window.location.href = 'challenge.html?monstername='+$monsterName;
+//     });
+// }
 
-    swal({
-            title: $monsterName,
-            text: "Speel "+$monsterName+" nu vrij",
-            imageUrl: "images/monster_"+$monsterNameLowerCase+".png",
-            confirmButtonText: "Start",
-            showCancelButton: true,
-            cancelButtonText: "Nu niet",
-        },
-        function(){
-            window.location.href = 'monster_challenge.html?monstername='+$monsterName;
-        });
-}
-
-function dailyChallenge(name, id){
+function dailyChallenge(name, id, description, time, reward){
     $name = name;
     $monsterName = '';//empty for check on challenge.html
+    $reward = reward;
     $challengeId = id;
+    $description = description
+    $time = time;
 
     swal({
             title: "Dagelijkse uitdaging",
@@ -155,8 +158,30 @@ function dailyChallenge(name, id){
             cancelButtonText: "Nu niet",
         },
         function(){
-            window.location.href = 'challenge.html?monstername='+$monsterName+'&challengeId='+$challengeId;
+            window.location.href = 'challenge.html?monstername='+$monsterName+'&challengeId='+$challengeId+'&challengeName='+$name+'&time='+$time+'&description='+$description;
         });
+}
+
+function monsterChallenge(monstername, name, id, description, time){
+    $name = name;
+    $monsterName = monstername;
+    $monsterNameLowerCase = $monsterName.toLowerCase();
+    $reward = '';//empty for check on challenge.html
+    $challengeId = id;
+    $description = description
+    $time = time;
+
+    swal({
+        title: $monsterName,
+        text: "Speel "+$monsterName+" nu vrij",
+        imageUrl: "img/monster_"+$monsterNameLowerCase+".png",
+        confirmButtonText: "Start",
+        showCancelButton: true,
+        cancelButtonText: "Nu niet",
+    },
+    function(){
+        window.location.href = 'challenge.html?monstername='+$monsterName+'&challengeId='+$challengeId+'&challengeName='+$name+'&time='+$time+'&description='+$description;
+    });
 }
 
 function buildMap(){
@@ -180,10 +205,38 @@ function buildMap(){
                 });
 
                 // click event for locked monsters
-                $('img.monsterEgg').click(function() {
+                // $('img.monsterEgg').click(function() {
+                //     $monsterName = $(this).attr('monster-name');
+                //     unlockMonsters($monsterName); // call function with param
+                // });
+
+                $('img.monsterEgg').click(function () {
                     $monsterName = $(this).attr('monster-name');
-                    unlockMonsters($monsterName); // call function with param
-                });
+
+                    var dataString="monsterName="+$monsterName+"&submitMonster=";
+                    $.ajax({
+                        type: "POST",
+                        url: "http://game.onlineops.nl/phonegap_php/getDailyChallenge.php",
+                        data: dataString,
+                        crossDomain: true,
+                        cache: false,
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data['error'] == "error") {
+                                //do nothing
+                            } else if (data['description'] !== "") {
+                                //get the data
+                                $name = data['name'];
+                                $description = data['description'];
+                                $time = data['timelimit'];
+                                $monsterId = data['id'];
+
+                            }
+                        }
+                    }).done(function (data) {
+                        monsterChallenge($monsterName, $name, $monsterId, $description, $time);
+                    })
+                });//end monsterEgg click
             },
             error: function () {
                 alert("Er gaat iets verkeerd, neem contact met ons op!");
@@ -205,7 +258,7 @@ function onDeviceReady() {
         $date = new Date();
         $day = $date.getDate();
 
-        var dataString="currentday="+$day+"&submit=";
+        var dataString="currentday="+$day+"&submitDaily=";
         $.ajax({
             type: "POST",
             url: "http://game.onlineops.nl/phonegap_php/getDailyChallenge.php",
@@ -219,12 +272,13 @@ function onDeviceReady() {
                 } else if (data['description'] !== "") {
                     //get the data
                     $name = data['name'];
-                    //$description = data['description'];
-                    //$time = data['timeLimit'];
+                    $description = data['description'];
+                    $time = data['timelimit'];
+                    $reward = data['reward'];
                 }
             }
         }).done(function (data) {
-            dailyChallenge($name, $day);
+            dailyChallenge($name, $day, $description, $time, $reward);
         })
     });
 }

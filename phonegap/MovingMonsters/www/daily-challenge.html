@@ -176,7 +176,7 @@
             $day = $date.getDate();
             console.log($day);
 
-            var dataString="currentday="+$day+"&submit=";
+            var dataString="currentday="+$day+"&submitDaily=";
             if(localStorage.getItem('userInfo') !== null) {
                 $.ajax({
                     type: "POST",

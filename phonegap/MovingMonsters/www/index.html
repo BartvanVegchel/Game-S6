@@ -190,7 +190,7 @@
     $requirement = getUrlParameter('requirement');
     $username = getUrlParameter('username');
 
-    if($monsterName && $requirement) {
+    if($monsterName && $requirement){
         $monsterNameLowerCase = $monsterName.toLowerCase();
         $monsterImage = $("img[monster-name='" + $monsterName + "']");
         $parentId = $($monsterImage).parent().parent().attr('id');
