@@ -458,8 +458,8 @@ section.map div.part div.transportbackground img {
 
 .swiper-container .swiper-slide{
     background-color: rgba(255,255,255,0.9);
-    width: 90% !important;
-    margin: 0 5%;
+    width: 75% !important;
+    /*margin: 0 5%;*/
     overflow: scroll;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;

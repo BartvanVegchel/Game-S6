@@ -263,9 +263,12 @@
             // Optional parameters
             direction: 'horizontal',
             initialSlide: 0,
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            centeredSlides: true,
             loop: false,
             onSlideChangeStart: function () {
-                var value = $('.swiper-slide-active').attr('data-swiper-slide-index');
+                var value = mySwiper.activeIndex;
                 var newValue = parseInt(value) + 1;
 
                 if (newValue == 1) {
