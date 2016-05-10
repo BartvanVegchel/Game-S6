@@ -281,9 +281,21 @@
             // Optional parameters
             direction: 'horizontal',
             initialSlide: 0,
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            centeredSlides: true,
+            loop: false,
+            onInit: function(){
+                var amount =  $('.swiper-slide').length;
+                if(amount == 1){
+                    $('.swiper-slide').css("margin", "0 12.5%");
+                }
+                $('.container').css("background-color", "#fadcb9");
+            },
             onSlideChangeStart: function () {
-                var value = $('.swiper-slide-active').attr('data-swiper-slide-index');
+                var value = mySwiper.activeIndex;
                 var newValue = parseInt(value) + 1;
+
                 if (newValue == 1) {
                     $('.container').css("background-color", "#fadcb9");
                 }
@@ -293,8 +305,7 @@
                 if (newValue == 3) {
                     $('.container').css("background-color", "#c0c0c0");
                 }
-            },
-            loop: false
+            }
         });
     }
 </script>

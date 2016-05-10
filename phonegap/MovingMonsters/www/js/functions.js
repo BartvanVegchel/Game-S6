@@ -341,3 +341,4 @@ function Countdown(options) {
         clearInterval(timer);
     };
 }
+
