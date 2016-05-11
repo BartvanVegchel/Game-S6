@@ -20,6 +20,9 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
+        //this.content();
+        this.watchID = null;
+        console.log('initalize');
     },
     // Bind Event Listeners
     //
@@ -27,14 +30,22 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+
     },
     // deviceready Event Handler
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+
+        pedometer.isStepCountingAvailable(successCallback, failureCallback);
+        app.receivedEvent('deviceready'); //AANZETTEN ALS HET NIET MEER WERKT
+        console.log('onDeviceReady');
+        //console.log(navigator.accelerometer);
+        // app.startAcceleration();
+        alert('success');
     },
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
@@ -45,5 +56,5 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    },
 };

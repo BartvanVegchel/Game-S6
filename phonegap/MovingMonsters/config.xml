@@ -25,6 +25,7 @@
   <plugin name="cordova-plugin-statusbar" source="npm" spec="~2.1.2"/>
   <plugin name="cordova-plugin-vibration" source="npm" spec="~2.1.0"/>
   <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1"/>
+  <plugin name="cordova-plugin-pedometer" source="npm" spec="~0.4.1"/>
   <plugin name="de.appplant.cordova.plugin.hidden-statusbar-overlay" spec="1.2.0" source="pgb" />
   <icon src="icon.png"/>
   <platform name="android">
@@ -105,7 +106,6 @@
   <access origin="185.13.226.244"/>
   <access origin="http://game.onlineops.nl*"/>
   <access origin="http://159.253.0.35*"/>
-  <access origin="http://www.arnoclassens.nl*"/>
   <access origin="http://game.onlineops.nl*"/>
   <access origin="*"/>
   <allow-intent href="http://*/*"/>
