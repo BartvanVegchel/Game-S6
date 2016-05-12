@@ -1,6 +1,7 @@
 $userName = localStorage.getItem('userInfo');
 $worldId = localStorage.getItem('worldId');
 
+// check if worldId isset, else worldId = 1
 if(localStorage.getItem('worldId') == null){
     $worldId = 1;
     console.log('geen worldId gezet');
@@ -11,9 +12,10 @@ if(localStorage.getItem('worldId') == null){
 
 console.log('functions ingeladen voor ' + $userName);
 
-// getEnergyPoints function
+// getEnergyPoints function and place in div element
 function getEnergypoints(){
     var dataString="username="+$userName+"&submit=";
+
     if(localStorage.getItem('userInfo') !== null) {
         $.ajax({
             type: "POST",
@@ -36,7 +38,7 @@ function getEnergypoints(){
     }
 }
 
-// getUnlockedFields function
+// getUnlockedFields function and place in div element
 function getUnlockedFields(){
     var dataString="username="+$userName+"&worldid="+$worldId+"&submit=";
     if(localStorage.getItem('userInfo') !== null) {
@@ -63,9 +65,8 @@ function getUnlockedFields(){
 }
 
 
-//unlock elements
+//function is called from the buildMap function with paramters of clicked element
 function unlockFunction(id, element){
-    //get the parameters from the function inside buildMap function
     $fieldId = id; // get id of clicked parent-element
     $clickedelement = element; //get clicked div
 
@@ -73,7 +74,7 @@ function unlockFunction(id, element){
     $personalEnergy = $('.personalEnergypoints'); // get personal energypoints box
     $personalEnergyValue = $($personalEnergy).text(); // get personal energypoints value
 
-    $personalUnlockedFields = $('.personalUnlockedFields').find('span.unlocked'); // unlocked fields box
+    $personalUnlockedFields = $('.personalUnlockedFields').find('span.unlocked'); // unlocked fields box where to place the new value
     $personalUnlockedFieldsValue = $($personalUnlockedFields).text(); // unlocked fields box value
     $personalUnlockedFieldsValueInt = parseInt($personalUnlockedFieldsValue); // convert value to integer
 
@@ -125,23 +126,7 @@ function unlockFunction(id, element){
 }// end .locked click
 
 
-// function unlockMonsters(monstername){
-//     $monsterName = monstername
-//     $monsterNameLowerCase = $monsterName.toLowerCase();
-//
-//     swal({
-//         title: $monsterName,
-//         text: "Speel "+$monsterName+" nu vrij",
-//         imageUrl: "images/monster_"+$monsterNameLowerCase+".png",
-//         confirmButtonText: "Start",
-//         showCancelButton: true,
-//         cancelButtonText: "Nu niet",
-//     },
-//     function(){
-//         window.location.href = 'challenge.html?monstername='+$monsterName;
-//     });
-// }
-
+// popup screen for daily challenge
 function dailyChallenge(name, id, description, time, reward){
     $name = name;
     $monsterName = '';//empty for check on challenge.html
@@ -162,6 +147,7 @@ function dailyChallenge(name, id, description, time, reward){
         });
 }
 
+//start monsterChallenge
 function monsterChallenge(monstername, name, id, description, time, clicktype){
     $name = name;
     $monsterName = monstername;
@@ -172,6 +158,7 @@ function monsterChallenge(monstername, name, id, description, time, clicktype){
     $time = time;
     $clickType = clicktype;
 
+    //check if clicktype is from monsterEgg or monster-detail page
     if($clickType == 'monsterEgg') {
         swal({
                 title: $monsterName,
@@ -189,6 +176,7 @@ function monsterChallenge(monstername, name, id, description, time, clicktype){
     }
 }
 
+//
 function getMonsterChallengeInfo(monstername, clicktype){
     $monsterName = monstername;
     $clickType = clicktype;
@@ -217,6 +205,7 @@ function getMonsterChallengeInfo(monstername, clicktype){
     })
 }
 
+//Function for build the map
 function buildMap(){
     var dataString="worldid="+$worldId+"&username="+$userName+"&submit=";
     if(localStorage.getItem('userInfo') !== null) {
@@ -237,12 +226,6 @@ function buildMap(){
                     unlockFunction($fieldId, $element); // call function with params
                 });
 
-                // click event for locked monsters
-                // $('img.monsterEgg').click(function() {
-                //     $monsterName = $(this).attr('monster-name');
-                //     unlockMonsters($monsterName); // call function with param
-                // });
-
                 $('img.monsterEgg').click(function () {
                     $monsterName = $(this).attr('monster-name');
                     $clickType = 'monsterEgg';
@@ -257,15 +240,13 @@ function buildMap(){
 }
 
 
-document.addEventListener("deviceready",onDeviceReady,false);// call first function if device is ready
+document.addEventListener("deviceready",onDeviceReady,false); // call first function if device is ready
 
 function onDeviceReady() {
     buildMap(); //build map if device is ready
     getEnergypoints(); //set energypoints in div
     getUnlockedFields(); //set unlocked fields in div
     //getWorlds(); //set worlds in div menu
-
-
 }
 
 function countClickItems(){
@@ -277,9 +258,6 @@ $(window).load(function() {
         localStorage.clear();
         window.location.href = "inloggen.html";
     });
-    console.log('ja');
-
-
 
     console.log( "ready!");
 });
@@ -298,7 +276,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
             return sParameterName[1] === undefined ? true : sParameterName[1];
         }
     }
-};
+}; // end getUrlParameter
 
 //countdown
 function Countdown(options) {
@@ -327,7 +305,7 @@ function Countdown(options) {
     this.stop = function () {
         clearInterval(timer);
     };
-}
+} //end Countdown function
 
 function createElements(){
     $elementsAccelerometer = '<div class="app">' +
@@ -338,7 +316,7 @@ function createElements(){
         '<div id="geefterug"></div>' +
         '</div>' +
         '</div>';
-    //$($elementsAccelerometer).insertAfter( $(".bottom-bar") );
+    $($elementsAccelerometer).insertAfter( $(".bottom-bar") );
 
     $elementsTopBar = '<span class="world-name" id="number2">Desertworld</span>' +
         '<a href="accelerometer.html">' +
@@ -406,7 +384,7 @@ function createElements(){
         '</li>';
     $($tutorailElements).appendTo( $("#joyRideTipContent") );
 
-    clickEvents(); // cal clickevents after set items
+    clickEvents();// cal clickevents after set items
 } // end create elements
 
 function clickEvents(){
@@ -445,29 +423,28 @@ function clickEvents(){
             expose: true
         });
     }); // end .tutorial click
-}
+
+} //end clickEvents tutorial
 
 function accelerometer() {
-    // function onSuccess(acceleration) {
-    //     /*alert('Acceleration X: ' + acceleration.x + '\n' +
-    //      'Acceleration Y: ' + acceleration.y + '\n' +
-    //      'Acceleration Z: ' + acceleration.z + '\n' +
-    //      'Timestamp: '      + acceleration.timestamp + '\n');*/
-    //     var accel = 'Acceleration X: ' + acceleration.x + '\n' +
-    //         'Acceleration Y: ' + acceleration.y + '\n' +
-    //         'Acceleration Z: ' + acceleration.z + '\n' +
-    //         'Timestamp: ' + acceleration.timestamp + '\n';
-    //     document.getElementById('geefterug').innerHTML = accel;
-    // }
-    //
-    // function onError() {
-    //     alert('onError!');
-    // }
-    //
-    // var options = {frequency: 3000};  // Update every 3 seconds
-    //
-    // var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-    //
-    // navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-}
+    function onSuccess(acceleration) {
+        /*alert('Acceleration X: ' + acceleration.x + '\n' +
+         'Acceleration Y: ' + acceleration.y + '\n' +
+         'Acceleration Z: ' + acceleration.z + '\n' +
+         'Timestamp: '      + acceleration.timestamp + '\n');*/
+        var accel = 'Acceleration X: ' + acceleration.x + '\n' +
+            'Acceleration Y: ' + acceleration.y + '\n' +
+            'Acceleration Z: ' + acceleration.z + '\n' +
+            'Timestamp: ' + acceleration.timestamp + '\n';
+        document.getElementById('geefterug').innerHTML = accel;
+    }
 
+    function onError() {
+        alert('onError!');
+    }
+
+    var options = {frequency: 3000};  // Update every 3 seconds
+    var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+
+    navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+}
