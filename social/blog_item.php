@@ -19,6 +19,11 @@ if($blogId != ''){
 			$category = $rij["category"];
 			$postDate = $rij["postDate"];
 			$image = $rij["image"];
+			
+			$postDate1 = substr($postDate, -2);
+			$postDate2 = substr($postDate, -5, -3);
+			$postDate3 = substr($postDate, 0, 4);
+			$postDate = $postDate1 . "-" . $postDate2 . "-" . $postDate3;
 			?>
 			<div class="row">
 				<div class="col-xs-12 col-md-offset-2 col-md-8">
@@ -92,7 +97,7 @@ if($blogId != ''){
 						<div class="row">
 							<div class="col-md-2 col-sm-2 hidden-xs">
 								<figure class="thumbnail">
-									<img class="img-responsive" src="http://www.keita-gaming.com/assets/profile/default-avatar-c5d8ec086224cb6fc4e395f4ba3018c2.jpg" />
+									<img class="img-responsive" src="img/profilepic/profile_pic1.jpg" />
 									<figcaption class="text-center"><?php echo $userCommentName; ?></figcaption>
 								</figure>
 							</div>

@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier verzo
 				}
 			}
 		
-            //header("Refresh: 3; url=index.php");
+            header("Refresh: 3; url=blog_item.php?id=$postId");
             echo "<div class='container'><div class='alert alert-success'><strong><span class=\"entypo-check\"></span>Your post has been created</strong>" . 
             "<p>Congratulations! Your post has been created. You can now view it <a href='../index.php'>live</a>.</p></div></div>"; // als het succesvol naar de database is geplaatst
         }

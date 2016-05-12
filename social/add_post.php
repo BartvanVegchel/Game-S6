@@ -2,6 +2,21 @@
 	include('header.php');
 ?>
 
+<style>
+.box {
+    color:#000;
+    margin:150px auto;
+    padding:20px;
+    width:500px;
+    height:240px;
+    background:#fff;
+    border-radius:3px;
+    border-bottom:4px solid #5e95cd;
+    box-shadow: 0px 0px 30px #888888;
+}
+.overlimit{color: red;}
+</style>
+
 	<section class="add_post">
 	
 		<div class="container">
@@ -35,6 +50,11 @@
 						
 							<div class="form-group">
 								<input type="text" class="form-control" value="" placeholder="Titel van het bericht" id="title" name="title" tabindex="1" />
+							</div>
+							
+							<div class="form-group">
+								<textarea class="form-control" id="preview-text" name="preview-text" placeholder="Content van de previewtekst" rows="5"></textarea>
+								<span id="text_counter"></span>
 							</div>
 							
 							<div class="form-group">
@@ -85,6 +105,28 @@
 		</div>
 	
 	</section>
+	
+	<script>
+	$(document).ready(function(){
+        var left = 140
+        $('#text_counter').text('Characters left: ' + left);
+ 
+            $('#preview-text').keyup(function () {
+ 
+            left = 140 - $(this).val().length;
+ 
+            if(left < 0){
+                $('#text_counter').addClass("overlimit");
+                 $('#posting').attr("disabled", true);
+            }else{
+                $('#text_counter').removeClass("overlimit");
+                $('#posting').attr("disabled", false);
+            }
+ 
+            $('#text_counter').text('Characters left: ' + left);
+        });
+    });
+	</script>
 	
 <?php
 	include('footer.php');
