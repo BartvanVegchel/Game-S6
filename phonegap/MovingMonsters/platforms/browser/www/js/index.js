@@ -37,16 +37,16 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        navigator.camera.getPicture(onSuccess, onFail, { quality: 50 });
-
-        function onSuccess(imageData) {
-            var image = document.getElementById('myImage');
-            image.src = "data:image/jpeg;base64," + imageData;
-        }
-
-        function onFail(message) {
-            alert('Failed because: ' + message);
-        }
+        // navigator.camera.getPicture(onSuccess, onFail, { quality: 50 });
+        //
+        // function onSuccess(imageData) {
+        //     var image = document.getElementById('myImage');
+        //     image.src = "data:image/jpeg;base64," + imageData;
+        // }
+        //
+        // function onFail(message) {
+        //     alert('Failed because: ' + message);
+        // }
 
 
         //pedometer.isStepCountingAvailable(successCallback, failureCallback);

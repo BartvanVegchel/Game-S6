@@ -33,29 +33,11 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+        createElements(); //always as first function
+
         app.receivedEvent('deviceready');
-		
-		function onSuccess(acceleration) {
-			/*alert('Acceleration X: ' + acceleration.x + '\n' +
-				  'Acceleration Y: ' + acceleration.y + '\n' +
-				  'Acceleration Z: ' + acceleration.z + '\n' +
-				  'Timestamp: '      + acceleration.timestamp + '\n');*/
-			var accel = 'Acceleration X: ' + acceleration.x + '\n' +
-				  'Acceleration Y: ' + acceleration.y + '\n' +
-				  'Acceleration Z: ' + acceleration.z + '\n' +
-				  'Timestamp: '      + acceleration.timestamp + '\n';
-			document.getElementById('geefterug').innerHTML = accel;
-		}
-
-		function onError() {
-			alert('onError!');
-		}
-		
-		var options = { frequency: 3000 };  // Update every 3 seconds
-
-		var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-
-		navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+        
+		accelerometer();
 		
 		/* navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
 			destinationType: Camera.DestinationType.DATA_URL

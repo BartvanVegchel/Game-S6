@@ -357,3 +357,39 @@ function Countdown(options) {
     };
 }
 
+function createElements(){
+    $elementsAccelerometer = '<div class="app">' +
+        '<h1>PhoneGap</h1>' +
+        '<div id="deviceready" class="blink">' +
+        '<p class="event listening">Connecting to Device</p>'+
+        '<p class="event received">Device is Ready</p>' +
+        '<div id="geefterug"></div>' +
+        '</div>' +
+        '</div>';
+    $($elementsAccelerometer).insertAfter( $(".bottom-bar") );
+}
+
+function accelerometer() {
+    function onSuccess(acceleration) {
+        /*alert('Acceleration X: ' + acceleration.x + '\n' +
+         'Acceleration Y: ' + acceleration.y + '\n' +
+         'Acceleration Z: ' + acceleration.z + '\n' +
+         'Timestamp: '      + acceleration.timestamp + '\n');*/
+        var accel = 'Acceleration X: ' + acceleration.x + '\n' +
+            'Acceleration Y: ' + acceleration.y + '\n' +
+            'Acceleration Z: ' + acceleration.z + '\n' +
+            'Timestamp: ' + acceleration.timestamp + '\n';
+        document.getElementById('geefterug').innerHTML = accel;
+    }
+
+    function onError() {
+        alert('onError!');
+    }
+
+    var options = {frequency: 3000};  // Update every 3 seconds
+
+    var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+
+    navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+}
+
