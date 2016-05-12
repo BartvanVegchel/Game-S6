@@ -310,7 +310,6 @@ $(window).load(function() {
     console.log( "ready!");
 });
 
-
 //callable function for get vars out of url in jquery
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = decodeURIComponent(window.location.search.substring(1)),
@@ -366,29 +365,95 @@ function createElements(){
         '</div>' +
         '</div>';
     $($elementsAccelerometer).insertAfter( $(".bottom-bar") );
+
+    $elementsTopBar = '<span class="world-name" id="number2">Desertworld</span>' +
+        '<a href="accelerometer.html">' +
+            '<span class="menu-icon fa fa-bars"></span>' +
+        '</a>';
+    $($elementsTopBar).appendTo( $(".top-bar") );
+
+    $elementsBottomBar = '<ul>' +
+        '<li>' +
+            '<a href="monsters.html">' +
+                '<div id="number4" class="circle">' +
+                    '<span class="fa fa-paper-plane"></span>' +
+                '</div>' +
+            '</a>' +
+        '</li>' +
+        '<li>' +
+            '<a href="worlds.html">' +
+                '<div id="number5" class="circle">' +
+                    '<span class="fa fa-rocket"></span>' +
+                '</div>' +
+            '</a>' +
+        '</li>' +
+        '<li>' +
+            '<a href="#" class="dailyChallenge">' +
+                '<div id="number6" class="circle">' +
+                    '<span class="fa fa-trophy"></span>' +
+                '</div>' +
+            '</a>' +
+        '</li>' +
+        '<li class="tutorial"> ' +
+            '<div id="number7" class="circle">' +
+                '<span class="fa fa-question"></span>' +
+            '</div>' +
+        '</li>' +
+        '</ul>';
+    $($elementsBottomBar).appendTo( $(".bottom-bar") );
+
+    $tutorailElements = '<li data-id="number1" data-text="Volgende" class="custom1">' +
+        '<h2>EnergyPointjes</h2>' +
+            '<p>Hier zie je hoeveel EnergyPoints (EP) je nog hebt. Je kunt er meer verdienen door te bewegen!</p>' +
+        '</li>'+
+        '<li data-id="number2" data-text="Volgende" class="custom2">'+
+        '<h2>Huidige wereld</h2>' +
+            '<p>Hier staat de naam van de wereld waar je op dit moment bent.</p>'+
+        '</li>' +
+        '<li data-id="number3" data-text="Volgende" class="custom3">' +
+            '<h2>Voortgang wereld</h2>' +
+            '<p>Hier zie je het aantal ontdekte gebieden van de wereld</p>' +
+        '</li>' +
+        '<li data-id="number4" data-text="Volgende" class="custom4" data-options="tipLocation:top;">' +
+            '<h2>Monsterdex</h2>' +
+            '<p>Bekijk hier welke monsters je al hebt ontdekt en wilke je nog moet!</p>' +
+        '</li>' +
+        '<li data-id="number5" data-text="Volgende" class="custom5" data-options="tipLocation:top;">' +
+            '<h2>Werelden</h2>' +
+            '<p>Vanuit hier kun je reizen naar andere werelden!</p>' +
+        '</li>' +
+        '<li data-id="number6" data-text="Volgende" class="custom6" data-options="tipLocation:top;">' +
+            '<h2>Scoreboard</h2>' +
+            '<p>Hier kun je zien hoeveel je vrienden al hebben gevonden!</p>' +
+        '</li>' +
+        '<li data-id="number7" data-text="Volgende" class="custom7" data-options="tipLocation:top;">' +
+            '<h2>Help?</h2>' +
+            '<p>Als je vragen hebt, kun je op deze knop drukken!</p>' +
+        '</li>';
+    $($tutorailElements).appendTo( $("#joyRideTipContent") );
 }
 
 function accelerometer() {
-    function onSuccess(acceleration) {
-        /*alert('Acceleration X: ' + acceleration.x + '\n' +
-         'Acceleration Y: ' + acceleration.y + '\n' +
-         'Acceleration Z: ' + acceleration.z + '\n' +
-         'Timestamp: '      + acceleration.timestamp + '\n');*/
-        var accel = 'Acceleration X: ' + acceleration.x + '\n' +
-            'Acceleration Y: ' + acceleration.y + '\n' +
-            'Acceleration Z: ' + acceleration.z + '\n' +
-            'Timestamp: ' + acceleration.timestamp + '\n';
-        document.getElementById('geefterug').innerHTML = accel;
-    }
-
-    function onError() {
-        alert('onError!');
-    }
-
-    var options = {frequency: 3000};  // Update every 3 seconds
-
-    var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-
-    navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+    // function onSuccess(acceleration) {
+    //     /*alert('Acceleration X: ' + acceleration.x + '\n' +
+    //      'Acceleration Y: ' + acceleration.y + '\n' +
+    //      'Acceleration Z: ' + acceleration.z + '\n' +
+    //      'Timestamp: '      + acceleration.timestamp + '\n');*/
+    //     var accel = 'Acceleration X: ' + acceleration.x + '\n' +
+    //         'Acceleration Y: ' + acceleration.y + '\n' +
+    //         'Acceleration Z: ' + acceleration.z + '\n' +
+    //         'Timestamp: ' + acceleration.timestamp + '\n';
+    //     document.getElementById('geefterug').innerHTML = accel;
+    // }
+    //
+    // function onError() {
+    //     alert('onError!');
+    // }
+    //
+    // var options = {frequency: 3000};  // Update every 3 seconds
+    //
+    // var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+    //
+    // navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
 }
 
