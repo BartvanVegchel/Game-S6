@@ -21,8 +21,8 @@ var app = {
     initialize: function() {
         this.bindEvents();
         //this.content();
-        this.watchID = null;
-        console.log('initalize');
+        // this.watchID = null;
+        // console.log('initalize');
     },
     // Bind Event Listeners
     //
@@ -38,12 +38,9 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
 
-        pedometer.isStepCountingAvailable(successCallback, failureCallback);
+        //pedometer.isStepCountingAvailable(successCallback, failureCallback);
         app.receivedEvent('deviceready'); //AANZETTEN ALS HET NIET MEER WERKT
         console.log('onDeviceReady');
-        //console.log(navigator.accelerometer);
-        // app.startAcceleration();
-        alert('success');
     },
 
     // Update DOM on a Received Event

@@ -162,7 +162,7 @@
     "cordova-plugin-pedometer": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-pedometer"
+            "id": "cordova-plugin-pedometer@~0.4.1"
         },
         "is_top_level": true,
         "variables": {}
