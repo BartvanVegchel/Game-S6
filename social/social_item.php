@@ -4,7 +4,7 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-wi-1 center-block">
+		<div class="col-xs-12 col-md-offset-2 col-md-8">
 			<div class="row">
 
 				<?php
