@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>New Moving Monsters Test</title>
+</head>
+
+<body>
+    <form id="login"><br><br><br><br>
+        <input type="text" name="username" id="username" placeholder="Typ je naam hier" tabindex="1">
+        <input type="password" name="password" id="password" placeholder="En hier je wachtwoord" tabindex="5">
+        <input class="btn" id="loginBtn" type="submit" name="submit" value="Laat me spelen!">
+    </form>
+    <a class="btn btn-secondary btn-small" href="register.html">Ik ben een nieuwe speler</a>
+
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $("#loginBtn").click(function(){
+            var username=$("#username").val();
+            var password=$("#password").val();
+
+            var dataString="username="+username+"&password="+password+"&submit=";
+
+            if($.trim(username).length>0 & $.trim(password).length>0)
+            {
+                $.ajax({
+                    type:"POST",
+                    url:"http://game.onlineops.nl/phonegap_php/login.php",
+                    data: dataString,
+                    crossDomain: true,
+                    cache: false,
+                    dataType: 'json',
+                    beforeSend: function(){ $("#loginBtn").val('Connecting...');},
+                    success: function(data){
+                        alert(data['error']);
+                        if(data['error']=="succesfull")
+                        {// if register is succesfull
+                            alert("Welkom " + data['username']);
+                            $("#loginBtn").val('Succesvol ingelogd');
+                            window.location.href = "index.html";
+                            localStorage.setItem('userInfo', data['username']);
+                        }
+                        else if(data['error']=="error")
+                        {//if somterhing goes wrong
+                            alert("Inloggen mislukt");
+                            $("#loginBtn").val('Probeer het nog eens');
+                        }
+                    },
+                    error: function () {
+                        alert("Er gaat iets verkeerd, neem contact met ons op");
+                    }
+                })
+            }return false;
+        });
+    });
+</script>
+</body>
+
+</html>

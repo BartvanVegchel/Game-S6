@@ -66,41 +66,6 @@
 			<!-- Additional required wrapper -->
 			<div class="swiper-wrapper">
 				<!-- Slides -->
-				<div class="swiper-slide">
-					<script>
-						//$monsterName = $_GET['monstername'];
-						$userName = localStorage.getItem('userInfo');
-						$monsterName = getUrlParameter('monstername');
-						console.log('monstername is ' + $monsterName);
-					</script>
-
-					<div class="popup">
-						<div class="item">
-							<h2>Touwtje springen</h2>
-						</div>
-						<div class="itembig">
-							<p>Spring 10 keer</p>
-						</div>
-						<div class="itemknop">
-							<script>
-								$(document).ready(function(){
-									$('span.start').on('click', function(){
-										myCounter.start();
-										//alert('hoi');
-									});
-								});
-							</script>
-							<span class="start">Start!</span>
-							<span class="smallcountdown" id="smallcountdown"></span>
-							<span class="countdown" id="countdown"></span>
-						</div>
-					</div>
-
-
-					<script>
-
-					</script>
-				</div>
 			</div>
 		</div>
 	</section>
@@ -188,27 +153,6 @@
 			console.log('je bent ingelogd');
 		}
 
-		// counter challenge
-		$('#smallcountdown').show();
-		var myCounter = new Countdown({
-			seconds:3,  // number of seconds to count down
-			onUpdateStatus: function(sec){
-				$('span.start').hide();
-				document.getElementById('smallcountdown').innerHTML = sec;
-			},
-			onCounterEnd: function(){
-				$('#smallcountdown').hide();
-				(function countdown(remaining) {
-					if(remaining === -1) {
-						window.location.replace("index.html?monstername="+$monsterName+"&requirement=3&username="+$userName);
-					}else{
-						document.getElementById('countdown').innerHTML = "Je hebt nog " + remaining + " seconden!";
-						setTimeout(function(){ countdown(remaining - 1); }, 1000);
-					}
-				})(150);
-			}
-		});
-
 		// Joyride tip
 		$(window).load(function() {
 			$('.tutorial').click(function() {
@@ -223,15 +167,12 @@
 		//initialize swiper when document ready
 		$(document).ready(function () {
 			//build items for swiper
-			function getMonsterInfo(){
-				$currentmonster = getUrlParameter('monstername');
-				$currentmonsterLowerCase = $currentmonster.toLowerCase();
-
-				var dataString="monstername="+$currentmonster+"&submit=";
+			function getWorlds(){
+				var dataString="username="+$userName+"&worldid="+$worldId+"&submit=";
 				if(localStorage.getItem('userInfo') !== null) {
 					$.ajax({
 						type: "POST",
-						url: "http://game.onlineops.nl/phonegap_php/getMonsterInfo.php",
+						url: "http://game.onlineops.nl/phonegap_php/getWorlds.php",
 						data: dataString,
 						crossDomain: true,
 						cache: false,
@@ -239,41 +180,62 @@
 						success: function (data) {
 							if (data['error'] == "error") {
 								//do nothing
-							} else if (data['monsterstory'] !== "") {
-								//get the data
-								$monsterStory = data['monsterstory'];
+							} else if (data['worldid'] !== "") {
+								$numWorlds = data['numworlds'];
+								$worldSize = data['worldsize'];
+								$worldColors = data['worldcolors'];
+								$unlockFieldWorlds = data['unlockFieldWorlds'];
+								$worldNames = data['worldnames'];
+								$totalMonsters = data['totalmonsters'];
+								$yourmonsters = data['yourmonsters'];
+								console.log($totalMonsters);
+								console.log($yourmonsters);
+								console.log('numWorlds is' + $numWorlds);
+								console.log($unlockFieldWorlds);
+								console.log($worldSize);
 
-								//get the container
 								$swiperContainer = $('.swiper-wrapper');
 
-								$slideItem = '<div class="swiper-slide monster-detail">'+
-										'<div class="img" style="background-image: url(\'img/monster_'+$currentmonsterLowerCase+'.png\');"></div>'+
-										'<div class="desc">' +
-										'<div class="item">'+
-										'<h2>'+$currentmonster+'</h2>' +
-										'</div>' +
-										'<div id="monsterstory" class="itembig">' +
-										'<p>'+$monsterStory+'</p>'+
-										'</div>' +
-										'<div class="item">' +
-										'<h2>Challenge</h2>'+
-										'</div>' +
-										'<div class="item">' +
-										'<a href="monsters.html">Terug</a>' +
-										'</div>' +
-										'</div>' +
-										'</div>';
+								for (var i = 0; i < $numWorlds; i++) {
+									$process = ($unlockFieldWorlds[i-1]/$worldSize[i-1])*100;
+									$thisWorldId = i+1;
 
-								//add item to container
-								$($swiperContainer).append($slideItem);
-
+									$slideItem ="<div class='swiper-slide'>";
+										if($process < 15){
+											$slideItem = $slideItem + "<div class='lockedWorld'><span class='fa fa-lock'></span></div>";
+										}
+									$slideItem = $slideItem + "<div class='img' style='background-image: url(\"img/"+$worldNames[i] +".png\");'></div>" +
+									"<div class='desc'>" +
+									"<div class='item'>" +
+									"<h2>" + $worldNames[i] + "</h2>" +
+									"</div>" +
+									"<div class='item'>" +
+									"<span>Monsters</span>" +
+									"<span>"+$yourmonsters[i] + " / " + $totalMonsters[i]+"</span>" +
+									"</div>" +
+									"<div class='item'>" +
+									"<span>Gebieden</span>" +
+									"<span>"+ $unlockFieldWorlds[i] + " / " + $worldSize[i] + "</span>" +
+									"</div>" +
+									"<div class='item'>" +
+									"<span>Sterren</span>" +
+									"<span>0/0</span>" +
+									"</div>" +
+									"<div class='item'>" +
+									"<button id='" + $thisWorldId + "' class='changeWorldId'>Speel level</button>" +
+									"</div>" +
+									"</div>" +
+									"</div>";
+									$($swiperContainer).append($slideItem);
+									console.log('item geplaatst');
+								}
 							}
 						},
 						error: function () {
 							alert("Er gaat iets verkeerd, neem contact met ons op!");
 						}
 					}).done(function(result){
-						swiper();
+						swiper($worldColors, $numWorlds);
 
 						$(".changeWorldId").click(function(){
 							$thisWorldId = $(this).attr("id");
@@ -284,22 +246,38 @@
 
 
 			}
-			getMonsterInfo();
-			swiper();
+			getWorlds();
+
 		});
 	</script>
 
 	<script>
-		function swiper() {
+		function swiper(worldcolors, numworlds) {
+			$bgColors = worldcolors;
+			$worlds = numworlds;
+			console.log($bgColors);
+			console.log($worlds);
 			console.log('swiper start');
 			var mySwiper = new Swiper('.swiper-container', {
 				// Optional parameters
 				direction: 'horizontal',
 				initialSlide: 0,
+				slidesPerView: 'auto',
+				spaceBetween: 20,
+				centeredSlides: true,
 				loop: false,
+				onInit: function(){
+					// als er maar 1 slide is, positioneer deze in het midden.
+					var amount =  $('.swiper-slide').length;
+					if(amount == 1){
+						$('.swiper-slide').css("margin", "0 12.5%");
+					}
+					$('.container').css("background-color", "#fadcb9");
+				},
 				onSlideChangeStart: function () {
-					var value = $('.swiper-slide-active').attr('data-swiper-slide-index');
+					var value = mySwiper.activeIndex;
 					var newValue = parseInt(value) + 1;
+
 					if (newValue == 1) {
 						$('.container').css("background-color", "#fadcb9");
 					}
@@ -310,6 +288,7 @@
 						$('.container').css("background-color", "#c0c0c0");
 					}
 				}
+
 			});
 		}
 
@@ -317,6 +296,7 @@
 			$thisWorldId = thisWorldId;
 			localStorage.setItem('worldId', $thisWorldId);
 			window.location.href = "index.html";
+			//alert($thisWorldId);
 		}
 
 		// initialize app
