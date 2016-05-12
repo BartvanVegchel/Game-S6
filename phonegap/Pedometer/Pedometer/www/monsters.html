@@ -54,10 +54,7 @@
 <body>
 
 	<!-- Top bar -->
-	<section class="top-bar">
-		<span class="world-name" id="number2">Monsters</span>
-		<span class="menu-icon fa fa-bars"></span>
-	</section>
+	<section class="top-bar"></section>
 
 	<!-- Map container -->
 	<section class="container">
@@ -83,81 +80,10 @@
 	</section>
 
 	<!-- Bottom bar -->
-	<section class="bottom-bar">
-		<ul>
-			<li>
-				<a href="monsters.html">
-					<div id="number4" class="circle">
-						<span class="fa fa-paper-plane"></span>
-					</div>
-				</a>
-			</li>
-			<li>
-				<a href="worlds.html">
-					<div id="number5" class="circle">
-						<span class="fa fa-rocket"></span>
-					</div>
-				</a>
-			</li>
-			<li>
-				<a href="#" class="dailyChallenge">
-					<div id="number6" class="circle">
-						<span class="fa fa-trophy"></span>
-					</div>
-				</a>
-			</li>
-			<li class="tutorial">
-				<div id="number7" class="circle">
-					<span class="fa fa-question"></span>
-				</div>
-			</li>
-		</ul>
-	</section>
+	<section class="bottom-bar"></section>
 
 	<!-- content of joyride tips -->
-	<ol id="joyRideTipContent" data-joyride>
-		<li data-id="number1" data-text="Volgende" class="custom1">
-			<h2>EnergyPointjes</h2>
-			<p>Hier zie je hoeveel EnergyPoints (EP) je nog hebt. Je kunt er meer verdienen door te bewegen!</p>
-		</li>
-		<li data-id="number2" data-text="Volgende" class="custom2">
-			<h2>Huidige wereld</h2>
-			<p>Hier staat de naam van de wereld waar je op dit moment bent.</p>
-		</li>
-		<li data-id="number3" data-text="Volgende" class="custom3">
-			<h2>Voortgang wereld</h2>
-			<p>Hier zie je het aantal ontdekte gebieden van de wereld</p>
-		</li>
-
-		<li data-id="number4" data-text="Volgende" class="custom4" data-options="tipLocation:top;">
-			<h2>Monsterdex</h2>
-			<p>Bekijk hier welke monsters je al hebt ontdekt en wilke je nog moet!</p>
-		</li>
-		<li data-id="number5" data-text="Volgende" class="custom5" data-options="tipLocation:top;">
-			<h2>Werelden</h2>
-			<p>Vanuit hier kun je reizen naar andere werelden!</p>
-		</li>
-		<li data-id="number6" data-text="Volgende" class="custom6" data-options="tipLocation:top;">
-			<h2>Scoreboard</h2>
-			<p>Hier kun je zien hoeveel je vrienden al hebben gevonden!</p>
-		</li>
-		<li data-id="number7" data-text="Volgende" class="custom7" data-options="tipLocation:top;">
-			<h2>Help?</h2>
-			<p>Als je vragen hebt, kun je op deze knop drukken!</p>
-		</li>
-
-	</ol>
-
-    <div class="app">
-        <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
-			
-			<div id="geefterug"></div>
-        </div>
-    </div>
-
+	<ol id="joyRideTipContent" data-joyride></ol>
 	
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -167,9 +93,6 @@
 	<script type="text/javascript" src="js/joyride-master/jquery.joyride-2.1.js"></script>
 	<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
 	<script>
-
-
-
 		// check if ingelogd
 		if(localStorage.getItem('userInfo') == null){
 			console.log('je bent niet ingelogd');
@@ -322,13 +245,6 @@
 		// initialize app
 		app.initialize();
 	</script>
-
-
-
-	<!--<script type="text/javascript" src="js/index.js"></script>-->
-	<!--<script type="text/javascript">-->
-	<!--app.initialize();-->
-	<!--</script>-->
 	
 </body>
 

@@ -434,26 +434,26 @@ function createElements(){
 }
 
 function accelerometer() {
-    // function onSuccess(acceleration) {
-    //     /*alert('Acceleration X: ' + acceleration.x + '\n' +
-    //      'Acceleration Y: ' + acceleration.y + '\n' +
-    //      'Acceleration Z: ' + acceleration.z + '\n' +
-    //      'Timestamp: '      + acceleration.timestamp + '\n');*/
-    //     var accel = 'Acceleration X: ' + acceleration.x + '\n' +
-    //         'Acceleration Y: ' + acceleration.y + '\n' +
-    //         'Acceleration Z: ' + acceleration.z + '\n' +
-    //         'Timestamp: ' + acceleration.timestamp + '\n';
-    //     document.getElementById('geefterug').innerHTML = accel;
-    // }
-    //
-    // function onError() {
-    //     alert('onError!');
-    // }
-    //
-    // var options = {frequency: 3000};  // Update every 3 seconds
-    //
-    // var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-    //
-    // navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+    function onSuccess(acceleration) {
+        /*alert('Acceleration X: ' + acceleration.x + '\n' +
+         'Acceleration Y: ' + acceleration.y + '\n' +
+         'Acceleration Z: ' + acceleration.z + '\n' +
+         'Timestamp: '      + acceleration.timestamp + '\n');*/
+        var accel = 'Acceleration X: ' + acceleration.x + '\n' +
+            'Acceleration Y: ' + acceleration.y + '\n' +
+            'Acceleration Z: ' + acceleration.z + '\n' +
+            'Timestamp: ' + acceleration.timestamp + '\n';
+        document.getElementById('geefterug').innerHTML = accel;
+    }
+    
+    function onError() {
+        alert('onError!');
+    }
+    
+    var options = {frequency: 3000};  // Update every 3 seconds
+    
+    var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+    
+    navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
 }
 

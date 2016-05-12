@@ -54,8 +54,7 @@
 <body>
 
 	<!-- Top bar, energypoints, world prgress -->
-	<section class="top-bar">
-	</section>
+	<section class="top-bar"></section>
 
 	<div class="energy-points" id="number1">
 		<span class="personalEnergypoints"><script>$( document ).ready(function() { getEnergypoints(); });</script></span>
@@ -68,18 +67,14 @@
 
 	<!-- Map container -->
 	<section class="container">
-		<section class='map-container'>
-
-		</section>
+		<section class='map-container'></section>
 	</section>
 
 	<!-- Bottom bar -->
-	<section class="bottom-bar">
-	</section>
+	<section class="bottom-bar"></section>
 	
 	<!-- content of joyride tips -->
-	<ol id="joyRideTipContent" data-joyride>
-	</ol>
+	<ol id="joyRideTipContent" data-joyride></ol>
 	
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -89,9 +84,6 @@
 	<script type="text/javascript" src="js/joyride-master/jquery.joyride-2.1.js"></script>
 	<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
 	<script>
-
-		// initialize app
-		app.initialize();
 
 		// check if ingelogd
 		if(localStorage.getItem('userInfo') == null){
@@ -189,11 +181,10 @@
 						});
 			});
 		}
+		
+		// initialize app
+		app.initialize();
 	</script>
-	
-    <script type="text/javascript">
-        app.initialize();
-    </script>
 	
 </body>
 
