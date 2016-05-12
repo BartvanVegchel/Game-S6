@@ -85,24 +85,13 @@
 	<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
 	<script>
 
-		// check if ingelogd
-		if(localStorage.getItem('userInfo') == null){
-			console.log('je bent niet ingelogd');
-			window.location.href = "inloggen.html";
-		} else{
-			console.log('je bent ingelogd');
-		}
-
-		// Joyride tip
-		$(window).load(function() {
-			$('.tutorial').click(function() {
-				$('#joyRideTipContent').joyride({
-					autoStart: true,
-					modal: true,
-					expose: true
-				});
-			});
-		});
+	// check if ingelogd
+	if(localStorage.getItem('userInfo') == null){
+		console.log('je bent niet ingelogd');
+		window.location.href = "inloggen.html";
+	} else{
+		console.log('je bent ingelogd');
+	}
 	</script>
 
 	<script>

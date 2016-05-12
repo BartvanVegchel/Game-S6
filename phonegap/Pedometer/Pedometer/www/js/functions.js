@@ -265,33 +265,7 @@ function onDeviceReady() {
     getUnlockedFields(); //set unlocked fields in div
     //getWorlds(); //set worlds in div menu
 
-    $('.dailyChallenge').click(function () {
-        $date = new Date();
-        $day = $date.getDate();
 
-        var dataString="currentday="+$day+"&submitDaily=";
-        $.ajax({
-            type: "POST",
-            url: "http://game.onlineops.nl/phonegap_php/getDailyChallenge.php",
-            data: dataString,
-            crossDomain: true,
-            cache: false,
-            dataType: 'json',
-            success: function (data) {
-                if (data['error'] == "error") {
-                    //do nothing
-                } else if (data['description'] !== "") {
-                    //get the data
-                    $name = data['name'];
-                    $description = data['description'];
-                    $time = data['timelimit'];
-                    $reward = data['reward'];
-                }
-            }
-        }).done(function (data) {
-            dailyChallenge($name, $day, $description, $time, $reward);
-        })
-    });
 }
 
 function countClickItems(){
@@ -364,7 +338,7 @@ function createElements(){
         '<div id="geefterug"></div>' +
         '</div>' +
         '</div>';
-    $($elementsAccelerometer).insertAfter( $(".bottom-bar") );
+    //$($elementsAccelerometer).insertAfter( $(".bottom-bar") );
 
     $elementsTopBar = '<span class="world-name" id="number2">Desertworld</span>' +
         '<a href="accelerometer.html">' +
@@ -431,29 +405,69 @@ function createElements(){
             '<p>Als je vragen hebt, kun je op deze knop drukken!</p>' +
         '</li>';
     $($tutorailElements).appendTo( $("#joyRideTipContent") );
+
+    clickEvents(); // cal clickevents after set items
+} // end create elements
+
+function clickEvents(){
+    $('.dailyChallenge').click("click", function () {
+        $date = new Date();
+        $day = $date.getDate();
+
+        var dataString="currentday="+$day+"&submitDaily=";
+        $.ajax({
+            type: "POST",
+            url: "http://game.onlineops.nl/phonegap_php/getDailyChallenge.php",
+            data: dataString,
+            crossDomain: true,
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+                if (data['error'] == "error") {
+                    //do nothing
+                } else if (data['description'] !== "") {
+                    //get the data
+                    $name = data['name'];
+                    $description = data['description'];
+                    $time = data['timelimit'];
+                    $reward = data['reward'];
+                }
+            }
+        }).done(function (data) {
+            dailyChallenge($name, $day, $description, $time, $reward);
+        })
+    }); // end .dailyChallenge click
+
+    $('.tutorial').click(function() {
+        $('#joyRideTipContent').joyride({
+            autoStart: true,
+            modal: true,
+            expose: true
+        });
+    }); // end .tutorial click
 }
 
 function accelerometer() {
-    function onSuccess(acceleration) {
-        /*alert('Acceleration X: ' + acceleration.x + '\n' +
-         'Acceleration Y: ' + acceleration.y + '\n' +
-         'Acceleration Z: ' + acceleration.z + '\n' +
-         'Timestamp: '      + acceleration.timestamp + '\n');*/
-        var accel = 'Acceleration X: ' + acceleration.x + '\n' +
-            'Acceleration Y: ' + acceleration.y + '\n' +
-            'Acceleration Z: ' + acceleration.z + '\n' +
-            'Timestamp: ' + acceleration.timestamp + '\n';
-        document.getElementById('geefterug').innerHTML = accel;
-    }
-    
-    function onError() {
-        alert('onError!');
-    }
-    
-    var options = {frequency: 3000};  // Update every 3 seconds
-    
-    var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
-    
-    navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
+    // function onSuccess(acceleration) {
+    //     /*alert('Acceleration X: ' + acceleration.x + '\n' +
+    //      'Acceleration Y: ' + acceleration.y + '\n' +
+    //      'Acceleration Z: ' + acceleration.z + '\n' +
+    //      'Timestamp: '      + acceleration.timestamp + '\n');*/
+    //     var accel = 'Acceleration X: ' + acceleration.x + '\n' +
+    //         'Acceleration Y: ' + acceleration.y + '\n' +
+    //         'Acceleration Z: ' + acceleration.z + '\n' +
+    //         'Timestamp: ' + acceleration.timestamp + '\n';
+    //     document.getElementById('geefterug').innerHTML = accel;
+    // }
+    //
+    // function onError() {
+    //     alert('onError!');
+    // }
+    //
+    // var options = {frequency: 3000};  // Update every 3 seconds
+    //
+    // var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
+    //
+    // navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
 }
 

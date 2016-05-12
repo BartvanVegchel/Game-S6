@@ -38,7 +38,7 @@ var app = {
         app.receivedEvent('deviceready');
         
 		accelerometer();
-		
+        		
 		/* navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
 			destinationType: Camera.DestinationType.DATA_URL
 		});

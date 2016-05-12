@@ -133,54 +133,44 @@
 			}
 		});
 
-		// Joyride tip
-		$(window).load(function() {
-			$('.tutorial').click(function() {
-				$('#joyRideTipContent').joyride({
-					autoStart: true,
-					modal: true,
-					expose: true
-				});
-			});
+		//build items for swiper
+		$monsterName = getUrlParameter('monstername');
+		$dailyChallengeId = getUrlParameter('challengeId');
+		$challengeName = getUrlParameter('challengeName');
+		$challengeDescription = getUrlParameter('description');
+		$reward = getUrlParameter('reward');
+		$challengeContainer = $("#challengeContainer");
 
-			//build items for swiper
-			$monsterName = getUrlParameter('monstername');
-			$dailyChallengeId = getUrlParameter('challengeId');
-			$challengeName = getUrlParameter('challengeName');
-			$challengeDescription = getUrlParameter('description');
-			$reward = getUrlParameter('reward');
-			$challengeContainer = $("#challengeContainer");
+		//check which challenge
+		if($monsterName == ''){
+			$challengeContent = '<div class="item">' +
+			'<h2 id="challengeName">'+ $challengeName +'</h2>' +
+			'</div>' +
+			'<div class="itembig">' +
+			'<p>'+$challengeDescription+'</p></div>' +
+			'<div class="item">' +
+			'<p>'+ $reward +'</p>' +
+			'</div>';
 
-			//check which challenge
-			if($monsterName == ''){
-				$challengeContent = '<div class="item">' +
-				'<h2 id="challengeName">'+ $challengeName +'</h2>' +
+			console.log('dailychallenge uitvoeren');
+		} else{
+			$challengeContent = '<div class="item">' +
+				'<h2>'+ $challengeName +'</h2>' +
 				'</div>' +
 				'<div class="itembig">' +
-				'<p>'+$challengeDescription+'</p></div>' +
-				'<div class="item">' +
-				'<p>'+ $reward +'</p>' +
-				'</div>';
-
-				console.log('dailychallenge uitvoeren');
-			} else{
-				$challengeContent = '<div class="item">' +
-					'<h2>'+ $challengeName +'</h2>' +
-					'</div>' +
-					'<div class="itembig">' +
-					'<p>'+$challengeDescription+'</p></div>';
+				'<p>'+$challengeDescription+'</p></div>';
 
 
-				console.log('monsterchallenge uitoveren');
-			}
+			console.log('monsterchallenge uitoveren');
+		}
 
-			$($challengeContainer).append($challengeContent);
-		});
+		$($challengeContainer).append($challengeContent);
+	});
 
-		//initialize swiper when document ready
-		$(document).ready(function () {
-			swiper();
-		});
+	//initialize swiper when document ready
+	$(document).ready(function () {
+		swiper();
+	});
 	</script>
 
 	<script>
