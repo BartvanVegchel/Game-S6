@@ -48,14 +48,14 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
     <script src="js/sweetalert-dev.js"></script>
-    <script src="js/cordova.js"></script>
+
 </head>
 
 <body>
 <!-- Top bar, energypoints, world prgress -->
 <section class="top-bar">
     <span class="world-name" id="number2">Desertworld</span>
-    <span class="menu-icon fa fa-bars"></span>
+    <a href="camera.html"><span class="menu-icon fa fa-bars"></span></a>
 </section>
 
 <div class="energy-points" id="number1">
@@ -238,18 +238,18 @@
             html: true
         }, function () {
             $.ajax({
-                        type: "get",
-                        url: "http://game.onlineops.nl/phonegap_php/completeDailyChallenge.php",
-                        data: {'reward': $reward, 'username': $username, 'date': $date},
-                        success: function (data) {
-                        }
-                    })
-                    .done(function (data) {
-                        window.location.href = 'index.html';
-                    })
-                    .error(function (data) {
-                        swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
-                    });
+                type: "get",
+                url: "http://game.onlineops.nl/phonegap_php/completeDailyChallenge.php",
+                data: {'reward': $reward, 'username': $username, 'date': $date},
+                success: function (data) {
+                }
+            })
+            .done(function (data) {
+                window.location.href = 'index.html';
+            })
+            .error(function (data) {
+                swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
+            });
         });
     }
 </script>

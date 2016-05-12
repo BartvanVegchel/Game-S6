@@ -162,7 +162,7 @@ function dailyChallenge(name, id, description, time, reward){
         });
 }
 
-function monsterChallenge(monstername, name, id, description, time){
+function monsterChallenge(monstername, name, id, description, time, clicktype){
     $name = name;
     $monsterName = monstername;
     $monsterNameLowerCase = $monsterName.toLowerCase();
@@ -170,18 +170,51 @@ function monsterChallenge(monstername, name, id, description, time){
     $challengeId = id;
     $description = description
     $time = time;
+    $clickType = clicktype;
 
-    swal({
-        title: $monsterName,
-        text: "Speel "+$monsterName+" nu vrij",
-        imageUrl: "img/monster_"+$monsterNameLowerCase+".png",
-        confirmButtonText: "Start",
-        showCancelButton: true,
-        cancelButtonText: "Nu niet",
-    },
-    function(){
-        window.location.href = 'challenge.html?monstername='+$monsterName+'&challengeId='+$challengeId+'&challengeName='+$name+'&time='+$time+'&description='+$description;
-    });
+    if($clickType == 'monsterEgg') {
+        swal({
+                title: $monsterName,
+                text: "Speel " + $monsterName + " nu vrij",
+                imageUrl: "img/monster_" + $monsterNameLowerCase + ".png",
+                confirmButtonText: "Start",
+                showCancelButton: true,
+                cancelButtonText: "Nu niet",
+            },
+            function () {
+                window.location.href = 'challenge.html?monstername=' + $monsterName + '&challengeId=' + $challengeId + '&challengeName=' + $name + '&time=' + $time + '&description=' + $description;
+            });
+    } else{
+        window.location.href = 'challenge.html?monstername=' + $monsterName + '&challengeId=' + $challengeId + '&challengeName=' + $name + '&time=' + $time + '&description=' + $description;
+    }
+}
+
+function getMonsterChallengeInfo(monstername, clicktype){
+    $monsterName = monstername;
+    $clickType = clicktype;
+
+    var dataString = "monsterName=" + $monsterName + "&submitMonster=";
+    $.ajax({
+        type: "POST",
+        url: "http://game.onlineops.nl/phonegap_php/getDailyChallenge.php",
+        data: dataString,
+        crossDomain: true,
+        cache: false,
+        dataType: 'json',
+        success: function (data) {
+            if (data['error'] == "error") {
+                //do nothing
+            } else if (data['description'] !== "") {
+                //get the data
+                $name = data['name'];
+                $description = data['description'];
+                $time = data['timelimit'];
+                $monsterId = data['id'];
+            }
+        }
+    }).done(function (data) {
+        monsterChallenge($monsterName, $name, $monsterId, $description, $time, $clickType);
+    })
 }
 
 function buildMap(){
@@ -212,30 +245,8 @@ function buildMap(){
 
                 $('img.monsterEgg').click(function () {
                     $monsterName = $(this).attr('monster-name');
-
-                    var dataString="monsterName="+$monsterName+"&submitMonster=";
-                    $.ajax({
-                        type: "POST",
-                        url: "http://game.onlineops.nl/phonegap_php/getDailyChallenge.php",
-                        data: dataString,
-                        crossDomain: true,
-                        cache: false,
-                        dataType: 'json',
-                        success: function (data) {
-                            if (data['error'] == "error") {
-                                //do nothing
-                            } else if (data['description'] !== "") {
-                                //get the data
-                                $name = data['name'];
-                                $description = data['description'];
-                                $time = data['timelimit'];
-                                $monsterId = data['id'];
-
-                            }
-                        }
-                    }).done(function (data) {
-                        monsterChallenge($monsterName, $name, $monsterId, $description, $time);
-                    })
+                    $clickType = 'monsterEgg';
+                    getMonsterChallengeInfo($monsterName, $clickType);
                 });//end monsterEgg click
             },
             error: function () {
@@ -253,21 +264,6 @@ function onDeviceReady() {
     getEnergypoints(); //set energypoints in div
     getUnlockedFields(); //set unlocked fields in div
     //getWorlds(); //set worlds in div menu
-    //
-    // navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-    //
-    // function onSuccess(acceleration) {
-    //     alert('Acceleration X: ' + acceleration.x + '\n' +
-    //         'Acceleration Y: ' + acceleration.y + '\n' +
-    //         'Acceleration Z: ' + acceleration.z + '\n' +
-    //         'Timestamp: '      + acceleration.timestamp + '\n');
-    // }
-    //
-    // function onError() {
-    //     alert('onError!');
-    // }
-
-
 
     $('.dailyChallenge').click(function () {
         $date = new Date();
@@ -307,6 +303,9 @@ $(window).load(function() {
         localStorage.clear();
         window.location.href = "inloggen.html";
     });
+    console.log('ja');
+
+
 
     console.log( "ready!");
 });

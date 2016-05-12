@@ -201,7 +201,7 @@
                                         '<p>'+$monsterStory+'</p>'+
                                     '</div>' +
                                     '<div class="item">' +
-                                        '<h2>Challenge</h2>'+
+                                        '<h2 class="monsterDetailChallenge" monster-name=' + $currentmonster + '>Challenge</h2>'+
                                     '</div>' +
                                     '<div class="item">' +
                                         '<a href="monsters.html">Terug</a>' +
@@ -218,6 +218,11 @@
                         alert("Er gaat iets verkeerd, neem contact met ons op!");
                     }
                 }).done(function(result){
+                    $(".monsterDetailChallenge").on('click', function(){
+                        $monsterName = $(this).attr('monster-name');
+                        getMonsterChallengeInfo($monsterName);
+                    });
+
                     swiper();
 
                     $(".changeWorldId").click(function(){
