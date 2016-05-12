@@ -55,7 +55,7 @@
 
 	<!-- Top bar -->
 	<section class="top-bar">
-		<span class="world-name" id="number2">Monsters</span>
+		<span class="world-name" id="number2">Werelden</span>
 		<span class="menu-icon fa fa-bars"></span>
 	</section>
 
@@ -66,18 +66,6 @@
 			<!-- Additional required wrapper -->
 			<div class="swiper-wrapper">
 				<!-- Slides -->
-
-				<!--<div class="swiper-slide">
-					<div class="monster" style="background-image: url('img/monster_boomer.png');">
-						<div class="monstername">Boomer</div>
-					</div>
-				</div>
-				<div class="swiper-slide">
-					<div class="monster" style="background-image: url('img/monster_droplet.png');">
-						<div class="monstername">Doplet</div>
-					</div>
-
-				</div>-->
 			</div>
 		</div>
 	</section>
@@ -148,27 +136,14 @@
 
 	</ol>
 
-    <div class="app">
-        <h1>PhoneGap</h1>
-        <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Device is Ready</p>
-			
-			<div id="geefterug"></div>
-        </div>
-    </div>
-
-	
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/jquery-1.12.3.js"></script>
 	<script type="text/javascript" src="js/joyride-master/jquery.cookie.js"></script>
 	<script type="text/javascript" src="js/joyride-master/modernizr.mq.js"></script>
 	<script type="text/javascript" src="js/joyride-master/jquery.joyride-2.1.js"></script>
 	<script type="text/javascript" src="js/swiper.jquery.min.js"></script>
 	<script>
-
-
 
 		// check if ingelogd
 		if(localStorage.getItem('userInfo') == null){
@@ -192,12 +167,15 @@
 		//initialize swiper when document ready
 		$(document).ready(function () {
 			//build items for swiper
-			function getMonsters(){
-				var dataString="username="+$userName+"&worldid="+$worldId+"&submit=";
+			function getMonsterInfo(){
+				$currentmonster = getUrlParameter('monstername');
+				$currentmonsterLowerCase = $currentmonster.toLowerCase();
+
+				var dataString="monstername="+$currentmonster+"&submit=";
 				if(localStorage.getItem('userInfo') !== null) {
 					$.ajax({
 						type: "POST",
-						url: "http://game.onlineops.nl/phonegap_php/getMonsters.php",
+						url: "http://game.onlineops.nl/phonegap_php/getMonsterInfo.php",
 						data: dataString,
 						crossDomain: true,
 						cache: false,
@@ -205,69 +183,45 @@
 						success: function (data) {
 							if (data['error'] == "error") {
 								//do nothing
-							} else if (data['worldid'] !== "") {
-								$worldNames = data['worldnames']; //worlnames of all the worlds
-								$numWorlds = data['numworlds']; //the number of worlds
-								$unlockedMonsters = data['unlockedmonsters']; // unlocked monsters array
-								$lockedMonsters = data['lockedmonsters']; //locked monsters array
+							} else if (data['monsterstory'] !== "") {
+								//get the data
+								$monsterStory = data['monsterstory'];
 
-								//define the slidecontainer
+								//get the container
 								$swiperContainer = $('.swiper-wrapper');
 
-								for (var i = 0; i < $numWorlds; i++) {
-									$thisId = i+1;//id for through the array
+								$slideItem = '<div class="swiper-slide monster-detail">'+
+									'<div class="img" style="background-image: url(\'img/monster_'+$currentmonsterLowerCase+'.png\');"></div>'+
+										'<div class="desc">' +
+										'<div class="item">'+
+											'<h2>'+$currentmonster+'</h2>' +
+										'</div>' +
+										'<div id="monsterstory" class="itembig">' +
+											'<p>'+$monsterStory+'</p>'+
+										'</div>' +
+										'<div class="item">' +
+											'<h2 class="monsterDetailChallenge" monster-name=' + $currentmonster + '>Challenge</h2>'+
+										'</div>' +
+										'<div class="item">' +
+											'<a href="monsters.html">Terug</a>' +
+										'</div>' +
+									'</div>' +
+								'</div>';
 
-									$thisUnlockedMonsters = $unlockedMonsters[$thisId]; //array with unlocked monsters for selected world
-									$thisLockedMonsters = $lockedMonsters[$thisId]; //array with locked monsters for selected world
+								//add item to container
+								$($swiperContainer).append($slideItem);
 
-									//split string from function to array
-									if ($unlockedMonsters[$thisId].length != '') {
-										$thisUnlockedMonsterArray = $thisUnlockedMonsters.split("_");
-									} else{
-										$thisUnlockedMonsterArray = '';
-									}
-
-									//split string from function to array
-									if ($lockedMonsters[$thisId].length != '') {
-										$thisLockedMonsterArray = $thisLockedMonsters.split("_");
-									} else{
-										$thisLockedMonsterArray = '';
-									}
-
-									//open slideitem div
-									$slideItem ="<div class='swiper-slide'>";
-
-									$slideItem = $slideItem + "<div class='item'>" +
-										"<h2>" + $worldNames[i] + "</h2>" +
-										"</div>";
-
-									//fill the current slideitem with unlocked monsters
-									$.each($thisUnlockedMonsterArray, function(index, monster ){
-										$monsterNameLowerCase = monster.toLowerCase();
-										$slideItem = $slideItem +"<a href='monsters-detail.html?monstername="+monster+"' class='monster' style='background-image: url(\"img/monster_"+$monsterNameLowerCase+".png\");'>" +
-										"<div class='monstername'>"+ monster +"</div>" +
-										"</a>";
-									});
-
-									//fill the current slideitem with locked monsters
-									$.each($thisLockedMonsterArray, function(index, monster ){
-										$monsterNameLowerCase = monster.toLowerCase();
-										$slideItem = $slideItem +"<div class='monster' style='background-image: url(\"img/monster_"+$monsterNameLowerCase+"_locked.png\");'>" +
-												"<div class='monstername'>??</div>" +
-												"</div>";
-									});
-									//close the slideitem div
-									$slideItem = $slideItem + "</div>";
-
-									//add item to container
-									$($swiperContainer).append($slideItem);
-								}
 							}
 						},
 						error: function () {
 							alert("Er gaat iets verkeerd, neem contact met ons op!");
 						}
 					}).done(function(result){
+						$(".monsterDetailChallenge").on('click', function(){
+							$monsterName = $(this).attr('monster-name');
+							getMonsterChallengeInfo($monsterName);
+						});
+
 						swiper();
 
 						$(".changeWorldId").click(function(){
@@ -279,8 +233,8 @@
 
 
 			}
-			getMonsters();
-
+			getMonsterInfo();
+			swiper();
 		});
 	</script>
 
@@ -291,11 +245,9 @@
 				// Optional parameters
 				direction: 'horizontal',
 				initialSlide: 0,
-				slidesPerView: 'auto',
-				spaceBetween: 20,
-				centeredSlides: true,
 				loop: false,
 				onInit: function(){
+					// als er maar 1 slide is, positioneer deze in het midden.
 					var amount =  $('.swiper-slide').length;
 					if(amount == 1){
 						$('.swiper-slide').css("margin", "0 12.5%");
@@ -303,9 +255,8 @@
 					$('.container').css("background-color", "#fadcb9");
 				},
 				onSlideChangeStart: function () {
-					var value = mySwiper.activeIndex;
+					var value = $('.swiper-slide-active').attr('data-swiper-slide-index');
 					var newValue = parseInt(value) + 1;
-
 					if (newValue == 1) {
 						$('.container').css("background-color", "#fadcb9");
 					}
@@ -319,10 +270,15 @@
 			});
 		}
 
+		function changeWorldId(thisWorldId){
+			$thisWorldId = thisWorldId;
+			localStorage.setItem('worldId', $thisWorldId);
+			window.location.href = "index.html";
+		}
+
 		// initialize app
 		app.initialize();
 	</script>
-
 
 
 	<!--<script type="text/javascript" src="js/index.js"></script>-->
