@@ -62,13 +62,14 @@
 					<!-- while loop -->					
 					<?php
 					
-						$getNewsPosts = mysqli_query($db_social, "SELECT * FROM posts WHERE category = 'news' LIMIT 6") or die("FOUT: " . mysqli_error($dblink)); //selecteer rij waar gebruikersnaam gelijk is aan de variabele
+						$getNewsPosts = mysqli_query($db_social, "SELECT * FROM posts WHERE category = 'news' ORDER by id DESC LIMIT 6") or die("FOUT: " . mysqli_error($dblink)); //selecteer rij waar gebruikersnaam gelijk is aan de variabele
 										
 						while($rij = mysqli_fetch_assoc($getNewsPosts)) {
 							$postId = $rij["id"];
 							$username = $rij["username"];
 							$userId = $rij["userId"];
 							$title = $rij["title"];
+							$previewText = $rij["previewText"];
 							$content = $rij["content"];
 							$category = $rij["category"];
 							$postDate = $rij["postDate"];
@@ -88,7 +89,7 @@
 										</div>
 										<div class="panel-body">
 											<h1><a href="blog_item.php?id=<?php echo $postId; ?>"><?php echo $title; ?></a></h1>
-											<p><?php echo $content; ?></p>
+											<p><?php echo $previewText; ?></p>
 										</div>
 										<div class="panel-footer">
 											</span><span class="post_date"><?php echo $postDate; ?></span>

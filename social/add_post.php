@@ -50,6 +50,7 @@
 						
 							<div class="form-group">
 								<input type="text" class="form-control" value="" placeholder="Titel van het bericht" id="title" name="title" tabindex="1" />
+								<span id="text_counter_title"></span>
 							</div>
 							
 							<div class="form-group">
@@ -108,12 +109,12 @@
 	
 	<script>
 	$(document).ready(function(){
-        var left = 140
+        var left = 220
         $('#text_counter').text('Characters left: ' + left);
  
             $('#preview-text').keyup(function () {
  
-            left = 140 - $(this).val().length;
+            left = 220 - $(this).val().length;
  
             if(left < 0){
                 $('#text_counter').addClass("overlimit");
@@ -124,6 +125,24 @@
             }
  
             $('#text_counter').text('Characters left: ' + left);
+        });
+		
+        var left2 = 34
+        $('#text_counter_title').text('Characters left: ' + left2);
+ 
+            $('#title').keyup(function () {
+ 
+            left2 = 34 - $(this).val().length;
+ 
+            if(left2 < 0){
+                $('#text_counter_title').addClass("overlimit");
+                 $('#posting').attr("disabled", true);
+            }else{
+                $('#text_counter_title').removeClass("overlimit");
+                $('#posting').attr("disabled", false);
+            }
+ 
+            $('#text_counter_title').text('Characters left: ' + left2);
         });
     });
 	</script>

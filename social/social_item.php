@@ -77,7 +77,7 @@
 							
 							<?php
 							
-								$getSocialComments = mysqli_query($db_social, "SELECT * FROM socialComments WHERE postId = '$socialId' ") or die("FOUT: " . mysqli_error($dblink));
+								$getSocialComments = mysqli_query($db_social, "SELECT * FROM socialComments WHERE postId = '$socialId' ORDER by id DESC ") or die("FOUT: " . mysqli_error($dblink));
 								
 								while($rij = mysqli_fetch_assoc($getSocialComments)) {
 									$commentId = $rij["id"];
