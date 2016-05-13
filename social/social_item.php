@@ -96,18 +96,24 @@
 									
 									<div class="col-xs-12 col-md-12">
 										<div class="row">
-											<div class="col-md-2 col-sm-2 hidden-xs">
+											<div class="col-xs-2 col-md-2 col-lg-1 hidden-xs">
 												<figure class="thumbnail">
 													<img class="img-responsive" src="img/profilepic/profile_pic1.jpg" />
-													<figcaption class="text-center"><?php echo $userCommentName; ?></figcaption>
 												</figure>
 											</div>
-											<div class="col-md-10 col-sm-10">
-												<div class="panel panel-default arrow left">
+											<div class="col-xs-10 col-md-10 col-lg-11">
+												<div class="panel panel-default arrow left reaction">
+													<div class="panel-header">
+														<div class="left-text">
+															<span class="username_post"><?php echo $userCommentName; ?></span>
+														</div>
+														<div class="right-text">
+															<span class="post_date"><?php echo $postDate; ?></span>
+														</div>
+														<div class="clear"></div>
+													 </div>
 													<div class="panel-body">
-														<header class="text-left">
-															<time class="comment-date"><i class="fa fa-clock-o"></i> <?php echo $postDate; ?></time>
-														</header>
+
 														<div class="comment-post">
 															<p>
 																<?php echo $comment; ?>
