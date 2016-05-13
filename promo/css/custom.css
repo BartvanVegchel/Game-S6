@@ -3,8 +3,9 @@
 body            { overflow-y: scroll; margin: 0; padding: 0; font-family: OpenSansRegular, Arial, sans-serif; color: #333333; box-sizing: border-box; display: block; overflow-x:hidden; background: url("../img/social_bg.png") no-repeat center center fixed; background-size: cover; }
 div.container   { width: 100%; }
 div.clear       { clear: both; }
+div.row         { position: relative; }
 
-header        { position: fixed; width: 100%; }
+header        { position: fixed; width: 100%; z-index: 99; }
 a.logo        { width: 180px; }
 a.logo img    { width: 100%; }
 
@@ -14,14 +15,32 @@ nav.navbar ul li   {  }
 
 .navbar-brand      { height: auto; }
 
+ul.nav.navbar-nav li a { color: #555555; font-size: 16px; }
+
+/* Intro */
+
+div.page_intro     { position: relative; padding: 0; margin: 0; }
+div.intro_bg       { width: 100%; }
+div.intro_bg img   { width: 100%; }
+
+div.playbtn         { position: absolute; left: 48%; top: 40%; width: 120px; height: 120px; cursor: pointer; transition: opacity 0.2s; }
+div.playbtn:hover   { opacity: 0.5; }
+div.playbtn img     { width: 100%; }
 
 
-ul.nav.navbar-nav li a { color: #333333; text-transform: uppercase; font-size: 19px; }
+/* Explore */
 
-/* Header */
+div.page_explore   { position: relative; padding: 0; margin: -1px 0 0 0; }
+div.explore_bg     { width: 100%; }
+div.explore_bg img { width: 100%; }
 
-div.page-header     { padding: 0; margin: 0; width: 100%; }
-div.page-header img { width: 100%; }
+div.explore_text    { z-index: 999; top: 45%; }
+div.explore_text h2 { color: #FFFFFF; }
+div.explore_text p  { color: #FFFFFF; }
+
+div.explore_img     {  }
+
+
 
 /* Login */
 
