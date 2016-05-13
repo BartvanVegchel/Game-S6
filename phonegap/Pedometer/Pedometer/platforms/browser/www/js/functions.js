@@ -445,3 +445,32 @@ function accelerometer() {
 
     navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
 } //end function accelerometer
+
+ function pedometerFunction(){
+    alert("pedometer function is started");
+
+//     var successHandler = function (pedometerData) {
+//         alert('successHandler');
+//         // pedometerData.startDate; -> ms since 1970
+//         // pedometerData.endDate; -> ms since 1970
+//         // pedometerData.numberOfSteps;
+//         // pedometerData.distance;
+//         // pedometerData.floorsAscended;
+//         // pedometerData.floorsDescended;
+//     };
+//     pedometer.startPedometerUpdates(successHandler, onError);
+//
+//
+//     //console.log(pedometer);
+//      // var successHandler = function (pedometerData) {
+//     //     // pedometerData.startDate; -> ms since 1970
+//     //     // pedometerData.endDate; -> ms since 1970
+//     //     // pedometerData.numberOfSteps;
+//     //     // pedometerData.distance;
+//     //     // pedometerData.floorsAscended;
+//     //     // pedometerData.floorsDescended;
+//     // };
+//     // pedometer.startPedometerUpdates(successHandler, onError);
+//
+//
+ }//end function pedometer
