@@ -97,6 +97,17 @@
     <icon src="www/res/icon/windows/Wide310x150Logo.scale-240.png" platform="windows" width="744" height="360"/>
     <splash src="www/res/screen/windows/SplashScreenPhone.scale-240.png" platform="windows" width="1152" height="1920"/>
   </platform>
+    <access origin="localhost*" />
+    <access origin="http://145.93.144.146/Pedometer/Pedometer/www*" />
+    <access origin="http://145.93.144.49/Pedometer/Pedometer/www*" />
+    <access origin="http://145.93.181.15/Pedometer/Pedometer/www*" />
+    <access origin="145.93.144.49:3000" />
+    <access origin="145.93.181.15:3000" />
+    <access origin="debug.phonegap.com*" />
+    <access origin="185.13.226.244" />
+    <access origin="http://159.253.0.35*" />
+    <access origin="http://www.arnoclassens.nl*" />
+    <access origin="http://game.onlineops.nl*" />
   <access origin="*"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
