@@ -92,7 +92,7 @@
 											<p><?php echo $previewText; ?></p>
 										</div>
 										<div class="panel-footer">
-											</span><span class="post_date"><?php echo $postDate; ?></span>
+											<span class="post_date"><?php echo $postDate; ?></span>
 											<div class="clear"></div>
 										</div>
 									</div>

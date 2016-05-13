@@ -7,7 +7,7 @@ div.clear       { clear: both; }
 textarea        { padding: 15px !important; max-width: 100%; font-size: 20px !important; }
 input.btn       { margin: 10px 0 0 0; font-size: 18px; padding: 10px 15px; }
 
-h1  { margin: 5px 0 20px 0; }
+h1  { margin: 5px 0 20px 0; font-size: 25px; }
 
 /* Events */
 .quicklinks .panel,
@@ -82,11 +82,11 @@ div.filter          { margin: 0 0 10px 0; }
 div.filter .btn     { font-size: 18px; margin: 0 10px 0 0; }
 div.goto                                    { background: #fed667; height: 100px; text-align: center; width: 100% !important; }
 div.social_block.goto div.social_text       { width: 100%; margin: 0; }
-div.social_block.goto div.social_text p     { color: #FFFFFF; padding: 22px 0 0 0; box-sizing: border-box; font-size: 19px; }
+div.social_block.goto div.social_text p     { color: #FFFFFF; padding: 22px 0 0 0; box-sizing: border-box; font-size: 17px; }
 
 /* sidebar */
 
-div.links ul       { margin: 0 0 30px 0; }
+div.links ul      { margin: 0 0 30px 0; padding: 0; }
 div.links ul h2   { color: #FFFFFF; }
 div.links ul li   { list-style: none; margin: 0 0 5px 0; }
 div.links ul li a { color: #FFFFFF; }
@@ -108,8 +108,16 @@ div.links ul li a { color: #FFFFFF; }
 .panel .panel-heading {
 	padding: 0;
 }
-/* Wat doe je nu weer Frank? */
-/*.col-wi-1   { width: 90%; max-width: 900px; } */
+.reaction div.panel-header { border-bottom: 1px solid #e5e5e5; padding: 0 0 10px 0; font-size: 12px; }
+
+section.blog div.panel-body p   { line-height: 25px; }
+section.blog div.panel-body     { min-height: 250px; }
+
+.left-text  { float: left; margin: 10px 0 0 20px; }
+.right-text  { float: right; margin: 0px 20px 0 0; }
+
+.thumbnail      { padding: 0; }
+.thumbnail img  { width: 100%; }
 
 .navbar {
 	border-radius: 0;
