@@ -8,7 +8,7 @@ if(localStorage.getItem('worldId') == null){
 } else{
     $worldId = localStorage.getItem('worldId');
     console.log('worldId ' + $worldId +' gezet');
-}
+} //end else localstorage WorlID
 
 console.log('functions ingeladen voor ' + $userName);
 
@@ -36,7 +36,7 @@ function getEnergypoints(){
             }
         })
     }
-}
+}// end function getEnergyPoints
 
 // getUnlockedFields function and place in div element
 function getUnlockedFields(){
@@ -62,7 +62,7 @@ function getUnlockedFields(){
             }
         })
     }
-}
+} //end function getUnlockedFields
 
 
 //function is called from the buildMap function with paramters of clicked element
@@ -123,7 +123,7 @@ function unlockFunction(id, element){
     else{
         sweetAlert("Oeps...", "Je hebt niet voldoende energypoints!", "error");
     }
-}// end .locked click
+}//end function UnlockFunction
 
 
 // popup screen for daily challenge
@@ -145,7 +145,7 @@ function dailyChallenge(name, id, description, time, reward){
         function(){
             window.location.href = 'challenge.html?monstername='+$monsterName+'&challengeId='+$challengeId+'&challengeName='+$name+'&time='+$time+'&reward='+$reward+'&description='+$description;
         });
-}
+} //end function dailyChallenge
 
 //start monsterChallenge
 function monsterChallenge(monstername, name, id, description, time, clicktype){
@@ -174,7 +174,7 @@ function monsterChallenge(monstername, name, id, description, time, clicktype){
     } else{
         window.location.href = 'challenge.html?monstername=' + $monsterName + '&challengeId=' + $challengeId + '&challengeName=' + $name + '&time=' + $time + '&description=' + $description;
     }
-}
+} //end function monsterChallenge
 
 //
 function getMonsterChallengeInfo(monstername, clicktype){
@@ -203,7 +203,7 @@ function getMonsterChallengeInfo(monstername, clicktype){
     }).done(function (data) {
         monsterChallenge($monsterName, $name, $monsterId, $description, $time, $clickType);
     })
-}
+} //end function getMonsterChallengeInfo
 
 //Function for build the map
 function buildMap(){
@@ -237,7 +237,7 @@ function buildMap(){
             }
         })
     }
-}
+} //end function buildMap
 
 
 document.addEventListener("deviceready",onDeviceReady,false); // call first function if device is ready
@@ -247,20 +247,12 @@ function onDeviceReady() {
     getEnergypoints(); //set energypoints in div
     getUnlockedFields(); //set unlocked fields in div
     //getWorlds(); //set worlds in div menu
-}
+} //end function onDeviceReady
 
 function countClickItems(){
     var numItems = $('.locked').length;
-}
+} //end function countClickItems
 
-$(window).load(function() {
-    $(".world-name").click(function(){
-        localStorage.clear();
-        window.location.href = "inloggen.html";
-    });
-
-    console.log( "ready!");
-});
 
 //callable function for get vars out of url in jquery
 var getUrlParameter = function getUrlParameter(sParam) {
@@ -384,8 +376,8 @@ function createElements(){
         '</li>';
     $($tutorailElements).appendTo( $("#joyRideTipContent") );
 
-    clickEvents();// cal clickevents after set items
-} // end create elements
+    clickEvents(); // cal clickevents after set items
+} // end function createElements
 
 function clickEvents(){
     $('.dailyChallenge').click("click", function () {
@@ -424,7 +416,12 @@ function clickEvents(){
         });
     }); // end .tutorial click
 
-} //end clickEvents tutorial
+    $(".world-name").click(function(){
+        localStorage.clear();
+        window.location.href = "inloggen.html";
+    }); //end .world-name click
+
+} //end function clickEvents
 
 function accelerometer() {
     function onSuccess(acceleration) {
@@ -447,4 +444,4 @@ function accelerometer() {
     var watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);
 
     navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-}
+} //end function accelerometer

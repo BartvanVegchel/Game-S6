@@ -7,6 +7,15 @@
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <icon src="icon.png" />
+    <access origin="localhost*" />
+    <access origin="http://145.93.144.146/MovingMonsters/www*" />
+    <access origin="http://145.93.144.49/MovingMonsters/www*" />
+    <access origin="145.93.144.49:3000" />
+    <access origin="debug.phonegap.com*" />
+    <access origin="185.13.226.244" />
+    <access origin="http://159.253.0.35*" />
+    <access origin="http://www.arnoclassens.nl*" />
+    <access origin="http://game.onlineops.nl*" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

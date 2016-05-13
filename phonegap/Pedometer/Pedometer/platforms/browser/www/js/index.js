@@ -36,7 +36,6 @@ var app = {
         createElements(); //always as first function
 
         app.receivedEvent('deviceready');
-        
 		accelerometer();
         		
 		/* navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
