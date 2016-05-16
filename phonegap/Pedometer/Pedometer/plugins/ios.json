@@ -66,6 +66,9 @@
         },
         "cordova-plugin-device-motion": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
         }
     },
     "dependent_plugins": {}

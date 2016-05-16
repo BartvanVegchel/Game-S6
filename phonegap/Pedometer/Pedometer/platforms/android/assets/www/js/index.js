@@ -36,8 +36,8 @@ var app = {
         createElements(); //always as first function
 
         app.receivedEvent('deviceready');
-        pedometerFunction();
-        //accelerometer();
+
+        accelerometer();
 
     },
     // Update DOM on a Received Event

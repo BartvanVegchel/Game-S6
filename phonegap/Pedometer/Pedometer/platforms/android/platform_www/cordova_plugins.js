@@ -106,6 +106,20 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-device-motion/www/Acceleration.js",
+        "id": "cordova-plugin-device-motion.Acceleration",
+        "clobbers": [
+            "Acceleration"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-device-motion/www/accelerometer.js",
+        "id": "cordova-plugin-device-motion.accelerometer",
+        "clobbers": [
+            "navigator.accelerometer"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-device-orientation/www/CompassError.js",
         "id": "cordova-plugin-device-orientation.CompassError",
         "clobbers": [
@@ -445,20 +459,6 @@ module.exports = [
             "navigator.notification",
             "navigator"
         ]
-    },
-    {
-        "file": "plugins/cordova-plugin-device-motion/www/Acceleration.js",
-        "id": "cordova-plugin-device-motion.Acceleration",
-        "clobbers": [
-            "Acceleration"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-device-motion/www/accelerometer.js",
-        "id": "cordova-plugin-device-motion.accelerometer",
-        "clobbers": [
-            "navigator.accelerometer"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -466,9 +466,9 @@ module.exports.metadata =
 {
     "cordova-plugin-battery-status": "1.1.2",
     "cordova-plugin-camera": "2.1.1",
-    "cordova-plugin-console": "1.0.3",
     "cordova-plugin-contacts": "2.0.1",
     "cordova-plugin-device": "1.1.2",
+    "cordova-plugin-device-motion": "1.2.1",
     "cordova-plugin-device-orientation": "1.0.3",
     "cordova-plugin-dialogs": "1.2.1",
     "cordova-plugin-file": "4.1.1",
@@ -484,7 +484,7 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.1",
     "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-device-motion": "1.2.1"
+    "cordova-plugin-console": "1.0.3"
 };
 // BOTTOM OF METADATA
 });

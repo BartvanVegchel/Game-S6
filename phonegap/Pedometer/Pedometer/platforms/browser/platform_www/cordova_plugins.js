@@ -36,7 +36,8 @@ module.exports.metadata =
 {
     "cordova-plugin-whitelist": "1.2.1",
     "cordova-plugin-pedometer": "0.4.1",
-    "cordova-plugin-device-motion": "1.2.1"
+    "cordova-plugin-device-motion": "1.2.1",
+    "cordova-plugin-console": "1.0.3"
 }
 // BOTTOM OF METADATA
 });

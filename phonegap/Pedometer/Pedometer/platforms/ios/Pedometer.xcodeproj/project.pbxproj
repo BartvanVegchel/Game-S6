@@ -52,6 +52,7 @@
 		FE2B27F5AC1640F18D31DD73 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7DA6439694578A097B1D1 /* AddressBook.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		75E0F981CB954120958BDE31 /* Pedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C17CBC20154BF5B839415F /* Pedometer.m */; };
 		89120EE0713D4BC09921FEC2 /* CDVAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0CB4726274BFCAE56D95D /* CDVAccelerometer.m */; };
+		71B603FAA0294436BE782122 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 40309425D6C847EFB8199EFC /* CDVLogger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +156,8 @@
 		7A05D1361EE2464CA8B4FED7 /* Pedometer.h */ = {isa = PBXFileReference; name = "Pedometer.h"; path = "cordova-plugin-pedometer/Pedometer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		19D0CB4726274BFCAE56D95D /* CDVAccelerometer.m */ = {isa = PBXFileReference; name = "CDVAccelerometer.m"; path = "cordova-plugin-device-motion/CDVAccelerometer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		780EC4F5CC5E448F996977DF /* CDVAccelerometer.h */ = {isa = PBXFileReference; name = "CDVAccelerometer.h"; path = "cordova-plugin-device-motion/CDVAccelerometer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		40309425D6C847EFB8199EFC /* CDVLogger.m */ = {isa = PBXFileReference; name = "CDVLogger.m"; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		A468701B56C9497F8BADD288 /* CDVLogger.h */ = {isa = PBXFileReference; name = "CDVLogger.h"; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +333,8 @@
 				7A05D1361EE2464CA8B4FED7 /* Pedometer.h */,
 				19D0CB4726274BFCAE56D95D /* CDVAccelerometer.m */,
 				780EC4F5CC5E448F996977DF /* CDVAccelerometer.h */,
+				40309425D6C847EFB8199EFC /* CDVLogger.m */,
+				A468701B56C9497F8BADD288 /* CDVLogger.h */,
 			);
 			name = Plugins;
 			path = Pedometer/Plugins;
@@ -480,6 +485,7 @@
 				50C5AEFA2D984E6CB88574A8 /* CDVVibration.m in Sources */,
 				75E0F981CB954120958BDE31 /* Pedometer.m in Sources */,
 				89120EE0713D4BC09921FEC2 /* CDVAccelerometer.m in Sources */,
+				71B603FAA0294436BE782122 /* CDVLogger.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

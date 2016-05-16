@@ -455,28 +455,45 @@ function accelerometer() {
      document.getElementById('pedometerGeefterug').innerHTML = 'Distance available? ' + testPedometer;
 
 
-//     var successHandler = function (pedometerData) {
-//         alert('successHandler');
-//         // pedometerData.startDate; -> ms since 1970
-//         // pedometerData.endDate; -> ms since 1970
-//         // pedometerData.numberOfSteps;
-//         // pedometerData.distance;
-//         // pedometerData.floorsAscended;
-//         // pedometerData.floorsDescended;
-//     };
-//     pedometer.startPedometerUpdates(successHandler, onError);
-//
-//
-//     //console.log(pedometer);
-//      // var successHandler = function (pedometerData) {
-//     //     // pedometerData.startDate; -> ms since 1970
-//     //     // pedometerData.endDate; -> ms since 1970
-//     //     // pedometerData.numberOfSteps;
-//     //     // pedometerData.distance;
-//     //     // pedometerData.floorsAscended;
-//     //     // pedometerData.floorsDescended;
-//     // };
-//     // pedometer.startPedometerUpdates(successHandler, onError);
-//
-//
+    // var successHandler = function (pedometerData) {
+    //     alert('successHandler');
+    //     // pedometerData.startDate; -> ms since 1970
+    //     // pedometerData.endDate; -> ms since 1970
+    //     // pedometerData.numberOfSteps;
+    //     // pedometerData.distance;
+    //     // pedometerData.floorsAscended;
+    //     // pedometerData.floorsDescended;
+    // }
+    //
+    //  var onError = function(){
+    //      alert('onError');
+    //  }
+    // pedometer.startPedometerUpdates(successHandler, onError);
+    alert('pedometerfunction');
+
+     var successCallback = function () {
+        alert('success');
+            var successHandler = function (pedometerData) {
+                 alert(pedometerData.numberOfSteps);
+                 // pedometerData.startDate; -> ms since 1970
+                 // pedometerData.endDate; -> ms since 1970
+                 // pedometerData.numberOfSteps;
+                 // pedometerData.distance;
+                 // pedometerData.floorsAscended;
+                 // pedometerData.floorsDescended;
+             }
+
+              var onError = function(){
+                  alert('onError');
+              }
+             pedometer.startPedometerUpdates(successHandler, onError);
+
+     }
+
+     var failureCallback = function(){
+         alert('failure');
+     }
+
+     pedometer.isStepCountingAvailable(successCallback, failureCallback);
+     //alert(testje);
  }//end function pedometer
