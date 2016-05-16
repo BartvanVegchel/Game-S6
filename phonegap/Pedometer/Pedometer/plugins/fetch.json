@@ -23,14 +23,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "cordova-plugin-console": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-console@~1.0.2"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-contacts": {
         "source": {
             "type": "registry",
@@ -43,14 +35,6 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-device@~1.1.1"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-device-motion": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-device-motion@~1.2.0"
         },
         "is_top_level": true,
         "variables": {}
@@ -163,6 +147,22 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-pedometer"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-console": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-console@~1.0.2"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-device-motion": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-device-motion@~1.2.0"
         },
         "is_top_level": true,
         "variables": {}

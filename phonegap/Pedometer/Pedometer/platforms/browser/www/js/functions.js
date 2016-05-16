@@ -306,6 +306,7 @@ function createElements(){
         '<p class="event listening">Connecting to Device</p>'+
         '<p class="event received">Device is Ready</p>' +
         '<div id="geefterug"></div>' +
+        '<div id="pedometerGeefterug"></div>' +
         '</div>' +
         '</div>';
     $($elementsAccelerometer).insertAfter( $(".bottom-bar") );
@@ -447,7 +448,12 @@ function accelerometer() {
 } //end function accelerometer
 
  function pedometerFunction(){
-    alert("pedometer function is started");
+     //alert(pedometer);
+
+     //var testPedometer = pedometer.isDistanceAvailable(successCallback, failureCallback);
+     var testPedometer = 'Ja';
+     document.getElementById('pedometerGeefterug').innerHTML = 'Distance available? ' + testPedometer;
+
 
 //     var successHandler = function (pedometerData) {
 //         alert('successHandler');
