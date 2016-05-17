@@ -469,12 +469,12 @@ function accelerometer() {
     //      alert('onError');
     //  }
     // pedometer.startPedometerUpdates(successHandler, onError);
-    alert('pedometerfunction');
+    // alert('pedometerfunction');
 
      var successCallback = function () {
-        alert('success');
+        //alert('success');
             var successHandler = function (pedometerData) {
-                 alert(pedometerData.numberOfSteps);
+                 //alert(pedometerData.numberOfSteps);
                  // pedometerData.startDate; -> ms since 1970
                  // pedometerData.endDate; -> ms since 1970
                  // pedometerData.numberOfSteps;
@@ -484,14 +484,14 @@ function accelerometer() {
              }
 
               var onError = function(){
-                  alert('onError');
+                  //alert('onError');
               }
              pedometer.startPedometerUpdates(successHandler, onError);
 
      }
 
      var failureCallback = function(){
-         alert('failure');
+         //alert('failure');
      }
 
      pedometer.isStepCountingAvailable(successCallback, failureCallback);

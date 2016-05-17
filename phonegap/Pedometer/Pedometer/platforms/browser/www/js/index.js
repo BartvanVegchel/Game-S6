@@ -37,7 +37,8 @@ var app = {
 
         app.receivedEvent('deviceready');
 
-        accelerometer();
+        //accelerometer();
+        pedometerFunction();
 
     },
     // Update DOM on a Received Event
