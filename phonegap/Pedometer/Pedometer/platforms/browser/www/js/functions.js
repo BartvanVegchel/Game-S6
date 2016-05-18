@@ -316,7 +316,7 @@ function createElements(){
     $($elementsAccelerometer).insertAfter( $(".bottom-bar") );
 
     $elementsTopBar = '<span class="world-name" id="number2">Desertworld</span>' +
-        '<a href="http://game.onlineops.nl/phonegap_php/setSession.php?username=Piet"><span class="menu-icon fa fa-bars"></span></a>';
+        '<a href="http://game.onlineops.nl/phonegap_php/setSession.php?username='+$userName+'"><span class="menu-icon fa fa-bars"></span></a>';
     $($elementsTopBar).appendTo( $(".top-bar") );
 
     $elementsBottomBar = '<ul>' +

@@ -49,6 +49,7 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
     <script src="js/sweetalert-dev.js"></script>
+    <script src="js/tabs.js"></script>
 </head>
 
 <body>
@@ -59,6 +60,34 @@
 <!-- container -->
 <section class="container">
 
+    <!------------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------------>
+    <!---http://www.onextrapixel.com/2013/07/31/creating-content-tabs-with-pure-css/------>
+    <!------------------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------------------>
+        <ul class="tabs">
+            <li>
+                <input type="radio" checked name="tabs" id="tab1">
+                <label for="tab1"><i class="fa fa-user"></i> </label>
+                <div id="tab-content1" class="tab-content animated fadeIn">
+                    Content 1
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="tabs" id="tab2">
+                <label for="tab2"><i class="fa fa-trophy"></i></label>
+                <div id="tab-content2" class="tab-content animated fadeIn">
+                    Content 2
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="tabs" id="tab3">
+                <label for="tab3"><i class="fa fa-heart"></i></label>
+                <div id="tab-content3" class="tab-content animated fadeIn">
+                    Content 3
+                </div>
+            </li>
+        </ul>
 </section>
 
 <!-- Bottom bar -->
