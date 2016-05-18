@@ -37,8 +37,67 @@ var app = {
 
         app.receivedEvent('deviceready');
 
+        function onSuccess(contacts) {
+            alert('Found ' + contacts.length + ' contacts.');
+        };
+
+        function onError(contactError) {
+            alert('onError!');
+        };
+
+        // find all contacts with 'Bob' in any name field
+        // var options      = new ContactFindOptions();
+        // options.filter   = "Bart";
+        // options.multiple = true;
+        // options.desiredFields = [navigator.contacts.fieldType.id];
+        // options.hasPhoneNumber = true;
+        // var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+        // navigator.contacts.find(fields, onSuccess, onError, options);
+
         //accelerometer();
-        pedometerFunction();
+        //pedometerFunction();
+        // var successCallback = function () {
+        //     alert('success');
+        //
+        //     var successHandler = function (pedometerData) {
+        //         alert(pedometerData.numberOfSteps);
+        //         // pedometerData.startDate; -> ms since 1970
+        //         // pedometerData.endDate; -> ms since 1970
+        //         // pedometerData.numberOfSteps;
+        //         // pedometerData.distance;
+        //         // pedometerData.floorsAscended;
+        //         // pedometerData.floorsDescended;
+        //     };
+        //
+        //     var onError = function(error){
+        //         alert('onError ' + error);
+        //     };
+        //
+        //     pedometer.startPedometerUpdates(successHandler, onError);
+        //
+        //     // var successHandler = function (pedometerData) {
+        //     //     alert('succesHandler');
+        //     //     // pedometerData.numberOfSteps;
+        //     //     // pedometerData.distance;
+        //     //     // pedometerData.floorsAscended;
+        //     //     // pedometerData.floorsDescended;
+        //     // };
+        //     //
+        //     // var onError = function(error){
+        //     //     alert('onError');
+        //     // };
+        //     // var options = {
+        //     //     "startDate": new Date("Mon May 16 2016 15:20:00"),
+        //     //     "endDate": new Date("Mon May 16 2016 19:15:00")
+        //     // };
+        //     // pedometer.queryData(successHandler, onError, options);
+        // };
+        //
+        // var failureCallback = function(){
+        //     alert('failure');
+        // };
+        //
+        // pedometer.isStepCountingAvailable(successCallback, failureCallback);
 
     },
     // Update DOM on a Received Event

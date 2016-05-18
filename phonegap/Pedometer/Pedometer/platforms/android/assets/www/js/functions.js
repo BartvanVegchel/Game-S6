@@ -426,6 +426,34 @@ function clickEvents(){
         window.location.href = "inloggen.html";
     }); //end .world-name click
 
+    $(".energy-points").click(function() {
+        alert('hoi');
+        var ref = cordova.InAppBrowser.open('moves://app/authorize?client_id=62SUuYWpK8w4KcGq1vSfGmaj1jO8yr_H&redirect_uri=http://game.onlineops.nl/phonegap_php/moves/data.php&scope=activity', '_blank', 'location=no');
+
+        //window.location.href = "moves://app/authorize?client_id=62SUuYWpK8w4KcGq1vSfGmaj1jO8yr_H&redirect_uri=http://game.onlineops.nl/phonegap_php/moves/data.php&scope=activity";
+
+
+
+        // var xmlhttp = new XMLHttpRequest();
+        // xmlhttp.onreadystatechange = function() {
+        //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        //         var link  = "moves://app/authorize?client_id=62SUuYWpK8w4KcGq1vSfGmaj1jO8yr_H&redirect_uri=http://game.onlineops.nl/phonegap_php/moves/data.php&scope=activity";
+        //         document.getElementById("txtHint").innerHTML = xmlhttp.link;
+        //     }
+        // };
+        // xmlhttp.open("GET", "gethint.php?q=" + str, true);
+        // xmlhttp.send();
+        // $.ajax({
+        //     url: "moves://app/authorize?client_id=62SUuYWpK8w4KcGq1vSfGmaj1jO8yr_H&redirect_uri=http://game.onlineops.nl/phonegap_php/moves/data.php&scope=activity",
+        //     success: function () {
+        //         alert('Goed gedaan');
+        //     },
+        //     error: function () {
+        //         alert("Er gaat iets verkeerd, neem contact met ons op!");
+        //     }
+        // });
+    });
+
 } //end function clickEvents
 
 function accelerometer() {
@@ -473,30 +501,29 @@ function accelerometer() {
     //      alert('onError');
     //  }
     // pedometer.startPedometerUpdates(successHandler, onError);
-    // alert('pedometerfunction');
+    alert('pedometerfunction');
 
      var successCallback = function () {
-        //alert('success');
+        alert('success');
             var successHandler = function (pedometerData) {
-                 //alert(pedometerData.numberOfSteps);
+                 alert(pedometerData.numberOfSteps);
                  // pedometerData.startDate; -> ms since 1970
                  // pedometerData.endDate; -> ms since 1970
                  // pedometerData.numberOfSteps;
                  // pedometerData.distance;
                  // pedometerData.floorsAscended;
                  // pedometerData.floorsDescended;
-             }
+             };
 
               var onError = function(){
-                  //alert('onError');
-              }
+                  alert('onError');
+              };
              pedometer.startPedometerUpdates(successHandler, onError);
-
-     }
+     };
 
      var failureCallback = function(){
-         //alert('failure');
-     }
+         alert('failure');
+     };
 
      pedometer.isStepCountingAvailable(successCallback, failureCallback);
      //alert(testje);

@@ -15,6 +15,12 @@
         },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
         }
     },
     "dependent_plugins": {}

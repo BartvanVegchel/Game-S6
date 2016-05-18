@@ -316,9 +316,7 @@ function createElements(){
     $($elementsAccelerometer).insertAfter( $(".bottom-bar") );
 
     $elementsTopBar = '<span class="world-name" id="number2">Desertworld</span>' +
-        '<a href="accelerometer.html">' +
-            '<span class="menu-icon fa fa-bars"></span>' +
-        '</a>';
+        '<a href="http://game.onlineops.nl/phonegap_php/setSession.php?username=Piet"><span class="menu-icon fa fa-bars"></span></a>';
     $($elementsTopBar).appendTo( $(".top-bar") );
 
     $elementsBottomBar = '<ul>' +
@@ -344,9 +342,11 @@ function createElements(){
             '</a>' +
         '</li>' +
         '<li class="tutorial"> ' +
-            '<div id="number7" class="circle">' +
-                '<span class="fa fa-question"></span>' +
-            '</div>' +
+            '<a href="user.html">' +
+                '<div id="number7" class="circle">' +
+                    '<span class="fa fa-user"></span>' +
+                '</div>' +
+            '</a>' +
         '</li>' +
         '</ul>';
     $($elementsBottomBar).appendTo( $(".bottom-bar") );
@@ -426,6 +426,15 @@ function clickEvents(){
         window.location.href = "inloggen.html";
     }); //end .world-name click
 
+    // $(".energy-points").click(function() {
+    //     alert($userName);
+    //     //window.location.href = 'http://game.onlineops.nl/phonegap_php/setSession.php?username=Piet';
+    //
+    //     var link =  'http://game.onlineops.nl/phonegap_php/setSession.php?username=Piet';
+    //     var ref = cordova.InAppBrowser.open(link, '_blank', 'location=no');
+    //
+    // });
+
 } //end function clickEvents
 
 function accelerometer() {
@@ -473,30 +482,29 @@ function accelerometer() {
     //      alert('onError');
     //  }
     // pedometer.startPedometerUpdates(successHandler, onError);
-    // alert('pedometerfunction');
+    alert('pedometerfunction');
 
      var successCallback = function () {
-        //alert('success');
+        alert('success');
             var successHandler = function (pedometerData) {
-                 //alert(pedometerData.numberOfSteps);
+                 alert(pedometerData.numberOfSteps);
                  // pedometerData.startDate; -> ms since 1970
                  // pedometerData.endDate; -> ms since 1970
                  // pedometerData.numberOfSteps;
                  // pedometerData.distance;
                  // pedometerData.floorsAscended;
                  // pedometerData.floorsDescended;
-             }
+             };
 
               var onError = function(){
-                  //alert('onError');
-              }
+                  alert('onError');
+              };
              pedometer.startPedometerUpdates(successHandler, onError);
-
-     }
+     };
 
      var failureCallback = function(){
-         //alert('failure');
-     }
+         alert('failure');
+     };
 
      pedometer.isStepCountingAvailable(successCallback, failureCallback);
      //alert(testje);
