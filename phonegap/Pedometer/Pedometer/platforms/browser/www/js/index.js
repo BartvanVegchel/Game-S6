@@ -36,6 +36,7 @@ var app = {
         createElements(); //always as first function
 
         app.receivedEvent('deviceready');
+        StatusBar.hide();
 
         function onSuccess(contacts) {
             alert('Found ' + contacts.length + ' contacts.');
@@ -45,14 +46,14 @@ var app = {
             alert('onError!');
         };
 
-        // find all contacts with 'Bob' in any name field
-        // var options      = new ContactFindOptions();
-        // options.filter   = "Bart";
-        // options.multiple = true;
-        // options.desiredFields = [navigator.contacts.fieldType.id];
-        // options.hasPhoneNumber = true;
-        // var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
-        // navigator.contacts.find(fields, onSuccess, onError, options);
+        //find all contacts with 'Bob' in any name field
+        var options      = new ContactFindOptions();
+        options.filter   = "";
+        options.multiple = true;
+        options.desiredFields = [navigator.contacts.fieldType.id];
+        options.hasPhoneNumber = true;
+        var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+        navigator.contacts.find(fields, onSuccess, onError, options);
 
         //accelerometer();
         //pedometerFunction();

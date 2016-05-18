@@ -316,9 +316,7 @@ function createElements(){
     $($elementsAccelerometer).insertAfter( $(".bottom-bar") );
 
     $elementsTopBar = '<span class="world-name" id="number2">Desertworld</span>' +
-        '<a href="accelerometer.html">' +
-            '<span class="menu-icon fa fa-bars"></span>' +
-        '</a>';
+        '<a href="http://game.onlineops.nl/phonegap_php/setSession.php?username=Piet"><span class="menu-icon fa fa-bars"></span></a>';
     $($elementsTopBar).appendTo( $(".top-bar") );
 
     $elementsBottomBar = '<ul>' +
@@ -344,9 +342,11 @@ function createElements(){
             '</a>' +
         '</li>' +
         '<li class="tutorial"> ' +
-            '<div id="number7" class="circle">' +
-                '<span class="fa fa-question"></span>' +
-            '</div>' +
+            '<a href="user.html">' +
+                '<div id="number7" class="circle">' +
+                    '<span class="fa fa-user"></span>' +
+                '</div>' +
+            '</a>' +
         '</li>' +
         '</ul>';
     $($elementsBottomBar).appendTo( $(".bottom-bar") );
@@ -426,33 +426,14 @@ function clickEvents(){
         window.location.href = "inloggen.html";
     }); //end .world-name click
 
-    $(".energy-points").click(function() {
-        alert('hoi');
-        var ref = cordova.InAppBrowser.open('moves://app/authorize?client_id=62SUuYWpK8w4KcGq1vSfGmaj1jO8yr_H&redirect_uri=http://game.onlineops.nl/phonegap_php/moves/data.php&scope=activity', '_blank', 'location=no');
-
-        //window.location.href = "moves://app/authorize?client_id=62SUuYWpK8w4KcGq1vSfGmaj1jO8yr_H&redirect_uri=http://game.onlineops.nl/phonegap_php/moves/data.php&scope=activity";
-
-
-
-        // var xmlhttp = new XMLHttpRequest();
-        // xmlhttp.onreadystatechange = function() {
-        //     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        //         var link  = "moves://app/authorize?client_id=62SUuYWpK8w4KcGq1vSfGmaj1jO8yr_H&redirect_uri=http://game.onlineops.nl/phonegap_php/moves/data.php&scope=activity";
-        //         document.getElementById("txtHint").innerHTML = xmlhttp.link;
-        //     }
-        // };
-        // xmlhttp.open("GET", "gethint.php?q=" + str, true);
-        // xmlhttp.send();
-        // $.ajax({
-        //     url: "moves://app/authorize?client_id=62SUuYWpK8w4KcGq1vSfGmaj1jO8yr_H&redirect_uri=http://game.onlineops.nl/phonegap_php/moves/data.php&scope=activity",
-        //     success: function () {
-        //         alert('Goed gedaan');
-        //     },
-        //     error: function () {
-        //         alert("Er gaat iets verkeerd, neem contact met ons op!");
-        //     }
-        // });
-    });
+    // $(".energy-points").click(function() {
+    //     alert($userName);
+    //     //window.location.href = 'http://game.onlineops.nl/phonegap_php/setSession.php?username=Piet';
+    //
+    //     var link =  'http://game.onlineops.nl/phonegap_php/setSession.php?username=Piet';
+    //     var ref = cordova.InAppBrowser.open(link, '_blank', 'location=no');
+    //
+    // });
 
 } //end function clickEvents
 

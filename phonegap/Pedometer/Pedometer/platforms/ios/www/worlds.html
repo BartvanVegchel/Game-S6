@@ -126,33 +126,60 @@
 								for (var i = 0; i < $numWorlds; i++) {
 									$process = ($unlockFieldWorlds[i-1]/$worldSize[i-1])*100;
 									$thisWorldId = i+1;
+									$unlockLimit = 15;
 
 									$slideItem ="<div class='swiper-slide'>";
-										if($process < 15){
-											$slideItem = $slideItem + "<div class='lockedWorld'><span class='fa fa-lock'></span></div>";
-										}
-									$slideItem = $slideItem +
-									"<div class='img' style='background-image: url(\"img/"+$worldNames[i] +".png\");'>"+
-									"</div>" +
-									"<h1 class='ribbon'>" +
-									"<strong class='ribbon-content'>" + $worldNames[i] + "</strong>" +
-									"</h1>" +
-									"<div class='desc'>" +
-									"<div class='item'>" +
-									"<span class='icon' style='background-color: #df8c3c;'><i class='fa fa-bolt'></i></span>" +
-									"<span class='stat' style='background-color: #df8c3c;'>"+$yourmonsters[i] + " / " + $totalMonsters[i]+"</span>" +
-									"</div>" +
-									"<div class='item'>" +
-									"<span class='icon' style='background-color: #89ab4c;'><i class='fa fa-globe'></i></span>" +
-									"<span class='stat' style='background-color: #89ab4c;'>"+ $unlockFieldWorlds[i] + " / " + $worldSize[i] + "</span>" +
-									"</div>" +
-									"<div class='item'>" +
-									"<span class='icon' style='background-color: #ede23b;'><i class='fa fa-star'></i></span>" +
-									"<span class='stat' style='background-color: #ede23b;'>0/0</span>" +
-									"</div>" +
-									"<button id='" + $thisWorldId + "' class='changeWorldId'>Speel level</button>" +
-									"</div>" +
-									"</div>";
+									if($process < $unlockLimit){
+										$dinges = ($worldSize[i-1]/100) * $unlockLimit;
+										$dinges2 = Math.ceil($dinges);
+										$slideItem = $slideItem +
+												"<div class='img'>" +
+//												"<span class='fa fa-locked'></span>"+
+												"<img src='img/custom-fog.png'>"+
+												"</div>" +
+												"<h1 class='ribbon'>" +
+												"<strong class='ribbon-content'>??</strong>" +
+												"</h1>" +
+												"<div class='desc'>" +
+												"<div class='item'>" +
+												"<span class='icon' style='background-color: #df8c3c;'><i class='fa fa-bolt'></i></span>" +
+												"<span class='stat' style='background-color: #df8c3c;'>" + $yourmonsters[i] + " / " + $totalMonsters[i] + "</span>" +
+												"</div>" +
+												"<div class='item'>" +
+												"<span class='icon' style='background-color: #89ab4c;'><i class='fa fa-globe'></i></span>" +
+												"<span class='stat' style='background-color: #89ab4c;'>" + $unlockFieldWorlds[i] + " / " + $worldSize[i] + "</span>" +
+												"</div>" +
+												"<div class='item'>" +
+												"<span class='icon' style='background-color: #ede23b;'><i class='fa fa-star'></i></span>" +
+												"<span class='stat' style='background-color: #ede23b;'>0/0</span>" +
+												"</div>" +
+												"<div class='monsterstory'>Je kunt dit level nog niet spelen! Speel minimaal "+ $dinges2 +" velden vrij in de vorige wereld</div>" +
+												"</div>" +
+												"</div>";
+									} else {
+										$slideItem = $slideItem +
+												"<div class='img' style='background-image: url(\"img/" + $worldNames[i] + ".png\");'>" +
+												"</div>" +
+												"<h1 class='ribbon'>" +
+												"<strong class='ribbon-content'>" + $worldNames[i] + "</strong>" +
+												"</h1>" +
+												"<div class='desc'>" +
+												"<div class='item'>" +
+												"<span class='icon' style='background-color: #df8c3c;'><i class='fa fa-bolt'></i></span>" +
+												"<span class='stat' style='background-color: #df8c3c;'>" + $yourmonsters[i] + " / " + $totalMonsters[i] + "</span>" +
+												"</div>" +
+												"<div class='item'>" +
+												"<span class='icon' style='background-color: #89ab4c;'><i class='fa fa-globe'></i></span>" +
+												"<span class='stat' style='background-color: #89ab4c;'>" + $unlockFieldWorlds[i] + " / " + $worldSize[i] + "</span>" +
+												"</div>" +
+												"<div class='item'>" +
+												"<span class='icon' style='background-color: #ede23b;'><i class='fa fa-star'></i></span>" +
+												"<span class='stat' style='background-color: #ede23b;'>0/0</span>" +
+												"</div>" +
+												"<button id='" + $thisWorldId + "' class='changeWorldId'>Speel level</button>" +
+												"</div>" +
+												"</div>";
+									}
 									$($swiperContainer).append($slideItem);
 									console.log('item geplaatst');
 								}
