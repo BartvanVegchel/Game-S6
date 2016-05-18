@@ -110,6 +110,7 @@
 								$numWorlds = data['numworlds']; //the number of worlds
 								$unlockedMonsters = data['unlockedmonsters']; // unlocked monsters array
 								$lockedMonsters = data['lockedmonsters']; //locked monsters array
+								$worldColor = data['worldcolors'];
 
 								//define the slidecontainer
 								$swiperContainer = $('.swiper-wrapper');
@@ -168,7 +169,7 @@
 							alert("Er gaat iets verkeerd, neem contact met ons op!");
 						}
 					}).done(function(result){
-						swiper();
+						swiper($worldColor, $numWorlds);
 
 						$(".changeWorldId").click(function(){
 							$thisWorldId = $(this).attr("id");
@@ -185,8 +186,11 @@
 	</script>
 
 	<script>
-		function swiper() {
+		function swiper(worldcolor, numworlds) {
 			console.log('swiper start');
+			$bgColors = worldcolor;
+			$worlds = numworlds;
+
 			var mySwiper = new Swiper('.swiper-container', {
 				// Optional parameters
 				direction: 'horizontal',
@@ -196,24 +200,23 @@
 				centeredSlides: true,
 				loop: false,
 				onInit: function(){
+					// als er maar 1 slide is, positioneer deze in het midden.
 					var amount =  $('.swiper-slide').length;
 					if(amount == 1){
 						$('.swiper-slide').css("margin", "0 12.5%");
 					}
-					$('.container').css("background-color", "#fadcb9");
+					$('.container').css("background-color", $bgColors[0]);
 				},
 				onSlideChangeStart: function () {
-					var value = mySwiper.activeIndex;
-					var newValue = parseInt(value) + 1;
+					for(var i = 0; i < $worlds; i++){
 
-					if (newValue == 1) {
-						$('.container').css("background-color", "#fadcb9");
-					}
-					if (newValue == 2) {
-						$('.container').css("background-color", "#e0f3fb");
-					}
-					if (newValue == 3) {
-						$('.container').css("background-color", "#c0c0c0");
+						var value = mySwiper.activeIndex;
+						var newValue = parseInt(value);
+
+						if (newValue == i) {
+							$('.container').css("background-color", $bgColors[i]);
+						}
+
 					}
 				}
 			});

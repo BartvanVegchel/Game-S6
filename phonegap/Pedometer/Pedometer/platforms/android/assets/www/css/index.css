@@ -71,6 +71,10 @@ button{
     padding:0px;
 }
 
+p{
+    margin: 0;
+}
+
 /* Portrait layout (default) */
 .app {
     /*background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
@@ -83,6 +87,7 @@ button{
     /*padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
     margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
                                    /* offset horizontal: half of text area width */
+    display: none;
 }
 
 /* Landscape layout (with min-width) */
@@ -450,23 +455,13 @@ section.map div.part div.transportbackground img {
 /* slider */
 .swiper-container {
     width: 100%;
-    height: 95%;
+    height: 100%;
     /*overflow-x: scroll;*/
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translate(-50%);
 }
-
-/*.swiper-container::after {*/
-    /*background-color: rgba(0,0,0,0.8);*/
-    /*height: 100%;*/
-    /*width: 100%;*/
-    /*position: absolute;*/
-    /*content: "\f023";*/
-    /*top: 0;*/
-    /*z-index: 99;*/
-/*}*/
 
 .lockedWorld {
     background-color: rgba(0,0,0,0.9);
@@ -496,13 +491,8 @@ section.map div.part div.transportbackground img {
     border-top-right-radius: 10px;
 }
 
-.monster-detail .img{
-    padding-bottom: 80%;
-    height: 0;
-}
-
 .img{
-    width: 80%;
+    width: calc(80% - 10px);
     padding-bottom: 80%;
     margin-left: 10%;
     margin-top: 10%;
@@ -510,6 +500,7 @@ section.map div.part div.transportbackground img {
     background-size: cover;
     background-position: top center;
     border-radius: 500px;
+    border: 5px solid white;
 }
 
 .desc{
@@ -518,19 +509,17 @@ section.map div.part div.transportbackground img {
     position: absolute;
     overflow: scroll;
     text-align: center;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
+/* worlds page */
 .desc .item,
 .item{
     width: 30%;
-    /*padding-bottom: 30%;*/
     display: inline-block;
     float: left;
-    /*line-height: 40px;*/
     text-align: center;
     color: #fff;
-    /*margin: 10px auto 0 auto;*/
     border-radius: 5px;
     position: relative;
 }
@@ -561,6 +550,46 @@ section.map div.part div.transportbackground img {
     border-radius: 3px;
     background-color: #516f72;
 }
+
+/* end world page */
+
+/* monster detail page */
+
+.monster-detail .img{
+    padding-bottom: 80%;
+    height: 0;
+    background-size: 300%;
+    background-position: top center;
+}
+
+.monster-detail .imgmonster{
+    background-color: transparent;
+    border:5px solid transparent;
+    padding-bottom: 80%;
+    background-position: top center;
+    background-size: 100%;
+}
+
+.stars{
+    width:40%;
+    margin:0 auto;
+}
+
+.stars img{
+    width: 100%;
+}
+
+.monsterstory{
+    width: 90%;
+    font-size: 14px;
+    height:auto;
+    margin: 5% auto 0;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+/* end monster detail page */
 
 .desc .itemklein,
 .itemklein{
@@ -594,8 +623,8 @@ section.map div.part div.transportbackground img {
 
 .desc button{
     display: inline-block;
-    background-color: #00caf2;
-    margin-top: 30px;
+    background-color: #9dcad0;
+    margin-top: 5%;
     padding: 10px 15px;
     color: #fff;
     border-radius: 3px;

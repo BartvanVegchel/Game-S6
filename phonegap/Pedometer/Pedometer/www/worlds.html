@@ -185,6 +185,12 @@
 			console.log($bgColors);
 			console.log($worlds);
 			console.log('swiper start');
+
+			var fontSize = $('.desc .item span.icon').width() * 0.85;
+			var lineHeight = $('.desc .item span.icon').width() * 1;
+			$("i.fa").css('font-size', fontSize);
+			$("i.fa").css('line-height', lineHeight+'px');
+
 			var mySwiper = new Swiper('.swiper-container', {
 				// Optional parameters
 				direction: 'horizontal',
@@ -199,24 +205,38 @@
 					if(amount == 1){
 						$('.swiper-slide').css("margin", "0 12.5%");
 					}
-					$('.container').css("background-color", "#fadcb9");
+					$('.container').css("background-color", $bgColors[0]);
 				},
 				onSlideChangeStart: function () {
-					var value = mySwiper.activeIndex;
-					var newValue = parseInt(value) + 1;
+					for(var i = 0; i < $worlds; i++){
 
-					if (newValue == 1) {
-						$('.container').css("background-color", "#fadcb9");
-					}
-					if (newValue == 2) {
-						$('.container').css("background-color", "#e0f3fb");
-					}
-					if (newValue == 3) {
-						$('.container').css("background-color", "#c0c0c0");
+						var value = mySwiper.activeIndex;
+						var newValue = parseInt(value);
+
+						if (newValue == i) {
+							$('.container').css("background-color", $bgColors[i]);
+						}
+
 					}
 				}
 			});
 		}
+
+		$(document).ready(function(){
+//			var fontSize = $('span').height() * 0.10; // 10% of container width
+//			alert(fontSize);
+//			$("i.fa").css('font-size', fontSize);
+//			alert('hai');
+//			var ding = $('span.icon').width();
+//			alert(ding);
+
+		});
+
+				$('.desc .item span.icon').on('load', function(){
+			alert('is geladen');
+		});
+
+
 
 		function changeWorldId(thisWorldId){
 			$thisWorldId = thisWorldId;

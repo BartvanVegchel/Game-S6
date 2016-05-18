@@ -111,28 +111,35 @@
 							} else if (data['monsterstory'] !== "") {
 								//get the data
 								$monsterStory = data['monsterstory'];
-
+								$monsterWorld = data['monsterworld'];
+								$worldName = data['worldname'];
+								$worldColor = data['worldcolor'];
 								//get the container
 								$swiperContainer = $('.swiper-wrapper');
 
 								$slideItem = '<div class="swiper-slide monster-detail">'+
-									'<div class="img" style="background-image: url(\'img/monster_'+$currentmonsterLowerCase+'.png\');"></div>'+
+										"<div class='img' style='background-image: url(\"img/"+ $worldName +".png\");'>"+
+//										"<div class='img' style='background-image: url(\"img/iceWorld.png\");'>"+
+											'<div class="imgmonster" style="background-image: url(\'img/monster_'+$currentmonsterLowerCase+'.png\');"></div>'+
+										"</div>" +
+										"<h1 class='ribbon'>" +
+											"<strong class='ribbon-content'>" + $currentmonster + "</strong>" +
+										"</h1>" +
 										'<div class="desc">' +
-										'<div class="item">'+
-											'<h2>'+$currentmonster+'</h2>' +
+											'<div class="stars">'+
+												"<img src='img/star_rating.png'>" +
+											'</div>' +
+											'<div id="monsterstory" class="monsterstory">' +
+												'<p>'+$monsterStory+'</p>'+
+											'</div>' +
+											'<button class="monsterDetailChallenge" monster-name=' + $currentmonster + '>' +
+												'Challenge'+
+											'</button>' +
+											"<button onclick='location.href=\"monsters.html\";'>" +
+												'Terug' +
+											'</button>' +
 										'</div>' +
-										'<div id="monsterstory" class="itembig">' +
-											'<p>'+$monsterStory+'</p>'+
-										'</div>' +
-										'<div class="item">' +
-											'<h2 class="monsterDetailChallenge" monster-name=' + $currentmonster + '>Challenge</h2>'+
-										'</div>' +
-										'<div class="item">' +
-											'<a href="monsters.html">Terug</a>' +
-										'</div>' +
-									'</div>' +
-								'</div>';
-
+									'</div>';
 								//add item to container
 								$($swiperContainer).append($slideItem);
 
@@ -147,7 +154,7 @@
 							getMonsterChallengeInfo($monsterName);
 						});
 
-						swiper();
+						swiper($worldColor);
 
 						$(".changeWorldId").click(function(){
 							$thisWorldId = $(this).attr("id");
@@ -164,7 +171,8 @@
 	</script>
 
 	<script>
-		function swiper() {
+		function swiper(worldcolor) {
+			$worldColor = worldcolor;
 			console.log('swiper start');
 			var mySwiper = new Swiper('.swiper-container', {
 				// Optional parameters
@@ -177,7 +185,7 @@
 					if(amount == 1){
 						$('.swiper-slide').css("margin", "0 12.5%");
 					}
-					$('.container').css("background-color", "#fadcb9");
+					$('.container').css("background-color", $worldColor);
 				},
 				onSlideChangeStart: function () {
 					var value = $('.swiper-slide-active').attr('data-swiper-slide-index');

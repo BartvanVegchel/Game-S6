@@ -104,8 +104,12 @@ function unlockFunction(id, element){
                 .done(function (data) {
                     //show image, remove locked block
                     $('#' + $fieldId).find('.locked').next('div').find('img').show();
-                    $('#' + $fieldId).find('.locked').find('.fa').hide();
-                    $('#' + $fieldId).find('.locked').removeClass('locked');
+                    $('#' + $fieldId).find('.locked').find('.fa').animate({opacity: 0 }, 1500 );
+                    $('#' + $fieldId).find('.locked').find('.fog').animate({opacity: 0 }, 1500, function(){
+                        $(this).hide();
+                        $('#' + $fieldId).find('.locked').removeClass('locked');
+                    });
+
 
                     $updatedEnergyPoints = $personalEnergyValue - $price; //the new energypoints value
                     $personalEnergy.text($updatedEnergyPoints); //set the new value
