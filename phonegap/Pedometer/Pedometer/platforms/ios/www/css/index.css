@@ -551,6 +551,19 @@ section.map div.part div.transportbackground img {
     background-color: #516f72;
 }
 
+.desc .item:first-child span.icon,
+.desc .item:first-child span.stat{
+    background-color: #df8c3c;
+}
+.desc .item:nth-child(2) span.icon,
+.desc .item:nth-child(2) span.stat{
+    background-color: #89ab4c;
+}
+.desc .item:nth-child(3) span.icon,
+.desc .item:nth-child(3) span.stat{
+    background-color: #ede23b;
+}
+
 .desc .item span.stat{
     height: 20px;
     line-height: 20px;
@@ -564,16 +577,26 @@ section.map div.part div.transportbackground img {
 
 /* end world page */
 
-/* monster detail page */
+/* monster overview page */
+.monsters .ribbon{
+    margin: 2em auto 2em;
+}
+/* end monster overview page */
 
-.monster-detail .img{
+/* monster detail page & challenge page & user page */
+
+.monster-detail .img,
+.challenge .img,
+.user .img{
     padding-bottom: 80%;
     height: 0;
     background-size: 300%;
     background-position: top center;
 }
 
-.monster-detail .imgmonster{
+.monster-detail .imgmonster,
+.challenge .imgmonster,
+.user .imgmonster{
     background-color: transparent;
     border:5px solid transparent;
     padding-bottom: 80%;
@@ -582,12 +605,28 @@ section.map div.part div.transportbackground img {
 }
 
 .stars{
-    width:40%;
+    width:100%;
     margin:0 auto;
 }
 
 .stars img{
-    width: 100%;
+    width: 40%;
+}
+
+.reward{
+    width:100%;
+    margin: 15px auto;
+}
+
+.reward span{
+    display: inline-block;
+    font-size: 20px;
+    color: #fff;
+    padding: 10px;
+    border: 5px solid #fff;
+    background-color: transparent;
+    border-radius: 5px;
+    transform: rotate(-10deg);
 }
 
 .monsterstory{
@@ -636,7 +675,7 @@ section.map div.part div.transportbackground img {
 .desc button{
     display: inline-block;
     background-color: #9dcad0;
-    margin-top: 5%;
+    margin-top: 10%;
     padding: 10px 15px;
     color: #fff;
     border-radius: 3px;
@@ -794,17 +833,15 @@ section.map div.part div.transportbackground img {
 }
 .tabs li{
     float: left;
-    width:33%
 }
 .tabs label {
     display: block;
-    padding: 10px 0;
-    width:100%;
-    text-align:center;
+    padding: 10px 20px;
     border-radius: 2px 2px 0 0;
-    color: #516f72;
+    color: #08C;
     font-size: 24px;
     font-weight: normal;
+    font-family: 'Lily Script One', helveti;
     background: rgba(255,255,255,0.2);
     cursor: pointer;
     position: relative;
@@ -820,7 +857,7 @@ section.map div.part div.transportbackground img {
 }
 
 [id^=tab]:checked + label {
-    background: #516f72;
+    background: #08C;
     color: white;
     top: 0;
 }
@@ -834,53 +871,18 @@ section.map div.part div.transportbackground img {
     display: none;
     text-align: left;
     width: 100%;
-    font-size: 15px;
-    background: #ffffff;
-    color:#333333;
+    font-size: 20px;
+    background: #08C;
     padding: 15px;
     box-sizing:border-box;
+    color: white;
     position: absolute;
     left: 0;
-}
-
-.animated {
+    box-sizing: border-box;
     -webkit-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
     animation-duration: 0.5s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeInRight {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-@keyframes fadeInRight {
-    from {
-        opacity: 0;
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0);
-    }
-
-    to {
-        opacity: 1;
-        -webkit-transform: none;
-        transform: none;
-    }
-}
-
-.fadeInRight {
-    -webkit-animation-name: fadeInRight;
-    animation-name: fadeInRight;
 }
 
 

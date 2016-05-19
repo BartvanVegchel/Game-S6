@@ -136,11 +136,12 @@
 									}
 
 									//open slideitem div
-									$slideItem ="<div class='swiper-slide'>";
+									$slideItem ="<div class='swiper-slide monsters'>";
 
-									$slideItem = $slideItem + "<div class='item'>" +
-										"<h2>" + $worldNames[i] + "</h2>" +
-										"</div>";
+									$slideItem = $slideItem +
+									"<h1 class='ribbon'>" +
+									"<strong class='ribbon-content'>" + $worldNames[i] + "</strong>" +
+									"</h1>" ;
 
 									//fill the current slideitem with unlocked monsters
 									$.each($thisUnlockedMonsterArray, function(index, monster ){

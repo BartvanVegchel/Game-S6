@@ -235,6 +235,10 @@ function buildMap(){
                     $clickType = 'monsterEgg';
                     getMonsterChallengeInfo($monsterName, $clickType);
                 });//end monsterEgg click
+
+                $("div.transportbackground img").click(function(){
+                    window.location.href = "worlds.html";
+                });
             },
             error: function () {
                 alert("Er gaat iets verkeerd, neem contact met ons op!");
@@ -321,63 +325,63 @@ function createElements(){
 
     $elementsBottomBar = '<ul>' +
         '<li>' +
-            '<a href="monsters.html">' +
-                '<div id="number4" class="circle">' +
-                    '<span class="fa fa-paper-plane"></span>' +
-                '</div>' +
-            '</a>' +
+        '<a href="index.html">' +
+        '<div id="number6" class="circle">' +
+        '<span class="fa fa-home"></span>' +
+        '</div>' +
+        '</a>' +
         '</li>' +
         '<li>' +
-            '<a href="worlds.html">' +
-                '<div id="number5" class="circle">' +
-                    '<span class="fa fa-rocket"></span>' +
-                '</div>' +
-            '</a>' +
+        '<a href="worlds.html">' +
+        '<div id="number5" class="circle">' +
+        '<span class="fa fa-rocket"></span>' +
+        '</div>' +
+        '</a>' +
         '</li>' +
         '<li>' +
-            '<a href="#" class="dailyChallenge">' +
-                '<div id="number6" class="circle">' +
-                    '<span class="fa fa-trophy"></span>' +
-                '</div>' +
-            '</a>' +
+        '<a href="monsters.html">' +
+        '<div id="number4" class="circle">' +
+        '<span class="fa fa-paper-plane"></span>' +
+        '</div>' +
+        '</a>' +
         '</li>' +
-        '<li class="tutorial"> ' +
-            '<a href="user.html">' +
-                '<div id="number7" class="circle">' +
-                    '<span class="fa fa-user"></span>' +
-                '</div>' +
-            '</a>' +
+        '<li> ' +
+        '<a href="user.html">' +
+        '<div id="number7" class="circle">' +
+        '<span class="fa fa-user"></span>' +
+        '</div>' +
+        '</a>' +
         '</li>' +
         '</ul>';
     $($elementsBottomBar).appendTo( $(".bottom-bar") );
 
     $tutorailElements = '<li data-id="number1" data-text="Volgende" class="custom1">' +
         '<h2>EnergyPointjes</h2>' +
-            '<p>Hier zie je hoeveel EnergyPoints (EP) je nog hebt. Je kunt er meer verdienen door te bewegen!</p>' +
+        '<p>Hier zie je hoeveel EnergyPoints (EP) je nog hebt. Je kunt er meer verdienen door te bewegen!</p>' +
         '</li>'+
         '<li data-id="number2" data-text="Volgende" class="custom2">'+
         '<h2>Huidige wereld</h2>' +
-            '<p>Hier staat de naam van de wereld waar je op dit moment bent.</p>'+
+        '<p>Hier staat de naam van de wereld waar je op dit moment bent.</p>'+
         '</li>' +
         '<li data-id="number3" data-text="Volgende" class="custom3">' +
-            '<h2>Voortgang wereld</h2>' +
-            '<p>Hier zie je het aantal ontdekte gebieden van de wereld</p>' +
+        '<h2>Voortgang wereld</h2>' +
+        '<p>Hier zie je het aantal ontdekte gebieden van de wereld</p>' +
         '</li>' +
         '<li data-id="number4" data-text="Volgende" class="custom4" data-options="tipLocation:top;">' +
-            '<h2>Monsterdex</h2>' +
-            '<p>Bekijk hier welke monsters je al hebt ontdekt en wilke je nog moet!</p>' +
+        '<h2>Monsterdex</h2>' +
+        '<p>Bekijk hier welke monsters je al hebt ontdekt en wilke je nog moet!</p>' +
         '</li>' +
         '<li data-id="number5" data-text="Volgende" class="custom5" data-options="tipLocation:top;">' +
-            '<h2>Werelden</h2>' +
-            '<p>Vanuit hier kun je reizen naar andere werelden!</p>' +
+        '<h2>Werelden</h2>' +
+        '<p>Vanuit hier kun je reizen naar andere werelden!</p>' +
         '</li>' +
         '<li data-id="number6" data-text="Volgende" class="custom6" data-options="tipLocation:top;">' +
-            '<h2>Scoreboard</h2>' +
-            '<p>Hier kun je zien hoeveel je vrienden al hebben gevonden!</p>' +
+        '<h2>Scoreboard</h2>' +
+        '<p>Hier kun je zien hoeveel je vrienden al hebben gevonden!</p>' +
         '</li>' +
         '<li data-id="number7" data-text="Volgende" class="custom7" data-options="tipLocation:top;">' +
-            '<h2>Help?</h2>' +
-            '<p>Als je vragen hebt, kun je op deze knop drukken!</p>' +
+        '<h2>Help?</h2>' +
+        '<p>Als je vragen hebt, kun je op deze knop drukken!</p>' +
         '</li>';
     $($tutorailElements).appendTo( $("#joyRideTipContent") );
 
@@ -425,16 +429,6 @@ function clickEvents(){
         localStorage.clear();
         window.location.href = "inloggen.html";
     }); //end .world-name click
-
-    // $(".energy-points").click(function() {
-    //     alert($userName);
-    //     //window.location.href = 'http://game.onlineops.nl/phonegap_php/setSession.php?username=Piet';
-    //
-    //     var link =  'http://game.onlineops.nl/phonegap_php/setSession.php?username=Piet';
-    //     var ref = cordova.InAppBrowser.open(link, '_blank', 'location=no');
-    //
-    // });
-
 } //end function clickEvents
 
 function accelerometer() {
@@ -460,12 +454,12 @@ function accelerometer() {
     navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
 } //end function accelerometer
 
- function pedometerFunction(){
-     //alert(pedometer);
+function pedometerFunction(){
+    //alert(pedometer);
 
-     //var testPedometer = pedometer.isDistanceAvailable(successCallback, failureCallback);
-     var testPedometer = 'Ja';
-     document.getElementById('pedometerGeefterug').innerHTML = 'Distance available? ' + testPedometer;
+    //var testPedometer = pedometer.isDistanceAvailable(successCallback, failureCallback);
+    var testPedometer = 'Ja';
+    document.getElementById('pedometerGeefterug').innerHTML = 'Distance available? ' + testPedometer;
 
 
     // var successHandler = function (pedometerData) {
@@ -484,28 +478,28 @@ function accelerometer() {
     // pedometer.startPedometerUpdates(successHandler, onError);
     alert('pedometerfunction');
 
-     var successCallback = function () {
+    var successCallback = function () {
         alert('success');
-            var successHandler = function (pedometerData) {
-                 alert(pedometerData.numberOfSteps);
-                 // pedometerData.startDate; -> ms since 1970
-                 // pedometerData.endDate; -> ms since 1970
-                 // pedometerData.numberOfSteps;
-                 // pedometerData.distance;
-                 // pedometerData.floorsAscended;
-                 // pedometerData.floorsDescended;
-             };
+        var successHandler = function (pedometerData) {
+            alert(pedometerData.numberOfSteps);
+            // pedometerData.startDate; -> ms since 1970
+            // pedometerData.endDate; -> ms since 1970
+            // pedometerData.numberOfSteps;
+            // pedometerData.distance;
+            // pedometerData.floorsAscended;
+            // pedometerData.floorsDescended;
+        };
 
-              var onError = function(){
-                  alert('onError');
-              };
-             pedometer.startPedometerUpdates(successHandler, onError);
-     };
+        var onError = function(){
+            alert('onError');
+        };
+        pedometer.startPedometerUpdates(successHandler, onError);
+    };
 
-     var failureCallback = function(){
-         alert('failure');
-     };
+    var failureCallback = function(){
+        alert('failure');
+    };
 
-     pedometer.isStepCountingAvailable(successCallback, failureCallback);
-     //alert(testje);
- }//end function pedometer
+    pedometer.isStepCountingAvailable(successCallback, failureCallback);
+    //alert(testje);
+}//end function pedometer
