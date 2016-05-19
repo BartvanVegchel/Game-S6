@@ -63,23 +63,9 @@
 			<!-- Additional required wrapper -->
 			<div class="swiper-wrapper">
 				<!-- Slides -->
-				<div class="swiper-slide">
-					<div class="popup">
-						<div id="challengeContainer">
+				<div class="swiper-slide challenge">
+					<div id="challengeContainer">
 
-						</div>
-						<div class="itemknop">
-							<script>
-								$(document).ready(function(){
-									$('span.start').on('click', function(){
-										myCounter.start();
-									});
-								});
-							</script>
-							<span class="start">Start!</span>
-							<span class="smallcountdown" id="smallcountdown"></span>
-							<span class="countdown" id="countdown"></span>
-						</div>
 					</div>
 				</div>
 			</div>
@@ -106,6 +92,12 @@
 		} else{
 			console.log('je bent ingelogd');
 		}
+
+		$(document).ready(function(){
+			$('span.start').on('click', function(){
+				myCounter.start();
+			});
+		});
 
 		// counter challenge
 		$('#smallcountdown').show();
@@ -143,14 +135,26 @@
 
 		//check which challenge
 		if($monsterName == ''){
-			$challengeContent = '<div class="item">' +
-			'<h2 id="challengeName">'+ $challengeName +'</h2>' +
-			'</div>' +
-			'<div class="itembig">' +
-			'<p>'+$challengeDescription+'</p></div>' +
-			'<div class="item">' +
-			'<p>'+ $reward +'</p>' +
-			'</div>';
+			$challengeContent = "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>"+
+				'<div class="imgmonster" style="background-image: url(\'img/trophy.png\');"></div>'+
+				"</div>" +
+				"<h1 class='ribbon'>" +
+					"<strong class='ribbon-content'>" + $challengeName + "</strong>" +
+				"</h1>" +
+				'<div class="desc">' +
+					'<div class="reward">'+
+					'<span>Beloning: ' + $reward + ' <i class="fa fa-bolt"></i></span>'+
+					'</div>' +
+					'<div id="monsterstory" class="monsterstory">' +
+						'<p>'+$challengeDescription+'</p>'+
+					'</div>' +
+					"<button>Start</button>" +
+//					'<div class="itemknop">' +
+//						'<span class="start">Start!</span>'+
+//						'<span class="smallcountdown" id="smallcountdown"></span>'+
+//						'<span class="countdown" id="countdown"></span>'+
+//					'</div>'+
+				'</div>';
 
 			console.log('dailychallenge uitvoeren');
 		} else{

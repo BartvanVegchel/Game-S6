@@ -22,14 +22,12 @@
 <html>
 
 <head>
-    <meta charset="utf-8"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="msapplication-tap-highlight" content="no"/>
-    <meta name="viewport"
-          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <meta http-equiv="Content-Security-Policy"
-          content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
     <!-- Good default declaration:
     * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
     * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
@@ -42,11 +40,11 @@
 
     <link rel="stylesheet" href="css/sweetalert.css">
     <link rel="stylesheet" href="css/swiper.min.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
-    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
-    <link rel="stylesheet" type="text/css" href="js/joyride-master/joyride-2.1.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="js/joyride-master/joyride-2.1.css" />
 
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>New Moving Monsters Test</title>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
@@ -61,19 +59,35 @@
 
 <!-- container -->
 <section class="container">
-    <div class="swiper-container">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
-            <!-- Slides -->
-        </div>
-    </div>
 
     <!------------------------------------------------------------------------------------>
     <!------------------------------------------------------------------------------------>
     <!---http://www.onextrapixel.com/2013/07/31/creating-content-tabs-with-pure-css/------>
     <!------------------------------------------------------------------------------------>
     <!------------------------------------------------------------------------------------>
-
+        <ul class="tabs">
+            <li>
+                <input type="radio" checked name="tabs" id="tab1">
+                <label for="tab1"><i class="fa fa-user"></i> </label>
+                <div id="tab-content1" class="tab-content animated fadeIn">
+                    Content 1
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="tabs" id="tab2">
+                <label for="tab2"><i class="fa fa-trophy"></i></label>
+                <div id="tab-content2" class="tab-content animated fadeIn">
+                    Content 2
+                </div>
+            </li>
+            <li>
+                <input type="radio" name="tabs" id="tab3">
+                <label for="tab3"><i class="fa fa-heart"></i></label>
+                <div id="tab-content3" class="tab-content animated fadeIn">
+                    Content 3
+                </div>
+            </li>
+        </ul>
 </section>
 
 <!-- Bottom bar -->
@@ -91,128 +105,11 @@
 <script type="text/javascript" src="js/swiper.jquery.min.js"></script>
 <script>
     // check if ingelogd
-    if (localStorage.getItem('userInfo') == null) {
+    if(localStorage.getItem('userInfo') == null){
         console.log('je bent niet ingelogd');
         window.location.href = "inloggen.html";
-    } else {
+    } else{
         console.log('je bent ingelogd');
-    }
-</script>
-
-<script>
-    //build items for swiper
-
-    $(document).ready(function () {
-        function getWorlds() {
-            var dataString = "username=" + $userName + "&worldid=" + $worldId + "&submit=";
-            if (localStorage.getItem('userInfo') !== null) {
-                $.ajax({
-                    type: "POST",
-                    url: "http://game.onlineops.nl/phonegap_php/getUserInfo.php",
-                    data: dataString,
-                    crossDomain: true,
-                    cache: false,
-                    dataType: 'json',
-                    success: function (data) {
-                        if (data['error'] == "error") {
-                            //do nothing
-                        } else if (data['gender'] !== "") {
-                            $gender = data['gender'];
-                            $monsters = data['unlockedmonsters'];
-                            $unlockedworlds = data['unlockedworlds'];
-                            $yourstars = data['yourstars'];
-
-                            $swiperContainer = $('.swiper-wrapper');
-
-                            if ($userName && $gender) {
-                                $slideItem = '';
-                                $slideItem = $slideItem +
-                                    "<div class='swiper-slide user'>" +
-                                        "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>" +
-                                            "<div class='imgmonster' style='background-image: url(\"img/icon"+ $gender +".png\");'></div>" +
-                                        "</div>" +
-                                        "<h1 class='ribbon'>" +
-                                            "<strong class='ribbon-content'>"+ $userName +"</strong>" +
-                                        "</h1>" +
-                                        "<div class='desc'>" +
-                                        "<div class='item'>" +
-                                            "<span class='icon'><i class='fa fa-bolt'></i></span>" +
-                                            "<span class='stat'>" + $monsters + "</span>" +
-                                        "</div>" +
-                                        "<div class='item'>" +
-                                            "<span class='icon'><i class='fa fa-globe'></i></span>" +
-                                            "<span class='stat'>" + $unlockedworlds + "</span>" +
-                                        "</div>" +
-                                        "<div class='item'>" +
-                                            "<span class='icon'><i class='fa fa-star'></i></span>" +
-                                            "<span class='stat'>" + $yourstars + "</span>" +
-                                        "</div>" +
-                                        "</div>" +
-                                    "</div>";
-
-                                $($swiperContainer).append($slideItem);
-                            }
-                            if ($userName && $gender) {
-                                $slideItem = '';
-                                $slideItem = $slideItem +
-                                        "<div class='swiper-slide user'>" +
-                                        "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>" +
-                                        "<div class='imgmonster' style='background-image: url(\"img/icon"+ $gender +".png\");'></div>" +
-                                        "</div>" +
-                                        "<h1 class='ribbon'>" +
-                                        "<strong class='ribbon-content'>"+ $userName +"</strong>" +
-                                        "</h1>" +
-                                        "<div class='desc'>" +
-                                        "<div class='item'>" +
-                                        "<span class='icon'><i class='fa fa-bolt'></i></span>" +
-                                        "<span class='stat'>" + $gender + "</span>" +
-                                        "</div>" +
-                                        "<div class='item'>" +
-                                        "<span class='icon'><i class='fa fa-globe'></i></span>" +
-                                        "<span class='stat'>" + $gender + "</span>" +
-                                        "</div>" +
-                                        "<div class='item'>" +
-                                        "<span class='icon'><i class='fa fa-star'></i></span>" +
-                                        "<span class='stat'>" + $gender + "</span>" +
-                                        "</div>" +
-                                        "</div>" +
-                                        "</div>";
-
-                                $($swiperContainer).append($slideItem);
-                            }
-                        }
-                    },
-                    error: function () {
-                        alert("Er gaat iets verkeerd, neem contact met ons op!");
-                    }
-                }).done(function (result) {
-                    swiper();
-                })
-            }
-        }
-
-        getWorlds();
-    });
-</script>
-
-<script>
-    function swiper() {
-        var mySwiper = new Swiper('.swiper-container', {
-            // Optional parameters
-            direction: 'horizontal',
-            initialSlide: 0,
-            slidesPerView: 'auto',
-            spaceBetween: 20,
-            centeredSlides: true,
-            loop: false,
-            onInit: function(){
-                // als er maar 1 slide is, positioneer deze in het midden.
-                var amount =  $('.swiper-slide').length;
-                if(amount == 1){
-                    $('.swiper-slide').css("margin", "0 12.5%");
-                }
-            }
-        });
     }
 </script>
 

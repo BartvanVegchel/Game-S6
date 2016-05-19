@@ -235,11 +235,6 @@ function buildMap(){
                     $clickType = 'monsterEgg';
                     getMonsterChallengeInfo($monsterName, $clickType);
                 });//end monsterEgg click
-
-                $("div.transportbackground img").click(function(){
-                    //alert('hoi');
-                    window.location.href = "worlds.html";
-                });
             },
             error: function () {
                 alert("Er gaat iets verkeerd, neem contact met ons op!");
@@ -326,9 +321,9 @@ function createElements(){
 
     $elementsBottomBar = '<ul>' +
         '<li>' +
-            '<a href="index.html">' +
-                '<div id="number6" class="circle">' +
-                    '<span class="fa fa-home"></span>' +
+            '<a href="monsters.html">' +
+                '<div id="number4" class="circle">' +
+                    '<span class="fa fa-paper-plane"></span>' +
                 '</div>' +
             '</a>' +
         '</li>' +
@@ -340,14 +335,13 @@ function createElements(){
             '</a>' +
         '</li>' +
         '<li>' +
-            '<a href="monsters.html">' +
-                '<div id="number4" class="circle">' +
-                    '<span class="fa fa-paper-plane"></span>' +
+            '<a href="#" class="dailyChallenge">' +
+                '<div id="number6" class="circle">' +
+                    '<span class="fa fa-trophy"></span>' +
                 '</div>' +
             '</a>' +
         '</li>' +
-
-        '<li> ' +
+        '<li class="tutorial"> ' +
             '<a href="user.html">' +
                 '<div id="number7" class="circle">' +
                     '<span class="fa fa-user"></span>' +
@@ -431,6 +425,16 @@ function clickEvents(){
         localStorage.clear();
         window.location.href = "inloggen.html";
     }); //end .world-name click
+
+    // $(".energy-points").click(function() {
+    //     alert($userName);
+    //     //window.location.href = 'http://game.onlineops.nl/phonegap_php/setSession.php?username=Piet';
+    //
+    //     var link =  'http://game.onlineops.nl/phonegap_php/setSession.php?username=Piet';
+    //     var ref = cordova.InAppBrowser.open(link, '_blank', 'location=no');
+    //
+    // });
+
 } //end function clickEvents
 
 function accelerometer() {
