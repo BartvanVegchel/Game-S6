@@ -237,7 +237,6 @@ function buildMap(){
                 });//end monsterEgg click
 
                 $("div.transportbackground img").click(function(){
-                    alert('hoi');
                     window.location.href = "worlds.html";
                 });
             },
