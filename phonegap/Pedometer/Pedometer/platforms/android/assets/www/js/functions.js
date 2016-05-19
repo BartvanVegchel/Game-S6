@@ -235,6 +235,11 @@ function buildMap(){
                     $clickType = 'monsterEgg';
                     getMonsterChallengeInfo($monsterName, $clickType);
                 });//end monsterEgg click
+
+                $("div.transportbackground img").click(function(){
+                    alert('hoi');
+                    window.location.href = "worlds.html";
+                });
             },
             error: function () {
                 alert("Er gaat iets verkeerd, neem contact met ons op!");
@@ -426,16 +431,6 @@ function clickEvents(){
         localStorage.clear();
         window.location.href = "inloggen.html";
     }); //end .world-name click
-
-    // $(".energy-points").click(function() {
-    //     alert($userName);
-    //     //window.location.href = 'http://game.onlineops.nl/phonegap_php/setSession.php?username=Piet';
-    //
-    //     var link =  'http://game.onlineops.nl/phonegap_php/setSession.php?username=Piet';
-    //     var ref = cordova.InAppBrowser.open(link, '_blank', 'location=no');
-    //
-    // });
-
 } //end function clickEvents
 
 function accelerometer() {
