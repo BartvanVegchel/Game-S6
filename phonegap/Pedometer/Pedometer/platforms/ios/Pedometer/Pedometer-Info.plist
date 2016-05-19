@@ -61,5 +61,14 @@
     </dict>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string/>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>movingmonsters</string>
+        </array>
+      </dict>
+    </array>
   </dict>
 </plist>

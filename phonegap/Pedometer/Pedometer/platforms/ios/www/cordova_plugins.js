@@ -41,6 +41,22 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
+        "id": "cordova-plugin-console.console",
+        "pluginId": "cordova-plugin-console",
+        "clobbers": [
+            "console"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-console/www/logger.js",
+        "id": "cordova-plugin-console.logger",
+        "pluginId": "cordova-plugin-console",
+        "clobbers": [
+            "cordova.logger"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-contacts/www/contacts.js",
         "id": "cordova-plugin-contacts.contacts",
         "pluginId": "cordova-plugin-contacts",
@@ -553,19 +569,11 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
-        "id": "cordova-plugin-console.console",
-        "pluginId": "cordova-plugin-console",
+        "file": "plugins/cordova-plugin-customurlscheme/www/ios/LaunchMyApp.js",
+        "id": "cordova-plugin-customurlscheme.LaunchMyApp",
+        "pluginId": "cordova-plugin-customurlscheme",
         "clobbers": [
-            "console"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-console/www/logger.js",
-        "id": "cordova-plugin-console.logger",
-        "pluginId": "cordova-plugin-console",
-        "clobbers": [
-            "cordova.logger"
+            "window.plugins.launchmyapp"
         ]
     }
 ];
@@ -574,6 +582,7 @@ module.exports.metadata =
 {
     "cordova-plugin-battery-status": "1.1.2",
     "cordova-plugin-camera": "2.1.1",
+    "cordova-plugin-console": "1.0.3",
     "cordova-plugin-contacts": "2.0.1",
     "cordova-plugin-device": "1.1.2",
     "cordova-plugin-device-motion": "1.2.1",
@@ -592,7 +601,7 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.1",
     "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-console": "1.0.3"
+    "cordova-plugin-customurlscheme": "4.1.5"
 }
 // BOTTOM OF METADATA
 });

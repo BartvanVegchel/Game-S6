@@ -522,7 +522,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.fontys.sm.testiugyighhgjhy;
-				PRODUCT_NAME = Pedometer;
+				PRODUCT_NAME = "Pedometer";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -547,7 +547,7 @@
 				INFOPLIST_FILE = "Pedometer/Pedometer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				PRODUCT_BUNDLE_IDENTIFIER = edu.fontys.sm.testiugyighhgjhy;
-				PRODUCT_NAME = Pedometer;
+				PRODUCT_NAME = "Pedometer";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -576,6 +576,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
+				PRODUCT_NAME = "Pedometer";
 			};
 			name = Debug;
 		};
@@ -601,6 +602,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
+				PRODUCT_NAME = "Pedometer";
 			};
 			name = Release;
 		};

@@ -21,6 +21,10 @@
         },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
+        },
+        "cordova-plugin-customurlscheme": {
+            "URL_SCHEME": "movingmonsters",
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
         }
     },
     "dependent_plugins": {}

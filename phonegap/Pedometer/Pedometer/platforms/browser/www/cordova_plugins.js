@@ -72,7 +72,8 @@ module.exports.metadata =
     "cordova-plugin-device-motion": "1.2.1",
     "cordova-plugin-console": "1.0.3",
     "cordova-plugin-inappbrowser": "1.3.0",
-    "cordova-plugin-statusbar": "2.1.3"
+    "cordova-plugin-statusbar": "2.1.3",
+    "cordova-plugin-customurlscheme": "4.1.5"
 }
 // BOTTOM OF METADATA
 });

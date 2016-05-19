@@ -11,6 +11,7 @@ Config.xml file:
   <content src="index.html"/>
   <preference name="DisallowOverscroll" value="true"/>
   <preference name="android-minSdkVersion" value="14"/>
+  <preference name="fullscreen" value="true" />
   <feature name="http://api.phonegap.com/1.0/camera"/>
   <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1"/>
   <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1"/>
@@ -111,15 +112,22 @@ Config.xml file:
     <access origin="http://159.253.0.35*" />
     <access origin="http://www.arnoclassens.nl*" />
     <access origin="http://game.onlineops.nl*" />
+  <access origin="moves:*" />
+  <access origin="moves://*" />
   <access origin="*"/>
   <allow-intent href="http://*/*"/>
   <allow-intent href="https://*/*"/>
   <allow-intent href="tel:*"/>
   <allow-intent href="sms:*"/>
   <allow-intent href="mailto:*"/>
+  <allow-intent href="moves:*"/>
   <allow-intent href="geo:*"/>
   <platform name="android">
     <allow-intent href="market:*"/>
+    <intent-filter>
+      <action android:name="edu.fontys.sm.testiugyighhgjhy.MAIN" />
+      <category android:name="edu.fontys.sm.testiugyighhgjhy.LAUNCHER" />
+    </intent-filter>
   </platform>
   <platform name="ios">
     <allow-intent href="itms:*"/>

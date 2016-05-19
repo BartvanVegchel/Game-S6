@@ -321,9 +321,9 @@ function createElements(){
 
     $elementsBottomBar = '<ul>' +
         '<li>' +
-            '<a href="monsters.html">' +
-                '<div id="number4" class="circle">' +
-                    '<span class="fa fa-paper-plane"></span>' +
+            '<a href="index.html">' +
+                '<div id="number6" class="circle">' +
+                    '<span class="fa fa-home"></span>' +
                 '</div>' +
             '</a>' +
         '</li>' +
@@ -335,13 +335,14 @@ function createElements(){
             '</a>' +
         '</li>' +
         '<li>' +
-            '<a href="#" class="dailyChallenge">' +
-                '<div id="number6" class="circle">' +
-                    '<span class="fa fa-trophy"></span>' +
+            '<a href="monsters.html">' +
+                '<div id="number4" class="circle">' +
+                    '<span class="fa fa-paper-plane"></span>' +
                 '</div>' +
             '</a>' +
         '</li>' +
-        '<li class="tutorial"> ' +
+
+        '<li> ' +
             '<a href="user.html">' +
                 '<div id="number7" class="circle">' +
                     '<span class="fa fa-user"></span>' +
