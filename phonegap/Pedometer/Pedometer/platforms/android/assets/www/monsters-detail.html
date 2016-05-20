@@ -131,13 +131,15 @@
 											'<div id="monsterstory" class="monsterstory">' +
 												'<p>'+$monsterStory+'</p>'+
 											'</div>' +
-											'<button class="monsterDetailChallenge" monster-name=' + $currentmonster + '>' +
-												'Challenge'+
-											'</button>' +
-											"<button onclick='location.href=\"monsters.html\";'>" +
-												'Terug' +
-											'</button>' +
 										'</div>' +
+										"<div class='buttonbar'>"+
+										'<button class="monsterDetailChallenge buttonleft" monster-name=' + $currentmonster + '>' +
+										'Challenge'+
+										'</button>' +
+										"<button class='monsterDetailChallenge buttonright' onclick='location.href=\"monsters.html\";'>" +
+										'Terug' +
+										'</button>' +
+										"</div>" +
 									'</div>';
 								//add item to container
 								$($swiperContainer).append($slideItem);

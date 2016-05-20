@@ -158,11 +158,26 @@
 
 			console.log('dailychallenge uitvoeren');
 		} else{
-			$challengeContent = '<div class="item">' +
-				'<h2>'+ $challengeName +'</h2>' +
-				'</div>' +
-				'<div class="itembig">' +
-				'<p>'+$challengeDescription+'</p></div>';
+			$challengeContent = "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>"+
+					'<div class="imgmonster" style="background-image: url(\'img/monster_'+ $monsterName +'.png\');"></div>'+
+					"</div>" +
+					"<h1 class='ribbon'>" +
+					"<strong class='ribbon-content'>" + $challengeName + "</strong>" +
+					"</h1>" +
+					'<div class="desc">' +
+					'<div class="stars">'+
+					"<img src='img/star_rating.png'>" +
+					'</div>' +
+					'<div id="monsterstory" class="monsterstory">' +
+					'<p>'+$challengeDescription+'</p>'+
+					'</div>' +
+					"<button class='buttonfull buttongreen'>Start</button>" +
+//					'<div class="itemknop">' +
+//						'<span class="start">Start!</span>'+
+//						'<span class="smallcountdown" id="smallcountdown"></span>'+
+//						'<span class="countdown" id="countdown"></span>'+
+//					'</div>'+
+					'</div>';
 
 
 			console.log('monsterchallenge uitoveren');

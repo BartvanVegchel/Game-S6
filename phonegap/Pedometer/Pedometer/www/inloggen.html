@@ -44,11 +44,25 @@
 </head>
 
 <body>
-    <form id="login"><br><br><br><br>
-        <input type="text" name="username" id="username" placeholder="Typ je naam hier" tabindex="1">
-        <input type="password" name="password" id="password" placeholder="En hier je wachtwoord" tabindex="5">
-        <input class="btn" id="loginBtn" type="submit" name="submit" value="Laat me spelen!">
-    </form>
+<section class="containerlogin">
+    <div class="loginheader">
+
+    </div>
+    <div class="placeholder"></div>
+    <div class="form">
+        <form id="login style-1">
+            <p>Wat is jouw gebruikersnaam?</p>
+            <input type="text" name="username" id="username" placeholder="Gebruikersnaam" tabindex="1" class="focus">
+            <p>Wat is je wachwoord?</p>
+            <input type="password" name="password" id="password" placeholder="Wachtwoord" tabindex="5" class="focus">
+            <div class='buttonbar'>
+                <input  class="buttonleft buttongreen" id="loginBtn" type="submit" name="submit" value="Spelen!">
+                <a class="button buttonright buttongrey" href="register.html">Registreren</a>
+            </div>
+        </form>
+    </div>
+</section>
+
     <a class="btn btn-secondary btn-small" href="register.html">Ik ben een nieuwe speler</a>
 
 
