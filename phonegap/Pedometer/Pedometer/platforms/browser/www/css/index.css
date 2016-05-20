@@ -83,12 +83,12 @@ input[type="submit"]{
     border-radius: 10px;
     /*box-shadow: 0 7px #27496d;*/
     text-decoration: none;
+    text-align: center;
 }
 
 button:active,
 a.button:active,
 input[type="submit"]:active{
-    box-shadow: 0 3px;
     transform: translateY(5px);
 }
 
@@ -112,9 +112,7 @@ input[type="submit"]:focus{
 }
 
 .buttonfull{
-    position: absolute;
     width: 100%;
-    left:0;
     margin-top: 20px;
 }
 
@@ -126,10 +124,10 @@ input[type="submit"]:focus{
     box-shadow: 0 3px #3e5659;
 }
 
- .buttongreen{
-     background-color: #8DAB51;
-     box-shadow: 0 7px #789144;
- }
+.buttongreen{
+ background-color: #8DAB51;
+ box-shadow: 0 7px #789144;
+}
 .buttongreen:active{
     box-shadow: 0 3px #789144;
 }
@@ -440,10 +438,10 @@ section.containerlogin{
 }
 
 section.containerlogin .loginheader{
-    width: 200vw;
-    height: 200vw;
+    width: 100vh;
+    height: 100vh;
     position: absolute;
-    top: -140vw;
+    top: -60vh;
     left: 50%;
     border-radius: 1000px;
     transform: translate(-50%);
@@ -452,7 +450,7 @@ section.containerlogin .loginheader{
 }
 
 .placeholder{
-    height: 60vw;
+    height: 40vh;
     width: 100%;
     position: relative;
 }
@@ -465,10 +463,16 @@ section.containerlogin .loginheader{
  }
 
 .form{
+    height: 60vh;
+    overflow: scroll;
     width: 70%;
-    margin: 10% auto;
+    margin: 0 auto;
     text-align: center;
     position: relative;
+}
+
+.form form{
+    padding: 20px 0px 30px 0px;
 }
 
 .form p{
@@ -476,6 +480,7 @@ section.containerlogin .loginheader{
     margin-bottom: 5px;
 }
 
+.radio-wrapper,
 input[type="text"],
 input[type="email"],
 input[type="password"]{
@@ -491,6 +496,7 @@ input[type="password"]{
     border: solid 1px #dcdcdc;
     transition: box-shadow 0.3s, border 0.3s;
     border-radius: 5px;
+    text-transform: none;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -498,6 +504,10 @@ input[type="password"]:focus{
     outline: none;
     border: solid 1px #707070;
     box-shadow: 0 0 5px 1px #969696;
+}
+
+.radio-wrapper label{
+    padding: 0px 10px 0px 5px;
 }
 
 /* custom classes for joyride */
