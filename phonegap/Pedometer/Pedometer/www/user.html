@@ -46,7 +46,7 @@
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
     <link rel="stylesheet" type="text/css" href="js/joyride-master/joyride-2.1.css"/>
 
-    <title>New Moving Monsters Test</title>
+    <title>Moving Monsters</title>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
     <script src="js/sweetalert-dev.js"></script>
@@ -54,6 +54,7 @@
 </head>
 
 <body>
+<div id="pageTitle">Profiel</div>
 
 <!-- Top bar -->
 <section class="top-bar"></section>
@@ -121,6 +122,7 @@
                             $unlockedworlds = data['unlockedworlds'];
                             $yourstars = data['yourstars'];
                             $requestCount = data['requestcount'];
+                            $frienddata = data['frienddata'];
 
                             $swiperContainer = $('.swiper-wrapper');
 
@@ -164,30 +166,31 @@
 
                                 $($swiperContainer).append($slideItem);
                             }
-                            if ($userName && $gender) {
+                            if ($frienddata) {
+                                console.log($frienddata);
+                                //$frienddata.sort();
                                 $slideItem = '';
+                                $ranklistitem = '';
+                                $.each( $frienddata, function( name, score ) {
+                                    $ranklistitem += '<div class="listitem">';
+                                    $ranklistitem += '<h2>' + name + '</h2>';
+                                    $ranklistitem += '<span>' + score + '</span>';
+                                    $ranklistitem += '</div>';
+
+                                });
+
                                 $slideItem = $slideItem +
-                                        "<div class='swiper-slide user'>" +
-                                        "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>" +
-                                        "<div class='imgmonster' style='background-image: url(\"img/icon" + $gender + ".png\");'></div>" +
-                                        "</div>" +
-                                        "<h1 class='ribbon'>" +
-                                        "<strong class='ribbon-content'>" + $userName + "</strong>" +
-                                        "</h1>" +
-                                        "<div class='desc'>" +
-                                        "<div class='item'>" +
-                                        "<span class='icon'><i class='fa fa-bolt'></i></span>" +
-                                        "<span class='stat'>" + $gender + "</span>" +
-                                        "</div>" +
-                                        "<div class='item'>" +
-                                        "<span class='icon'><i class='fa fa-globe'></i></span>" +
-                                        "<span class='stat'>" + $gender + "</span>" +
-                                        "</div>" +
-                                        "<div class='item'>" +
-                                        "<span class='icon'><i class='fa fa-star'></i></span>" +
-                                        "<span class='stat'>" + $gender + "</span>" +
-                                        "</div>" +
-                                        "</div>";
+                                    "<div class='swiper-slide'>" +
+                                    "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>" +
+                                    "<div class='imgmonster' style='background-image: url(\"img/trophy.png\");'></div>" +
+                                    "</div>" +
+                                    "<h1 class='ribbon'>" +
+                                    "<strong class='ribbon-content'>Ranglijst</strong>" +
+                                    "</h1>" +
+                                    "<div class='desc'>" +
+                                        $ranklistitem +
+                                    "</div>" +
+                                    "</div>";
 
                                 $($swiperContainer).append($slideItem);
                             }

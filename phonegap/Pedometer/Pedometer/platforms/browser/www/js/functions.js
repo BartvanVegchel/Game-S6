@@ -320,8 +320,15 @@ function createElements() {
         '</div>' +
         '</div>';
     $($elementsAccelerometer).insertAfter($(".bottom-bar"));
+    $pageTitle = $("#pageTitle").html();
 
-    $elementsTopBar = '<span class="world-name" id="number2">Desertworld</span>' +
+    if($pageTitle !== ""){
+        $title = $pageTitle;
+    } else{
+        $title = 'Moving Monsters';
+    }
+
+    $elementsTopBar = '<span class="world-name" id="number2">'+$title+'</span>' +
         '<a href="http://game.onlineops.nl/phonegap_php/setSession.php?username=' + $userName + '"><span class="menu-icon fa fa-bars"></span></a>';
     $($elementsTopBar).appendTo($(".top-bar"));
 

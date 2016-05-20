@@ -13,6 +13,11 @@ Config.xml file:
   <preference name="android-minSdkVersion" value="14"/>
   <preference name="fullscreen" value="true" />
   <feature name="http://api.phonegap.com/1.0/camera"/>
+  <feature name="Custom URL scheme">
+    <param name="id" value="cordova-plugin-customurlscheme" />
+    <param name="url" value="https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git" />
+    <variable name="URL_SCHEME" value="movingmonsters" /><!-- change as appropriate -->
+  </feature>
   <plugin name="cordova-plugin-battery-status" source="npm" spec="~1.1.1"/>
   <plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1"/>
   <plugin name="cordova-plugin-media-capture" source="npm" spec="~1.2.0"/>
@@ -124,10 +129,6 @@ Config.xml file:
   <allow-intent href="geo:*"/>
   <platform name="android">
     <allow-intent href="market:*"/>
-    <intent-filter>
-      <action android:name="edu.fontys.sm.testiugyighhgjhy.MAIN" />
-      <category android:name="edu.fontys.sm.testiugyighhgjhy.LAUNCHER" />
-    </intent-filter>
   </platform>
   <platform name="ios">
     <allow-intent href="itms:*"/>
@@ -137,7 +138,7 @@ Config.xml file:
 
 Plugins: 
 
-cordova-plugin-battery-status,cordova-plugin-camera,cordova-plugin-console,cordova-plugin-contacts,cordova-plugin-device,cordova-plugin-device-motion,cordova-plugin-device-orientation,cordova-plugin-dialogs,cordova-plugin-file,cordova-plugin-file-transfer,cordova-plugin-geolocation,cordova-plugin-globalization,cordova-plugin-inappbrowser,cordova-plugin-media,cordova-plugin-media-capture,cordova-plugin-network-information,cordova-plugin-pedometer,cordova-plugin-splashscreen,cordova-plugin-statusbar,cordova-plugin-vibration,cordova-plugin-whitelist
+cordova-plugin-battery-status,cordova-plugin-camera,cordova-plugin-console,cordova-plugin-contacts,cordova-plugin-customurlscheme,cordova-plugin-device,cordova-plugin-device-motion,cordova-plugin-device-orientation,cordova-plugin-dialogs,cordova-plugin-file,cordova-plugin-file-transfer,cordova-plugin-geolocation,cordova-plugin-globalization,cordova-plugin-inappbrowser,cordova-plugin-media,cordova-plugin-media-capture,cordova-plugin-network-information,cordova-plugin-pedometer,cordova-plugin-splashscreen,cordova-plugin-statusbar,cordova-plugin-vibration,cordova-plugin-whitelist
 
 Error retrieving Android platform information: 
 Android SDK is not set up properly. Make sure that the Android SDK 'tools' and 'platform-tools' directories are in the PATH variable. 
