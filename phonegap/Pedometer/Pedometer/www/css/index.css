@@ -85,17 +85,10 @@ input[type="submit"]{
     text-decoration: none;
 }
 
-button:hover,
-a.button:hover,
-input[type="submit"]:hover{
-    background-color: #417cb8
-}
-
 button:active,
 a.button:active,
 input[type="submit"]:active{
-    background-color: #417cb8;
-    box-shadow: 0 3px #27496d;
+    box-shadow: 0 3px;
     transform: translateY(5px);
 }
 
@@ -129,15 +122,24 @@ input[type="submit"]:focus{
     background-color: #516f73;
     box-shadow: 0 7px #3e5659;
 }
+.buttongrey:active{
+    box-shadow: 0 3px #3e5659;
+}
 
  .buttongreen{
      background-color: #8DAB51;
      box-shadow: 0 7px #789144;
- }#9ECACF
+ }
+.buttongreen:active{
+    box-shadow: 0 3px #789144;
+}
 
 .buttonblue{
    background-color: #9ECACF;
    box-shadow: 0 7px #8ab1b8;
+}
+.buttonblue:active{
+    box-shadow: 0 3px #8ab1b8;
 }
 
 
@@ -441,7 +443,7 @@ section.containerlogin .loginheader{
     width: 200vw;
     height: 200vw;
     position: absolute;
-    top: -120vw;
+    top: -140vw;
     left: 50%;
     border-radius: 1000px;
     transform: translate(-50%);
@@ -450,9 +452,17 @@ section.containerlogin .loginheader{
 }
 
 .placeholder{
-    height: 80vw;
+    height: 60vw;
     width: 100%;
+    position: relative;
 }
+ .placeholder img{
+     width: 80%;
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%, -50%);
+ }
 
 .form{
     width: 70%;
@@ -462,11 +472,12 @@ section.containerlogin .loginheader{
 }
 
 .form p{
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"]{
     /*position: absolute;*/
     display: block;
@@ -476,12 +487,13 @@ input[type="password"]{
     font-size: 18px;
     appearance: none;
     box-shadow: none;
-    padding: 10px;
+    padding: 7px;
     border: solid 1px #dcdcdc;
     transition: box-shadow 0.3s, border 0.3s;
     border-radius: 5px;
 }
 input[type="text"]:focus,
+input[type="email"]:focus,
 input[type="password"]:focus{
     outline: none;
     border: solid 1px #707070;
