@@ -8,20 +8,25 @@
 
 
 					<div class="wow fadeInDown">
-						<section id="img-section" class="col-lg-4 col-md-3">
-							<img class="monsterimg" id="leefy" src="img/monsterdex/leefy.png">
+						<section id="img-section" class="col-lg-4 col-sm-4 col-xs-12">
+							<img class="popuptext monsterimg" title='Leefy houdt maar van twee dingen; spelen en eten.
+						Dit monsters is misschien niet het slimste, maar hij zal er altijd zijn om je op te vrolijken!' id="leefy" src="img/monsterdex/leefy.png">
+							</img>
+						<h3>leefy</h3>
+						</section>
+						<section id="img-section" class="col-lg-4 col-sm-4 col-xs-12">
+							<img class="popuptext monsterimg" title="De overgrootouders van Shroom waren de eerste levende paddestoelen.
+						Zijn soort is zeldzaam en Shroom is de enigste die er is.
+						Rondspringen doet hij graag maar kijk wel uit voor zijn stekelige hoofd!" id="shroom" src="img/monsterdex/shroom.png">
 							</img>
 						</section>
-						<section id="img-section" class="col-lg-4 col-md-3">
-							<img class="monsterimg" id="shroom" src="img/monsterdex/shroom.png">
-							</img>
-						</section>
-						<section id="img-section" class="col-lg-4 col-md-3">
-							<img class="monsterimg" id="grasilla" src="img/monsterdex/grasilla.png">
+						<section id="img-section" class="col-lg-4 col-sm-4 col-xs-12">
+							<img class="popuptext monsterimg" title="De baas van het bos, Grasilla, waakt al eeuwen over Forest Field. Het gerucht gaat rond dat hij nog nooit in zijn leven heeft gelachen..." id="grasilla" src="img/monsterdex/grasilla.png">
 							</img>
 						</section>
 					</div>
 
+					<!--
 					<section id="leefy-info" class="info-text col-lg-6 col-lg-offset-3 col-xs-8 col-xs-offset-2">
 						<h2 class="info-title">Leefy</h2>
 						<p>Leefy houdt maar van twee dingen; spelen en eten.
@@ -38,6 +43,7 @@
 						<p>De baas van het bos, Grasilla, waakt al eeuwen over Forest Field.
 							Het gerucht gaat rond dat hij nog nooit in zijn leven heeft gelachen...</p>
 					</section>
+					-->
 				</div>
 			</section>
 		</div>
@@ -49,20 +55,23 @@
 								<div id="water-section-divider"></div>
 
 								<div class="wow fadeInDown" >
-									<section id="img-section" class="col-lg-4 col-xs-4">
-										<img class="monsterimg" id="droplet" src="img/monsterdex/droplet.png">
+									<section id="img-section" class="col-lg-4 col-sm-4 col-xs-12">
+										<img class="popuptext monsterimg" title="Deze vrolijke inktvis is zelden in een slechte bui en altijd opzoek naar een avontuur.
+									Met zijn scherpe tanden en zware tentakels is hij tevens ook een van de gevaarlijkste vissen, zonder dat hij dat zelf doorheeft." id="droplet" src="img/monsterdex/droplet.png">
 										</img>
 									</section>
-									<section id="img-section" class="col-lg-4 col-xs-4">
-										<img class="monsterimg" id="twistar" src="img/monsterdex/twistar.png">
+									<section id="img-section" class="col-lg-4 col-sm-4 col-xs-12">
+										<img class="popuptext monsterimg" title="Deze zeester is de snelste vis van de hele oceaan.
+									Laat je niet afleiden door zijn schattigheid, want Twistar is gevaarlijker dan hij eruit ziet!" id="twistar" src="img/monsterdex/twistar.png">
 										</img>
 									</section>
-									<section id="img-section" class="col-lg-4 col-xs-4">
-										<img class="monsterimg" id="koral" src="img/monsterdex/koral.png">
+									<section id="img-section" class="col-lg-4 col-sm-4 col-xs-12">
+										<img class="popuptext monsterimg" title="In de diepste bodem van de oceaan woont Koral. Hier leeft hij een eenzaam bestaan, want zijn ouders zijn lang geleden overleden.
+									Zijn neefje droplet is de enigste familie die hij nog heeft, maar die heeft hij al jaren niet meer gezien." id="koral" src="img/monsterdex/koral.png">
 										</img>
 									</section>
 								</div>
-
+								<!--
 								<section id="droplet-info" class="info-text col-lg-6 col-lg-offset-3 col-xs-12">
 									<h2 class="info-title">Droplet</h2>
 									Deze vrolijke inktvis is zelden in een slechte bui en altijd opzoek naar een avontuur.
@@ -79,6 +88,7 @@
 									In de diepste bodem van de oceaan woont Koral. Hier leeft hij een eenzaam bestaan, want zijn ouders zijn lang geleden overleden.
 									Zijn neefje droplet is de enigste familie die hij nog heeft, maar die heeft hij al jaren niet meer gezien.
 								</section>
+								-->
 				</section>
 			</div>
 
@@ -89,20 +99,23 @@
 						<h1 class="section-title">Vulcano Island</h1>
 
 						<div class="wow fadeInDown">
-							<section id="img-section" class="col-lg-4 col-xs-4">
-										<img class="monsterimg" id="fury" src="img/monsterdex/fury.png">
+							<section id="img-section" class="col-lg-4 col-sm-4 col-xs-12">
+										<img class="popuptext monsterimg" id="fury" title="Fury is het coolste monster in het universum.
+								Maar pas op, dit monster heeft een kort-lontje en is licht-ontvlambaar!" src="img/monsterdex/fury.png">
 										</img>
 							</section>
-							<section id="img-section" class="col-lg-4 col-xs-4">
-										<img class="monsterimg" id="boomer" src="img/monsterdex/boomer.png">
+							<section id="img-section" class="col-lg-4 col-sm-4 col-xs-12">
+										<img class="popuptext monsterimg" id="boomer" title="Boomer, de rode duivel, heeft een passie voor alles dat slecht is.
+								Het enigste goede in hem is de liefde voor zijn broertje Flame, omdat die bijna net zo gemeen is als Boomer." src="img/monsterdex/boomer.png">
 										</img>
 							</section>
-							<section id="img-section" class="col-lg-4 col-xs-4">
-										<img class="monsterimg" id="magmo" src="img/monsterdex/magmo.png">
+							<section id="img-section" class="col-lg-4 col-sm-4 col-xs-12">
+										<img class="popuptext monsterimg" id="magmo" title="Uit de lava van Volcano Islands is het monster Magmo ontstaan.
+								Er is verder niet veel bekend over dit monster, omdat hij maar een paar keer per jaar uit zijn vulkaan komt." src="img/monsterdex/magmo.png">
 										</img>
 							</section>
 						</div>
-
+							<!--
 							<section id="fury-info" class="info-text col-lg-6 col-lg-offset-3 col-xs-12">
 									<h2 class="info-title">Fury</h2>
 								Fury is het coolste monster in het universum.
@@ -118,7 +131,7 @@
 								Uit de lava van Volcano Islands is het monster Magmo ontstaan.
 								Er is verder niet veel bekend over dit monster, omdat hij maar een paar keer per jaar uit zijn vulkaan komt.
 							</section>
-
+							-->
 					</div>
 				</section>
 			</div>
@@ -144,37 +157,61 @@
 
 <script>
 	$(document).ready(function(){
-		$("#leefy-info").hide();
-		$("#shroom-info").hide();
-		$("#grasilla-info").hide();
-		$('#leefy').click(function(){
-			$("#leefy-info").slideToggle();
-			$("#shroom-info").hide(500);
-			$("#grasilla-info").hide(500);
 
-			$("#leefy").attr('src',"img/monsterdex/leefy_hover.png");
-			$("#shroom").attr('src',"img/monsterdex/shroom.png");
-			$("#grasilla").attr('src',"img/monsterdex/grasilla.png");
+			/* ---- TOOLTIP ---- */
+			var options = {
+				width: '200px',
+				trigger: 'click',
+				pointer: 'left',
+				closeOnClick: true,
+				closeButton: 'box',
+				animation: 'zoomOut'
+
+			};
+
+			$('.popuptext').jBox('Tooltip', options);
+
+
+		/* ---- Selected Monster ---- */
+
+		var clicks = 0;
+
+		$('#leefy').click(function(){
+			if(clicks == 0) {
+				$("#leefy").attr('src', "img/monsterdex/leefy_hover.png");
+				clicks++;
+				console.log(clicks);
+			}
+			else if(clicks == 1){
+				$("#leefy").attr('src', "img/monsterdex/leefy.png");
+				clicks--;
+				console.log(clicks);
+			}
 		});
 		$('#shroom').click(function(){
-			$("#leefy-info").hide(500);
-			$("#shroom-info").slideToggle();
-			$("#grasilla-info").hide(500);
-
-			$("#leefy").attr('src',"img/monsterdex/leefy.png");
-			$("#shroom").attr('src',"img/monsterdex/shroom_hover.png");
-			$("#grasilla").attr('src',"img/monsterdex/grasilla.png");
+			if(clicks == 0) {
+				$("#shroom").attr('src', "img/monsterdex/shroom_hover1.png");
+				clicks++;
+				console.log(clicks);
+			}
+			else if(clicks == 1){
+				$("#shroom").attr('src', "img/monsterdex/shroom.png");
+				clicks--;
+				console.log(clicks);
+			}
 		});
 		$('#grasilla').click(function(){
-			$("#leefy-info").hide(500);
-			$("#shroom-info").hide(500);
-			$("#grasilla-info").slideToggle();
-
-			$("#leefy").attr('src',"img/monsterdex/leefy.png");
-			$("#shroom").attr('src',"img/monsterdex/shroom.png");
-			$("#grasilla").attr('src',"img/monsterdex/grasilla_hover.png");
+			if(clicks == 0) {
+				$("#grasilla").attr('src', "img/monsterdex/grasilla_hover.png");
+				clicks++;
+				console.log(clicks);
+			}
+			else if(clicks == 1){
+				$("#grasilla").attr('src', "img/monsterdex/grasilla.png");
+				clicks--;
+				console.log(clicks);
+			}
 		});
-
 
 		$("#droplet-info").hide();
 		$("#twistar-info").hide();

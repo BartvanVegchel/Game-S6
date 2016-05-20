@@ -41,6 +41,9 @@
 	<link rel="stylesheet" type="text/css" href="css/animate.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./fonts/opensans/opensans.css" />
 
+	<script src="http://code.jboxcdn.com/0.3.2/jBox.min.js"></script>
+	<link href="css/jBox.css" rel="stylesheet">
+	
 
 	<script type="text/javascript" src="js/plax.js"></script>
 	<script type="text/javascript">
