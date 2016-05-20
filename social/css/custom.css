@@ -1,4 +1,3 @@
-
 /* General */
 body            { overflow-y: scroll; margin: 0; padding: 0; font-family: OpenSansRegular, Arial, sans-serif; color: #333333; box-sizing: border-box; display: block; overflow-x:hidden; background: url("../img/social_bg.png") no-repeat center center fixed; background-size: cover; }
 div.container   { width: 100%; }
@@ -203,4 +202,178 @@ section.blog div.panel-body     { min-height: 250px; }
 	position: absolute;
 	bottom: 0;
 	left: 0;
+}
+
+
+/* -------------------- MONSTERDEX -------------------- */
+
+@font-face {
+    font-family: 'kaushan_scriptregular';
+    src: url('../fonts/kaushan_script/kaushanscript-regular-webfont.woff2') format('woff2'),
+    url('../fonts/kaushan_script/kaushanscript-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.grass-section, .water-section, .fire-section, .desert-section, .ice-section{
+    width:100%;
+    height:100%;
+    max-width: 1400px;
+    min-height:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.grass-section{
+    padding:15px;
+    background: url("../img/monsterdex/grassbg.jpg") no-repeat;;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:top center;
+    display: inline-block;
+    position: relative;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow: visible;
+}
+
+
+
+.water-section{
+    padding:15px;
+    background: url("../img/monsterdex/waterbg.jpg") no-repeat;;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:top center;
+    display: inline-block;
+    position: relative;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    overflow: visible;
+
+}
+
+.fire-section{
+    padding:15px;
+    background: url("../img/monsterdex/firebg.jpg") no-repeat;
+    height:auto;
+    overflow: hidden;
+}
+.desert-section{
+    padding:15px;
+    background: yellow;
+    height:auto;
+    overflow: hidden;
+}
+.ice-section{
+    padding:15px;
+    background: lightskyblue;
+    height:auto;
+    overflow: hidden;
+}
+.whitespace{
+    background: red;
+    height:200px;
+}
+.section-title{
+    font-family: 'kaushan_scriptregular';
+    text-align: center;
+    font-size:5em;
+    font-weight: 900;
+    margin-top:15px;
+    text-transform: uppercase;
+
+}
+
+.grass-section > h1{
+    color:#a6ec57;
+    text-shadow: 0 1px 0 #3a632d,
+    0 1px 0 #3a632d,
+    0 1px 0 #3a632d,
+    0 2px 0 #3a632d,
+    0 3px 0 #3a632d,
+    0 2px 1px rgba(0,0,0,.1);
+}
+.water-section > h1{
+    color:#acecfc;
+    text-shadow: 0 1px 0 #335e8a,
+    0 1px 0 #335e8a,
+    0 1px 0 #335e8a,
+    0 2px 0 #335e8a,
+    0 3px 0 #335e8a,
+    0 2px 1px rgba(0,0,0,.1);
+}
+.fire-section > h1{
+    margin-top:80px;
+    color:#fabf86;
+    text-shadow: 0 1px 0 #793246,
+    0 1px 0 #652c3c,
+    0 1px 0 #652c3c,
+    0 2px 0 #652c3c,
+    0 3px 0 #652c3c,
+    0 2px 1px rgba(0,0,0,.1);
+}
+
+#img-section{
+    margin-top:50px;
+    height:auto;
+    text-align: center;
+}
+.monsterimg{
+    position:relative;
+    display: block;
+    max-width:200px;
+}
+.monsterimg, span{
+    width:70%;
+    display: block;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-size:2em;
+    cursor: pointer;
+}
+
+#water-section-divider{
+    height: 6px;
+    background: url("img/monsterdex/hrline.png");
+    border: 0;
+}
+    /* MONSTER INDIVIDUAL STYLING */
+
+#twistar, #boomer{
+    margin-top:50px;
+}
+
+/* MONSTERINFO STYLING */
+.info-text{
+    padding:20px;
+    text-align: center;
+    position: relative;
+    background:rgba(0,0,0,0.3);
+    border-radius:5px;
+    color:#fff;
+}
+
+.info-text h2{
+    font-size:4em;
+}
+.info-text p{
+    font-size:1.2em;
+}
+
+
+
+#divide1{
+    position: absolute;
+    display: block;
+}
+
+#divide2{
+    position: absolute;
+    display: block;
 }

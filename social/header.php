@@ -1,7 +1,7 @@
-<? 
+<?
 	session_start();
 	ob_start();
-	
+
 	include('includes/db_core.php');
 	include('includes/db_social.php');
 	include('functions/login_function.php');
@@ -41,6 +41,20 @@
 	<link rel="stylesheet" type="text/css" href="css/animate.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./fonts/opensans/opensans.css" />
 
+
+	<script type="text/javascript" src="js/plax.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$.plax.enable({ "activityTarget": $('#shell')});
+			$.plax.disable({ "activityTarget": $('#shell-1')})
+			$.plax.enable({ "activityTarget": $('#shell-2')})
+
+
+			$.plax.enable($('#shell').plaxify().disable();)
+			$.plax.enable($('#shell-1').plaxify())
+
+		})
+	</script>
 </head>
 <body>
 
@@ -63,21 +77,21 @@
                 <ul class="nav navbar-nav">
                     <li><a href="index.php">Home</a></li>
                     <li class="active"><a href="index.php">Social</a></li>
-                </ul>
+					<li><a href="monsterdex.php">Monsterdex</a></li>
+				</ul>
                 <ul class="nav navbar-nav navbar-right">
-				
+
 					<?php
 						if(isset($_SESSION["logged_in"])){ //controleer of je bent ingelogd
 					?>
-					
+
 						<li><a href="#">Ingelogd als: <?php echo $_SESSION["username"]; ?></a></li>
 						<li><a href="functions/logout_function.php">Uitloggen</a></li>
-							
 					<?php
 						}
 						else {
 						?>
-				
+
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Inloggen</b> <span class="caret"></span></a>
 								<ul id="login-dp" class="dropdown-menu">
@@ -108,8 +122,8 @@
 									</li>
 								</ul>
 							</li>
-							
-					<?php	
+
+					<?php
 						}
 					?>
                 </ul>
