@@ -2,21 +2,21 @@ $userName = localStorage.getItem('userInfo');
 $worldId = localStorage.getItem('worldId');
 
 // check if worldId isset, else worldId = 1
-if(localStorage.getItem('worldId') == null){
+if (localStorage.getItem('worldId') == null) {
     $worldId = 1;
     console.log('geen worldId gezet');
-} else{
+} else {
     $worldId = localStorage.getItem('worldId');
-    console.log('worldId ' + $worldId +' gezet');
+    console.log('worldId ' + $worldId + ' gezet');
 } //end else localstorage WorlID
 
 console.log('functions ingeladen voor ' + $userName);
 
 // getEnergyPoints function and place in div element
-function getEnergypoints(){
-    var dataString="username="+$userName+"&submit=";
+function getEnergypoints() {
+    var dataString = "username=" + $userName + "&submit=";
 
-    if(localStorage.getItem('userInfo') !== null) {
+    if (localStorage.getItem('userInfo') !== null) {
         $.ajax({
             type: "POST",
             url: "http://game.onlineops.nl/phonegap_php/getEnergypoints.php",
@@ -39,9 +39,9 @@ function getEnergypoints(){
 }// end function getEnergyPoints
 
 // getUnlockedFields function and place in div element
-function getUnlockedFields(){
-    var dataString="username="+$userName+"&worldid="+$worldId+"&submit=";
-    if(localStorage.getItem('userInfo') !== null) {
+function getUnlockedFields() {
+    var dataString = "username=" + $userName + "&worldid=" + $worldId + "&submit=";
+    if (localStorage.getItem('userInfo') !== null) {
         $.ajax({
             type: "POST",
             url: "http://game.onlineops.nl/phonegap_php/getUnlockedFields.php",
@@ -66,7 +66,7 @@ function getUnlockedFields(){
 
 
 //function is called from the buildMap function with paramters of clicked element
-function unlockFunction(id, element){
+function unlockFunction(id, element) {
     $fieldId = id; // get id of clicked parent-element
     $clickedelement = element; //get clicked div
 
@@ -79,9 +79,9 @@ function unlockFunction(id, element){
     $personalUnlockedFieldsValueInt = parseInt($personalUnlockedFieldsValue); // convert value to integer
 
     //if you have enough points
-    if($personalEnergyValue >= $price) {
+    if ($personalEnergyValue >= $price) {
         swal({
-            title: "Dit kost <i class='fa fa-bolt'></i> "+$price+" ",
+            title: "Dit kost <i class='fa fa-bolt'></i> " + $price + " ",
             text: "",
             type: "",
             showCancelButton: true,
@@ -95,7 +95,7 @@ function unlockFunction(id, element){
                 {
                     type: "get",
                     url: "http://game.onlineops.nl/phonegap_php/unlockFields.php",
-                    data: {'fieldid': $fieldId , 'dataenergy': $price, 'id': $worldId, 'username' : $userName},
+                    data: {'fieldid': $fieldId, 'dataenergy': $price, 'id': $worldId, 'username': $userName},
                     timer: 2000,
                     success: function (data) {
                     }
@@ -104,8 +104,8 @@ function unlockFunction(id, element){
                 .done(function (data) {
                     //show image, remove locked block
                     $('#' + $fieldId).find('.locked').next('div').find('img').show();
-                    $('#' + $fieldId).find('.locked').find('.fa').animate({opacity: 0 }, 1500 );
-                    $('#' + $fieldId).find('.locked').find('.fog').animate({opacity: 0 }, 1500, function(){
+                    $('#' + $fieldId).find('.locked').find('.fa').animate({opacity: 0}, 1500);
+                    $('#' + $fieldId).find('.locked').find('.fog').animate({opacity: 0}, 1500, function () {
                         $(this).hide();
                         $('#' + $fieldId).find('.locked').removeClass('locked');
                     });
@@ -124,14 +124,14 @@ function unlockFunction(id, element){
         });
     }
     // if you dont have enough points
-    else{
+    else {
         sweetAlert("Oeps...", "Je hebt niet voldoende energypoints!", "error");
     }
 }//end function UnlockFunction
 
 
 // popup screen for daily challenge
-function dailyChallenge(name, id, description, time, reward){
+function dailyChallenge(name, id, description, time, reward) {
     $name = name;
     $monsterName = '';//empty for check on challenge.html
     $reward = reward;
@@ -146,13 +146,13 @@ function dailyChallenge(name, id, description, time, reward){
             showCancelButton: true,
             cancelButtonText: "Nu niet",
         },
-        function(){
-            window.location.href = 'challenge.html?monstername='+$monsterName+'&challengeId='+$challengeId+'&challengeName='+$name+'&time='+$time+'&reward='+$reward+'&description='+$description;
+        function () {
+            window.location.href = 'challenge.html?monstername=' + $monsterName + '&challengeId=' + $challengeId + '&challengeName=' + $name + '&time=' + $time + '&reward=' + $reward + '&description=' + $description;
         });
 } //end function dailyChallenge
 
 //start monsterChallenge
-function monsterChallenge(monstername, name, id, description, time, clicktype){
+function monsterChallenge(monstername, name, id, description, time, clicktype) {
     $name = name;
     $monsterName = monstername;
     $monsterNameLowerCase = $monsterName.toLowerCase();
@@ -163,7 +163,7 @@ function monsterChallenge(monstername, name, id, description, time, clicktype){
     $clickType = clicktype;
 
     //check if clicktype is from monsterEgg or monster-detail page
-    if($clickType == 'monsterEgg') {
+    if ($clickType == 'monsterEgg') {
         swal({
                 title: $monsterName,
                 text: "Speel " + $monsterName + " nu vrij",
@@ -175,13 +175,13 @@ function monsterChallenge(monstername, name, id, description, time, clicktype){
             function () {
                 window.location.href = 'challenge.html?monstername=' + $monsterName + '&challengeId=' + $challengeId + '&challengeName=' + $name + '&time=' + $time + '&description=' + $description;
             });
-    } else{
+    } else {
         window.location.href = 'challenge.html?monstername=' + $monsterName + '&challengeId=' + $challengeId + '&challengeName=' + $name + '&time=' + $time + '&description=' + $description;
     }
 } //end function monsterChallenge
 
 //
-function getMonsterChallengeInfo(monstername, clicktype){
+function getMonsterChallengeInfo(monstername, clicktype) {
     $monsterName = monstername;
     $clickType = clicktype;
 
@@ -210,9 +210,9 @@ function getMonsterChallengeInfo(monstername, clicktype){
 } //end function getMonsterChallengeInfo
 
 //Function for build the map
-function buildMap(){
-    var dataString="worldid="+$worldId+"&username="+$userName+"&submit=";
-    if(localStorage.getItem('userInfo') !== null) {
+function buildMap() {
+    var dataString = "worldid=" + $worldId + "&username=" + $userName + "&submit=";
+    if (localStorage.getItem('userInfo') !== null) {
         $.ajax({
             type: "POST",
             url: "http://game.onlineops.nl/phonegap_php/buildMap.php",
@@ -224,7 +224,7 @@ function buildMap(){
                 countClickItems();
 
                 // click event for locked field
-                $(".locked").click(function(){
+                $(".locked").click(function () {
                     $fieldId = $(this).parent().attr("id");
                     $element = $(this);
                     unlockFunction($fieldId, $element); // call function with params
@@ -236,7 +236,7 @@ function buildMap(){
                     getMonsterChallengeInfo($monsterName, $clickType);
                 });//end monsterEgg click
 
-                $("div.transportbackground img").click(function(){
+                $("div.transportbackground img").click(function () {
                     window.location.href = "worlds.html";
                 });
             },
@@ -248,7 +248,7 @@ function buildMap(){
 } //end function buildMap
 
 
-document.addEventListener("deviceready",onDeviceReady,false); // call first function if device is ready
+document.addEventListener("deviceready", onDeviceReady, false); // call first function if device is ready
 
 function onDeviceReady() {
     buildMap(); //build map if device is ready
@@ -257,7 +257,7 @@ function onDeviceReady() {
     //getWorlds(); //set worlds in div menu
 } //end function onDeviceReady
 
-function countClickItems(){
+function countClickItems() {
     var numItems = $('.locked').length;
 } //end function countClickItems
 
@@ -283,8 +283,10 @@ function Countdown(options) {
     var timer,
         instance = this,
         seconds = options.seconds || 10,
-        updateStatus = options.onUpdateStatus || function () {},
-        counterEnd = options.onCounterEnd || function () {};
+        updateStatus = options.onUpdateStatus || function () {
+            },
+        counterEnd = options.onCounterEnd || function () {
+            };
 
     function decrementCounter() {
         updateStatus(seconds);
@@ -307,21 +309,21 @@ function Countdown(options) {
     };
 } //end Countdown function
 
-function createElements(){
+function createElements() {
     $elementsAccelerometer = '<div class="app">' +
         '<h1>PhoneGap</h1>' +
         '<div id="deviceready" class="blink">' +
-        '<p class="event listening">Connecting to Device</p>'+
+        '<p class="event listening">Connecting to Device</p>' +
         '<p class="event received">Device is Ready</p>' +
         '<div id="geefterug"></div>' +
         '<div id="pedometerGeefterug"></div>' +
         '</div>' +
         '</div>';
-    $($elementsAccelerometer).insertAfter( $(".bottom-bar") );
+    $($elementsAccelerometer).insertAfter($(".bottom-bar"));
 
     $elementsTopBar = '<span class="world-name" id="number2">Desertworld</span>' +
-        '<a href="http://game.onlineops.nl/phonegap_php/setSession.php?username='+$userName+'"><span class="menu-icon fa fa-bars"></span></a>';
-    $($elementsTopBar).appendTo( $(".top-bar") );
+        '<a href="http://game.onlineops.nl/phonegap_php/setSession.php?username=' + $userName + '"><span class="menu-icon fa fa-bars"></span></a>';
+    $($elementsTopBar).appendTo($(".top-bar"));
 
     $elementsBottomBar = '<ul>' +
         '<li>' +
@@ -353,15 +355,15 @@ function createElements(){
         '</a>' +
         '</li>' +
         '</ul>';
-    $($elementsBottomBar).appendTo( $(".bottom-bar") );
+    $($elementsBottomBar).appendTo($(".bottom-bar"));
 
     $tutorailElements = '<li data-id="number1" data-text="Volgende" class="custom1">' +
         '<h2>EnergyPointjes</h2>' +
         '<p>Hier zie je hoeveel EnergyPoints (EP) je nog hebt. Je kunt er meer verdienen door te bewegen!</p>' +
-        '</li>'+
-        '<li data-id="number2" data-text="Volgende" class="custom2">'+
+        '</li>' +
+        '<li data-id="number2" data-text="Volgende" class="custom2">' +
         '<h2>Huidige wereld</h2>' +
-        '<p>Hier staat de naam van de wereld waar je op dit moment bent.</p>'+
+        '<p>Hier staat de naam van de wereld waar je op dit moment bent.</p>' +
         '</li>' +
         '<li data-id="number3" data-text="Volgende" class="custom3">' +
         '<h2>Voortgang wereld</h2>' +
@@ -383,17 +385,17 @@ function createElements(){
         '<h2>Help?</h2>' +
         '<p>Als je vragen hebt, kun je op deze knop drukken!</p>' +
         '</li>';
-    $($tutorailElements).appendTo( $("#joyRideTipContent") );
+    $($tutorailElements).appendTo($("#joyRideTipContent"));
 
     clickEvents(); // cal clickevents after set items
 } // end function createElements
 
-function clickEvents(){
+function clickEvents() {
     $('.dailyChallenge').click("click", function () {
         $date = new Date();
         $day = $date.getDate();
 
-        var dataString="currentday="+$day+"&submitDaily=";
+        var dataString = "currentday=" + $day + "&submitDaily=";
         $.ajax({
             type: "POST",
             url: "http://game.onlineops.nl/phonegap_php/getDailyChallenge.php",
@@ -417,7 +419,7 @@ function clickEvents(){
         })
     }); // end .dailyChallenge click
 
-    $('.tutorial').click(function() {
+    $('.tutorial').click(function () {
         $('#joyRideTipContent').joyride({
             autoStart: true,
             modal: true,
@@ -425,7 +427,7 @@ function clickEvents(){
         });
     }); // end .tutorial click
 
-    $(".world-name").click(function(){
+    $(".world-name").click(function () {
         localStorage.clear();
         window.location.href = "inloggen.html";
     }); //end .world-name click
@@ -454,7 +456,7 @@ function accelerometer() {
     navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
 } //end function accelerometer
 
-function pedometerFunction(){
+function pedometerFunction() {
     //alert(pedometer);
 
     //var testPedometer = pedometer.isDistanceAvailable(successCallback, failureCallback);
@@ -490,13 +492,13 @@ function pedometerFunction(){
             // pedometerData.floorsDescended;
         };
 
-        var onError = function(){
+        var onError = function () {
             alert('onError');
         };
         pedometer.startPedometerUpdates(successHandler, onError);
     };
 
-    var failureCallback = function(){
+    var failureCallback = function () {
         alert('failure');
     };
 

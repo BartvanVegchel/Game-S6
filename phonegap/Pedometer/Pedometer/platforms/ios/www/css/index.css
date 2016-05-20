@@ -1020,6 +1020,34 @@ input[type="password"]:focus{
     animation-duration: 0.5s;
 }
 
+#results{
+    display: inline-block;
+    float: left;
+    width:100%;
+}
+
+#results .friendRow{
+    float:left;
+    width:100%;
+    border-bottom:1px solid red;
+}
+
+#search{
+    float:left;
+}
+
+#searchBar a.searchBtn {
+   float:left;
+    background:red;
+    height:30px;
+    margin:0;
+}
+
+#searchBar input[type="text"] {
+    background:#fff;
+    min-height:30px;
+}
+
 
 
 

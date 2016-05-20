@@ -129,10 +129,10 @@
                                 $slideItem = $slideItem +
                                         "<div class='swiper-slide user'>" +
                                         "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>" +
-                                        "<div class='imgmonster' style='background-image: url(\"img/icon"+ $gender +".png\");'></div>" +
+                                        "<div class='imgmonster' style='background-image: url(\"img/icon" + $gender + ".png\");'></div>" +
                                         "</div>" +
                                         "<h1 class='ribbon'>" +
-                                        "<strong class='ribbon-content'>"+ $userName +"</strong>" +
+                                        "<strong class='ribbon-content'>" + $userName + "</strong>" +
                                         "</h1>" +
                                         "<div class='desc'>" +
                                         "<div class='item'>" +
@@ -148,6 +148,11 @@
                                         "<span class='stat'>" + $yourstars + "</span>" +
                                         "</div>" +
                                         "</div>" +
+                                        "</div>" +
+                                        "<div class='buttonbar'>"+
+                                        "<a href='add-friends.html' class='buttonleft'>vriend toevoegen</a>" +
+                                        "<a href='accept-friends.html' class='buttonright'>verzoeken bekijken</a>" +
+                                        "</div>" +
                                         "</div>";
 
                                 $($swiperContainer).append($slideItem);
@@ -157,10 +162,10 @@
                                 $slideItem = $slideItem +
                                         "<div class='swiper-slide user'>" +
                                         "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>" +
-                                        "<div class='imgmonster' style='background-image: url(\"img/icon"+ $gender +".png\");'></div>" +
+                                        "<div class='imgmonster' style='background-image: url(\"img/icon" + $gender + ".png\");'></div>" +
                                         "</div>" +
                                         "<h1 class='ribbon'>" +
-                                        "<strong class='ribbon-content'>"+ $userName +"</strong>" +
+                                        "<strong class='ribbon-content'>" + $userName + "</strong>" +
                                         "</h1>" +
                                         "<div class='desc'>" +
                                         "<div class='item'>" +
@@ -174,7 +179,6 @@
                                         "<div class='item'>" +
                                         "<span class='icon'><i class='fa fa-star'></i></span>" +
                                         "<span class='stat'>" + $gender + "</span>" +
-                                        "</div>" +
                                         "</div>" +
                                         "</div>";
 
@@ -205,10 +209,10 @@
             spaceBetween: 20,
             centeredSlides: true,
             loop: false,
-            onInit: function(){
+            onInit: function () {
                 // als er maar 1 slide is, positioneer deze in het midden.
-                var amount =  $('.swiper-slide').length;
-                if(amount == 1){
+                var amount = $('.swiper-slide').length;
+                if (amount == 1) {
                     $('.swiper-slide').css("margin", "0 12.5%");
                 }
             }
