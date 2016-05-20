@@ -117,7 +117,7 @@
 								$swiperContainer = $('.swiper-wrapper');
 
 								$slideItem = '<div class="swiper-slide monster-detail">'+
-										"<div class='img' style='background-image: url(\"img/"+ $worldName +".png\");'>"+
+										"<div class='img' style='background-image: url(\"img/world_"+ ($worldName).replace(/\s+/g, '').toLowerCase() +".png\");'>"+
 											'<div class="imgmonster" style="background-image: url(\'img/monster_'+$currentmonsterLowerCase+'.png\');"></div>'+
 										"</div>" +
 										"<h1 class='ribbon'>" +

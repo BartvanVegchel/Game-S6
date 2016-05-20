@@ -208,6 +208,10 @@
 
 <script>
     function swiper() {
+        var fontSize = $('.desc .item span.icon').width() * 0.85;
+        var lineHeight = $('.desc .item span.icon').width() * 1;
+        $("i.fa").css('font-size', fontSize);
+        $("i.fa").css('line-height', lineHeight+'px');
         var mySwiper = new Swiper('.swiper-container', {
             // Optional parameters
             direction: 'horizontal',

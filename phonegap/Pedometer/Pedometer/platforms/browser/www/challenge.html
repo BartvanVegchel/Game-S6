@@ -93,7 +93,7 @@
 		}
 
 		$(document).ready(function(){
-			$('span.start').on('click', function(){
+			$('.itemknop').on('click', function(){
 				myCounter.start();
 			});
 		});
@@ -147,12 +147,18 @@
 					'<div id="monsterstory" class="monsterstory">' +
 						'<p>'+$challengeDescription+'</p>'+
 					'</div>' +
-					"<button>Start</button>" +
 //					'<div class="itemknop">' +
 //						'<span class="start">Start!</span>'+
 //						'<span class="smallcountdown" id="smallcountdown"></span>'+
 //						'<span class="countdown" id="countdown"></span>'+
 //					'</div>'+
+				'</div>'+
+				"<div class='buttonbar'>"+
+					"<button class='buttonfull buttongreen itemknop'>" +
+						"<span class='start'>Startje!</span>"+
+						'<span class="smallcountdown" id="smallcountdown"></span>'+
+						'<span class="countdown" id="countdown"></span>'+
+					"</button>" +
 				'</div>';
 
 			console.log('dailychallenge uitvoeren');
@@ -178,7 +184,7 @@
 //					'</div>'+
 					'</div>'+
 					"<div class='buttonbar'>"+
-					"<button class='buttonfull buttongreen'>Start</button>" +
+					"<button class='buttonfull buttongreen itemknop'>Start</button>" +
 					'</div>';
 
 
