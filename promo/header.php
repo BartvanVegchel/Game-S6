@@ -40,6 +40,7 @@
     <link rel="stylesheet" type="text/css" href="css/custom.css" />
 	<link rel="stylesheet" type="text/css" href="css/animate.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./fonts/opensans/opensans.css" />
+	<link href='https://fonts.googleapis.com/css?family=Righteous|Sansita+One|Slackey' rel='stylesheet' type='text/css'>
 
 </head>
 <body>
@@ -59,15 +60,15 @@
                 <a class="navbar-brand logo" href="#">
 					<img src="img/mm_logo.png" alt=""/>
 				</a>
+
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse headernav" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="#">Het spel</a></li>
-                    <li><a href="#">Monsters</a></li>
-                    <li><a href="index.php">Social</a></li>
+                    <li><a href="https://www.moving-monsters.com">Home</a></li>
+                    <li><a href="monsterdex.php">Monsters</a></li>
+                    <li><a href="https://www.social.moving-monsters.com">Social</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
 				
