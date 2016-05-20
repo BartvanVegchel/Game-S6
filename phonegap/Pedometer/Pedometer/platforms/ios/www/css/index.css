@@ -89,6 +89,7 @@ input[type="submit"]{
 button:active,
 a.button:active,
 input[type="submit"]:active{
+    box-shadow: 0 3px;
     transform: translateY(5px);
 }
 
@@ -119,22 +120,34 @@ input[type="submit"]:focus{
 .buttongrey{
     background-color: #516f73;
     box-shadow: 0 7px #3e5659;
+    min-width:50px;
 }
 .buttongrey:active{
     box-shadow: 0 3px #3e5659;
 }
 
-.buttongreen{
- background-color: #8DAB51;
- box-shadow: 0 7px #789144;
-}
+ .buttongreen{
+     background-color: #8DAB51;
+     box-shadow: 0 7px #789144;
+     min-width:50px;
+ }
 .buttongreen:active{
     box-shadow: 0 3px #789144;
+}
+
+.buttonred{
+    background-color: #ab5151;
+    box-shadow: 0 7px #873737;
+    min-width:50px;
+}
+.buttonred:active{
+    box-shadow: 0 3px #873737;
 }
 
 .buttonblue{
    background-color: #9ECACF;
    box-shadow: 0 7px #8ab1b8;
+    min-width:50px;
 }
 .buttonblue:active{
     box-shadow: 0 3px #8ab1b8;
@@ -438,10 +451,10 @@ section.containerlogin{
 }
 
 section.containerlogin .loginheader{
-    width: 100vh;
-    height: 100vh;
+    width: 200vw;
+    height: 200vw;
     position: absolute;
-    top: -60vh;
+    top: -140vw;
     left: 50%;
     border-radius: 1000px;
     transform: translate(-50%);
@@ -450,7 +463,7 @@ section.containerlogin .loginheader{
 }
 
 .placeholder{
-    height: 40vh;
+    height: 60vw;
     width: 100%;
     position: relative;
 }
@@ -463,16 +476,10 @@ section.containerlogin .loginheader{
  }
 
 .form{
-    height: 60vh;
-    overflow: scroll;
     width: 70%;
-    margin: 0 auto;
+    margin: 10% auto;
     text-align: center;
     position: relative;
-}
-
-.form form{
-    padding: 20px 0px 30px 0px;
 }
 
 .form p{
@@ -480,7 +487,6 @@ section.containerlogin .loginheader{
     margin-bottom: 5px;
 }
 
-.radio-wrapper,
 input[type="text"],
 input[type="email"],
 input[type="password"]{
@@ -496,7 +502,6 @@ input[type="password"]{
     border: solid 1px #dcdcdc;
     transition: box-shadow 0.3s, border 0.3s;
     border-radius: 5px;
-    text-transform: none;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -504,10 +509,6 @@ input[type="password"]:focus{
     outline: none;
     border: solid 1px #707070;
     box-shadow: 0 0 5px 1px #969696;
-}
-
-.radio-wrapper label{
-    padding: 0px 10px 0px 5px;
 }
 
 /* custom classes for joyride */
@@ -1056,6 +1057,23 @@ input[type="password"]:focus{
 #searchBar input[type="text"] {
     background:#fff;
     min-height:30px;
+}
+
+.friendrequestbutton{
+    position: relative;
+}
+
+.friendrequestbutton span.requestVal{
+    position: absolute;
+    width:20px;
+    height:20px;
+    top:-10px;
+    right:0px;
+    background:red;
+    color:#fff;
+    font-size:12px;
+    line-height:20px;
+    border-radius: 100%;
 }
 
 

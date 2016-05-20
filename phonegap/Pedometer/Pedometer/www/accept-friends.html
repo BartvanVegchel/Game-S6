@@ -59,16 +59,9 @@
 
 <!-- container -->
 <section class="container">
-    <form role="form">
-        <!--<input type="text" id="search" placeholder="Sart type 'a' ....">-->
-        <div id="searchBar" class="wrapper">
-            <input type="text" id="search" />
+    <section id="friendInvites">
 
-            <a href="#" class="searchBtn">GO</a>
-        </div>
-    </form>
-
-    <section id="results"></section>
+    </section>
 </section>
 
 <!-- Bottom bar -->
@@ -95,59 +88,70 @@
 </script>
 <script>
     $(window).load(function () {
-        $('.searchBtn').click(function () {
-            event.preventDefault();
+        $userName = localStorage.getItem('userInfo');
 
-            var searchField = $('#search').val();
-            var regex = new RegExp(searchField, "i");
-            var searchTerm = searchField.length;
-            //var myLength = $("#search").val().length;
-
-            //alert(searchTerm);
-            if(searchTerm > 2) {
-                var output = '';
-                $.getJSON('http://game.onlineops.nl/phonegap_php/allUsers.php', function (data) {
-                    $.each(data, function (key, val) {
-                        if ((val.name.search(regex) != -1)) {
-                            output += '<div class="friendRow">';
-                            output += '<h2>' + val.name + '</h2>';
-                            output += '<button class="addFriend" data-friendname=' + val.name + '>voeg vriend toe</button>';
-                            output += '</div>';
-                        }
-                    });
-                    $('#results').html(output);
-                    clickFriends();
-                });
-            } else{
-                $('#results').html("<p>Voeg een uitgebreidere zoekterm in</p>");
+        var dataString = "username=" + $userName + "&submit=";
+        $.ajax({
+            type: "POST",
+            url: "http://game.onlineops.nl/phonegap_php/showFriendRequests.php",
+            data: dataString,
+            crossDomain: true,
+            cache: false,
+            dataType: 'json',
+            success: function (data) {
+                $requestArray = data['friendrequests'];
+                $requestsCount = $requestArray.length;
+                $friendlist = '';
+                for (var i = 1; i < $requestsCount; i++) {
+                    $friendlist += '<div class="friendRow">';
+                    $friendlist += '<h2>' + $requestArray[i] + '</h2>';
+                    $friendlist += '<button class="handleFriend buttongreen" data-handle="accept" data-friendname=' + $requestArray[i] + '><i class="fa fa-check"></i></button>';
+                    $friendlist += '<button class="handleFriend buttonred" data-handle="decline" data-friendname=' + $requestArray[i] + '><i class="fa fa-times"></i></button>';
+                    $friendlist += '</div>';
+                }
+                $("#friendInvites").append($friendlist);
+                handleFriendRequest();
             }
-        });
-        function clickFriends() {
-            $('.addFriend').click("click", function () {
+        })
+                .done(function (data) {
+
+                })
+                .error(function (data) {
+                    swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
+                });
+
+        function handleFriendRequest() {
+            $('.handleFriend').click("click", function () {
                 $userName = localStorage.getItem('userInfo');
-                $friendname = $(this).attr('data-friendname');
+                $handle = $(this).attr('data-handle');
+                $friendName = $(this).attr('data-friendname');
 
-                //alert('clicked' + $friendName);
+                alert($friendName);
+                alert($userName);
 
-                var dataString = "friendname=" + $friendname + "&username=" + $userName +"&submit=";
+                var dataString = "handle=" + $handle + "&username=" + $userName + "&friendname=" + $friendName + "&submit=";
                 $.ajax({
                     type: "POST",
-                    url: "http://game.onlineops.nl/phonegap_php/addFriend.php",
+                    url: "http://game.onlineops.nl/phonegap_php/handleFriendRequest.php",
                     data: dataString,
                     crossDomain: true,
                     cache: false,
                     dataType: 'json',
                     success: function (data) {
-
+                        //alert('jaja');
+                        if (data['error'] == "accept") {
+                            swal("Gelukt", "Jullie zijn nu vrienden");
+                        } else if(data['error'] == "decline"){
+                            swal("Succesvol", "Het verzoek is afgewezen");
+                        }
                     }
                 }).done(function (data) {
-                    //alert("vriend toegevoegd");
-                }).error(function(error) {
-                    //alert('een fout' + error);
+
+                }).error(function (error) {
+                    swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
                 })
             }); // end .clickFriends click
         }
-
 
     });
 </script>
