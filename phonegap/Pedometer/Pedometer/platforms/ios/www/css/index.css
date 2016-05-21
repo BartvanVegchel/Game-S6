@@ -713,6 +713,34 @@ input[type="password"]:focus{
     background-color: #516f72;
 }
 
+.desc .item span.icon span.tooltipIcon {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    font-size: 12px;
+    background:#516f72;
+    padding:4px;
+    z-index: 1000;
+    display:none;
+}
+
+.desc .item span.icon span.tooltipIcon:after{
+    content: "";
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-color: #516f72 transparent transparent transparent;
+    bottom: -5px;
+    z-index:-1;
+    left: 50%;
+    margin-left:-5px;
+    border-width: 10px 0 0 10px;
+    -ms-transform: rotate(-225deg);
+    -webkit-transform: rotate(-225deg);
+    transform: rotate(-225deg);
+}
+
 .desc .item:first-child span.icon,
 .desc .item:first-child span.stat{
     background-color: #df8c3c;

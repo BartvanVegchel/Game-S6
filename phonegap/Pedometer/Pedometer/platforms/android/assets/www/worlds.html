@@ -165,15 +165,24 @@
 												"</h1>" +
 												"<div class='desc'>" +
 												"<div class='item'>" +
-												"<span class='icon'><i class='fa fa-bolt'></i></span>" +
+												"<span class='icon'>" +
+												"<span class='tooltipIcon'>Verzamelde monsters</span>" +
+												"<i class='fa fa-bolt'></i>" +
+												"</span>" +
 												"<span class='stat'>" + $yourmonsters[i] + " / " + $totalMonsters[i] + "</span>" +
 												"</div>" +
 												"<div class='item'>" +
-												"<span class='icon'><i class='fa fa-globe'></i></span>" +
+												"<span class='icon'>" +
+												"<span class='tooltipIcon'>Ontdekte gebieden</span>" +
+												"<i class='fa fa-globe'></i>" +
+												"</span>" +
 												"<span class='stat'>" + $unlockFieldWorlds[i] + " / " + $worldSize[i] + "</span>" +
 												"</div>" +
 												"<div class='item'>" +
-												"<span class='icon'><i class='fa fa-star'></i></span>" +
+												"<span class='icon'>" +
+												"<span class='tooltipIcon'>Verzamelde sterren</span>" +
+												"<i class='fa fa-star'></i>" +
+												"</span>" +
 												"<span class='stat'>0/0</span>" +
 												"</div>" +
 
@@ -199,6 +208,11 @@
 							$thisWorldName = $(this).attr("data-world-name");
 							changeWorldInfo($thisWorldId, $thisWorldName);
 						});
+
+//						$(".desc .item .icon").click(function () {
+//							tooltiponClick(element);
+//						}); //end .desc .item .icon click
+						$('.desc .item .icon').click(tooltiponClick);
 					})
 				}
 

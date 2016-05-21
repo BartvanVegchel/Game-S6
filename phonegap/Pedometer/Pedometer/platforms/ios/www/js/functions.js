@@ -448,6 +448,7 @@ function clickEvents() {
         localStorage.clear();
         window.location.href = "inloggen.html";
     }); //end .world-name click
+
 } //end function clickEvents
 
 function accelerometer() {
@@ -522,3 +523,9 @@ function pedometerFunction() {
     pedometer.isStepCountingAvailable(successCallback, failureCallback);
     //alert(testje);
 }//end function pedometer
+
+function tooltiponClick(element){
+    $tooltip = $(this).find('.tooltipIcon');
+    $($tooltip).fadeIn().delay(2000).fadeOut();
+    //alert($classname);
+}
