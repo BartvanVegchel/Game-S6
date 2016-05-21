@@ -176,9 +176,9 @@
                                     } else{
                                         $ranklistitem += '<div class="listitem">';
                                     }
-                                    $ranklistitem += '<span>' + $rank + '</span>';
-                                    $ranklistitem += '<h2>' + name + '</h2>';
-                                    $ranklistitem += '<span>' + score + '</span>';
+                                    $ranklistitem += '<span class="rank">' + $rank + '</span>';
+                                    $ranklistitem += '<span class="name">' + name + '</span>';
+                                    $ranklistitem += '<span class="score">' + score + '</span>';
                                     $ranklistitem += '</div>';
 
                                     $rank ++;
@@ -186,9 +186,9 @@
                                 });
 
                                 $slideItem = $slideItem +
-                                    "<div class='swiper-slide'>" +
+                                    "<div class='swiper-slide ranking'>" +
                                     "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>" +
-                                    "<div class='imgmonster' style='background-image: url(\"img/trophy.png\");'></div>" +
+                                    "<div class='imgmonster' style='background-image: url(\"img/stage.png\");'></div>" +
                                     "</div>" +
                                     "<h1 class='ribbon'>" +
                                     "<strong class='ribbon-content'>Ranglijst</strong>" +

@@ -101,10 +101,10 @@
                 $requestsCount = $requestArray.length;
                 $friendlist = '';
                 for (var i = 1; i < $requestsCount; i++) {
-                    $friendlist += '<div class="friendRow">';
-                    $friendlist += '<h2>' + $requestArray[i] + '</h2>';
-                    $friendlist += '<button class="handleFriend buttongreen" data-handle="accept" data-friendname=' + $requestArray[i] + '><i class="fa fa-check"></i></button>';
+                    $friendlist += '<div class="listitem">';
+                    $friendlist += '<span>' + $requestArray[i] + '</span>';
                     $friendlist += '<button class="handleFriend buttonred" data-handle="decline" data-friendname=' + $requestArray[i] + '><i class="fa fa-times"></i></button>';
+                    $friendlist += '<button class="handleFriend buttongreen" data-handle="accept" data-friendname=' + $requestArray[i] + '><i class="fa fa-check"></i></button>';
                     $friendlist += '</div>';
                 }
                 $("#friendInvites").append($friendlist);

@@ -58,15 +58,16 @@
 
 <!-- container -->
 <section class="container">
-    <form role="form">
-        <!--<input type="text" id="search" placeholder="Sart type 'a' ....">-->
-        <div id="searchBar" class="wrapper">
-            <input type="text" id="search" />
+    <div class="form">
+        <form role="form">
+            <!--<input type="text" id="search" placeholder="Sart type 'a' ....">-->
+            <div id="searchBar">
+                <input type="text" id="search" placeholder="Zoek..." tabindex="1" class="focus"/>
 
-            <a href="#" class="searchBtn">GO</a>
-        </div>
-    </form>
-
+                <a href="#" class="searchBtn button buttonfull buttonblue">Zoek</a>
+            </div>
+        </form>
+    </div>
     <section id="results"></section>
 </section>
 
@@ -108,9 +109,9 @@
                 $.getJSON('http://game.onlineops.nl/phonegap_php/allUsers.php', function (data) {
                     $.each(data, function (key, val) {
                         if ((val.name.search(regex) != -1)) {
-                            output += '<div class="friendRow">';
-                            output += '<h2>' + val.name + '</h2>';
-                            output += '<button class="addFriend" data-friendname=' + val.name + '>voeg vriend toe</button>';
+                            output += '<div class="listitem">';
+                            output += '<span>' + val.name + '</span>';
+                            output += '<button class="addFriend buttongreen" data-friendname=' + val.name + '><span class="fa fa-check"></span></button>';
                             output += '</div>';
                         }
                     });

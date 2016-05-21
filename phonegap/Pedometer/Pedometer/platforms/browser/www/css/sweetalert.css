@@ -63,7 +63,8 @@ body.stop-scrolling {
     line-height: normal; }
   .sweet-alert fieldset {
     border: none;
-    position: relative; }
+    position: relative;
+  display: none;}
   .sweet-alert .sa-error-container {
     background-color: #f1f1f1;
     margin-left: -17px;
