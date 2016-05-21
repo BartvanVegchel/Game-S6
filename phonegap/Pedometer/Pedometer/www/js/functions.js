@@ -329,7 +329,10 @@ function createElements() {
     }
 
     $elementsTopBar = '<span class="world-name" id="number2">'+$title+'</span>' +
-        '<a href="http://game.onlineops.nl/phonegap_php/setSession.php?username=' + $userName + '"><span class="menu-icon fa fa-bars"></span></a>';
+        '<div class="buttonsright">' +
+            '<a href="http://game.onlineops.nl/phonegap_php/startEnergypointsUpdate.php?username=' + $userName + '"><span class="menu-icon fa fa-refresh"></span></a>' +
+            '<a href="http://game.onlineops.nl/phonegap_php/startChallenge.php?username=' + $userName + '"><span class="menu-icon fa fa-trophy"></span></a>' +
+        '</div>';
     $($elementsTopBar).appendTo($(".top-bar"));
 
     $elementsBottomBar = '<ul>' +

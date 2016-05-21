@@ -242,14 +242,20 @@ section.top-bar{
     font-size: 20px;
 }
 
-section.top-bar .menu-icon{
+section.top-bar .buttonsright{
     height:40px;
-    width: 40px;
     position: absolute;
     right:0;
     top:0;
+}
+
+section.top-bar .menu-icon{
+    height:40px;
+    width: 40px;
     text-align: center;
     line-height: 40px;
+    float:left;
+    color:#fff;
 }
 
 div.energy-points{
