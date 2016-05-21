@@ -122,7 +122,6 @@
                             $requestCount = data['requestcount'];
                             $frienddata = data['frienddata'];
 
-                            alert($requestCount);
                             $swiperContainer = $('.swiper-wrapper');
 
                             if ($userName && $gender) {
@@ -167,14 +166,22 @@
                             }
                             if ($frienddata) {
                                 console.log($frienddata);
-                                //$frienddata.sort();
+
                                 $slideItem = '';
                                 $ranklistitem = '';
+                                $rank = 1;
                                 $.each( $frienddata, function( name, score ) {
-                                    $ranklistitem += '<div class="listitem">';
+                                    if(name == $userName) {
+                                        $ranklistitem += '<div class="listitem highlighted">';
+                                    } else{
+                                        $ranklistitem += '<div class="listitem">';
+                                    }
+                                    $ranklistitem += '<span>' + $rank + '</span>';
                                     $ranklistitem += '<h2>' + name + '</h2>';
                                     $ranklistitem += '<span>' + score + '</span>';
                                     $ranklistitem += '</div>';
+
+                                    $rank ++;
 
                                 });
 

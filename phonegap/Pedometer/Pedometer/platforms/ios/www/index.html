@@ -52,6 +52,8 @@
 </head>
 
 <body>
+
+<!-- wolrname is set in document ready-->
 <div id="pageTitle">Home wereld</div>
 
 <!-- Top bar, energypoints, world prgress -->
@@ -100,6 +102,13 @@
 </script>
 
 <script>
+    $(document).ready(function () {
+        $worldName = localStorage.getItem('worldName');
+        $('#pageTitle').html($worldName);
+    });
+</script>
+
+<script>
     $monsterName = getUrlParameter('monstername');
     $requirement = getUrlParameter('requirement');
     $username = getUrlParameter('username');
@@ -129,21 +138,20 @@
                     success: function (data) {
                     }
                 })
-                        .done(function (data) {
-                            console.log($parentId);
-                            $('#' + $parentId).find('.monsterEgg').hide();
-                            $('#' + $parentId).find('.monsterbackground').append('<img src="images/egg_' + $monsterNameLowerCase + '_broken.png" monster-name=' + $monsterName + '>');
-                            window.location.href = 'index.html';
-                        })
-                        .error(function (data) {
-                            swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
-                        });
+                    .done(function (data) {
+                        console.log($parentId);
+                        $('#' + $parentId).find('.monsterEgg').hide();
+                        $('#' + $parentId).find('.monsterbackground').append('<img src="images/egg_' + $monsterNameLowerCase + '_broken.png" monster-name=' + $monsterName + '>');
+                        window.location.href = 'index.html';
+                    })
+                    .error(function (data) {
+                        swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
+                    });
             });
         } else {
             alert('niet voldoende, probeer nogmaals');
         }
     } else if ($reward !== '' && $monsterName == '') {
-        //alert('dailychallenge');
         $date = new Date();
         $day = $date.getDate();//zero based
         $month = $date.getMonth() + 1;//zero based

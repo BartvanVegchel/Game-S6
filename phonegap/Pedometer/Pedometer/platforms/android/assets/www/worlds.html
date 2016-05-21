@@ -179,7 +179,7 @@
 
 												"</div>" +
 												"<div class='buttonbar'>"+
-												"<button id='" + $thisWorldId + "' class='changeWorldId buttonfull buttonblue'>Speel level</button>" +
+												"<button id='" + $thisWorldId + "' class='changeWorldId buttonfull buttonblue' data-world-name='"+$worldNames[i] +"'>Speel level</button>" +
 												"</div>" +
 												"</div>";
 									}
@@ -196,7 +196,8 @@
 
 						$(".changeWorldId").click(function(){
 							$thisWorldId = $(this).attr("id");
-							changeWorldId($thisWorldId);
+							$thisWorldName = $(this).attr("data-world-name");
+							changeWorldInfo($thisWorldId, $thisWorldName);
 						});
 					})
 				}
@@ -268,9 +269,12 @@
 
 
 
-		function changeWorldId(thisWorldId){
+		function changeWorldInfo(thisWorldId, thisWorldName){
 			$thisWorldId = thisWorldId;
+			$thisWorldName = thisWorldName;
+
 			localStorage.setItem('worldId', $thisWorldId);
+			localStorage.setItem('worldName', $thisWorldName);
 			window.location.href = "index.html";
 		}
 
