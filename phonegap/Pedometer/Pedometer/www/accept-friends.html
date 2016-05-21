@@ -67,7 +67,7 @@
 
 <!-- content of joyride tips -->
 <ol id="joyRideTipContent" data-joyride></ol>
-?>
+
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
@@ -124,8 +124,6 @@
                 $handle = $(this).attr('data-handle');
                 $friendName = $(this).attr('data-friendname');
 
-                alert($friendName);
-                alert($userName);
 
                 var dataString = "handle=" + $handle + "&username=" + $userName + "&friendname=" + $friendName + "&submit=";
                 $.ajax({
@@ -136,15 +134,30 @@
                     cache: false,
                     dataType: 'json',
                     success: function (data) {
-                        //alert('jaja');
-                        if (data['error'] == "accept") {
-                            swal("Gelukt", "Jullie zijn nu vrienden");
-                        } else if(data['error'] == "decline"){
-                            swal("Succesvol", "Het verzoek is afgewezen");
-                        }
+
                     }
                 }).done(function (data) {
-
+                    if (data['error'] == "accept") {
+                        swal({
+                            title: "Gelukt",
+                            text:  "Jij en " + $friendName+ " zijn nu vrienden.",
+                            confirmButtonText: "Oke",
+                            showCancelButton: false,
+                        },
+                        function () {
+                            window.location.href = 'user.html';
+                        });
+                    } else if(data['error'] == "decline"){
+                        swal({
+                            title: "Afgewezen",
+                            text: "Je hebt het verzoek van " + $friendName+ " afgewezen.",
+                            confirmButtonText: "Oke",
+                            showCancelButton: false,
+                        },
+                        function () {
+                            window.location.href = 'user.html';
+                        });
+                    }
                 }).error(function (error) {
                     swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
                 })

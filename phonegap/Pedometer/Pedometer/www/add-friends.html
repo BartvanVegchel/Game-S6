@@ -75,6 +75,7 @@
 
 <!-- content of joyride tips -->
 <ol id="joyRideTipContent" data-joyride></ol>
+
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
@@ -139,7 +140,15 @@
 
                     }
                 }).done(function (data) {
-                    //alert("vriend toegevoegd");
+                    swal({
+                        title: "Verzoek verstuurd",
+                        text: $friendname + " zal een bericht ontvangen",
+                        confirmButtonText: "Oke",
+                        showCancelButton: false,
+                    },
+                    function () {
+                        window.location.href = 'user.html';
+                    });
                 }).error(function(error) {
                     //alert('een fout' + error);
                 })
