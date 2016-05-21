@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
 		025905E3321C4CF8AA00C88D /* CDVCompass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4245ECDD563E4515855D3D24 /* CDVCompass.m */; };
@@ -28,9 +29,12 @@
 		55A8EA68BF884F1F961EFBFE /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B46FBB438614162AE10800D /* CDVSplashScreen.m */; };
 		580DBC5B1F164CF99811D620 /* CDVCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = F3CDD95B0A1A4E72BB0AA1EA /* CDVCamera.m */; };
 		6F4BC02F7ADE49FD9174885E /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9AB9D51E544E8ABE8A8A6F /* CDVStatusBar.m */; };
+		71B603FAA0294436BE782122 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 40309425D6C847EFB8199EFC /* CDVLogger.m */; };
 		73C62B35943B4438B8053FA1 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55988A8DEDAE46C383E366A4 /* AddressBookUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		75E0F981CB954120958BDE31 /* Pedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C17CBC20154BF5B839415F /* Pedometer.m */; };
 		76371581480C4E118CF53FE9 /* CDVJpegHeaderWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = F967C77BA31348A38F91B9D1 /* CDVJpegHeaderWriter.m */; };
 		7E109655EAD7498491342041 /* CDVContact.m in Sources */ = {isa = PBXBuildFile; fileRef = 3837C389067F4E08880A4C7B /* CDVContact.m */; };
+		89120EE0713D4BC09921FEC2 /* CDVAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0CB4726274BFCAE56D95D /* CDVAccelerometer.m */; };
 		8AB4BB35939C4C658C7ED7FA /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F88B9F7B0AE8487F9757F368 /* CDVNotification.bundle */; };
 		8D9A5F283DFE4935A51C8185 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDEA97BC8F44053BDA70C9E /* CDVDevice.m */; };
 		97B643698E9F43EFB5647775 /* CDVSound.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C5C42D54BB4876837CB85A /* CDVSound.m */; };
@@ -50,9 +54,6 @@
 		EACAE2FFB9264D91B50328BC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFD4BA5B1B214E7EA9C543B5 /* SystemConfiguration.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		EC56B9FCBCB24010BB87ED44 /* CDVLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = A40C845FE3CD4A349577F931 /* CDVLocation.m */; };
 		FE2B27F5AC1640F18D31DD73 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08E7DA6439694578A097B1D1 /* AddressBook.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		75E0F981CB954120958BDE31 /* Pedometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59C17CBC20154BF5B839415F /* Pedometer.m */; };
-		89120EE0713D4BC09921FEC2 /* CDVAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D0CB4726274BFCAE56D95D /* CDVAccelerometer.m */; };
-		71B603FAA0294436BE782122 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 40309425D6C847EFB8199EFC /* CDVLogger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		0B46FBB438614162AE10800D /* CDVSplashScreen.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVSplashScreen.m; path = "cordova-plugin-splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; };
 		0DC1C44FD5364DA294A9781D /* CDVGlobalization.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVGlobalization.m; path = "cordova-plugin-globalization/CDVGlobalization.m"; sourceTree = "<group>"; };
 		1758172F6AEE489FA56DB367 /* CDVLocalFilesystem.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVLocalFilesystem.m; path = "cordova-plugin-file/CDVLocalFilesystem.m"; sourceTree = "<group>"; };
+		19D0CB4726274BFCAE56D95D /* CDVAccelerometer.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVAccelerometer.m; path = "cordova-plugin-device-motion/CDVAccelerometer.m"; sourceTree = "<group>"; };
 		19EE9691E1C447028BE92FD3 /* CDVStatusBar.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVStatusBar.h; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		3837C389067F4E08880A4C7B /* CDVContact.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVContact.m; path = "cordova-plugin-contacts/CDVContact.m"; sourceTree = "<group>"; };
 		3936ACEEBE8042FD880DDC9E /* CDVConnection.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVConnection.m; path = "cordova-plugin-network-information/CDVConnection.m"; sourceTree = "<group>"; };
 		401EB7CEA14248DAB969B4BA /* CDVCamera.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVCamera.h; path = "cordova-plugin-camera/CDVCamera.h"; sourceTree = "<group>"; };
+		40309425D6C847EFB8199EFC /* CDVLogger.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVLogger.m; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; };
 		4245ECDD563E4515855D3D24 /* CDVCompass.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVCompass.m; path = "cordova-plugin-device-orientation/CDVCompass.m"; sourceTree = "<group>"; };
 		478C9B1B8F9B4C7F9B0FDB76 /* CDVCapture.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVCapture.m; path = "cordova-plugin-media-capture/CDVCapture.m"; sourceTree = "<group>"; };
 		4DBA6E6748D94F8789E194C3 /* CDVNotification.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVNotification.h; path = "cordova-plugin-dialogs/CDVNotification.h"; sourceTree = "<group>"; };
@@ -110,9 +113,12 @@
 		543C2774A4204612AEF98BC3 /* CoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		55988A8DEDAE46C383E366A4 /* AddressBookUI.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		5919AE09CE8746D7B200C991 /* CDVDevice.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVDevice.h; path = "cordova-plugin-device/CDVDevice.h"; sourceTree = "<group>"; };
+		59C17CBC20154BF5B839415F /* Pedometer.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = Pedometer.m; path = "cordova-plugin-pedometer/Pedometer.m"; sourceTree = "<group>"; };
 		5BB3DD4D6C434B6D972BB01C /* CDVBattery.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVBattery.h; path = "cordova-plugin-battery-status/CDVBattery.h"; sourceTree = "<group>"; };
 		630DEA78483946588728C8B6 /* CDVReachability.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVReachability.m; path = "cordova-plugin-network-information/CDVReachability.m"; sourceTree = "<group>"; };
 		68379CDB97EF47EF8E00808E /* CDVSplashScreen.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVSplashScreen.h; path = "cordova-plugin-splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; };
+		780EC4F5CC5E448F996977DF /* CDVAccelerometer.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVAccelerometer.h; path = "cordova-plugin-device-motion/CDVAccelerometer.h"; sourceTree = "<group>"; };
+		7A05D1361EE2464CA8B4FED7 /* Pedometer.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = Pedometer.h; path = "cordova-plugin-pedometer/Pedometer.h"; sourceTree = "<group>"; };
 		7D9B96D38A434D56860B9A60 /* CDVVibration.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVVibration.h; path = "cordova-plugin-vibration/CDVVibration.h"; sourceTree = "<group>"; };
 		82F835605B334236B710F3D3 /* CDVCapture.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVCapture.h; path = "cordova-plugin-media-capture/CDVCapture.h"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Pedometer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pedometer-Info.plist"; path = "Pedometer/Pedometer-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
@@ -124,6 +130,7 @@
 		A38A4E3F7FDE43EAAE0C8805 /* CDVFile.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVFile.m; path = "cordova-plugin-file/CDVFile.m"; sourceTree = "<group>"; };
 		A40A1A3DD3AB4D7CA764225F /* UIImage+CropScaleOrientation.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "UIImage+CropScaleOrientation.h"; path = "cordova-plugin-camera/UIImage+CropScaleOrientation.h"; sourceTree = "<group>"; };
 		A40C845FE3CD4A349577F931 /* CDVLocation.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVLocation.m; path = "cordova-plugin-geolocation/CDVLocation.m"; sourceTree = "<group>"; };
+		A468701B56C9497F8BADD288 /* CDVLogger.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVLogger.h; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; };
 		A837E57EB75842598C37E996 /* CDVFile.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVFile.h; path = "cordova-plugin-file/CDVFile.h"; sourceTree = "<group>"; };
 		ACCEE005001C4B669A27681B /* CDVContacts.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVContacts.m; path = "cordova-plugin-contacts/CDVContacts.m"; sourceTree = "<group>"; };
 		AED1B5B7838840AEA30D262B /* CDVAssetLibraryFilesystem.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVAssetLibraryFilesystem.m; path = "cordova-plugin-file/CDVAssetLibraryFilesystem.m"; sourceTree = "<group>"; };
@@ -152,12 +159,6 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Pedometer/config.xml; sourceTree = "<group>"; };
 		F88B9F7B0AE8487F9757F368 /* CDVNotification.bundle */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.plug-in"; path = CDVNotification.bundle; sourceTree = "<group>"; };
 		F967C77BA31348A38F91B9D1 /* CDVJpegHeaderWriter.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVJpegHeaderWriter.m; path = "cordova-plugin-camera/CDVJpegHeaderWriter.m"; sourceTree = "<group>"; };
-		59C17CBC20154BF5B839415F /* Pedometer.m */ = {isa = PBXFileReference; name = "Pedometer.m"; path = "cordova-plugin-pedometer/Pedometer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		7A05D1361EE2464CA8B4FED7 /* Pedometer.h */ = {isa = PBXFileReference; name = "Pedometer.h"; path = "cordova-plugin-pedometer/Pedometer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		19D0CB4726274BFCAE56D95D /* CDVAccelerometer.m */ = {isa = PBXFileReference; name = "CDVAccelerometer.m"; path = "cordova-plugin-device-motion/CDVAccelerometer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		780EC4F5CC5E448F996977DF /* CDVAccelerometer.h */ = {isa = PBXFileReference; name = "CDVAccelerometer.h"; path = "cordova-plugin-device-motion/CDVAccelerometer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		40309425D6C847EFB8199EFC /* CDVLogger.m */ = {isa = PBXFileReference; name = "CDVLogger.m"; path = "cordova-plugin-console/CDVLogger.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		A468701B56C9497F8BADD288 /* CDVLogger.h */ = {isa = PBXFileReference; name = "CDVLogger.h"; path = "cordova-plugin-console/CDVLogger.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -521,8 +522,8 @@
 				INFOPLIST_FILE = "Pedometer/Pedometer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = edu.fontys.sm.testiugyighhgjhy;
-				PRODUCT_NAME = "Pedometer";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.fontys.smmovingmonsters;
+				PRODUCT_NAME = Pedometer;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -546,8 +547,8 @@
 				GCC_VERSION = "";
 				INFOPLIST_FILE = "Pedometer/Pedometer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				PRODUCT_BUNDLE_IDENTIFIER = edu.fontys.sm.testiugyighhgjhy;
-				PRODUCT_NAME = "Pedometer";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.fontys.smmovingmonsters;
+				PRODUCT_NAME = Pedometer;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -574,9 +575,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Pedometer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
-				PRODUCT_NAME = "Pedometer";
 			};
 			name = Debug;
 		};
@@ -600,9 +601,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				PRODUCT_NAME = Pedometer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
-				PRODUCT_NAME = "Pedometer";
 			};
 			name = Release;
 		};

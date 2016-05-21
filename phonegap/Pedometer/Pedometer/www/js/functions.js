@@ -89,7 +89,8 @@ function unlockFunction(id, element) {
             showLoaderOnConfirm: true,
             confirmButtonText: "Oke",
             cancelButtonText: "Nee",
-            html: true
+            html: true,
+            inputPlaceholder: "Write something"
         }, function () {
             $.ajax(
                 {
@@ -147,7 +148,8 @@ function dailyChallenge(name, id, description, time, reward) {
             cancelButtonText: "Nu niet",
         },
         function () {
-            window.location.href = 'challenge.html?monstername=' + $monsterName + '&challengeId=' + $challengeId + '&challengeName=' + $name + '&time=' + $time + '&reward=' + $reward + '&description=' + $description;
+            localStorage.setItem('dailyChallenge', $challengeId);
+            window.location.href = 'challenge.html';
         });
 } //end function dailyChallenge
 
@@ -173,10 +175,12 @@ function monsterChallenge(monstername, name, id, description, time, clicktype) {
                 cancelButtonText: "Nu niet",
             },
             function () {
-                window.location.href = 'challenge.html?monstername=' + $monsterName + '&challengeId=' + $challengeId + '&challengeName=' + $name + '&time=' + $time + '&description=' + $description;
+                localStorage.setItem('monsterChallenge', $challengeId);
+                window.location.href = 'challenge.html';
             });
     } else {
-        window.location.href = 'challenge.html?monstername=' + $monsterName + '&challengeId=' + $challengeId + '&challengeName=' + $name + '&time=' + $time + '&description=' + $description;
+        localStorage.setItem('monsterChallenge', $challengeId);
+        window.location.href = 'challenge.html';
     }
 } //end function monsterChallenge
 
@@ -320,8 +324,11 @@ function createElements() {
         '</div>' +
         '</div>';
     $($elementsAccelerometer).insertAfter($(".bottom-bar"));
+    
+    //get Pagetitle of div on page 
     $pageTitle = $("#pageTitle").html();
-
+    
+    //if is no pageTitle set Moving monsters as title
     if($pageTitle !== ""){
         $title = $pageTitle;
     } else{
@@ -331,7 +338,7 @@ function createElements() {
     $elementsTopBar = '<span class="world-name" id="number2">'+$title+'</span>' +
         '<div class="buttonsright">' +
             '<a href="http://game.onlineops.nl/phonegap_php/startEnergypointsUpdate.php?username=' + $userName + '"><span class="menu-icon fa fa-refresh"></span></a>' +
-            '<a href="http://game.onlineops.nl/phonegap_php/startChallenge.php?username=' + $userName + '"><span class="menu-icon fa fa-trophy"></span></a>' +
+            '<a href="#" class="dailyChallenge"><span class="menu-icon fa fa-trophy"></span></a>' +
         '</div>';
     $($elementsTopBar).appendTo($(".top-bar"));
 

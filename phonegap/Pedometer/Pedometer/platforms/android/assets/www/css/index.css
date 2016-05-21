@@ -1156,6 +1156,11 @@ input[type="password"]:focus{
 }
 
 
+#challengeContainer .timeLimit{
+    display: none;
+}
+
+
 
 
 
