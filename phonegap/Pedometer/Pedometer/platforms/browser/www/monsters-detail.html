@@ -51,7 +51,11 @@
 </head>
 
 <body>
-	<div id="pageTitle">Monster</div>
+<script>
+	$currentmonster = getUrlParameter('monstername');
+	$("#pageTitle").html($currentmonster);
+</script>
+<div id="pageTitle">Monster</div>
 	<!-- Top bar -->
 	<section class="top-bar"></section>
 
@@ -94,7 +98,6 @@
 			function getMonsterInfo(){
 				$currentmonster = getUrlParameter('monstername');
 				$currentmonsterLowerCase = $currentmonster.toLowerCase();
-
 				$('#pageTitle').html($currentmonster);
 
 				var dataString="monstername="+$currentmonster+"&submit=";
@@ -108,19 +111,18 @@
 						dataType: 'json',
 						success: function (data) {
 							if (data['error'] == "error") {
-								alert('jajaja');
+								//do nothing
 							} else if (data['monsterstory'] !== "") {
 								//get the data
 								$monsterStory = data['monsterstory'];
 								$monsterWorld = data['monsterworld'];
 								$worldName = data['worldname'];
 								$worldColor = data['worldcolor'];
-
 								//get the container
 								$swiperContainer = $('.swiper-wrapper');
 
 								$slideItem = '<div class="swiper-slide monster-detail">'+
-										"<div class='img' style='background-image: url(\"img/"+ $worldName +".png\");'>"+
+										"<div class='img' style='background-image: url(\"img/world_"+ ($worldName).replace(/\s+/g, '').toLowerCase() +".png\");'>"+
 											'<div class="imgmonster" style="background-image: url(\'img/monster_'+$currentmonsterLowerCase+'.png\');"></div>'+
 										"</div>" +
 										"<h1 class='ribbon'>" +
