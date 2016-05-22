@@ -407,11 +407,13 @@ section.blog div.panel-body     { min-height: 250px; }
 
 
 #divide1{
+    max-width: 1400px;
     position: absolute;
     display: block;
 }
 
 #divide2{
+    max-width: 1400px;
     position: absolute;
     display: block;
 }
