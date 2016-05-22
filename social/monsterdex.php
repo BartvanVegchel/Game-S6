@@ -47,7 +47,6 @@
 		</div>
 			<div class="row">
 				<section class="col-lg-12">
-					<div id="divider1"><img src="img/monsterdex/divide1.jpg"></img> </div>
 					<div class="water-section">
 							<h1 class="section-title">Sea Side</h1>
 								<div id="water-section-divider"></div>
@@ -92,7 +91,6 @@
 
 			<div class="row">
 				<section class="col-lg-12">
-					<div id="divider2"><img src="img/monsterdex/divider2.jpg"></img> </div>
 					<div class="fire-section">
 						<h1 class="section-title">Vulcano Island</h1>
 
