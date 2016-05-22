@@ -38,7 +38,7 @@
 .jBox-Tooltip .jBox-container,
 .jBox-Mouse .jBox-container {
 	border-radius: 3px;
-	box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+
 }
 
 .jBox-Tooltip .jBox-title,
@@ -89,25 +89,25 @@
 .jBox-pointer-top:after {
 	left: 5px;
 	top: 6px;
-	box-shadow: -1px -1px 4px rgba(0, 0, 0, .2);
+
 }
 
 .jBox-pointer-right:after {
 	top: 5px;
 	right: 6px;
-	box-shadow: 1px -1px 4px rgba(0, 0, 0, .2);
+
 }
 
 .jBox-pointer-bottom:after {
 	left: 5px;
 	bottom: 6px;
-	box-shadow: 1px 1px 4px rgba(0, 0, 0, .2);
+
 }
 
 .jBox-pointer-left:after {
 	top: 5px;
 	left: 6px;
-	box-shadow: -1px 1px 4px rgba(0, 0, 0, .2);
+
 }
 
 /* jBox Modal & jBox Confirm */
@@ -397,7 +397,7 @@
 }
 
 #jBox-overlay .jBox-closeButton path {
-	fill: #d2d4d6;
+	fill: red;
 }
 
 #jBox-overlay .jBox-closeButton:hover path {
