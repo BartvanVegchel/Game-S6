@@ -163,9 +163,8 @@ function temporaryMonsterFunction(monstername){
             title: $monsterName,
             text: "Je hebt " + $monsterName + " ontdekt",
             imageUrl: "img/monster_" + $monsterNameLowerCase + ".png",
-            confirmButtonText: "Start",
+            confirmButtonText: "Oke",
             showCancelButton: false,
-            cancelButtonText: "Nu niet",
         },
         function () {
             $.ajax(
@@ -384,28 +383,28 @@ function createElements() {
     $elementsBottomBar = '<ul>' +
         '<li>' +
         '<a href="index.html">' +
-        '<div id="number6" class="circle">' +
+        '<div id="number5" class="circle">' +
         '<span class="fa fa-home"></span>' +
         '</div>' +
         '</a>' +
         '</li>' +
         '<li>' +
         '<a href="worlds.html">' +
-        '<div id="number5" class="circle">' +
+        '<div id="number6" class="circle">' +
         '<span class="fa fa-rocket"></span>' +
         '</div>' +
         '</a>' +
         '</li>' +
         '<li>' +
         '<a href="monsters.html">' +
-        '<div id="number4" class="circle">' +
-        '<span class="fa fa-paper-plane"></span>' +
+        '<div id="number7" class="circle">' +
+        '<span class="fa fa-monster"></span>' +
         '</div>' +
         '</a>' +
         '</li>' +
         '<li> ' +
         '<a href="user.html">' +
-        '<div id="number7" class="circle">' +
+        '<div id="number8" class="circle">' +
         '<span class="fa fa-user"></span>' +
         '</div>' +
         '</a>' +
@@ -413,35 +412,60 @@ function createElements() {
         '</ul>';
     $($elementsBottomBar).appendTo($(".bottom-bar"));
 
-    $tutorailElements = '<li data-id="number1" data-text="Volgende" class="custom1">' +
-        '<h2>EnergyPointjes</h2>' +
-        '<p>Hier zie je hoeveel EnergyPoints (EP) je nog hebt. Je kunt er meer verdienen door te bewegen!</p>' +
+    $tutorailElements = ''+
+        '<li data-text="Volgende">' +
+        '<h2>Welkom!</h2>' +
+        '<p>Welkom bij MovingMonsters, leuk dat je meedoet! Tijdens deze korte tutorial word het spel kort uitgelegd. Veel plezier!</p>' +
+        '</li>' +
+        '<li data-id="number1" data-text="Volgende" data-prev-text="Prev" class="custom1">' +
+        '<h2>Energie punten</h2>' +
+        '<p>Hier zie je hoeveel Energie punten je hebt. Deze punten kun je verdienen door te bewegen! Je kunt dit in en uitklappen door er op te tikken.</p>' +
         '</li>' +
         '<li data-id="number2" data-text="Volgende" class="custom2">' +
-        '<h2>Huidige wereld</h2>' +
-        '<p>Hier staat de naam van de wereld waar je op dit moment bent.</p>' +
+        '<h2>Energie punten toevoegen</h2>' +
+        '<p>Wanneer je hier op klikt, worden de stappen van de stappenteller afgehaald, en toegevoegd aan jouw energie punten.</p>' +
         '</li>' +
         '<li data-id="number3" data-text="Volgende" class="custom3">' +
         '<h2>Voortgang wereld</h2>' +
-        '<p>Hier zie je het aantal ontdekte gebieden van de wereld</p>' +
+        '<p>Hier zie je het aantal ontdekte gebieden van de wereld waar je op dit moment bent. Je kunt dit in en uitklappen door er op te tikken.</p>' +
         '</li>' +
-        '<li data-id="number4" data-text="Volgende" class="custom4" data-options="tipLocation:top;">' +
-        '<h2>Monsterdex</h2>' +
-        '<p>Bekijk hier welke monsters je al hebt ontdekt en wilke je nog moet!</p>' +
+        '<li data-id="number4" data-text="Volgende" class="custom4">' +
+        '<h2>Dagelijkse uitdaging</h2>' +
+        '<p>Iedere dag staat er een nieuwe uitdaging voor je klaar, waarmee je extra punten kunt verdienen!</p>' +
         '</li>' +
         '<li data-id="number5" data-text="Volgende" class="custom5" data-options="tipLocation:top;">' +
-        '<h2>Werelden</h2>' +
-        '<p>Vanuit hier kun je reizen naar andere werelden!</p>' +
+        '<h2>Home</h2>' +
+        '<p>Wanneer je hier op klikt ga je terug naar de wereld die je op dit moment aan het verkennen bent.</p>' +
         '</li>' +
         '<li data-id="number6" data-text="Volgende" class="custom6" data-options="tipLocation:top;">' +
-        '<h2>Scoreboard</h2>' +
-        '<p>Hier kun je zien hoeveel je vrienden al hebben gevonden!</p>' +
+        '<h2>Raketbasis</h2>' +
+        '<p>Vanuit je raketbasis kun je kiezen naar welke wereld je wilt reizen. Hier kun je ook zien welke werelden je al hebt vrijgespeeld, en welke nog verborgen zijn.</p>' +
         '</li>' +
         '<li data-id="number7" data-text="Volgende" class="custom7" data-options="tipLocation:top;">' +
-        '<h2>Help?</h2>' +
-        '<p>Als je vragen hebt, kun je op deze knop drukken!</p>' +
+        '<h2>Monsterdex</h2>' +
+        '<p>Alle ontdekte monsters worden verzameld in jouw eigen monsterdex. Klik op een monster voor meer informatie, of als je de monsterchallenge opnieuw wilt doen.</p>' +
+        '</li>'+
+        '<li data-id="number8" data-text="Ik snap het!" class="custom8" data-options="tipLocation:top;">' +
+        '<h2>Profiel</h2>' +
+        '<p>Op deze pagina kun je eigen prestaties bekijken. Ook kun je vanuit hier vrienden uitnodigen, zodat jullie tegen elkaar kunnen strijden om de eerste plek!</p>' +
         '</li>';
     $($tutorailElements).appendTo($("#joyRideTipContent"));
+
+    // Joyride tip
+    var tutorial = getUrlParameter('tutorial');
+    console.log(tutorial);
+    if(tutorial == 'true'){
+        $('#joyRideTipContent').joyride({
+            autoStart: true,
+            modal: true,
+            prev_button: true,
+            template : {
+                link        : '<a href="#close" class="joyride-close-tip"><span class="fa fa-times"></span></a>',
+                button: '<a href="#" class="joyride-next-tip button buttonmiddle buttonblue"></a>',
+                prev_button : '<a href="#" class="joyride-next-tip button buttonright buttonblue"></a>'
+            },
+        });
+    }
 
     clickEvents(); // cal clickevents after set items
 } // end function createElements
@@ -474,16 +498,6 @@ function clickEvents() {
             dailyChallenge($name, $day, $description, $time, $reward);
         })
     }); // end .dailyChallenge click
-
-    $('.monster')
-
-    $('.tutorial').click(function () {
-        $('#joyRideTipContent').joyride({
-            autoStart: true,
-            modal: true,
-            expose: true
-        });
-    }); // end .tutorial click
 
     $(".world-name").click(function () {
         localStorage.clear();

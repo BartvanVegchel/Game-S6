@@ -66,9 +66,9 @@
     <span class="fa fa-bolt"></span>
 </div>
 
-<div class="energy-points sync" id="number1">
+<div class="energy-points sync" id="number2">
     <a href="">
-     <span class="fa fa-refresh"></span>
+     <span class="fa fa-add-points"></span>
     </a>
 </div>
 
@@ -79,7 +79,7 @@
     });</script></span>
 </div>
 
-<div class="world-progress daily-challenge" id="number3">
+<div class="world-progress daily-challenge" id="number4">
     <a href="#" class="dailyChallenge">
         <span class="fa fa-trophy"></span>
     </a>
@@ -120,25 +120,19 @@
         $worldName = localStorage.getItem('worldName');
         $('#pageTitle').html($worldName);
 
-//        $('.energy-points').on('click', function(){
-//            $(this).css('width', '25px');
-//        })
+        // collapse energypoints and unlocked fields
+        $('.collapse').click(function() {
+            $(this).toggleClass( "ingeklapt" );
+            $(this).find('.personalEnergypoints').toggle('fast');
+            $(this).find('.personalUnlockedFields').toggle('fast');
+        });
 
-//        $('.energy-points').toggle(
-//            function(){$(this).css({'width': '25px'});},
-//            function(){$(this).css({'width': '100px'});
-//        });
 
-          $('.collapse').click(function() {
-              $(this).toggleClass( "ingeklapt" );
-              $(this).find('.personalEnergypoints').toggle('fast');
-              $(this).find('.personalUnlockedFields').toggle('fast');
-          });
-//        $('.collapse').click(function() {
-//            $(this).toggleClass( "ingeklapt" );
-//            $(this).find('.personalUnlockedFields').toggle('fast');
-//        });
     });
+
+    $(window).on('load', function(){
+
+    })
 </script>
 
 <script>

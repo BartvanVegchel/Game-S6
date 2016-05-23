@@ -71,23 +71,25 @@ a{
 button,
 a.button,
 input[type="submit"]{
-    display: inline-block;
+    display: inline-block !important;
     /*margin: 0 10px 0 0;*/
     padding: 10px 0px;
     font-size: 16px;
     font-family: 'Oduda', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     /*line-height: 1.8;*/
     appearance: none;
-    -webkit-appearance: none;
-    border-radius: 0;
+    -webkit-appearance: none !important;
+    border-radius: 0 !important;
     color: #fff;
     /*background-color: #6496c8;*/
-    border: none;
-    text-transform: none;
-    border-radius: 10px;
+    border: none !important;
+    text-transform: none !important;
+    border-radius: 10px !important;
     /*box-shadow: 0 7px #27496d;*/
-    text-decoration: none;
-    text-align: center;
+    text-decoration: none !important;
+    text-align: center !important;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 button:active,
@@ -118,6 +120,11 @@ input[type="submit"]:focus{
 .buttonfull{
     width: 100%;
     margin-top: 20px;
+}
+
+.buttonmiddle{
+    position: relative;
+    width:45%;
 }
 
 .buttongrey{
@@ -156,6 +163,21 @@ input[type="submit"]:focus{
     box-shadow: 0 3px #8ab1b8;
 }
 
+.confirm{
+    position: relative !important;
+    width:45% !important;
+    background-color: #8DAB51 !important;
+    box-shadow: 0 7px #789144 !important;
+    min-width:50px !important;
+}
+
+.cancel{
+    position: relative !important;
+    width:45% !important;
+    background-color: #9ECACF !important;
+    box-shadow: 0 7px #8ab1b8 !important;
+    min-width:50px !important;
+}
 p{
     margin: 0;
 }
@@ -318,11 +340,13 @@ div.ingeklapt{
 }
 
 div.daily-challenge{
-    background-color: #B1D171;
+    /*background-color: #B1D171;*/
+    background-color: #8bab4b;
 }
 
 div.sync{
-    background-color: #C3EFF6;
+    /*background-color: #C3EFF6;*/
+    background-color: #9dc9d0;
 }
 
 
@@ -555,11 +579,16 @@ input[type="password"]:focus{
 }
 
 /* custom classes for joyride */
+.joyride-tip-guide span{
+    color: #000;
+    font-size: 16px;
+}
+
 .custom1 .joyride-nub{
 }
 
 .custom2 .joyride-nub{
-    left: calc(50% - 14px) !important;
+    left: 5px !important;
 }
 
 .custom3 .joyride-nub{
@@ -568,19 +597,24 @@ input[type="password"]:focus{
 }
 
 .custom4 .joyride-nub{
-    left: 18px !important;
+    left: initial !important;
+    right: 5px !important;
 }
 
 .custom5 .joyride-nub{
-    left: 98px !important;
+    left: 18px !important;
 }
 
 .custom6 .joyride-nub{
+    left: 98px !important;
+}
+
+.custom7 .joyride-nub{
     left: initial !important;
     right: 98px;
 }
 
-.custom7 .joyride-nub{
+.custom8 .joyride-nub{
     left: initial !important;
     right: 18px;
 }
@@ -879,7 +913,7 @@ input[type="password"]:focus{
 /* end monster overview page */
 
 /* monster detail page & challenge page & user page */
-
+.buttonbar button,
 .monster-detail .buttonbar button,
 .challenge .buttonbar button,
 .ranking .desc,
@@ -1226,13 +1260,47 @@ input[type="password"]:focus{
 }
 
 
-#challengeContainer .hiddenInfo,
-.completeChallenge,
-button.monsterDetailChallenge.buttonleft{
+#challengeContainer .timeLimit{
     display: none;
 }
 
+div.sweet-alert{
+    font-family: 'Oduda', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+}
 
+div.sweet-alert h2{
+    font-size: 26px;
+    color: #333 !important;
+}
+
+div.sweet-alert p{
+    font-size: 14px;
+    color: #333 !important;
+    margin-bottom: 25px;
+}
+
+.sync .fa-add-points{
+    background-image: url("../img/addpoints-icon.png");
+    background-size: 100%;
+    height: 18px;
+    width: 18px;
+    margin-top: 16px;
+}
+
+.bottom-bar .fa-monster{
+    background-image: url("../img/monster-icon.png");
+    background-size: 100%;
+    height: 22px;
+    width: 22px;
+}
+
+.desc .fa-monster{
+    background-image: url("../img/monster-icon.png");
+    background-size: 100%;
+    height: 22px;
+    width: 22px;
+    margin-top: 12px;
+}
 
 
 
