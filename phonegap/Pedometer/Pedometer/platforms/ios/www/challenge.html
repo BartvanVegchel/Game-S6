@@ -94,117 +94,157 @@
         console.log('je bent ingelogd');
     }
 
+    function handleOpenURL(url) {
+        setTimeout(function() {
+            //var link = url.substring(17);
+            alert(url);
+            var link = url.substring(17);
+
+            if(link == 'challenge.html'){
+                localStorage.setItem('challengeStatus', 'true');
+                window.location.href = "challenge.html";
+            }else if(link == 'index.html'){
+                localStorage.setItem('challengeStatus', 'false');
+                window.location.href = "index.html";
+            }
+
+        }, 0);
+    }
+
+    $challengeStatus = localStorage.getItem('challengeStatus');
+    alert($challengeStatus);
+
     $(document).ready(function () {
         //start timer
+           function buildChallenge() {
+                //get localstorage dailyChallenge
+                $challengeId = localStorage.getItem('dailyChallenge');
 
-        function buildChallenge() {
-            //get localstorage dailyChallenge
-            $challengeId = localStorage.getItem('dailyChallenge');
+                //check if is dailyChallenge or monsterChallenge
+                if ($challengeId == '') {
+                    $challenge = "monsterChallenge";
+                    $challengeId = localStorage.getItem('monsterChallenge');
+                } else {
+                    $challenge = "dailyChallenge";
+                }
 
-            //check if is dailyChallenge or monsterChallenge
-            if($challengeId == ''){
-                $challenge = "monsterChallenge";
-                $challengeId = localStorage.getItem('monsterChallenge');
-            } else{
-                $challenge = "dailyChallenge";
-            }
+                console.log('challenge is ' + $challenge + ' id is ' + $challengeId);
 
-            console.log('challenge is ' + $challenge + ' id is ' + $challengeId);
+                var dataString = "challenge=" + $challenge + "&challengeid=" + $challengeId + "&submit=";
+                if (localStorage.getItem('userInfo') !== null) {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://game.onlineops.nl/phonegap_php/getChallengeInfo.php",
+                        data: dataString,
+                        crossDomain: true,
+                        cache: false,
+                        dataType: 'json',
+                        success: function (data) {
+                            if (data['error'] == "error") {
+                                //do nothing
+                            } else if (data['name'] !== "") {
+                                //check which challenge
+                                $challengeContainer = $("#challengeContainer");
 
-            var dataString = "challenge=" + $challenge + "&challengeid=" + $challengeId + "&submit=";
-            if (localStorage.getItem('userInfo') !== null) {
-                $.ajax({
-                    type: "POST",
-                    url: "http://game.onlineops.nl/phonegap_php/getChallengeInfo.php",
-                    data: dataString,
-                    crossDomain: true,
-                    cache: false,
-                    dataType: 'json',
-                    success: function (data) {
-                        if (data['error'] == "error") {
-                            //do nothing
-                        } else if (data['name'] !== "") {
-                            //check which challenge
-                            $challengeContainer = $("#challengeContainer");
+                                if ($challenge == 'dailyChallenge') {
+                                    $challengeName = data['name'];
+                                    $challengeDescription = data['description'];
+                                    $timeLimit = data['timelimit'];
+                                    $reward = data['reward'];
 
-                            if ($challenge == 'dailyChallenge') {
-                                $challengeName = data['name'];
-                                $challengeDescription = data['description'];
-                                $timeLimit = data['timelimit'];
-                                $reward = data['reward'];
+                                    $challengeStatus = localStorage.getItem('challengeStatus');
 
-                                $challengeContent = "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>" +
-                                        '<div class="imgmonster" style="background-image: url(\'img/trophy.png\');"></div>' +
-                                        "</div>" +
-                                        "<h1 class='ribbon'>" +
-                                        "<strong class='ribbon-content'>" + $challengeName + "</strong>" +
-                                        "</h1>" +
-                                        '<div class="desc">' +
-                                        '<div class="reward">' +
-                                        '<span>Beloning: ' + $reward + ' <i class="fa fa-bolt"></i></span>' +
-                                        '</div>' +
-                                        '<div id="monsterstory" class="monsterstory">' +
-                                        '<p>' + $challengeDescription + '</p>' +
-                                        '</div>' +
-                                        '<div class="timeLimit">' +
-                                        '<span>'+ $timeLimit + '</span>' +
-                                        '</div>' +
-                                        '</div>' +
-                                        "<div class='buttonbar'>" +
-                                        "<button class='buttonfull buttongreen itemknop'>" +
-                                        "<span class='start'>Start</span>" +
-                                        '<span class="smallcountdown" id="smallcountdown"></span>' +
-                                        '<span class="countdown" id="countdown"></span>' +
-                                        "</button>" +
-                                        '</div>';
+                                    if($challengeStatus == 'true') {
+                                        $button = "<button class='buttonfull buttongreen itemknop'>" +
+                                                "<span class='start'>Start</span>" +
+                                                '<span class="smallcountdown" id="smallcountdown"></span>' +
+                                                '<span class="countdown" id="countdown"></span>' +
+                                                "</button>";
+                                    } else{
+                                        $button = "<a href='http://game.onlineops.nl/phonegap_php/updateBeforeChallenge.php?username="+ $userName +"' class='button buttonfull buttongreen syncforChallenge'>" +
+                                                "Update voor te starten" +
+                                                "</a>";
+                                    }
 
-                                console.log('dailychallenge uitvoeren');
-                            } else if ($challenge == 'monsterChallenge') {
-                                $challengeContent = "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>" +
-                                        '<div class="imgmonster" style="background-image: url(\'img/monster_' + $monsterName + '.png\');"></div>' +
-                                        "</div>" +
-                                        "<h1 class='ribbon'>" +
-                                        "<strong class='ribbon-content'>" + $challengeName + "</strong>" +
-                                        "</h1>" +
-                                        '<div class="desc">' +
-                                        '<div class="stars">' +
-                                        "<img src='img/star_rating.png'>" +
-                                        '</div>' +
-                                        '<div id="monsterstory" class="monsterstory">' +
-                                        '<p>' + $challengeDescription + '</p>' +
-                                        '</div>' +
-                                        '<div class="timeLimit">' +
-                                        '<span>'+ $timeLimit + '</span>' +
-                                        '</div>' +
-                                        '</div>' +
-                                        "<div class='buttonbar'>" +
-                                        "<button class='buttonfull buttongreen itemknop'>" +
-                                        "<span class='start'>Start</span>" +
-                                        '<span class="smallcountdown" id="smallcountdown"></span>' +
-                                        '<span class="countdown" id="countdown"></span>' +
-                                        "</button>" +
-                                        '</div>';
+                                    $challengeContent = "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>" +
+                                            '<div class="imgmonster" style="background-image: url(\'img/trophy.png\');"></div>' +
+                                            "</div>" +
+                                            "<h1 class='ribbon'>" +
+                                            "<strong class='ribbon-content'>" + $challengeName + "</strong>" +
+                                            "</h1>" +
+                                            '<div class="desc">' +
+                                            '<div class="reward">' +
+                                            '<span>Beloning: ' + $reward + ' <i class="fa fa-bolt"></i></span>' +
+                                            '</div>' +
+                                            '<div id="monsterstory" class="monsterstory">' +
+                                            '<p>' + $challengeDescription + '</p>' +
+                                            '</div>' +
+                                            '<div class="timeLimit">' +
+                                            '<span>' + $timeLimit + '</span>' +
+                                            '</div>' +
+                                            '</div>' +
+                                            "<div class='buttonbar'>" +
+                                            $button +
+                                            '</div>';
+
+                                    console.log('dailychallenge uitvoeren');
+
+                                } else if ($challenge == 'monsterChallenge') {
+                                    $challengeStatus = localStorage.getItem('challengeStatus');
+                                    if($challengeStatus == 'true') {
+                                        $button = "<button class='buttonfull buttongreen itemknop'>" +
+                                                "<span class='start'>Start</span>" +
+                                                '<span class="smallcountdown" id="smallcountdown"></span>' +
+                                                '<span class="countdown" id="countdown"></span>' +
+                                                "</button>";
+                                    } else{
+                                        $button = "<button class='buttonfull buttongreen syncforChallenge'>" +
+                                                "Update voor te starten" +
+                                                "</button>";
+                                    }
+
+                                    $challengeContent = "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>" +
+                                            '<div class="imgmonster" style="background-image: url(\'img/monster_' + $monsterName + '.png\');"></div>' +
+                                            "</div>" +
+                                            "<h1 class='ribbon'>" +
+                                            "<strong class='ribbon-content'>" + $challengeName + "</strong>" +
+                                            "</h1>" +
+                                            '<div class="desc">' +
+                                            '<div class="stars">' +
+                                            "<img src='img/star_rating.png'>" +
+                                            '</div>' +
+                                            '<div id="monsterstory" class="monsterstory">' +
+                                            '<p>' + $challengeDescription + '</p>' +
+                                            '</div>' +
+                                            '<div class="timeLimit">' +
+                                            '<span>' + $timeLimit + '</span>' +
+                                            '</div>' +
+                                            '</div>' +
+                                            "<div class='buttonbar'>" +
+                                            $button +
+                                            '</div>';
+                                }
+
+                                $($challengeContainer).append($challengeContent);
+
+
                             }
-
-                            $($challengeContainer).append($challengeContent);
-
-
+                        },
+                        error: function () {
+                            alert("Er gaat iets verkeerd, neem contact met ons op!");
                         }
-                    },
-                    error: function () {
-                        alert("Er gaat iets verkeerd, neem contact met ons op!");
-                    }
-                }).done(function (result) {
-                    $('.itemknop').on('click', function () {
-                        myCounter.start();
-                    });
-                    swiper();
-                })
-            }
-        } // end buildChallenge
+                    }).done(function (result) {
+                        $('.itemknop').on('click', function () {
+                            myCounter.start();
+                        });
+                        swiper();
+                        localStorage.setItem('challengeStatus', 'false');
+                    })
+                }
 
-        buildChallenge();
+            } // end buildChallenge
 
+            buildChallenge();
     }); //end document ready
 
     // counter challenge

@@ -147,6 +147,24 @@
     $username = getUrlParameter('username');
     $reward = getUrlParameter('reward');
 
+    function handleOpenURL(url) {
+        setTimeout(function() {
+            //var link = url.substring(17);
+            alert(url);
+            var link = url.substring(17);
+
+            if(link == 'challenge.html'){
+                localStorage.setItem('challengeStatus', 'true');
+                window.location.href = "challenge.html";
+            }else if(link == 'index.html'){
+                localStorage.setItem('challengeStatus', 'false');
+                window.location.href = "index.html";
+            }
+
+        }, 0);
+    }
+
+
     //check if is monsterChallenge
     if ($monsterName !== '' && $requirement) {
         if ($requirement) {

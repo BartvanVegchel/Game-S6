@@ -336,8 +336,11 @@ function createElements() {
     }
 
     $('.sync a').attr( "href", "http://game.onlineops.nl/phonegap_php/startEnergypointsUpdate.php?username="+ $userName);
+    $('.syncforChallenge').attr( "href", "http://game.onlineops.nl/phonegap_php/updateBeforeChallenge.php?username="+ $userName);
 
-    $elementsTopBar = '<span class="world-name" id="number2">'+$title+'</span>';
+
+    $elementsTopBar = '<span class="world-name" id="number2">'+$title+'</span>' +
+        '<a href="http://game.onlineops.nl/phonegap_php/startEnergypointsUpdate.php?username=' + $userName + '"><span class="menu-icon fa fa-refresh"></span></a>';
 
     $($elementsTopBar).appendTo($(".top-bar"));
 
@@ -501,12 +504,6 @@ function pedometerFunction() {
         alert('success');
         var successHandler = function (pedometerData) {
             alert(pedometerData.numberOfSteps);
-            // pedometerData.startDate; -> ms since 1970
-            // pedometerData.endDate; -> ms since 1970
-            // pedometerData.numberOfSteps;
-            // pedometerData.distance;
-            // pedometerData.floorsAscended;
-            // pedometerData.floorsDescended;
         };
 
         var onError = function () {
@@ -526,5 +523,4 @@ function pedometerFunction() {
 function tooltiponClick(element){
     $tooltip = $(this).find('.tooltipIcon');
     $($tooltip).fadeIn().delay(2000).fadeOut();
-    //alert($classname);
 }
