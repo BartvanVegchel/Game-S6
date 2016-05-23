@@ -335,11 +335,10 @@ function createElements() {
         $title = 'Moving Monsters';
     }
 
-    $elementsTopBar = '<span class="world-name" id="number2">'+$title+'</span>' +
-        '<div class="buttonsright">' +
-            '<a href="http://game.onlineops.nl/phonegap_php/startEnergypointsUpdate.php?username=' + $userName + '"><span class="menu-icon fa fa-refresh"></span></a>' +
-            '<a href="#" class="dailyChallenge"><span class="menu-icon fa fa-trophy"></span></a>' +
-        '</div>';
+    $('.sync a').attr( "href", "http://game.onlineops.nl/phonegap_php/startEnergypointsUpdate.php?username="+ $userName);
+
+    $elementsTopBar = '<span class="world-name" id="number2">'+$title+'</span>';
+
     $($elementsTopBar).appendTo($(".top-bar"));
 
     $elementsBottomBar = '<ul>' +

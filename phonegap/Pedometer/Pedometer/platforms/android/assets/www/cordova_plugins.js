@@ -99,6 +99,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-customurlscheme/www/android/LaunchMyApp.js",
+        "id": "cordova-plugin-customurlscheme.LaunchMyApp",
+        "clobbers": [
+            "window.plugins.launchmyapp"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-device/www/device.js",
         "id": "cordova-plugin-device.device",
         "clobbers": [
@@ -459,13 +466,6 @@ module.exports = [
             "navigator.notification",
             "navigator"
         ]
-    },
-    {
-        "file": "plugins/cordova-plugin-customurlscheme/www/android/LaunchMyApp.js",
-        "id": "cordova-plugin-customurlscheme.LaunchMyApp",
-        "clobbers": [
-            "window.plugins.launchmyapp"
-        ]
     }
 ];
 module.exports.metadata = 
@@ -475,6 +475,7 @@ module.exports.metadata =
     "cordova-plugin-camera": "2.1.1",
     "cordova-plugin-console": "1.0.3",
     "cordova-plugin-contacts": "2.0.1",
+    "cordova-plugin-customurlscheme": "4.1.5",
     "cordova-plugin-device": "1.1.2",
     "cordova-plugin-device-motion": "1.2.1",
     "cordova-plugin-device-orientation": "1.0.3",
@@ -491,8 +492,7 @@ module.exports.metadata =
     "cordova-plugin-splashscreen": "3.2.2",
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.1",
-    "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-customurlscheme": "4.1.5"
+    "cordova-plugin-whitelist": "1.2.2"
 };
 // BOTTOM OF METADATA
 });

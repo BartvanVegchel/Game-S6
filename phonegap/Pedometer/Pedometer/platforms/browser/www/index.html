@@ -59,18 +59,32 @@
 <!-- Top bar, energypoints, world prgress -->
 <section class="top-bar"></section>
 
-<div class="energy-points" id="number1">
+<div class="energy-points collapse" id="number1">
     <span class="personalEnergypoints"><script>$(document).ready(function () {
         getEnergypoints();
     });</script></span>
     <span class="fa fa-bolt"></span>
 </div>
-<div class="world-progress" id="number3">
+
+<div class="energy-points sync" id="number1">
+    <a href="">
+     <span class="fa fa-refresh"></span>
+    </a>
+</div>
+
+<div class="world-progress collapse" id="number3">
     <span class="fa fa-globe"></span>
     <span class="personalUnlockedFields"><script>$(document).ready(function () {
         getUnlockedFields();
     });</script></span>
 </div>
+
+<div class="world-progress daily-challenge" id="number3">
+    <a href="#" class="dailyChallenge">
+        <span class="fa fa-trophy"></span>
+    </a>
+</div>
+
 
 <!-- Map container -->
 <section class="container">
@@ -105,6 +119,25 @@
     $(document).ready(function () {
         $worldName = localStorage.getItem('worldName');
         $('#pageTitle').html($worldName);
+
+//        $('.energy-points').on('click', function(){
+//            $(this).css('width', '25px');
+//        })
+
+//        $('.energy-points').toggle(
+//            function(){$(this).css({'width': '25px'});},
+//            function(){$(this).css({'width': '100px'});
+//        });
+
+          $('.collapse').click(function() {
+              $(this).toggleClass( "ingeklapt" );
+              $(this).find('.personalEnergypoints').toggle('fast');
+              $(this).find('.personalUnlockedFields').toggle('fast');
+          });
+//        $('.collapse').click(function() {
+//            $(this).toggleClass( "ingeklapt" );
+//            $(this).find('.personalUnlockedFields').toggle('fast');
+//        });
     });
 </script>
 

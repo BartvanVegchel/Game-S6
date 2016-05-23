@@ -25,7 +25,7 @@ White:          #fff
 grey:           #516f72
 light-blue:     #9dcad0
 orange:         #df8c3c
-green:          #89ab4c
+green:          #89ab4c #B7D282
 yellow:         #ede23b
 
 */
@@ -62,6 +62,10 @@ body {
     padding:0px;
     text-transform:uppercase;
     width:100%;
+}
+
+a{
+    color: #fff;
 }
 
 button,
@@ -274,6 +278,10 @@ div.energy-points{
     -webkit-box-shadow: 1px 1px 2px 0px rgba(81, 111, 114, 1);
     -moz-box-shadow:    1px 1px 2px 0px rgba(81, 111, 114, 1);
     box-shadow:         1px 1px 2px 0px rgba(81, 111, 114, 1);
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
 }
 
 div.world-progress{
@@ -293,7 +301,30 @@ div.world-progress{
     -webkit-box-shadow: -1px 1px 2px 0px rgba(81, 111, 114, 1);
     -moz-box-shadow:    -1px 1px 2px 0px rgba(81, 111, 114, 1);
     box-shadow:         -1px 1px 2px 0px rgba(81, 111, 114, 1);
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
 }
+
+div.daily-challenge,
+div.sync{
+    top: 110px;
+    width: 25px;
+}
+
+div.ingeklapt{
+    width: 25px;
+}
+
+div.daily-challenge{
+    background-color: #B1D171;
+}
+
+div.sync{
+    background-color: #C3EFF6;
+}
+
 
 section.container{
     position: fixed;

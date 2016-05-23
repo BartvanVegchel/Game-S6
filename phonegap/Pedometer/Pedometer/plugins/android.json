@@ -8,71 +8,71 @@
     },
     "installed_plugins": {
         "cordova-plugin-battery-status": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
         "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-device-orientation": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-globalization": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-vibration": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-pedometer": {
-            "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
-        },
-        "cordova-plugin-device-motion": {
-            "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
         "cordova-plugin-customurlscheme": {
             "URL_SCHEME": "movingmonsters",
-            "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-pedometer": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         }
     },
     "dependent_plugins": {}
