@@ -96,25 +96,95 @@
 
     function handleOpenURL(url) {
         setTimeout(function() {
-            //var link = url.substring(17);
             alert(url);
             var link = url.substring(17);
 
             if(link == 'challenge.html'){
                 localStorage.setItem('challengeStatus', 'true');
                 window.location.href = "challenge.html";
-            }else if(link == 'index.html'){
+            } else if(link == 'index.html'){
                 localStorage.setItem('challengeStatus', 'false');
                 window.location.href = "index.html";
+            } else if(link = 'challenge.html?status=readydaily'){
+                $stepsBefore = localStorage.getItem('stepsBefore');
+                alert('stepsBefore is' + $stepsBefore);
+                handleDailyChallenge();
             }
-
         }, 0);
     }
-    
+
+    function handleDailyChallenge(){
+        $challengeId = localStorage.getItem('dailyChallenge');
+
+        alert($challengeId);
+        alert($userName);
+        $stepsBefore = localStorage.getItem('stepsBefore');
+        var dataString = "username=" + $userName + "&stepsbefore=" + $stepsBefore + "&challengeid=" + $challengeId + "&submitDailyAfter=";
+            $.ajax({
+                type: "POST",
+                url: "http://game.onlineops.nl/phonegap_php/challengeData.php",
+                data: dataString,
+                crossDomain: true,
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    if (data['error'] == "error") {
+                        alert('error');
+                    } else if (data['stepsbefore'] !== "") {
+                        $stepsbefore = data['stepsbefore'];
+                        $username = data['username'];
+                        $stepsafter = data['stepsafter'];
+                        $challengestatus = data['challengestatus'];
+                        $reward = data['reward'];
+
+                        alert($username + ' had ' + $stepsbefore + ' en heeft nu ' + $stepsafter + ' de challenge is ' + $challengestatus + ' hiermee is ' + $reward + 'verdiend');
+                        window.location.href = 'http://game.onlineops.nl/phonegap_php/updateBeforeChallenge.php?username='+$userName;
+                        $('.stepsafter').html($stepsafter);
+                    }
+                },
+                error: function () {
+                    alert("Er gaat iets verkeerd, neem contact met ons op!");
+                }
+            }).done(function (result) {
+                window.location.href = "index.html?challengecomplete=daily&challengestatus="+ $challengestatus + "&username=" + $userName  + "&reward=" + $reward;
+            })
+
+    }
+
     $challengeStatus = localStorage.getItem('challengeStatus');
     alert($challengeStatus);
 
     $(document).ready(function () {
+        //started from the done function in buildChallenge
+        function startDailyChallenge(){
+            alert($userName);
+            var dataString = "username=" + $userName + "&submitDailyBefore=";
+            $.ajax({
+                type: "POST",
+                url: "http://game.onlineops.nl/phonegap_php/challengeData.php",
+                data: dataString,
+                crossDomain: true,
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    if (data['error'] == "error") {
+                        //do nothing
+                    } else if (data['stepsbefore'] !== "") {
+                        $stepsbefore = data['stepsbefore'];
+                        $username = data['username'];
+                        $('.stepsBefore').html($stepsbefore);
+                        localStorage.setItem('stepsBefore', $stepsbefore);
+                        alert($username + ' heeft ' + $stepsbefore);
+                    }
+                },
+                error: function () {
+                    alert("Er gaat iets verkeerd, neem contact met ons op!");
+                }
+            }).done(function (result) {
+                myCounter.start();
+            })
+        }
+
         //start timer
            function buildChallenge() {
                 //get localstorage dailyChallenge
@@ -130,8 +200,9 @@
 
                 console.log('challenge is ' + $challenge + ' id is ' + $challengeId);
 
-                var dataString = "challenge=" + $challenge + "&challengeid=" + $challengeId + "&submit=";
+
                 if (localStorage.getItem('userInfo') !== null) {
+                    var dataString = "challenge=" + $challenge + "&challengeid=" + $challengeId + "&submit=";
                     $.ajax({
                         type: "POST",
                         url: "http://game.onlineops.nl/phonegap_php/getChallengeInfo.php",
@@ -155,11 +226,12 @@
                                     $challengeStatus = localStorage.getItem('challengeStatus');
 
                                     if($challengeStatus == 'true') {
-                                        $button = "<button class='buttonfull buttongreen itemknop'>" +
-                                                "<span class='start'>Start</span>" +
+                                        $button = '<button class="buttonfull buttongreen itemknop">' +
+                                                '<span class="start">Start</span>' +
                                                 '<span class="smallcountdown" id="smallcountdown"></span>' +
                                                 '<span class="countdown" id="countdown"></span>' +
-                                                "</button>";
+                                                '</button>' +
+                                                '<a href="http://game.onlineops.nl/phonegap_php/updateAfterChallenge.php?username=' + $userName +'" class="button buttonfull buttongreen completeChallenge">Voltooien</a>';
                                     } else{
                                         $button = "<a href='http://game.onlineops.nl/phonegap_php/updateBeforeChallenge.php?username="+ $userName +"' class='button buttonfull buttongreen syncforChallenge'>" +
                                                 "Update voor te starten" +
@@ -179,8 +251,10 @@
                                             '<div id="monsterstory" class="monsterstory">' +
                                             '<p>' + $challengeDescription + '</p>' +
                                             '</div>' +
-                                            '<div class="timeLimit">' +
-                                            '<span>' + $timeLimit + '</span>' +
+                                            '<div class="hiddenInfo">' +
+                                            '<span class="timeLimit">' + $timeLimit + '</span>' +
+                                            '<span class="stepsBefore"></span>' +
+                                            '<span class="stepsAfter"></span>' +
                                             '</div>' +
                                             '</div>' +
                                             "<div class='buttonbar'>" +
@@ -192,15 +266,16 @@
                                 } else if ($challenge == 'monsterChallenge') {
                                     $challengeStatus = localStorage.getItem('challengeStatus');
                                     if($challengeStatus == 'true') {
-                                        $button = "<button class='buttonfull buttongreen itemknop'>" +
-                                                "<span class='start'>Start</span>" +
+                                        $button = '<button class="buttonfull buttongreen itemknop">' +
+                                                '<span class="start">Start</span>' +
                                                 '<span class="smallcountdown" id="smallcountdown"></span>' +
                                                 '<span class="countdown" id="countdown"></span>' +
-                                                "</button>";
+                                                '</button>' +
+                                                '<a href="http://game.onlineops.nl/phonegap_php/updateAfterChallenge.php?username=' + $userName +'" class="button buttonfull buttongreen completeChallenge">Voltooien</a>';
                                     } else{
-                                        $button = "<button class='buttonfull buttongreen syncforChallenge'>" +
+                                        $button = "<a href='http://game.onlineops.nl/phonegap_php/updateBeforeChallenge.php?username="+ $userName +"' class='button buttonfull buttongreen syncforChallenge'>" +
                                                 "Update voor te starten" +
-                                                "</button>";
+                                                "</a>";
                                     }
 
                                     $challengeContent = "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>" +
@@ -235,44 +310,48 @@
                         }
                     }).done(function (result) {
                         $('.itemknop').on('click', function () {
-                            myCounter.start();
+                            startDailyChallenge();
                         });
                         swiper();
                         localStorage.setItem('challengeStatus', 'false');
                     })
                 }
-
             } // end buildChallenge
 
             buildChallenge();
+
+        $('#smallcountdown').show();
+        var myCounter = new Countdown({
+            seconds: 3,  // number of seconds to count down
+
+            onUpdateStatus: function (sec) {
+                $('span.start').hide();
+                document.getElementById('smallcountdown').innerHTML = sec;
+            },
+            onCounterEnd: function () {
+
+                $timeLimit = $('.timeLimit').html();
+                $time = parseInt($timeLimit);//convert to integer
+
+                $('#smallcountdown').hide();
+                (function countdown(remaining) {
+                    if (remaining == -1) {
+                        $('.itemknop').hide();
+                        $('completeChallenge').show();
+                        $stepsbefore = $('.stepsBefore').html();
+                    } else {
+                        document.getElementById('countdown').innerHTML = "Je hebt nog " + remaining + " seconden!";
+                        setTimeout(function () {
+                            countdown(remaining - 1);
+                        }, 1000);
+                    }
+                })($time);
+            }
+        });
     }); //end document ready
 
     // counter challenge
-    $('#smallcountdown').show();
-    var myCounter = new Countdown({
-        seconds: 3,  // number of seconds to count down
-        onUpdateStatus: function (sec) {
-            $('span.start').hide();
-            document.getElementById('smallcountdown').innerHTML = sec;
-        },
-        onCounterEnd: function () {
 
-            $timeLimit = $('.timeLimit span').html();
-            $time = parseInt($timeLimit);//convert to integer
-
-            $('#smallcountdown').hide();
-            (function countdown(remaining) {
-                if (remaining === -1) {
-                    window.location.replace("index.html?monstername=" + $monsterName + "&requirement=3&username=" + $userName + "&reward=" + $reward);
-                } else {
-                    document.getElementById('countdown').innerHTML = "Je hebt nog " + remaining + " seconden!";
-                    setTimeout(function () {
-                        countdown(remaining - 1);
-                    }, 1000);
-                }
-            })($time);
-        }
-    });
 </script>
 
 <script>

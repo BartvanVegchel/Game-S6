@@ -47,9 +47,6 @@
         "cordova-plugin-globalization": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
-        },
         "cordova-plugin-media": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
@@ -72,6 +69,9 @@
             "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
         "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         }
     },

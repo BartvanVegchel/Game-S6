@@ -339,8 +339,7 @@ function createElements() {
     $('.syncforChallenge').attr( "href", "http://game.onlineops.nl/phonegap_php/updateBeforeChallenge.php?username="+ $userName);
 
 
-    $elementsTopBar = '<span class="world-name" id="number2">'+$title+'</span>' +
-        '<a href="http://game.onlineops.nl/phonegap_php/startEnergypointsUpdate.php?username=' + $userName + '"><span class="menu-icon fa fa-refresh"></span></a>';
+    $elementsTopBar = '<span class="world-name" id="number2">'+$title+'</span>';
 
     $($elementsTopBar).appendTo($(".top-bar"));
 

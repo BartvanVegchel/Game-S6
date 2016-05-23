@@ -123,71 +123,71 @@
     },
     "installed_plugins": {
         "cordova-plugin-battery-status": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
         "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
         "cordova-plugin-contacts": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-device-motion": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-device-orientation": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-dialogs": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-geolocation": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-globalization": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-media": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-media-capture": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-network-information": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-pedometer": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-vibration": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
-        "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
         "cordova-plugin-customurlscheme": {
             "URL_SCHEME": "movingmonsters",
-            "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-pedometer": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         }
     },
     "dependent_plugins": {},
@@ -334,6 +334,14 @@
             "pluginId": "cordova-plugin-contacts",
             "merges": [
                 "Contact"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-customurlscheme/www/ios/LaunchMyApp.js",
+            "id": "cordova-plugin-customurlscheme.LaunchMyApp",
+            "pluginId": "cordova-plugin-customurlscheme",
+            "clobbers": [
+                "window.plugins.launchmyapp"
             ]
         },
         {
@@ -759,14 +767,6 @@
                 "navigator.notification",
                 "navigator"
             ]
-        },
-        {
-            "file": "plugins/cordova-plugin-customurlscheme/www/ios/LaunchMyApp.js",
-            "id": "cordova-plugin-customurlscheme.LaunchMyApp",
-            "pluginId": "cordova-plugin-customurlscheme",
-            "clobbers": [
-                "window.plugins.launchmyapp"
-            ]
         }
     ],
     "plugin_metadata": {
@@ -774,6 +774,7 @@
         "cordova-plugin-camera": "2.1.1",
         "cordova-plugin-console": "1.0.3",
         "cordova-plugin-contacts": "2.0.1",
+        "cordova-plugin-customurlscheme": "4.1.5",
         "cordova-plugin-device": "1.1.2",
         "cordova-plugin-device-motion": "1.2.1",
         "cordova-plugin-device-orientation": "1.0.3",
@@ -790,7 +791,6 @@
         "cordova-plugin-splashscreen": "3.2.2",
         "cordova-plugin-statusbar": "2.1.3",
         "cordova-plugin-vibration": "2.1.1",
-        "cordova-plugin-whitelist": "1.2.2",
-        "cordova-plugin-customurlscheme": "4.1.5"
+        "cordova-plugin-whitelist": "1.2.2"
     }
 }

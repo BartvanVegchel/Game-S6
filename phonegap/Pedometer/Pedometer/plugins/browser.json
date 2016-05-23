@@ -16,15 +16,15 @@
         "cordova-plugin-console": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
         },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
-        },
         "cordova-plugin-statusbar": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
         },
         "cordova-plugin-customurlscheme": {
             "URL_SCHEME": "movingmonsters",
             "PACKAGE_NAME": "edu.fontys.sm.testiugyighhgjhy"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         }
     },
     "dependent_plugins": {}

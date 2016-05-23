@@ -166,74 +166,119 @@
 
 
     //check if is monsterChallenge
-    if ($monsterName !== '' && $requirement) {
-        if ($requirement) {
-            $monsterNameLowerCase = $monsterName.toLowerCase();
-            $monsterImage = $("img[monster-name='" + $monsterName + "']");
-            $parentId = $($monsterImage).parent().parent().attr('id');
+//    if ($monsterName !== '' && $requirement) {
+//        if ($requirement) {
+//            $monsterNameLowerCase = $monsterName.toLowerCase();
+//            $monsterImage = $("img[monster-name='" + $monsterName + "']");
+//            $parentId = $($monsterImage).parent().parent().attr('id');
+//
+//            swal({
+//                title: "Gefeliciteerd!",
+//                text: "<img src='img/star_rating.png'> <br>Je hebt de challenge voltooid",
+//                type: "",
+//                showCancelButton: false,
+//                closeOnConfirm: true,
+//                showLoaderOnConfirm: true,
+//                confirmButtonText: "Super!",
+//                html: true
+//            }, function () {
+//                $.ajax({
+//                    type: "get",
+//                    url: "http://game.onlineops.nl/phonegap_php/unlockMonsters.php",
+//                    data: {'monstername': $monsterName, 'username': $username},
+//                    success: function (data) {
+//                    }
+//                })
+//                    .done(function (data) {
+//                        console.log($parentId);
+//                        $('#' + $parentId).find('.monsterEgg').hide();
+//                        $('#' + $parentId).find('.monsterbackground').append('<img src="images/egg_' + $monsterNameLowerCase + '_broken.png" monster-name=' + $monsterName + '>');
+//                        window.location.href = 'index.html';
+//                    })
+//                    .error(function (data) {
+//                        swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
+//                    });
+//            });
+//        } else {
+//            alert('niet voldoende, probeer nogmaals');
+//        }
+//    } else if ($reward !== '' && $monsterName == '') {
+//        $date = new Date();
+//        $day = $date.getDate();//zero based
+//        $month = $date.getMonth() + 1;//zero based
+//        $year = $date.getFullYear();
+//        $date = $year.toString() + $month.toString() + $day.toString();
+//
+//        swal({
+//            title: "Uitdaging voltooid!",
+//            text: "Je hebt " + $reward + "energypoints verdiend",
+//            type: "",
+//            showCancelButton: false,
+//            closeOnConfirm: true,
+//            showLoaderOnConfirm: true,
+//            confirmButtonText: "Top!",
+//            html: true
+//        }, function () {
+//            $.ajax({
+//                type: "get",
+//                url: "http://game.onlineops.nl/phonegap_php/completeDailyChallenge.php",
+//                data: {'reward': $reward, 'username': $username, 'date': $date},
+//                success: function (data) {
+//                }
+//            })
+//                    .done(function (data) {
+//                        window.location.href = 'index.html';
+//                    })
+//                    .error(function (data) {
+//                        swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
+//                    });
+//        });
+//    }
 
-            swal({
-                title: "Gefeliciteerd!",
-                text: "<img src='img/star_rating.png'> <br>Je hebt de challenge voltooid",
-                type: "",
-                showCancelButton: false,
-                closeOnConfirm: true,
-                showLoaderOnConfirm: true,
-                confirmButtonText: "Super!",
-                html: true
-            }, function () {
-                $.ajax({
-                    type: "get",
-                    url: "http://game.onlineops.nl/phonegap_php/unlockMonsters.php",
-                    data: {'monstername': $monsterName, 'username': $username},
-                    success: function (data) {
-                    }
-                })
-                    .done(function (data) {
-                        console.log($parentId);
-                        $('#' + $parentId).find('.monsterEgg').hide();
-                        $('#' + $parentId).find('.monsterbackground').append('<img src="images/egg_' + $monsterNameLowerCase + '_broken.png" monster-name=' + $monsterName + '>');
-                        window.location.href = 'index.html';
-                    })
-                    .error(function (data) {
-                        swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
-                    });
-            });
-        } else {
-            alert('niet voldoende, probeer nogmaals');
-        }
-    } else if ($reward !== '' && $monsterName == '') {
+    $challengeComplete = getUrlParameter('challengecomplete');
+    if($challengeComplete == 'daily'){
+        $challengestatus = getUrlParameter('challengestatus');
+        $userName = getUrlParameter('username');
+        $reward = getUrlParameter('reward');
+
         $date = new Date();
         $day = $date.getDate();//zero based
         $month = $date.getMonth() + 1;//zero based
         $year = $date.getFullYear();
         $date = $year.toString() + $month.toString() + $day.toString();
 
-        swal({
-            title: "Uitdaging voltooid!",
-            text: "Je hebt " + $reward + "energypoints verdiend",
-            type: "",
-            showCancelButton: false,
-            closeOnConfirm: true,
-            showLoaderOnConfirm: true,
-            confirmButtonText: "Top!",
-            html: true
-        }, function () {
-            $.ajax({
-                type: "get",
-                url: "http://game.onlineops.nl/phonegap_php/completeDailyChallenge.php",
-                data: {'reward': $reward, 'username': $username, 'date': $date},
-                success: function (data) {
-                }
-            })
+        if($challengestatus == 'completed') {
+            $titel = 'Uitdaging voltooid!';
+            $text = 'Je hebt' + $reward + 'energypoints verdiend';
+        } else{
+            $titel = 'Helaas voltooid!';
+            $text = 'Je hebt de uitdaging niet voltooid. Probeer morgen nog eens.';
+        }
+            swal({
+                title: $titel,
+                text: $text,
+                type: "",
+                showCancelButton: false,
+                closeOnConfirm: true,
+                showLoaderOnConfirm: true,
+                confirmButtonText: "Oke",
+                html: true
+            }, function () {
+                $.ajax({
+                    type: "GET",
+                    url: "http://game.onlineops.nl/phonegap_php/completeDailyChallenge.php",
+                    data: {'reward': $reward, 'username': $username, 'date': $date, 'challengestatus':$challengestatus},
+                    success: function (data) {
+                    }
+                })
                     .done(function (data) {
                         window.location.href = 'index.html';
                     })
                     .error(function (data) {
                         swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
                     });
-        });
-    }
+            });
+    } //challengeComplete == completed
 
     // initialize app
     app.initialize();

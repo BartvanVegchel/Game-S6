@@ -1226,7 +1226,8 @@ input[type="password"]:focus{
 }
 
 
-#challengeContainer .timeLimit{
+#challengeContainer .hiddenInfo,
+.completeChallenge{
     display: none;
 }
 
