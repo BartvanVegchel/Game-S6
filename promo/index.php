@@ -67,26 +67,27 @@
 
 <div class="page_play">
 
+	<div class="play_bg">
+		<img src="img/play_bg.png" alt="" />
+	</div>
+
 	<div class="row explore_push">
 
+		<div class="col-xs-12 text-center">
+			<div class="play_text">
+				<h2>Speel nu!</h2>
+				<p>Download de app meteen op je smartphone!</p>
 
-		<div class="play_text">
-			<h2>Speel nu!</h2>
-			<p>Download de app meteen op je smartphone!</p>
+				<div class="download_icons">
+					<img src="img/apple_app.png" alt="" />
+					<img src="img/android_app.png" alt="" />
+				</div>
 
-			<div class="download_icons">
-				<img src="img/apple_app.png" alt="" />
-				<img src="img/android_app.png" alt="" />
 			</div>
-
 		</div>
 
 
 	</div><!--/row-->
-
-	<div class="play_bg">
-		<img src="img/play_bg.png" alt="" />
-	</div>
 
 </div>
 

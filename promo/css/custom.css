@@ -89,12 +89,12 @@ div.explore_push   { position: absolute; width: 100%; padding: 0 0 0 15px; }
 div.play_bg        { width: 100%; }
 div.play_bg img    { width: 100%; }
 
-div.play_text    { text-align: center; width: 400px; margin: 48% 0 0 0; left: 39%; right: 61%; position: absolute; }
+div.play_text    { position: absolute; bottom: 3.5em; width: 100%; }
 div.play_text h2 { color: #333333; font-size: 60px; font-family: 'Righteous', cursive; text-shadow: 6px 6px 0px rgba(0,0,0,0.2); }
 div.play_text p  { color: #333333; font-size: 19px; margin: 25px 0 0 0; }
 
-div.download_icons      { width: 400px; margin: 30px 0 0 0; }
-div.download_icons img  { display: inline-block; width: 45%; }
+div.download_icons  { margin: 30px 0 0 0; }
+div.download_icons img  { display: inline-block; width: 10%; }
 div.download_icons img:first-child  { margin: 0 20px 0 0; }
 
 
@@ -178,14 +178,6 @@ div.download_icons img:first-child  { margin: 0 20px 0 0; }
     div.explore_text p { width: 90%; margin: 0; }
 
     div.monsters_text   { width: 90%; margin: 10% 0 0 5%; float: none; }
-
-    div.play_text           { width: 90%; }
-    div.play_text h2        { display: none; }
-    div.play_text p         { display: none; }
-    div.download_icons      { width: 280px; margin: 4% 0 0 6%; }
-    div.download_icons img  { display: block; }
-    div.download_icons img:first-child  { margin: 0 0 10px 0; }
-
 }
 
 @media(max-width:350px){
@@ -198,9 +190,9 @@ div.download_icons img:first-child  { margin: 0 20px 0 0; }
     div.monsters_text   { width: 90%; margin: 10% 0 0 5%; float: none; }
 
     div.play_text           { width: 90%; }
-    div.play_text h2        { display: none; }
+    div.play_text h2        { font-size: 16px !important; }
     div.play_text p         { display: none; }
-    div.download_icons      { width: 280px; margin: 4% 0 0 6%; }
+    div.download_icons      { width: 100%; margin: 4% 0 0 6%; }
     div.download_icons img  { display: block; }
     div.download_icons img:first-child  { margin: 0 0 10px 0; }
 
