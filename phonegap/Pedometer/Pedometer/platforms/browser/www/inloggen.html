@@ -82,7 +82,7 @@
                     dataType: 'json',
                     beforeSend: function(){ $("#loginBtn").val('Connecting...');},
                     success: function(data){
-                        alert(data['error']);
+                        //alert(data['error']);
                         if(data['error']=="succesfull")
                         {// if register is succesfull
                             alert("Welkom " + data['username']);

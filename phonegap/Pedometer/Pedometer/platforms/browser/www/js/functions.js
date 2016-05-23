@@ -51,7 +51,7 @@ function getUnlockedFields() {
             dataType: 'json',
             success: function (data) {
                 if (data['error'] == "error") {// if register is succesfull
-                    alert("error");
+                    //alert("error");
                     $(".personalUnlockedFields").html("0 / 0");
                 } else if (data['energypoints'] !== "") {
                     $(".personalUnlockedFields").html("<span class='unlocked'>" + data['unlockedfields'] + "</span>/" + data['worldsize']);
@@ -179,7 +179,7 @@ function temporaryMonsterFunction(monstername){
                 }
             )
                 .done(function (data) {
-                    alert('ontdekt');
+                    //alert('ontdekt');
                 //show image, remove locked block
                     window.location.href = 'index.html';
                 });
@@ -506,7 +506,7 @@ function accelerometer() {
     }
 
     function onError() {
-        alert('onError!');
+        //alert('onError!');
     }
 
     var options = {frequency: 3000};  // Update every 3 seconds
@@ -537,22 +537,22 @@ function pedometerFunction() {
     //      alert('onError');
     //  }
     // pedometer.startPedometerUpdates(successHandler, onError);
-    alert('pedometerfunction');
+    //alert('pedometerfunction');
 
     var successCallback = function () {
-        alert('success');
+        //alert('success');
         var successHandler = function (pedometerData) {
-            alert(pedometerData.numberOfSteps);
+            //alert(pedometerData.numberOfSteps);
         };
 
         var onError = function () {
-            alert('onError');
+            //alert('onError');
         };
         pedometer.startPedometerUpdates(successHandler, onError);
     };
 
     var failureCallback = function () {
-        alert('failure');
+        //alert('failure');
     };
 
     pedometer.isStepCountingAvailable(successCallback, failureCallback);

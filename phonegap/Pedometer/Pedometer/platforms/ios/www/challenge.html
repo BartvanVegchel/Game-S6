@@ -96,7 +96,7 @@
 
     function handleOpenURL(url) {
         setTimeout(function() {
-            alert(url);
+            //alert(url);
             var link = url.substring(17);
 
             if(link == 'challenge.html'){
@@ -107,7 +107,7 @@
                 window.location.href = "index.html";
             } else if(link = 'challenge.html?status=readydaily'){
                 $stepsBefore = localStorage.getItem('stepsBefore');
-                alert('stepsBefore is' + $stepsBefore);
+                //alert('stepsBefore is' + $stepsBefore);
                 handleDailyChallenge();
             }
         }, 0);
@@ -116,8 +116,8 @@
     function handleDailyChallenge(){
         $challengeId = localStorage.getItem('dailyChallenge');
 
-        alert($challengeId);
-        alert($userName);
+        //alert($challengeId);
+        //alert($userName);
         $stepsBefore = localStorage.getItem('stepsBefore');
         var dataString = "username=" + $userName + "&stepsbefore=" + $stepsBefore + "&challengeid=" + $challengeId + "&submitDailyAfter=";
             $.ajax({
@@ -129,7 +129,7 @@
                 dataType: 'json',
                 success: function (data) {
                     if (data['error'] == "error") {
-                        alert('error');
+                        //alert('error');
                     } else if (data['stepsbefore'] !== "") {
                         $stepsbefore = data['stepsbefore'];
                         $username = data['username'];
@@ -137,7 +137,7 @@
                         $challengestatus = data['challengestatus'];
                         $reward = data['reward'];
 
-                        alert($username + ' had ' + $stepsbefore + ' en heeft nu ' + $stepsafter + ' de challenge is ' + $challengestatus + ' hiermee is ' + $reward + 'verdiend');
+                        //alert($username + ' had ' + $stepsbefore + ' en heeft nu ' + $stepsafter + ' de challenge is ' + $challengestatus + ' hiermee is ' + $reward + 'verdiend');
                         window.location.href = 'http://game.onlineops.nl/phonegap_php/updateBeforeChallenge.php?username='+$userName;
                         $('.stepsafter').html($stepsafter);
                     }
@@ -152,12 +152,12 @@
     }
 
     $challengeStatus = localStorage.getItem('challengeStatus');
-    alert($challengeStatus);
+    //alert($challengeStatus);
 
     $(document).ready(function () {
         //started from the done function in buildChallenge
         function startDailyChallenge(){
-            alert($userName);
+            //alert($userName);
             var dataString = "username=" + $userName + "&submitDailyBefore=";
             $.ajax({
                 type: "POST",
@@ -174,7 +174,7 @@
                         $username = data['username'];
                         $('.stepsBefore').html($stepsbefore);
                         localStorage.setItem('stepsBefore', $stepsbefore);
-                        alert($username + ' heeft ' + $stepsbefore);
+                        //alert($username + ' heeft ' + $stepsbefore);
                     }
                 },
                 error: function () {
@@ -189,6 +189,7 @@
            function buildChallenge() {
                 //get localstorage dailyChallenge
                 $challengeId = localStorage.getItem('dailyChallenge');
+               //alert($challengeId);
 
                 //check if is dailyChallenge or monsterChallenge
                 if ($challengeId == '') {

@@ -1227,7 +1227,8 @@ input[type="password"]:focus{
 
 
 #challengeContainer .hiddenInfo,
-.completeChallenge{
+.completeChallenge,
+button.monsterDetailChallenge.buttonleft{
     display: none;
 }
 

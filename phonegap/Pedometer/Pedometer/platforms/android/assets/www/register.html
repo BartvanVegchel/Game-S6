@@ -108,16 +108,16 @@
                     dataType: 'json',
                     beforeSend: function(){ $("#registerBtn").val('Connecting...');},
                     success: function(data){
-                        alert(data['error']);
+                        //alert(data['error']);
                         if(data['error']=="succesfull")
                         {// if register is succesfull
-                            alert("inserted");
+                            //alert("inserted");
                             $("#registerBtn").val('Succesvol geregistreerd');
                             window.location.href = "inloggen.html";
                         }
                         else if(data['error']=="error")
                         {//if somterhing goes wrong
-                            alert("error");                            
+                            //alert("error");
                             $("#registerBtn").val('Probeer het nog eens');
                         }
                         else if(data['error']=="username_exists")
