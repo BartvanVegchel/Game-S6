@@ -1706,6 +1706,33 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/dashboard\/delete_challenged_function.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dashboard\/delete_challenged_function.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/dashboard\/delete_monster_function.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dashboard\/delete_monster_function.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/dashboard\/delete_world_function.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dashboard\/delete_world_function.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/dashboard\/energypoints.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1840,6 +1867,44 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/dashboard\/update_challenged_function.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dashboard\/update_challenged_function.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/dashboard\/update_challengem_function.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dashboard\/update_challengem_function.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/dashboard\/update_monster_function.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/dashboard\/update_monster_function.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/dashboard\/uploads\/monster_Frizzle.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 16076,
+		"inputAbbreviatedPath": "\/dashboard\/uploads\/monster_Frizzle.png",
+		"outputAbbreviatedPath": "\/dashboard\/uploads\/monster_Frizzle.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/dashboard\/werelden.html": {
 		"fileType": 8192,
@@ -33152,6 +33217,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/platform_www\/plugins\/cordova-plugin-customurlscheme\/www\/android\/LaunchMyApp.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/platform_www\/plugins\/cordova-plugin-customurlscheme\/www\/android\/LaunchMyApp.js",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/platform_www\/plugins\/cordova-plugin-customurlscheme\/www\/android\/min\/LaunchMyApp-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/platform_www\/plugins\/cordova-plugin-device-motion\/www\/Acceleration.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -33757,6 +33833,94 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-hdpi\/icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5119,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-hdpi\/icon.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-hdpi\/icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-hdpi\/screen.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 60267,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-hdpi\/screen.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-hdpi\/screen.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-ldpi\/screen.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 17452,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-ldpi\/screen.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-ldpi\/screen.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-mdpi\/screen.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 30152,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-mdpi\/screen.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-mdpi\/screen.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-xhdpi\/screen.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 116889,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-xhdpi\/screen.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-xhdpi\/screen.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-xxhdpi\/screen.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 184401,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-xxhdpi\/screen.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-xxhdpi\/screen.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-xxxhdpi\/screen.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 255796,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-xxxhdpi\/screen.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-land-xxxhdpi\/screen.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-ldpi\/icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2192,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-ldpi\/icon.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-ldpi\/icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-mdpi\/ic_action_next_item.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -33786,6 +33950,83 @@
 		"initialSize": 328,
 		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-mdpi\/ic_action_remove.png",
 		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-mdpi\/ic_action_remove.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-mdpi\/icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3085,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-mdpi\/icon.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-mdpi\/icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-hdpi\/screen.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 59318,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-hdpi\/screen.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-hdpi\/screen.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-ldpi\/screen.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 17591,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-ldpi\/screen.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-ldpi\/screen.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-mdpi\/screen.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 30488,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-mdpi\/screen.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-mdpi\/screen.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-xhdpi\/screen.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 117927,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-xhdpi\/screen.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-xhdpi\/screen.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-xxhdpi\/screen.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 208817,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-xxhdpi\/screen.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-xxhdpi\/screen.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-xxxhdpi\/screen.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 292582,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-xxxhdpi\/screen.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-port-xxxhdpi\/screen.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -33823,6 +34064,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-xhdpi\/icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7153,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-xhdpi\/icon.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-xhdpi\/icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-xxhdpi\/ic_action_next_item.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -33852,6 +34104,28 @@
 		"initialSize": 681,
 		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-xxhdpi\/ic_action_remove.png",
 		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-xxhdpi\/ic_action_remove.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-xxhdpi\/icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11736,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-xxhdpi\/icon.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-xxhdpi\/icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-xxxhdpi\/icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 16638,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-xxxhdpi\/icon.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/android\/res\/drawable-xxxhdpi\/icon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -34061,12 +34335,56 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-inappbrowser\/src\/browser\/InAppBrowserProxy.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-inappbrowser\/src\/browser\/InAppBrowserProxy.js",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-inappbrowser\/src\/browser\/min\/InAppBrowserProxy-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-inappbrowser\/www\/inappbrowser.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-inappbrowser\/www\/inappbrowser.js",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-inappbrowser\/www\/min\/inappbrowser-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-pedometer\/www\/pedometer.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-pedometer\/www\/pedometer.js",
 		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-pedometer\/www\/min\/pedometer-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-statusbar\/src\/browser\/statusbar.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-statusbar\/src\/browser\/statusbar.js",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-statusbar\/src\/browser\/min\/statusbar-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-statusbar\/www\/statusbar.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-statusbar\/www\/statusbar.js",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/platforms\/browser\/platform_www\/plugins\/cordova-plugin-statusbar\/www\/min\/statusbar-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -38639,6 +38957,93 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-contacts\/www\/ios\/contacts.js",
 		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-contacts\/www\/ios\/min\/contacts-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/package.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/package.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/package-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/README.md": {
+		"criticStyle": 0,
+		"enableFootnotes": 1,
+		"enableLabels": 1,
+		"enableSmartQuotes": 1,
+		"escapeLineBreaks": 0,
+		"fileType": 4096,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/README.md",
+		"maskEmailAddresses": 1,
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/README.html",
+		"outputFormat": 0,
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"parseMetadata": 1,
+		"processHTML": 0,
+		"randomFootnoteNumbers": 0,
+		"useCompatibilityMode": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/src\/wp8\/hooks\/add-uri-mapper.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/src\/wp8\/hooks\/add-uri-mapper.js",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/src\/wp8\/hooks\/min\/add-uri-mapper-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/www\/android\/LaunchMyApp.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/www\/android\/LaunchMyApp.js",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/www\/android\/min\/LaunchMyApp-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/www\/ios\/LaunchMyApp.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/www\/ios\/LaunchMyApp.js",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/www\/ios\/min\/LaunchMyApp-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/www\/windows\/LaunchMyApp.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/www\/windows\/LaunchMyApp.js",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/www\/windows\/min\/LaunchMyApp-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/www\/wp8\/LaunchMyApp.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/www\/wp8\/LaunchMyApp.js",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/plugins\/cordova-plugin-customurlscheme\/www\/wp8\/min\/LaunchMyApp-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -48566,6 +48971,24 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
 		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/accept-friends.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/accept-friends.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/add-friends.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/add-friends.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/phonegap\/Pedometer\/Pedometer\/www\/challenge.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -48631,35 +49054,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/desertWorld.png": {
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/custom-fog.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 76050,
-		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/desertWorld.png",
-		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/desertWorld.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_bolt.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 7252,
-		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_bolt.png",
-		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_bolt.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_bolt_broken.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 8426,
-		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_bolt_broken.png",
-		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_bolt_broken.png",
+		"initialSize": 81341,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/custom-fog.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/custom-fog.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -48708,6 +49109,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_dusty.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5860,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_dusty.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_dusty.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_dusty_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5964,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_dusty_broken.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_dusty_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_flame.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4847,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_flame.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_flame.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_flame_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5100,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_flame_broken.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_flame_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_frizzle.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -48752,6 +49197,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_grasilla.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4844,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_grasilla.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_grasilla.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_grasilla_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5248,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_grasilla_broken.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_grasilla_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_koral.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6659,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_koral.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_koral.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_koral_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6993,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_koral_broken.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_koral_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_leefy.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -48774,46 +49263,200 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_pinky.png": {
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_magmo.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 7639,
-		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_pinky.png",
-		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_pinky.png",
+		"initialSize": 5393,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_magmo.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_magmo.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_pinky_broken.png": {
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_magmo_broken.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 9664,
-		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_pinky_broken.png",
-		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_pinky_broken.png",
+		"initialSize": 5786,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_magmo_broken.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_magmo_broken.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/forestWorld.png": {
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_sandking.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 101598,
-		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/forestWorld.png",
-		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/forestWorld.png",
+		"initialSize": 6179,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_sandking.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_sandking.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/iceWorld.png": {
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_sandking_broken.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 96881,
-		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/iceWorld.png",
-		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/iceWorld.png",
+		"initialSize": 7025,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_sandking_broken.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_sandking_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_shroom.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6087,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_shroom.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_shroom.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_shroom_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6405,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_shroom_broken.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_shroom_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_snapper.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6261,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_snapper.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_snapper.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_snapper_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6611,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_snapper_broken.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_snapper_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_spurl.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5866,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_spurl.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_spurl.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_spurl_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6377,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_spurl_broken.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_spurl_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_twistar.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5245,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_twistar.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_twistar.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_twistar_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5482,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_twistar_broken.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_twistar_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_willow.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5644,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_willow.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_willow.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_willow_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5728,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_willow_broken.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_willow_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_yeti.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5494,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_yeti.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_yeti.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_yeti_broken.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5917,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_yeti_broken.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/egg_yeti_broken.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/iconJongen.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7461,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/iconJongen.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/iconJongen.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/iconMeisje.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7405,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/iconMeisje.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/iconMeisje.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -48829,24 +49472,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_bolt.png": {
-		"fileType": 32768,
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/mm_bg.jpg": {
+		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 21087,
-		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_bolt.png",
-		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_bolt.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_bolt_locked.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 13377,
-		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_bolt_locked.png",
-		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_bolt_locked.png",
+		"initialSize": 69278,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/mm_bg.jpg",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/mm_bg.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -48895,6 +49527,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_dusty.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 43460,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_dusty.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_dusty.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_dusty_locked.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 25270,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_dusty_locked.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_dusty_locked.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_flame.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 41970,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_flame.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_flame.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_flame_locked.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 18391,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_flame_locked.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_flame_locked.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_frizzle.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -48939,6 +49615,50 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_grasilla.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 49658,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_grasilla.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_grasilla.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_grasilla_locked.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 21334,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_grasilla_locked.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_grasilla_locked.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_koral.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 68632,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_koral.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_koral.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_koral_locked.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 46126,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_koral_locked.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_koral_locked.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_leefy.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -48961,24 +49681,189 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_pinky.png": {
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_magmo.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 28435,
-		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_pinky.png",
-		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_pinky.png",
+		"initialSize": 48118,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_magmo.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_magmo.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_pinky_locked.png": {
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_magmo_locked.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 18068,
-		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_pinky_locked.png",
-		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_pinky_locked.png",
+		"initialSize": 26348,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_magmo_locked.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_magmo_locked.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_sandking.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 40681,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_sandking.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_sandking.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_sandking_locked.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 22429,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_sandking_locked.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_sandking_locked.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_shroom.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 37785,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_shroom.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_shroom.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_shroom_locked.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 17415,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_shroom_locked.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_shroom_locked.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_snapper.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 49406,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_snapper.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_snapper.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_snapper_locked.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 28747,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_snapper_locked.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_snapper_locked.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_spurl.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 32006,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_spurl.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_spurl.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_spurl_locked.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14983,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_spurl_locked.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_spurl_locked.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_twistar.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 50500,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_twistar.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_twistar.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_twistar_locked.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 28094,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_twistar_locked.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_twistar_locked.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_willow.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 54284,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_willow.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_willow.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_willow_locked.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27780,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_willow_locked.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_willow_locked.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_yeti.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 43410,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_yeti.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_yeti.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_yeti_locked.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 28320,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_yeti_locked.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/monster_yeti_locked.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/movingmonsters.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 238559,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/movingmonsters.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/movingmonsters.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -48994,6 +49879,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/stage.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3150,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/stage.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/stage.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/star_rating.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -49001,6 +49897,72 @@
 		"initialSize": 10801,
 		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/star_rating.png",
 		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/star_rating.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/trophy.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 9710,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/trophy.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/trophy.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_desertvalley.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 110716,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_desertvalley.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_desertvalley.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_forestfield.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 236273,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_forestfield.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_forestfield.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_icecave.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 129238,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_icecave.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_icecave.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_seaside.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 214067,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_seaside.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_seaside.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_volcanoisland.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 337639,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_volcanoisland.png",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/img\/world_volcanoisland.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -49109,6 +50071,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/js\/min\/functions-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/js\/min\/functions-min.js",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/js\/min\/min\/functions-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/phonegap\/Pedometer\/Pedometer\/www\/js\/sweetalert-dev.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -49126,6 +50099,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/js\/swiper.jquery.min.js",
 		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/js\/min\/swiper.jquery.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/js\/tabs.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/js\/tabs.js",
+		"outputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/js\/min\/tabs-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -49911,6 +50895,15 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/phonegap\/Pedometer\/Pedometer\/www\/user.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/phonegap\/Pedometer\/Pedometer\/www\/user.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/phonegap\/Pedometer\/Pedometer\/www\/worlds.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -50001,15 +50994,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/promo\/css\/custom.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/promo\/css\/custom.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/promo\/fonts\/opensans\/demo.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -50064,6 +51048,28 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/promo\/img\/android_app.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 187318,
+		"inputAbbreviatedPath": "\/promo\/img\/android_app.png",
+		"outputAbbreviatedPath": "\/promo\/img\/android_app.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/promo\/img\/apple_app.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 187318,
+		"inputAbbreviatedPath": "\/promo\/img\/apple_app.png",
+		"outputAbbreviatedPath": "\/promo\/img\/apple_app.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/promo\/img\/explore_bg.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -50097,6 +51103,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/promo\/img\/monsters_bg.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 113058,
+		"inputAbbreviatedPath": "\/promo\/img\/monsters_bg.png",
+		"outputAbbreviatedPath": "\/promo\/img\/monsters_bg.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/promo\/img\/play-button.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -50104,6 +51121,17 @@
 		"initialSize": 14024,
 		"inputAbbreviatedPath": "\/promo\/img\/play-button.png",
 		"outputAbbreviatedPath": "\/promo\/img\/play-button.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/promo\/img\/play_bg.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 230540,
+		"inputAbbreviatedPath": "\/promo\/img\/play_bg.png",
+		"outputAbbreviatedPath": "\/promo\/img\/play_bg.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -50122,15 +51150,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/promo\/includes\/db_social.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/promo\/index.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/promo\/index.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -50719,11 +51738,20 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/social\/css\/custom.css": {
+	"\/social\/fonts\/kaushan_script\/webfontkit-20160519-174517\/kaushanscript-regular-demo.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/social\/fonts\/kaushan_script\/webfontkit-20160519-174517\/kaushanscript-regular-demo.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/social\/fonts\/kaushan_script\/webfontkit-20160519-174517\/stylesheet.css": {
 		"fileType": 16,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/social\/css\/custom.css",
+		"inputAbbreviatedPath": "\/social\/fonts\/kaushan_script\/webfontkit-20160519-174517\/stylesheet.css",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -50790,6 +51818,17 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/social\/img\/monsterdex\/waterbg.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 120694,
+		"inputAbbreviatedPath": "\/social\/img\/monsterdex\/waterbg.jpg",
+		"outputAbbreviatedPath": "\/social\/img\/monsterdex\/waterbg.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/social\/img\/post_date.png": {
 		"fileType": 32768,
@@ -50950,6 +51989,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/social\/js\/jquery.easypin.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/social\/js\/jquery.easypin.min.js",
+		"outputAbbreviatedPath": "\/social\/js\/min\/jquery.easypin.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/social\/js\/jquery.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -50967,6 +52017,17 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/social\/js\/npm.js",
 		"outputAbbreviatedPath": "\/social\/js\/min\/npm-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/social\/js\/plax.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/social\/js\/plax.js",
+		"outputAbbreviatedPath": "\/social\/js\/min\/plax-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,

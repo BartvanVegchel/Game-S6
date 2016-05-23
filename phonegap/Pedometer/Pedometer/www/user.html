@@ -144,15 +144,24 @@
                                         "</h1>" +
                                         "<div class='desc'>" +
                                         "<div class='item'>" +
-                                        "<span class='icon'><i class='fa fa-bolt'></i></span>" +
+                                        "<span class='icon'>" +
+                                        "<span class='tooltipIcon'>Totaal verzamelde monsters</span>" +
+                                        "<i class='fa fa-bolt'></i>" +
+                                        "</span>" +
                                         "<span class='stat'>" + $monsters + "</span>" +
                                         "</div>" +
                                         "<div class='item'>" +
-                                        "<span class='icon'><i class='fa fa-globe'></i></span>" +
+                                        "<span class='icon'>" +
+                                        "<span class='tooltipIcon'>Totaal ontdekte werelden</span>" +
+                                        "<i class='fa fa-globe'></i>" +
+                                        "</span>" +
                                         "<span class='stat'>" + $unlockedworlds + "</span>" +
                                         "</div>" +
                                         "<div class='item'>" +
-                                        "<span class='icon'><i class='fa fa-star'></i></span>" +
+                                        "<span class='icon'>" +
+                                        "<span class='tooltipIcon'>Totaal behaalde sterren</span>" +
+                                        "<i class='fa fa-star'></i>" +
+                                        "</span>" +
                                         "<span class='stat'>" + $yourstars + "</span>" +
                                         "</div>" +
                                         "</div>" +
@@ -207,6 +216,7 @@
                     }
                 }).done(function (result) {
                     swiper();
+                    $('.desc .item .icon').click(tooltiponClick);
                 })
             }
         }
