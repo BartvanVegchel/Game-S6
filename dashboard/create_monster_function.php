@@ -10,12 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier verzo
 	if (!empty($_POST['monster_name']) &&
 		!empty($_POST['monster_rarity']) &&
         !empty($_POST['monster_world']) &&
-		!empty($_POST['monster_location'])) { // Controleer of benodigde velden wel ingevuld zijn
+		!empty($_POST['monster_location']) &&
+        !empty($_POST['monster_story'])) { // Controleer of benodigde velden wel ingevuld zijn
 
         $monsterName 		= mysqli_real_escape_string($db, $_POST["monster_name"]);
         $monsterRarity      = mysqli_real_escape_string($db, $_POST["monster_rarity"]);
         $monsterWorld 		= mysqli_real_escape_string($db, $_POST["monster_world"]);
         $monsterLocation    = mysqli_real_escape_string($db, $_POST["monster_location"]);
+        $monsterStory    	= mysqli_real_escape_string($db, $_POST["monster_story"]);
 		
 		$monsterLocation = $monsterWorld . "_" . $monsterLocation;
 		
@@ -30,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier verzo
             "<p>Please choose a different name.</p></div></div>";
         }
         else {
-            mysqli_query($db, "INSERT INTO monsters (monsterId, monsterName, monsterRarity, monsterWorld, monsterLocation)
-                                VALUES ('', '$monsterName', '$monsterRarity', '$monsterWorld', '$monsterLocation') ");
+            mysqli_query($db, "INSERT INTO monsters (monsterId, monsterName, monsterChallengeId, monsterRarity, monsterWorld, monsterLocation, monsterStory)
+                                VALUES ('', '$monsterName', '', '$monsterRarity', '$monsterWorld', '$monsterLocation', '$monsterStory') ");
 		
 			//printf ("New Record has id %d.\n", mysqli_insert_id($db));
 			//$postId = mysqli_insert_id($db_social);
@@ -80,7 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier verzo
 				}
 			}
 		
-            //header("Refresh: 3; url=monsters.php");
+            header("Refresh: 3; url=monsters.php");
             echo "<div class='container'><div class='alert alert-success'><strong><span class=\"entypo-check\"></span>Your monster has been created</strong>" . 
             "<p>Congratulations! Your monster has been created.</p></div></div>"; // als het succesvol naar de database is geplaatst
         }

@@ -70,10 +70,10 @@
 												<td><?php echo $amount; ?></td>
 												<td><?php echo $totalEarned; ?></td>
 												<td><?php echo $totalSpend; ?></td>
-												<td>
+												<!--<td>
 													<button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
 													<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-												</td>
+												</td>-->
 											</tr>
 										
 										<?php											

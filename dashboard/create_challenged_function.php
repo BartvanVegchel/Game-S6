@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier verzo
                                 VALUES ('', '$challengedName', '$challengedDescription', '$challengedRequirement', '$challengedTimeLimit', '$challengedReward') ");
 		
 		
-            //header("Refresh: 3; url=monsters.php");
+            header("Refresh: 3; url=challengesd.php");
             echo "<div class='container'><div class='alert alert-success'><strong><span class=\"entypo-check\"></span>Your world has been created</strong>" . 
             "<p>Congratulations! Your world has been created.</p></div></div>"; // als het succesvol naar de database is geplaatst
         }

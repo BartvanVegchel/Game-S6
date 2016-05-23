@@ -8,14 +8,13 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier verzonden is
 
 	if (!empty($_POST['world_name']) &&
-		!empty($_POST['world_size'])) { // Controleer of benodigde velden wel ingevuld zijn
+		!empty($_POST['world_size']) &&
+		!empty($_POST['world_color'])) { // Controleer of benodigde velden wel ingevuld zijn
 
         $worldName		= mysqli_real_escape_string($db, $_POST["world_name"]);
         $worldSize		= mysqli_real_escape_string($db, $_POST["world_size"]);
-		
-		$homeLocation		= 'a:0:{}';
-		$townHallLocation	= 'a:0:{}';
-		$bankLocation		= 'a:0:{}';
+        $worldColor		= mysqli_real_escape_string($db, $_POST["world_color"]);
+
 		$transportLocation	= 'a:0:{}';
 		
 		//echo $monsterName . $monsterRarity . $monsterWorld . $monsterLocation;
@@ -29,8 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier verzo
             "<p>Please choose a different name.</p></div></div>";
         }
         else {
-            mysqli_query($db, "INSERT INTO worlds (id, worldName, worldSize, homeLocation, townHallLocation, bankLocation, transportLocation)
-                                VALUES ('', '$worldName', '$worldSize', '$homeLocation', '$townHallLocation', '$bankLocation', '$transportLocation') ");
+            mysqli_query($db, "INSERT INTO worlds (id, worldName, worldSize, worldColor transportLocation)
+                                VALUES ('', '$worldName', '$worldSize', '$worldColor', '$transportLocation') ");
 		
 			//printf ("New Record has id %d.\n", mysqli_insert_id($db));
 			//$postId = mysqli_insert_id($db_social);
