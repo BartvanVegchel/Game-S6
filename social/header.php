@@ -41,6 +41,8 @@
 	<link rel="stylesheet" type="text/css" href="css/animate.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./fonts/opensans/opensans.css" />
 
+	<link href='https://fonts.googleapis.com/css?family=Righteous|Sansita+One|Slackey' rel='stylesheet' type='text/css'>
+
 	<script src="http://code.jboxcdn.com/0.3.2/jBox.min.js"></script>
 	<link href="css/jBox.css" rel="stylesheet">
 	

@@ -1,7 +1,7 @@
 <?php include('header.php'); ?>
 
 
-		<div class="row">
+		<div class="row text-center">
 			<section class="col-lg-12">
 				<div class="grass-section">
 					<h1 class="section-title">Forest Field</h1>
