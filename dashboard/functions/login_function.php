@@ -6,6 +6,12 @@ function login(){
 		if($_SERVER["REQUEST_METHOD"] == "POST"){ // Controleer of het formulier verzonden is
 		  if(!empty($_POST["username"]) &&
 			 !empty($_POST["password"])){ // Controleer of benodigde velden wel ingevuld zijn
+			 
+				if($_POST["username"] != "admin") {
+					echo "<div class='container'><div class='alert alert-danger'><strong><span class=\"entypo-block\"></span>Geen admin!</strong>" . 
+					"<p>Je kan alleen inloggen met een admin account.</p></div></div>";
+				}
+				else {
 
 				include('includes/db_connection.php');			 
 			
@@ -19,15 +25,16 @@ function login(){
 				$_SESSION["username"] = $username;
 			}
 			else{ //anders zijn de gegevens niet juist
-				//header("Refresh: 3; url=inloggen.php");
+				header("Refresh: 3; url=login.php");
 				echo "De ingevoerde gegevens kloppen niet!";
 			}
+				}
 		  }
 		  
 		  else{
-			//header("Refresh: 3; url=inloggen.php");
+			header("Refresh: 3; url=login.php");
 			echo "Je moet wel alle velden invullen!";
-		  } 
+		  }
 						  
 		}
 	  

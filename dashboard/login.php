@@ -8,11 +8,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Dashboard">
-    <meta name="keyword" content="Dashboard, Moving Monsters">
 
-    <title>Moving Monsters Dashboard</title>
+    <title>Moving Monsters | Dashboard</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -69,13 +66,13 @@
 		                          <h4 class="modal-title">Wachtwoord vergeten?</h4>
 		                      </div>
 		                      <div class="modal-body">
-		                          <p>Enter your e-mail address below to reset your password.</p>
-		                          <input type="text" name="email" placeholder="Email" autocomplete="off" class="form-control placeholder-no-fix">
+		                          <p>Vul uw e-mailadres in om een nieuw wachtwoord aan te vragen</p>
+		                          <input type="text" name="email" placeholder="E-mail" autocomplete="off" class="form-control placeholder-no-fix">
 		
 		                      </div>
 		                      <div class="modal-footer">
-		                          <button data-dismiss="modal" class="btn btn-default" type="button">Cancel</button>
-		                          <button class="btn btn-theme" type="button">Submit</button>
+		                          <button data-dismiss="modal" class="btn btn-default" type="button">Annuleren</button>
+		                          <button class="btn btn-theme" type="button">Verstuur</button>
 		                      </div>
 		                  </div>
 		              </div>

@@ -1,6 +1,7 @@
 <?php
 	include('includes/header.php');
-	include('includes/db_connection.php');
+	
+	if(isset($_SESSION["logged_in"]) && $_SESSION['username'] == "admin"){
 ?>
 
 <?php
@@ -39,5 +40,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier verzo
 ?>
 
 <?php
-    include('includes/footer.php');
+	} else {
+		header("Refresh: 0; url=login.php");
+	}
+	
+	include('includes/footer.php');
 ?>

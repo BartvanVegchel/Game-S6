@@ -1,5 +1,7 @@
 <?php
 	include('includes/header.php');
+	
+	if(isset($_SESSION["logged_in"]) && $_SESSION['username'] == "admin"){
 ?>
 
       <!--Werelden Form-->
@@ -22,6 +24,10 @@
 						
 						<div class="form-group">
                           <input type="text" class="form-control" id="world_color" name="world_color" placeholder="#FFFFFF">
+						</div>
+						
+						<div class="form-group">
+                          <input type="text" class="form-control" id="unlock_cost" name="unlock_cost" placeholder="Unlock kosten">
 						</div>
 							
 							<div class="form-group">
@@ -171,5 +177,9 @@
 			</div>
 			  
 <?php
+	} else {
+		header("Refresh: 0; url=login.php");
+	}
+	
 	include('includes/footer.php');
 ?>

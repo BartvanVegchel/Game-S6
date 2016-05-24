@@ -1,5 +1,7 @@
 <?php
 	include('includes/header.php');
+	
+	if(isset($_SESSION["logged_in"]) && $_SESSION['username'] == "admin"){
 ?>
 
       <!--Daily Challenges Form-->
@@ -7,7 +9,7 @@
               <div class="col-lg-12">
                 <div class="form-panel">
                     <div class="input-group image-preview">
-                      <h4 class="mb">Monster challenge aanmaken</h4>
+                      <h4 class="mb">Energypoints</h4>
 					  
 					  <form method="POST" action="add_energypoints_function.php" id="create_post">
 						
@@ -37,7 +39,7 @@
                   <div class="col-md-12">
                       <div class="content-panel">
                           <table class="table table-striped table-advance table-hover">
-                            <h4>Energy points</h4>
+                            <h4>Energypoints</h4>
                             <hr>
                               <thead>
                               <tr>
@@ -70,10 +72,6 @@
 												<td><?php echo $amount; ?></td>
 												<td><?php echo $totalEarned; ?></td>
 												<td><?php echo $totalSpend; ?></td>
-												<!--<td>
-													<button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-													<button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-												</td>-->
 											</tr>
 										
 										<?php											
@@ -89,5 +87,9 @@
 			</div>
 			  
 <?php
+	} else {
+		header("Refresh: 0; url=login.php");
+	}
+	
 	include('includes/footer.php');
 ?>

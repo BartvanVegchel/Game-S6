@@ -116,6 +116,13 @@
                       </a>
                   </li>
 
+                  <li class="sub-menu">
+                      <a href="gebruikers.php">
+                          <i class="fa fa-th"></i>
+                          <span>Gebruikers</span>
+                      </a>
+                  </li>
+
               </ul>
               <!-- sidebar menu end-->
           </div>

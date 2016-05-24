@@ -1,5 +1,7 @@
 <?php
 	include('includes/header.php');
+	
+	if(isset($_SESSION["logged_in"]) && $_SESSION['username'] == "admin"){
 ?>
 
       <!--Monster Form-->
@@ -202,5 +204,9 @@
 			
 			  
 <?php
+	} else {
+		header("Refresh: 0; url=login.php");
+	}
+	
 	include('includes/footer.php');
 ?>
