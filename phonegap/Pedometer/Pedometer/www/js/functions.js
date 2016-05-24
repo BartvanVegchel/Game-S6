@@ -164,7 +164,8 @@ function temporaryMonsterFunction(monstername){
             text: "Je hebt " + $monsterName + " ontdekt",
             imageUrl: "img/monster_" + $monsterNameLowerCase + ".png",
             confirmButtonText: "Oke",
-            showCancelButton: false
+            showCancelButton: false,
+            cancelButtonText: "",
         },
         function () {
             $.ajax(
@@ -416,6 +417,18 @@ function createElements() {
         '<li data-text="Volgende">' +
         '<h2>Welkom!</h2>' +
         '<p>Welkom bij MovingMonsters, leuk dat je meedoet! Tijdens deze korte tutorial word het spel kort uitgelegd. Veel plezier!</p>' +
+        '</li>' +
+        '<li data-text="Volgende">' +
+        '<h2>Punten verdienen</h2>' +
+        '<p>Je kunt bij dit spel nieuwe punten verzamelen door in het echt te bewegen. De stappenteller houdt het aantal stappen bij, en die worden omgezet in punten.</p>' +
+        '</li>' +
+        '<li data-text="Volgende">' +
+        '<h2>Werelden ontdekken</h2>' +
+        '<p>Je bent geland op een nieuwe wereld. Je kunt deze wereld ontdekken door op een wolkje te klikken.</p>' +
+        '</li>' +
+        '<li data-text="Volgende">' +
+        '<h2>Monsters ontdekken</h2>' +
+        '<p>Op iedere wereld zitten een aantal monsters verstopt. Ontdek de wereld en verzamel alle monsters!</p>' +
         '</li>' +
         '<li data-id="number1" data-text="Volgende" data-prev-text="Prev" class="custom1">' +
         '<h2>Energie punten</h2>' +

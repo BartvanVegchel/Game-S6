@@ -1302,6 +1302,12 @@ div.sweet-alert p{
     margin-top: 12px;
 }
 
+.hiddenInfo,
+.completeChallenge{
+    display:none;
+}
+
+
 
 
 
