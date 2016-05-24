@@ -3,14 +3,16 @@
 body            { overflow-y: scroll; margin: 0; padding: 0; font-family: OpenSansRegular, Arial, sans-serif; color: #333333; box-sizing: border-box; display: block; overflow-x:hidden; background: url("../img/social_bg.png") no-repeat center center fixed; background-size: cover; }
 div.container   { width: 100%; }
 div.clear       { clear: both; }
+.no-margin	{ margin: 0 !important; }
+.no-padding	{ padding: 0 !important; }
 
 header        { position: fixed; width: 100%; z-index: 99; }
 a.logo        { width: 180px; }
 a.logo img    { width: 100%; }
 
 nav.navbar         { border-radius: 0; background: none; border: none;  }
-nav.navbar ul      { padding: 25px 0 0 50px; font-family: OpenSansSemiBold; }
-nav.navbar ul li   {  }
+nav.navbar ul      { font-family: OpenSansSemiBold; }
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form { background: #fff; }
 
 .navbar-brand      { height: auto; }
 .whitebg            { background:rgba(255,255,255, 0.9); }
@@ -18,7 +20,7 @@ nav.navbar ul li   {  }
 ul.nav.navbar-nav li a { color: #555555; font-size: 16px; }
 .navbar                 { margin: 0; }
 
-div.navbar-header a       { width: 200px; transition: all 0.2s; }
+div.navbar-header a       { width: 95px; transition: all 0.2s; margin: 0; padding: 10px; }
 .navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover  { color: #333333; }
 .smaller_scroll           { width: 120px !important; }
 .padding_scroll           { padding: 13px 14px 0 50px !important; }
@@ -32,21 +34,21 @@ div.page_intro     { position: relative; padding: 0; margin: 0; }
 div.intro_bg       { width: 100%; }
 div.intro_bg img   { width: 100%; }
 
-div.playbtn         { position: absolute; left: 48%; top: 40%; width: 120px; height: 120px; cursor: pointer; transition: opacity 0.2s; }
+div.playbtn         { position: absolute; top: 40%; width: 100%; cursor: pointer; transition: opacity 0.2s; }
 div.playbtn:hover   { opacity: 0.5; }
-div.playbtn img     { width: 100%; }
+div.playbtn img     { width: 120px; height: auto; }
 
 
 /* Explore */
 
 div.page_explore   { position: relative; }
-div.explore_push   { position: absolute; width: 100%; padding: 0 0 0 15px; }
+div.explore_push   { position: absolute; width: 100%; }
 div.explore_bg     { width: 100%; }
 div.explore_bg img { width: 100%; }
 
-div.explore_text    { text-align: center; margin: 52% 0 0 10%; }
-div.explore_text h2 { color: #FFFFFF; font-size: 60px; font-family: 'Righteous', cursive; width: 450px; text-shadow: 6px 6px 0px rgba(0,0,0,0.2); }
-div.explore_text p  { color: #FFFFFF; font-size: 19px; width: 400px; margin: 0 0 0 25px; }
+div.explore_text    { text-align: center; margin: 45% 0 0 10%; }
+div.explore_text h2 { color: #FFFFFF; font-size: 4.5vw; font-family: 'Righteous', cursive; width: 450px; text-shadow: 6px 6px 0px rgba(0,0,0,0.2); }
+div.explore_text p  { color: #FFFFFF; font-size: 1.5vw; width: 400px; }
 
 /* Monsters */
 
@@ -54,9 +56,9 @@ div.page_monsters   { position: relative; }
 div.monsters_bg     { width: 100%; }
 div.monsters_bg img { width: 100%; }
 
-div.monsters_text    { float: right; text-align: center; width: 450px; margin: 36% 10% 0 0; }
-div.monsters_text h2 { color: #FFFFFF; font-size: 60px; font-family: 'Righteous', cursive; text-shadow: 6px 6px 0px rgba(0,0,0,0.2); }
-div.monsters_text p  { color: #FFFFFF; font-size: 19px; }
+div.monsters_text    { float: right; text-align: center; width: 450px; margin: 30% 10% 0 0; }
+div.monsters_text h2 { color: #FFFFFF; font-size: 4.5vw; font-family: 'Righteous', cursive; text-shadow: 6px 6px 0px rgba(0,0,0,0.2); }
+div.monsters_text p  { color: #FFFFFF; font-size: 1.5vw; }
 
 
 a.btn {
@@ -81,21 +83,24 @@ a.btn:hover {
     border-color: #009ac9;
 }
 
+.navbar-inverse .navbar-toggle .icon-bar { background-color: #333; }
+.navbar-inverse .navbar-toggle:hover .icon-bar, .navbar-inverse .navbar-toggle:focus .icon-bar { background-color: #fff; }
+
 /* Play now */
 
 
 div.page_play      { position: relative; }
-div.explore_push   { position: absolute; width: 100%; padding: 0 0 0 15px; }
+div.explore_push   { position: absolute; width: 100%; }
 div.play_bg        { width: 100%; }
 div.play_bg img    { width: 100%; }
 
-div.play_text    { position: absolute; bottom: 3.5em; width: 100%; }
-div.play_text h2 { color: #333333; font-size: 60px; font-family: 'Righteous', cursive; text-shadow: 6px 6px 0px rgba(0,0,0,0.2); }
-div.play_text p  { color: #333333; font-size: 19px; margin: 25px 0 0 0; }
+div.play_text    { position: absolute; bottom: 3vw; width: 100%; }
+div.play_text h2 { color: #333333; font-size: 5vw; font-family: 'Righteous', cursive; text-shadow: 6px 6px 0px rgba(0,0,0,0.2); line-height: 4vw; }
+div.play_text p  { color: #333333; font-size: 1.5vw; margin: 25px 0 0 0; }
 
-div.download_icons  { margin: 30px 0 0 0; }
-div.download_icons img  { display: inline-block; width: 10%; }
-div.download_icons img:first-child  { margin: 0 20px 0 0; }
+div.download_icons  { width: 60%; margin: 20px auto 0 auto; }
+div.download_icons img { width: 25%; height: auto; }
+div.download_icons img:first-child { margin-right: 5%; }
 
 
 
@@ -171,29 +176,26 @@ div.download_icons img:first-child  { margin: 0 20px 0 0; }
 
 
 @media(max-width:1230px){
-    div.playbtn { left: 45% }
+    div.explore_text { margin: 10% 0 0 0; text-align: center; }
+    div.explore_text h2 { width: 100%; }
+    div.explore_text p { width: 100%; margin: 0; }
 
-    div.explore_text { margin: 10% 0 0 10%; text-align: center; }
-    div.explore_text h2 { width: 90%; }
-    div.explore_text p { width: 90%; margin: 0; }
-
-    div.monsters_text   { width: 90%; margin: 10% 0 0 5%; float: none; }
+    div.monsters_text   { width: 100%; float: none; margin: 8% 0 0 0; }
+}
+@media(max-width:768px){
+    div.explore_text h2, div.monsters_text h2 { width: 100%; font-size: 6vw; }
+    div.explore_text p, div.monsters_text p { font-size: 2.5vw; }
 }
 
-@media(max-width:350px){
-    div.playbtn { left: 45% }
+@media(max-width:360px){
+    div.explore_text { margin: 10% 0 0 0; text-align: center; }
+    div.explore_text h2, div.monsters_text h2 { width: 100%; font-size: 8vw; }
+    div.explore_text p, div.monsters_text p { font-size: 4vw; display: none; }
 
-    div.explore_text { margin: 10% 0 0 10%; text-align: center; }
-    div.explore_text h2 { width: 90%; font-size: 12px; }
-    div.explore_text p { display: none; }
-
-    div.monsters_text   { width: 90%; margin: 10% 0 0 5%; float: none; }
-
-    div.play_text           { width: 90%; }
-    div.play_text h2        { font-size: 16px !important; }
-    div.play_text p         { display: none; }
-    div.download_icons      { width: 100%; margin: 4% 0 0 6%; }
-    div.download_icons img  { display: block; }
-    div.download_icons img:first-child  { margin: 0 0 10px 0; }
-
+    div.monsters_text   { width: 100%; float: none; }
+	
+	div.download_icons img { width: 40%; height: auto; }
+	div.download_icons img:first-child { margin-right: 5%; }
+	
+	div.playbtn img     { width: 60px; height: auto; }
 }

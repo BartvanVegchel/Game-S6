@@ -2,8 +2,12 @@
 
 <div class="page_intro">
 
-	<div class="playbtn" data-toggle="modal" data-target="#exampleModal" >
-		<img src="img/play-button.png" alt="Play video" />
+	<div class="row playbtn no-margin">
+		<div class="col-xs-12 text-center no-padding">
+			<div data-toggle="modal" data-target="#exampleModal" >
+				<img src="img/play-button.png" alt="Play video" />
+			</div>
+		</div>
 	</div>
 
 	<div class="intro_bg">
@@ -20,7 +24,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			</div>
 			<div class="modal-body">
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/QB3ry-04G-I" frameborder="0" allowfullscreen></iframe>
+				<iframe width="100%" height="315" src="https://www.youtube.com/embed/QB3ry-04G-I" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
 	</div>
@@ -29,7 +33,7 @@
 
 <div class="page_explore">
 
-	<div class="row explore_push">
+	<div class="row explore_push no-margin">
 
 		<div class="explore_text">
 			<h2>Ontdek nieuwe werelden!</h2>
@@ -47,7 +51,7 @@
 
 <div class="page_monsters">
 
-	<div class="row explore_push">
+	<div class="row explore_push no-margin">
 
 		<div class="monsters_text">
 			<h2>Vang alle monsters die je tegen komt!</h2>
@@ -76,7 +80,7 @@
 		<div class="col-xs-12 text-center">
 			<div class="play_text">
 				<h2>Speel nu!</h2>
-				<p>Download de app meteen op je smartphone!</p>
+				<p class="hidden-xs">Download de app meteen op je smartphone!</p>
 
 				<div class="download_icons">
 					<img src="img/apple_app.png" alt="" />

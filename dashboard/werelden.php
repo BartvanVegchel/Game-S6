@@ -57,7 +57,8 @@
                                   <th>Wereld</th>
                                   <th>Formaat</th>
                                   <th>Kleur</th>
-                                  <th></th>
+                                  <th>Unlock kosten</th>
+								  <th></th>
                               </tr>
                               </thead>
                               <tbody>
@@ -70,12 +71,14 @@
 										$worldName = $rij["worldName"];
 										$worldSize = $rij["worldSize"];
 										$worldColor = $rij["worldColor"];
+										$unlockCosts = $rij["unlockCosts"];
 								?>
 								
 									<tr>
 										<td><?php echo $worldName; ?></td>
 										<td><?php echo $worldSize; ?></td>
 										<td style="color: <?php echo $worldColor; ?>;"><?php echo $worldColor; ?></td>
+										<td><?php echo $unlockCosts; ?></td>
 										<td>
 											<button class="btn btn-primary btn-xs" data-toggle="modal" data-target="#worldUpdate<?php echo $worldId; ?>"><i class="fa fa-pencil"></i></button>
 											<button class="btn btn-danger btn-xs" data-toggle="modal" data-target="#worldDelete<?php echo $worldId; ?>"><i class="fa fa-trash-o "></i></button>
