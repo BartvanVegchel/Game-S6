@@ -89,7 +89,7 @@ input[type="submit"]{
     text-decoration: none !important;
     text-align: center !important;
     -webkit-user-select: none;
-    -webkit-tap-highlight-color: transparent;
+
 }
 
 button:active,
@@ -99,8 +99,11 @@ input[type="submit"]:active{
 }
 
 button:focus,
+a.button:focus,
 input[type="submit"]:focus{
-    outline: none
+    outline: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
 }
 
 .buttonleft{
@@ -515,7 +518,7 @@ section.containerlogin{
     height: 100%;
     width: 100%;
     background-color: #fff;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 section.containerlogin .loginheader{
@@ -622,7 +625,9 @@ input[type="password"]:focus{
     right: 18px;
 }
 
-
+.joyride-content-wrapper img{
+    height: 150px;
+}
 
 /* floating eggs */
 @-webkit-keyframes pulse {

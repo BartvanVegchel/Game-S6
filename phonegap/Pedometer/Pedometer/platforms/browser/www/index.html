@@ -66,8 +66,8 @@
     <span class="fa fa-bolt"></span>
 </div>
 
-<div class="energy-points sync" id="number2">
-    <a href="">
+<div class="energy-points sync" id="number22">
+    <a href="#">
      <span class="fa fa-add-points"></span>
     </a>
 </div>
@@ -95,7 +95,9 @@
 <section class="bottom-bar"></section>
 
 <!-- content of joyride tips -->
-<ol id="joyRideTipContent" data-joyride></ol>
+<ol id="joyRideTipContent" class="tip1" data-joyride></ol>
+<ol id="joyRideTipContent" class="tip2" data-joyride></ol>
+<ol id="joyRideTipContent" class="tip3" data-joyride></ol>
 
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
@@ -113,6 +115,9 @@
     } else {
         console.log('je bent ingelogd');
     }
+
+
+
 </script>
 
 <script>
@@ -126,8 +131,6 @@
             $(this).find('.personalEnergypoints').toggle('fast');
             $(this).find('.personalUnlockedFields').toggle('fast');
         });
-
-
     });
 
     $(window).on('load', function(){

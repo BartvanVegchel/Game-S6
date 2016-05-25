@@ -161,7 +161,7 @@ body.stop-scrolling {
   .sweet-alert.show-input input {
     display: block; }
   .sweet-alert .sa-confirm-button-container {
-    display: inline-block;
+    display: inline;
     position: relative; }
   .sweet-alert .la-ball-fall {
     position: absolute;
