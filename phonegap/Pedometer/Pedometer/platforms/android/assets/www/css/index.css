@@ -480,7 +480,8 @@ section.map div.part div.locked:before {
 
 section.map div.part div.background,
 section.map div.part div.transportbackground,
-section.map div.part div.monsterbackground {
+section.map div.part div.monsterbackground,
+    section.map div.part div.epbackground{
     width: 148px;
     height: 148px;
     float: left;
@@ -491,7 +492,8 @@ section.map div.part div.monsterbackground {
 
 section.map div.part div.background img,
 section.map div.part div.transportbackground img,
-section.map div.part div.monsterbackground img {
+section.map div.part div.monsterbackground img,
+section.map div.part div.epbackground img{
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -1306,8 +1308,3 @@ div.sweet-alert p{
 .completeChallenge{
     display:none;
 }
-
-
-
-
-

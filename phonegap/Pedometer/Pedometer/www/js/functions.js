@@ -157,7 +157,6 @@ function temporaryMonsterFunction(monstername){
     $monsterName = monstername;
     $monsterNameLowerCase = $monsterName.toLowerCase();
 
-
     //check if clicktype is from monsterEgg or monster-detail page
     swal({
             title: $monsterName,
@@ -185,7 +184,44 @@ function temporaryMonsterFunction(monstername){
                 });
 
         });
-}
+} //end temporaryMonsterFunction
+
+function addGiftReward(giftElementId, giftCategory , giftValue){
+
+    $giftElementId = giftElementId;
+    $giftCategory = giftCategory;
+    $giftValue = giftValue;
+
+    if($giftCategory == 'energypoints'){
+        $title = 'Energiepunten gevonden';
+        $text = 'Je hebt ' + $giftValue + ' energiepunten gekregen';
+    }
+    //check if clicktype is from monsterEgg or monster-detail page
+    swal({
+            title: $title,
+            text: $text,
+            confirmButtonText: "Oke",
+            showCancelButton: false,
+            cancelButtonText: "",
+        },
+        function () {
+            $.ajax(
+                {
+                    type: "get",
+                    url: "http://game.onlineops.nl/phonegap_php/addGiftValues.php",
+                    data: {'giftelementid': $giftElementId, 'giftvalue': $giftValue, 'giftcategory': $giftCategory, 'username': $userName},
+                    timer: 2000,
+                    success: function (data) {
+                    }
+                }
+            )
+                .done(function (data) {
+                    //refresh page on done
+                    window.location.href = 'index.html';
+                });
+
+        });
+} //end addGiftReward
 
 
 //start monsterChallenge
@@ -275,7 +311,14 @@ function buildMap() {
                     //$clickType = 'monsterEgg';
                     //getMonsterChallengeInfo($monsterName, $clickType);
                     temporaryMonsterFunction($monsterName);
+                });//end monsterEgg click
 
+                $('img.giftBox').click(function () {
+                    $giftElementId = $(this).parent().parent().attr('id');
+                    $giftCategory = $(this).attr('id');
+                    $giftValue = $(this).attr('giftValue');
+
+                    addGiftReward($giftElementId, $giftCategory, $giftValue);
                 });//end monsterEgg click
 
                 $("div.transportbackground img").click(function () {
