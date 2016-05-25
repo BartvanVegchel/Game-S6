@@ -106,6 +106,7 @@
 <script type="text/javascript" src="js/joyride-master/modernizr.mq.js"></script>
 <script type="text/javascript" src="js/joyride-master/jquery.joyride-2.1.js"></script>
 <script type="text/javascript" src="js/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
 <script>
 
     // check if ingelogd
@@ -131,11 +132,15 @@
             $(this).find('.personalEnergypoints').toggle('fast');
             $(this).find('.personalUnlockedFields').toggle('fast');
         });
+
+//        $mapWidth = $('.map').width();
+//        $mapHeight = $('.map').height();
+//         $('.map-container').offset({ top: 450, left: 450 });
+//        // $('body').animate({ scrollTop: '450px' });
+//         alert($mapWidth);
+////        $(window).scrollTo('#1_14',{duration:'slow', offsetTop : '50'});
     });
 
-    $(window).on('load', function(){
-
-    })
 </script>
 
 <script>
@@ -160,7 +165,6 @@
 
         }, 0);
     }
-
 
     //check if is monsterChallenge
 //    if ($monsterName !== '' && $requirement) {

@@ -139,7 +139,7 @@ function dailyChallenge(name, id, description, time, reward) {
     $monsterName = '';//empty for check on challenge.html
     $reward = reward;
     $challengeId = id;
-    $description = description
+    $description = description;
     $time = time;
 
     swal({
@@ -357,11 +357,17 @@ function buildMap() {
                 alert("Er gaat iets verkeerd, neem contact met ons op!");
             }
         }).done(function(){
-            // $mapWidth = $('.map').width();
-            // $mapHeight = $('.map').height();
-            // //$('.map-container').offset({ top: 450, left: 450 });
-            // $('body').animate({ scrollTop: '450px' });
+            $mapWidth = $('.map').width();
+            $mapHeight = $('.map').height();
             // alert($mapWidth);
+
+            // function scrollToElement($('#1_14')){
+            //     $(window).scrollTop($('#1_14').offset().top).scrollLeft($('#1_14').offset().left);
+            // }
+            var dingetje = $(".part:nth-child(10)").attr('id');
+
+            var element = document.getElementById(dingetje);
+            element.scrollIntoView();
         })
     }
 
@@ -629,6 +635,20 @@ function clickEvents() {
             dailyChallenge($name, $day, $description, $time, $reward);
         })
     }); // end .dailyChallenge click
+
+    $('a, input[type="submit"], button').on('click', function(){
+        var snd = new Audio("sounds/square_pop.wav");
+        snd.play();
+        snd.currentTime=0;
+    });
+
+    $('input[type="submit"], button').on('click', function(){
+        preventDefault();
+        var snd = new Audio("sounds/square_pop.wav");
+        snd.play();
+        snd.currentTime=0;
+        return true;
+    });
 
 
     $(".world-name").click(function () {
