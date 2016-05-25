@@ -56,9 +56,6 @@
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
-        "cordova-plugin-pedometer": {
-            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
-        },
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },

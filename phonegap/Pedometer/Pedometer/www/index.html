@@ -281,6 +281,40 @@
             });
     } //challengeComplete == completed
 
+    if($challengeComplete == 'monster'){
+        $challengestatus = getUrlParameter('challengestatus');
+        $userName = getUrlParameter('username');
+        $challengeId = getUrlParameter('challengeid');
+        $titel = 'Uitdaging voltooid!';
+        $text = 'Je hebt ' + $challengestatus + '/3 sterren verdiend!';
+
+        swal({
+            title: $titel,
+            text: $text,
+            imageUrl: "img/ratingstars_" + $challengestatus + ".png",
+            type: "",
+            closeOnConfirm: true,
+            showLoaderOnConfirm: true,
+            confirmButtonText: "Oke",
+            html: true
+        }, function () {
+            $.ajax({
+                type: "GET",
+                url: "http://game.onlineops.nl/phonegap_php/completeMonsterChallenge.php",
+                data: {'username': $username, 'challengeid': $challengeId, 'challengestatus':$challengestatus},
+                success: function (data) {
+                }
+            })
+                    .done(function (data) {
+                        alert('success');
+                        window.location.href = 'index.html';
+                    })
+                    .error(function (data) {
+                        swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
+                    });
+        });
+    }
+
     // initialize app
     app.initialize();
 </script>

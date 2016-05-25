@@ -95,8 +95,9 @@
 				$currentmonster = getUrlParameter('monstername');
 				$currentmonsterLowerCase = $currentmonster.toLowerCase();
 				$('#pageTitle').html($currentmonster);
+				$userName = localStorage.getItem('userInfo');
 
-				var dataString="monstername="+$currentmonster+"&submit=";
+				var dataString="monstername="+$currentmonster+"&username="+$userName+"&submit=";
 				if(localStorage.getItem('userInfo') !== null) {
 					$.ajax({
 						type: "POST",
@@ -114,6 +115,8 @@
 								$monsterWorld = data['monsterworld'];
 								$worldName = data['worldname'];
 								$worldColor = data['worldcolor'];
+								$stars = data['stars'];
+
 								//get the container
 								$swiperContainer = $('.swiper-wrapper');
 
@@ -126,7 +129,7 @@
 										"</h1>" +
 										'<div class="desc">' +
 											'<div class="stars">'+
-												"<img src='img/star_rating.png'>" +
+												"<img src='img/ratingstars_"+$stars+".png'>" +
 											'</div>' +
 											'<div id="monsterstory" class="monsterstory">' +
 												'<p>'+$monsterStory+'</p>'+

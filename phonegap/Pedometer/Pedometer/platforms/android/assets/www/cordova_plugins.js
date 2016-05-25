@@ -424,13 +424,6 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/cordova-plugin-pedometer/www/pedometer.js",
-        "id": "cordova-plugin-pedometer.Pedometer",
-        "clobbers": [
-            "pedometer"
-        ]
-    },
-    {
         "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
         "id": "cordova-plugin-splashscreen.SplashScreen",
         "clobbers": [
@@ -486,7 +479,6 @@ module.exports.metadata =
     "cordova-plugin-media": "2.2.0",
     "cordova-plugin-media-capture": "1.2.0",
     "cordova-plugin-network-information": "1.2.1",
-    "cordova-plugin-pedometer": "0.4.1",
     "cordova-plugin-splashscreen": "3.2.2",
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.1",

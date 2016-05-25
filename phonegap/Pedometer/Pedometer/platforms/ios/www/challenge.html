@@ -191,8 +191,8 @@
                 alert("Er gaat iets verkeerd, neem contact met ons op!");
             }
         }).done(function (result) {
-            alert($username + ' had ' + $stepsbefore + ' en heeft nu ' + $stepsafter + ' het aantal sterren is ' + $challengestatus);
-            window.location.href = "index.html?challengecomplete=monster&challengestatus="+ $challengestatus + "&username=" + $userName;
+            alert($username + ' heeft challenge ' + $challengeId + 'gedaan, hij had ' + $stepsbefore + ' en heeft nu ' + $stepsafter + ' het aantal sterren is ' + $challengestatus);
+            window.location.href = "index.html?challengecomplete=monster&challengestatus="+ $challengestatus + "&challengeid="+$challengeId+"&username=" + $userName;
         })
 
     }
@@ -342,6 +342,7 @@
                                 } else if ($challenge == 'monsterChallenge') {
                                     $challengeStatus = localStorage.getItem('challengeStatus');
                                     $monsterName = data['monstername'];
+                                    $monsterNameLowerCase = $monsterName.toLowerCase();
                                     $challengeName = data['name'];
                                     $challengeDescription = data['description'];
                                     $timeLimit = data['timelimit'];
@@ -360,15 +361,12 @@
                                     }
 
                                     $challengeContent = "<div class='img' style='background-image: url(\"img/mm_bg.jpg\");'>" +
-                                            '<div class="imgmonster" style="background-image: url(\'img/monster_' + $monsterName + '.png\');"></div>' +
+                                            '<div class="imgmonster" style="background-image: url(\'img/monster_' + $monsterNameLowerCase + '.png\');"></div>' +
                                             "</div>" +
                                             "<h1 class='ribbon'>" +
                                             "<strong class='ribbon-content'>" + $challengeName + "</strong>" +
                                             "</h1>" +
                                             '<div class="desc">' +
-                                            '<div class="stars">' +
-                                            "<img src='img/star_rating.png'>" +
-                                            '</div>' +
                                             '<div id="monsterstory" class="monsterstory">' +
                                             '<p>' + $challengeDescription + '</p>' +
                                             '</div>' +

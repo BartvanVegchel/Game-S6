@@ -66,8 +66,8 @@
     <span class="fa fa-bolt"></span>
 </div>
 
-<div class="energy-points sync" id="number2">
-    <a href="">
+<div class="energy-points sync" id="number22">
+    <a href="#">
      <span class="fa fa-add-points"></span>
     </a>
 </div>
@@ -95,7 +95,9 @@
 <section class="bottom-bar"></section>
 
 <!-- content of joyride tips -->
-<ol id="joyRideTipContent" data-joyride></ol>
+<ol id="joyRideTipContent" class="tip1" data-joyride></ol>
+<ol id="joyRideTipContent" class="tip2" data-joyride></ol>
+<ol id="joyRideTipContent" class="tip3" data-joyride></ol>
 
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
@@ -104,6 +106,7 @@
 <script type="text/javascript" src="js/joyride-master/modernizr.mq.js"></script>
 <script type="text/javascript" src="js/joyride-master/jquery.joyride-2.1.js"></script>
 <script type="text/javascript" src="js/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
 <script>
 
     // check if ingelogd
@@ -113,6 +116,9 @@
     } else {
         console.log('je bent ingelogd');
     }
+
+
+
 </script>
 
 <script>
@@ -127,12 +133,14 @@
             $(this).find('.personalUnlockedFields').toggle('fast');
         });
 
-
+//        $mapWidth = $('.map').width();
+//        $mapHeight = $('.map').height();
+//         $('.map-container').offset({ top: 450, left: 450 });
+//        // $('body').animate({ scrollTop: '450px' });
+//         alert($mapWidth);
+////        $(window).scrollTo('#1_14',{duration:'slow', offsetTop : '50'});
     });
 
-    $(window).on('load', function(){
-
-    })
 </script>
 
 <script>
@@ -157,7 +165,6 @@
 
         }, 0);
     }
-
 
     //check if is monsterChallenge
 //    if ($monsterName !== '' && $requirement) {
@@ -273,6 +280,40 @@
                     });
             });
     } //challengeComplete == completed
+
+    if($challengeComplete == 'monster'){
+        $challengestatus = getUrlParameter('challengestatus');
+        $userName = getUrlParameter('username');
+        $challengeId = getUrlParameter('challengeid');
+        $titel = 'Uitdaging voltooid!';
+        $text = 'Je hebt ' + $challengestatus + '/3 sterren verdiend!';
+
+        swal({
+            title: $titel,
+            text: $text,
+            imageUrl: "img/ratingstars_" + $challengestatus + ".png",
+            type: "",
+            closeOnConfirm: true,
+            showLoaderOnConfirm: true,
+            confirmButtonText: "Oke",
+            html: true
+        }, function () {
+            $.ajax({
+                type: "GET",
+                url: "http://game.onlineops.nl/phonegap_php/completeMonsterChallenge.php",
+                data: {'username': $username, 'challengeid': $challengeId, 'challengestatus':$challengestatus},
+                success: function (data) {
+                }
+            })
+                    .done(function (data) {
+                        alert('success');
+                        window.location.href = 'index.html';
+                    })
+                    .error(function (data) {
+                        swal("Oeps", "We denken dat er iets verkeerd is gegaan.", "error");
+                    });
+        });
+    }
 
     // initialize app
     app.initialize();
