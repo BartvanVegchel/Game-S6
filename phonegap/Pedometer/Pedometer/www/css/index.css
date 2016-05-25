@@ -462,6 +462,7 @@ section.map div.part div.locked img{
     transform: translate(-50%, -50%);
     width: 175%;
     z-index: -1;
+    pointer-events: none;
 }
 
 section.map div.part div.locked:before {

@@ -128,6 +128,8 @@ function unlockFunction(id, element) {
     else {
         sweetAlert("Oeps...", "Je hebt niet voldoende energypoints!", "error");
     }
+
+    alert($('.map').offsetWidth());
 }//end function UnlockFunction
 
 
@@ -153,38 +155,40 @@ function dailyChallenge(name, id, description, time, reward) {
         });
 } //end function dailyChallenge
 
-function temporaryMonsterFunction(monstername){
-    $monsterName = monstername;
-    $monsterNameLowerCase = $monsterName.toLowerCase();
 
-    //check if clicktype is from monsterEgg or monster-detail page
-    swal({
-            title: $monsterName,
-            text: "Je hebt " + $monsterName + " ontdekt",
-            imageUrl: "img/monster_" + $monsterNameLowerCase + ".png",
-            confirmButtonText: "Oke",
-            showCancelButton: false,
-            cancelButtonText: "",
-        },
-        function () {
-            $.ajax(
-                {
-                    type: "get",
-                    url: "http://game.onlineops.nl/phonegap_php/temporaryMonsterFunction.php",
-                    data: {'monstername': $monsterName, 'username': $userName},
-                    timer: 2000,
-                    success: function (data) {
-                    }
-                }
-            )
-                .done(function (data) {
-                    //alert('ontdekt');
-                //show image, remove locked block
-                    window.location.href = 'index.html';
-                });
 
-        });
-} //end temporaryMonsterFunction
+// function temporaryMonsterFunction(monstername){
+//     $monsterName = monstername;
+//     $monsterNameLowerCase = $monsterName.toLowerCase();
+//
+//     //check if clicktype is from monsterEgg or monster-detail page
+//     swal({
+//             title: $monsterName,
+//             text: "Je hebt " + $monsterName + " ontdekt",
+//             imageUrl: "img/monster_" + $monsterNameLowerCase + ".png",
+//             confirmButtonText: "Oke",
+//             showCancelButton: false,
+//             cancelButtonText: "",
+//         },
+//         function () {
+//             $.ajax(
+//                 {
+//                     type: "get",
+//                     url: "http://game.onlineops.nl/phonegap_php/temporaryMonsterFunction.php",
+//                     data: {'monstername': $monsterName, 'username': $userName},
+//                     timer: 2000,
+//                     success: function (data) {
+//                     }
+//                 }
+//             )
+//                 .done(function (data) {
+//                     //alert('ontdekt');
+//                 //show image, remove locked block
+//                     window.location.href = 'index.html';
+//                 });
+//
+//         });
+// } //end temporaryMonsterFunction
 
 function addGiftReward(giftElementId, giftCategory , giftValue){
 
@@ -198,92 +202,93 @@ function addGiftReward(giftElementId, giftCategory , giftValue){
     }
     //check if clicktype is from monsterEgg or monster-detail page
     swal({
-            title: $title,
-            text: $text,
-            confirmButtonText: "Oke",
-            showCancelButton: false,
-            cancelButtonText: "",
-        },
-        function () {
-            $.ajax(
-                {
-                    type: "get",
-                    url: "http://game.onlineops.nl/phonegap_php/addGiftValues.php",
-                    data: {'giftelementid': $giftElementId, 'giftvalue': $giftValue, 'giftcategory': $giftCategory, 'username': $userName},
-                    timer: 2000,
-                    success: function (data) {
-                    }
+        title: $title,
+        text: $text,
+        confirmButtonText: "Oke",
+        showCancelButton: false,
+        cancelButtonText: "",
+    },
+    function () {
+        $.ajax(
+            {
+                type: "get",
+                url: "http://game.onlineops.nl/phonegap_php/addGiftValues.php",
+                data: {'giftelementid': $giftElementId, 'giftvalue': $giftValue, 'giftcategory': $giftCategory, 'username': $userName},
+                timer: 2000,
+                success: function (data) {
                 }
-            )
-                .done(function (data) {
-                    //refresh page on done
-                    window.location.href = 'index.html';
-                });
-
+            }
+        )
+        .done(function (data) {
+            //refresh page on done
+            window.location.href = 'index.html';
         });
+
+    });
 } //end addGiftReward
 
 
 //start monsterChallenge
-// function monsterChallenge(monstername, name, id, description, time, clicktype) {
-//     $name = name;
-//     $monsterName = monstername;
-//     $monsterNameLowerCase = $monsterName.toLowerCase();
-//     $reward = '';//empty for check on challenge.html
-//     $challengeId = id;
-//     $description = description
-//     $time = time;
-//     $clickType = clicktype;
-//
-//     //check if clicktype is from monsterEgg or monster-detail page
-//     if ($clickType == 'monsterEgg') {
-//         swal({
-//                 title: $monsterName,
-//                 text: "Speel " + $monsterName + " nu vrij",
-//                 imageUrl: "img/monster_" + $monsterNameLowerCase + ".png",
-//                 confirmButtonText: "Start",
-//                 showCancelButton: true,
-//                 cancelButtonText: "Nu niet",
-//             },
-//             function () {
-//                 localStorage.setItem('monsterChallenge', $challengeId);
-//                 window.location.href = 'challenge.html';
-//             });
-//     } else {
-//         localStorage.setItem('monsterChallenge', $challengeId);
-//         window.location.href = 'challenge.html';
-//     }
-// } //end function monsterChallenge
+function monsterChallenge(monstername, name, challengeid, description, time, clicktype) {
+    $challengeId = challengeid;
+    $name = name;
+    $monsterName = monstername;
+    $monsterNameLowerCase = $monsterName.toLowerCase();
+    $reward = '';//empty for check on challenge.html
+    $description = description;
+    $time = time;
+    $clickType = clicktype;
 
-//
+    //check if clicktype is from monsterEgg or monster-detail page
+    if ($clickType == 'monsterEgg') {
+        swal({
+                title: $monsterName,
+                text: "Speel " + $monsterName + " nu vrij",
+                imageUrl: "img/monster_" + $monsterNameLowerCase + ".png",
+                confirmButtonText: "Start",
+                showCancelButton: true,
+                cancelButtonText: "Nu niet",
+            },
+            function () {
+                localStorage.setItem('monsterChallenge', $challengeId);
+                window.location.href = 'challenge.html';
+            });
+    } else {
+        localStorage.setItem('monsterChallenge', $challengeId);
+        window.location.href = 'challenge.html';
+    }
+} //end function monsterChallenge
 
-// function getMonsterChallengeInfo(monstername, clicktype) {
-//     $monsterName = monstername;
-//     $clickType = clicktype;
-//
-//     var dataString = "monsterName=" + $monsterName + "&submitMonster=";
-//     $.ajax({
-//         type: "POST",
-//         url: "http://game.onlineops.nl/phonegap_php/getDailyChallenge.php",
-//         data: dataString,
-//         crossDomain: true,
-//         cache: false,
-//         dataType: 'json',
-//         success: function (data) {
-//             if (data['error'] == "error") {
-//                 //do nothing
-//             } else if (data['description'] !== "") {
-//                 //get the data
-//                 $name = data['name'];
-//                 $description = data['description'];
-//                 $time = data['timelimit'];
-//                 $monsterId = data['id'];
-//             }
-//         }
-//     }).done(function (data) {
-//         monsterChallenge($monsterName, $name, $monsterId, $description, $time, $clickType);
-//     })
-// } //end function getMonsterChallengeInfo
+
+function getMonsterChallengeInfo(monstername, clicktype) {
+    $monsterName = monstername;
+    $clickType = clicktype;
+
+    var dataString = "monsterName=" + $monsterName + "&submitMonster=";
+    $.ajax({
+        type: "POST",
+        url: "http://game.onlineops.nl/phonegap_php/getDailyChallenge.php",
+        data: dataString,
+        crossDomain: true,
+        cache: false,
+        dataType: 'json',
+        success: function (data) {
+            if (data['error'] == "error") {
+                //do nothing
+            } else if (data['description'] !== "") {
+                //get the data
+                $name = data['name'];
+                $description = data['description'];
+                $time = data['timelimit'];
+                $challengeId = data['challengeid'];
+                alert('id is' + $challengeId);
+                //alert($name);
+            }
+        }
+    }).done(function (data) {
+        monsterChallenge($monsterName, $name, $challengeId, $description, $time, $clickType);
+    })
+} //end function getMonsterChallengeInfo
 
 //Function for build the map
 function buildMap() {
@@ -308,9 +313,11 @@ function buildMap() {
 
                 $('img.monsterEgg').click(function () {
                     $monsterName = $(this).attr('monster-name');
-                    //$clickType = 'monsterEgg';
-                    //getMonsterChallengeInfo($monsterName, $clickType);
-                    temporaryMonsterFunction($monsterName);
+                    $clickType = 'monsterEgg';
+                    localStorage.removeItem('dailyChallenge');
+
+                    getMonsterChallengeInfo($monsterName, $clickType);
+                    //temporaryMonsterFunction($monsterName);
                 });//end monsterEgg click
 
                 $('img.giftBox').click(function () {
@@ -328,8 +335,15 @@ function buildMap() {
             error: function () {
                 alert("Er gaat iets verkeerd, neem contact met ons op!");
             }
+        }).done(function(){
+            // $mapWidth = $('.map').width();
+            // $mapHeight = $('.map').height();
+            // //$('.map-container').offset({ top: 450, left: 450 });
+            // $('body').animate({ scrollTop: '450px' });
+            // alert($mapWidth);
         })
     }
+
 } //end function buildMap
 
 
@@ -339,7 +353,6 @@ function onDeviceReady() {
     buildMap(); //build map if device is ready
     getEnergypoints(); //set energypoints in div
     getUnlockedFields(); //set unlocked fields in div
-    //getWorlds(); //set worlds in div menu
 } //end function onDeviceReady
 
 function countClickItems() {
@@ -554,6 +567,7 @@ function clickEvents() {
             dailyChallenge($name, $day, $description, $time, $reward);
         })
     }); // end .dailyChallenge click
+
 
     $(".world-name").click(function () {
         localStorage.clear();
