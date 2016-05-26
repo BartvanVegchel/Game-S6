@@ -66,7 +66,6 @@ function getUnlockedFields() {
     }
 } //end function getUnlockedFields
 
-
 //function is called from the buildMap function with paramters of clicked element
 function unlockFunction(id, element) {
     $fieldId = id; // get id of clicked parent-element
@@ -239,11 +238,18 @@ function monsterChallenge(monstername, name, challengeid, description, time, cli
     $time = time;
     $clickType = clicktype;
 
+    if($clickType == 'monsterEgg'){
+        $titel = $monsterName;
+        $text = "Speel " + $monsterName + " nu vrij";
+    } else if($clickType == 'monsterdetail'){
+        $titel = $monsterName;
+        $text = "Voer de challenge nog een keer uit!";
+    }
+
     //check if clicktype is from monsterEgg or monster-detail page
-    if ($clickType == 'monsterEgg') {
         swal({
-                title: $monsterName,
-                text: "Speel " + $monsterName + " nu vrij",
+                title: $titel,
+                text: $text,
                 imageUrl: "img/monster_" + $monsterNameLowerCase + ".png",
                 confirmButtonText: "Start",
                 showCancelButton: true,
@@ -253,10 +259,7 @@ function monsterChallenge(monstername, name, challengeid, description, time, cli
                 localStorage.setItem('monsterChallenge', $challengeId);
                 window.location.href = 'challenge.html';
             });
-    } else {
-        localStorage.setItem('monsterChallenge', $challengeId);
-        window.location.href = 'challenge.html';
-    }
+
 } //end function monsterChallenge
 
 
@@ -335,6 +338,15 @@ function buildMap() {
                 $('img.monsterEgg').click(function () {
                     $monsterName = $(this).attr('monster-name');
                     $clickType = 'monsterEgg';
+                    localStorage.removeItem('dailyChallenge');
+
+                    getMonsterChallengeInfo($monsterName, $clickType);
+                    //temporaryMonsterFunction($monsterName);
+                });//end monsterEgg click
+
+                $('.monsterdetailChallenge').click(function () {
+                    $monsterName = $(this).attr('monster-name');
+                    $clickType = 'monsterdetail';
                     localStorage.removeItem('dailyChallenge');
 
                     getMonsterChallengeInfo($monsterName, $clickType);

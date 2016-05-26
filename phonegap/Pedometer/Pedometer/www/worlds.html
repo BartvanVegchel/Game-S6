@@ -128,7 +128,7 @@
 								for (var i = 0; i < $numWorlds; i++) {
 									$process = ($unlockFieldWorlds[i-1]/$worldSize[i-1])*100;
 									$thisWorldId = i+1;
-									$unlockLimit = 15;
+									$unlockLimit = 75;
 
 									$totalStars = $totalMonsters[i] * 3;
 
@@ -138,7 +138,6 @@
 										$dinges2 = Math.ceil($dinges);
 										$slideItem = $slideItem +
 												"<div class='img'>" +
-//												"<span class='fa fa-locked'></span>"+
 												"<img src='img/custom-fog.png'>"+
 												"</div>" +
 												"<h1 class='ribbon'>" +
@@ -146,7 +145,7 @@
 												"</h1>" +
 												"<div class='desc'>" +
 												"<div class='item'>" +
-												"<span class='icon'><i class='fa fa-bolt'></i></span>" +
+												"<span class='icon'><i class='fa fa-monster'></i></span>" +
 												"<span class='stat'>" + $yourmonsters[i] + " / " + $totalMonsters[i] + "</span>" +
 												"</div>" +
 												"<div class='item'>" +

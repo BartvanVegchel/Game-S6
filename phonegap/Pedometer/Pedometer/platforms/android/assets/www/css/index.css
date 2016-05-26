@@ -79,6 +79,7 @@ input[type="submit"]{
     /*line-height: 1.8;*/
     appearance: none;
     -webkit-appearance: none !important;
+    border-radius: 0 !important;
     color: #fff;
     /*background-color: #6496c8;*/
     border: none !important;
@@ -90,6 +91,20 @@ input[type="submit"]{
     text-decoration: none !important;
     text-align: center !important;
     -webkit-user-select: none;
+}
+
+a.btn{
+    padding: 10px 0px;
+    font-size: 16px;
+    font-family: 'Oduda', 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    appearance: none;
+    -webkit-appearance: none !important;
+    color: #fff;
+    border: none;
+    text-transform: none;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
 }
 
 button:active,
@@ -1349,6 +1364,10 @@ div.sweet-alert p{
     height: 22px;
     width: 22px;
     margin-top: 12px;
+}
+
+.completeChallenge{
+    display:inline-block;
 }
 
 .hiddenInfo,
