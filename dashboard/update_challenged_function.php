@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { // Controleer of het formulier verzo
 
         mysqli_query($db, "UPDATE dailyChallenges SET name = '$challengedName', description = '$challengedDescription', requirement = '$challengedRequirement', timeLimit = '$challengedTimeLimit', reward = '$challengedReward' WHERE id = '$challengedId'");
 		
-		//header("Refresh: 3; url=challengesd.php");
+		header("Refresh: 3; url=challengesd.php");
         echo "<div class='container'><div class='alert alert-success'><strong><span class=\"entypo-check\"></span>Daily challenge is succesvol geupdate</strong>" . 
             "<p>Gefeliciteerd! De daily challenge is succesvol geupdate.</p></div></div>"; // als het succesvol naar de database is geplaatst
 		
