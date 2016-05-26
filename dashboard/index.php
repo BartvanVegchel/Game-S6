@@ -5,47 +5,7 @@
 ?>
 
               <div class="row">
-                  <div class="col-lg-9 main-chart">
-                  
-                  	<div class="row mtbox">
-                  		<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
-                  			<div class="box1">
-					  			<span class="li_heart"></span>
-					  			<h3>33</h3>
-                  			</div>
-					  			<p>33 mensen hebben MM likes gegeven de afgelopen week!</p>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="li_data"></span>
-					  			<h3>+48</h3>
-                  			</div>
-					  			<p>Er zijn 48 Nieuwe bestanden op de server geplaatst.</p>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="li_stack"></span>
-					  			<h3>23</h3>
-                  			</div>
-					  			<p>er staan 23 ongelezen berichten in de inbox.</p>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="li_news"></span>
-					  			<h3>+10</h3>
-                  			</div>
-					  			<p>Er zijn tien nieuwe comments op fb en insta!</p>
-                  		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="li_cloud"></span>
-					  			<h3>3</h3>
-                  			</div>
-					  			<p>Er zijn 3 nieuwe bestanden op de google drive opgeslagen. </p>
-                  		</div>
-                  	
-                  	</div><!-- /row mt -->	
-                  
+                  <div class="col-lg-12 main-chart">
                       
                       <div class="row mt">
                       <!-- SERVER STATUS PANELS -->
@@ -82,7 +42,6 @@
 								<i class="fa fa-instagram fa-4x"></i>
 								<p>Instagram Activiteit</br>deze maand
 								</p>
-								<p><i class="fa fa-comment"></i> 18 | <i class="fa fa-heart"></i> 49</p>
 							</div>
 						</div><!-- /col-md-4 -->
 
@@ -92,7 +51,6 @@
                 <i class="fa fa-facebook-square fa-4x"></i>
                 <p>Facebook Activiteit</br>deze maand
                 </p>
-                <p><i class="fa fa-comment"></i> 12 | <i class="fa fa-facebook"></i> 49</p>
               </div>
             </div><!-- /col-md-4 -->
 					
@@ -151,66 +109,7 @@
       RIGHT SIDEBAR CONTENT
       *********************************************************************************************************************************************************** -->                  
                   
-                  <div class="col-lg-3 ds">
-                    <!--COMPLETED ACTIONS DONUTS CHART-->
-						<h3>NOTIFICATIES</h3>
-                                        
-                      <!-- First Action -->
-                      <div class="desc">
-                      	<div class="thumb">
-                      		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                      	</div>
-                      	<div class="details">
-                      		<p><muted>2 Minuten geleden</muted><br/>
-                      		   <a href="#">Kees Bruin</a> heeft nu een subscriptie op de nieuws brief.<br/>
-                      		</p>
-                      	</div>
-                      </div>
-                      <!-- Second Action -->
-                      <div class="desc">
-                      	<div class="thumb">
-                      		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                      	</div>
-                      	<div class="details">
-                      		<p><muted>3 Uur geleden</muted><br/>
-                      		   <a href="#">Diana Ken</a> heeft Moving Monsters gedownload.<br/>
-                      		</p>
-                      	</div>
-                      </div>
-                      <!-- Third Action -->
-                      <div class="desc">
-                      	<div class="thumb">
-                      		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                      	</div>
-                      	<div class="details">
-                      		<p><muted>7 Uur geleden</muted><br/>
-                      		   <a href="#">Bram Page</a> heeft Moving Monsters gedownload.<br/>
-                      		</p>
-                      	</div>
-                      </div>
-                      <!-- Fourth Action -->
-                      <div class="desc">
-                      	<div class="thumb">
-                      		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                      	</div>
-                      	<div class="details">
-                      		<p><muted>11 Uur geleden</muted><br/>
-                      		   <a href="#">Mark Tuin</a> heeft een subscriptie op de facebook pagina.<br/>
-                      		</p>
-                      	</div>
-                      </div>
-                      <!-- Fifth Action -->
-                      <div class="desc">
-                      	<div class="thumb">
-                      		<span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                      	</div>
-                      	<div class="details">
-                      		<p><muted>18 Uur geleden</muted><br/>
-                      		   <a href="#">Daniel Praat</a> heeft Moving Monsters gedownload.<br/>
-                      	</div>
-                      </div>
-                      
-                  </div><!-- /col-lg-3 -->
+                  
 				</div>
               </div><! --/row -->
 			  

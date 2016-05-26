@@ -358,6 +358,15 @@ ul.sidebar-menu li.sub-menu{
 ul.sidebar-menu li a span{
     display: inline-block;
     font-family: oduda;
+	font-size: 13px;
+}
+
+.loggedinas {
+	padding: 5px 10px;
+	background: #fff;
+	margin-top: 15px;
+	font-weight: bold;
+	margin-right: 20px;
 }
 
 ul.sidebar-menu li a{

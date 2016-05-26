@@ -53,7 +53,7 @@
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
 					<?php if(isset($_SESSION["logged_in"])){ ?>
-						<li>Ingelogd als: <?php echo $_SESSION["username"]; ?></li>
+						<li class="loggedinas">Ingelogd als: <?php echo $_SESSION["username"]; ?></li>
 						<li><a class="logout" href="functions/logout_function.php">Uitloggen</a></li>
 					<?php } else { ?>
 						<li><a class="logout" href="login.php">Inloggen</a></li>
