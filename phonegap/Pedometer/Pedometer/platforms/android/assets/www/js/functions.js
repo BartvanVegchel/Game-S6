@@ -563,10 +563,21 @@ function buildJoyride(){
         '<h2>Oh nee!</h2>' +
         '<p>Je Energie punten zijn bijna op!</p>' +
         '</li>' +
-        '<li data-id="number22" data-text="Ik snap het!" data-prev-text="Prev" class="custom2">' +
+        '<li data-text="Volgende">' +
+        '<h2>Nieuwe punten</h2>' +
+        '<img src="img/moves-logo.png">'+
+        '<p>Maar geen zorgen, je kunt zelf nieuwe punten te verdienen! Download de Moves app en houd bij hoeveel stappen je zet!</p>' +
+        '</li>' +
+        '<li data-id="number22" data-text="Volgende" data-prev-text="Prev" class="custom2">' +
         '<h2>Energie punten toevoegen</h2>' +
-        '<p>Klik hier om nieuwe energiepunten toe te voegen vanuit de stappenteller.</p>' +
+        '<p>Klik op deze knop om nieuwe energiepunten toe te voegen vanuit de stappenteller.</p>' +
+        '</li>'+
+        '<li data-text="Ik snap het!">' +
+        '<h2>Stappenteller</h2>' +
+        '<img src="img/tutorialimg.png">'+
+        '<p>Zometeen krijg je een soortgelijk scherm als hierboven. Klik op "ALLOW" om verder te gaan.</p>' +
         '</li>';
+
     $($tutorailElements3).appendTo($(".tip3"));
 
     // Joyride tip intro

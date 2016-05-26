@@ -768,7 +768,7 @@ input[type="password"]:focus{
     padding-bottom: 80%;
     margin-left: 10%;
     margin-top: 10%;
-    background-color: #fff;
+    /*background-color: #fff;*/
     background-size: cover;
     background-position: top center;
     -webkit-border-radius: 100%;
@@ -977,10 +977,10 @@ input[type="password"]:focus{
 .challenge .img,
 .ranking .img,
 .user .img{
-    padding-bottom: 80%;
+    /*padding-bottom: 80%;*/
     height: 0;
-    background-size: 300%;
-    background-position: top center;
+    /*background-size: 300%;*/
+    /*background-position: top center;*/
 }
 
 .monster-detail .imgmonster,
