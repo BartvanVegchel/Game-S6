@@ -123,6 +123,13 @@
                       </a>
                   </li>
 
+                  <li class="sub-menu">
+                      <a href="gifts.php">
+                          <i class="fa fa-th"></i>
+                          <span>Gifts</span>
+                      </a>
+                  </li>
+
               </ul>
               <!-- sidebar menu end-->
           </div>
