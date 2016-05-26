@@ -115,8 +115,10 @@
 								$worldNames = data['worldnames'];
 								$totalMonsters = data['totalmonsters'];
 								$yourmonsters = data['yourmonsters'];
+								$yourstars = data['yourstars'];
 								console.log($totalMonsters);
 								console.log($yourmonsters);
+								console.log($yourstars);
 								console.log('numWorlds is' + $numWorlds);
 								console.log($unlockFieldWorlds);
 								console.log($worldSize);
@@ -127,6 +129,8 @@
 									$process = ($unlockFieldWorlds[i-1]/$worldSize[i-1])*100;
 									$thisWorldId = i+1;
 									$unlockLimit = 15;
+
+									$totalStars = $totalMonsters[i] * 3;
 
 									$slideItem ="<div class='swiper-slide'>";
 									if($process < $unlockLimit){
@@ -183,9 +187,8 @@
 												"<span class='tooltipIcon'>Verzamelde sterren</span>" +
 												"<i class='fa fa-star'></i>" +
 												"</span>" +
-												"<span class='stat'>0/0</span>" +
+												"<span class='stat'>" + $yourstars[i] + " / " + $totalStars + "</span>" +
 												"</div>" +
-
 												"</div>" +
 												"<div class='buttonbar'>"+
 												"<button id='" + $thisWorldId + "' class='changeWorldId buttonfull buttonblue' data-world-name='"+$worldNames[i] +"'>Speel level</button>" +
@@ -215,11 +218,6 @@
 							changeWorldInfo($thisWorldId, $thisWorldName);
 						});
 
-
-
-//						$(".desc .item .icon").click(function () {
-//							tooltiponClick(element);
-//						}); //end .desc .item .icon click
 						$('.desc .item .icon').click(tooltiponClick);
 					})
 				}
@@ -307,5 +305,4 @@
 	</script>
 	
 </body>
-
 </html>
