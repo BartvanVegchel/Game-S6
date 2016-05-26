@@ -27,7 +27,7 @@
 									VALUES ('', '$challengemName', '$challengemDescription', '$challengemRequirement1', '$challengemRequirement2', '$challengemRequirement3', '$challengemTimeLimit') ");
 			
 			
-				header("Refresh: 3; url=challengem.php");
+				header("Refresh: 3; url=challengesm.php");
 				echo "<div class='container'><div class='alert alert-success'><strong><span class=\"entypo-check\"></span>Your monster challenge has been created</strong>" . 
 				"<p>Congratulations! Your monster challenge has been created.</p></div></div>"; // als het succesvol naar de database is geplaatst
 				

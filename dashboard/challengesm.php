@@ -38,7 +38,7 @@
                           <input type="text" class="form-control" id="naamm" name="challengem_requirement3" placeholder="Requirement (minimaal 30x springen)">
 						</div>
 							
-						<input type="submit" name="submit" id="submit" value="Voeg daily challenge toe" class="btn btn-theme btn-lg btn-block">
+						<input type="submit" name="submit" id="submit" value="Voeg monster challenge toe" class="btn btn-theme btn-lg btn-block">
 							
 					</form>
 
