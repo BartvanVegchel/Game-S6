@@ -315,6 +315,30 @@
         });
     }
 
+    function checkDailyChallenge(){
+        $userName = localStorage.getItem('userInfo');
+
+        $date = new Date();
+        $day = $date.getDate();//zero based
+        $month = $date.getMonth() + 1;//zero based
+        $year = $date.getFullYear();
+        $date = $year.toString() + $month.toString() + $day.toString();
+
+        var dataString = "date=" + $date + "&username="+ $userName;
+        $.ajax({
+            type: "GET",
+            url: "http://game.onlineops.nl/phonegap_php/checkDailyChallenge.php",
+            dataType: 'json',
+            data: dataString,
+            success: function (data) {
+                alert(data['dailychallengecheck']);
+            }
+        })
+        .done(function (data) {
+            $("daily-challenge").hide();
+        })
+    }
+    checkDailyChallenge();
     // initialize app
     app.initialize();
 </script>
