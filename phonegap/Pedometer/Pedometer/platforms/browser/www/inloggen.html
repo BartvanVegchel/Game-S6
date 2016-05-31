@@ -80,7 +80,6 @@
                     crossDomain: true,
                     cache: false,
                     dataType: 'json',
-                    beforeSend: function(){ $("#loginBtn").val('Connecting...');},
                     success: function(data){
                         //alert(data['error']);
                         if(data['error']=="succesfull")
@@ -93,7 +92,7 @@
                         else if(data['error']=="error")
                         {//if somterhing goes wrong
                             alert("Inloggen mislukt");
-                            $("#loginBtn").val('Probeer het nog eens');
+//                            $("#loginBtn").val('Probeer het nog eens');
                         }
                     },
                     error: function () {

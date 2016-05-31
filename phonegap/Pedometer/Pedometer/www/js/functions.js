@@ -487,7 +487,7 @@ function createElements() {
         '<li>' +
         '<a href="worlds.html">' +
         '<div id="number6" class="circle">' +
-        '<span class="fa fa-rocket"></span>' +
+        '<span class="fa fa-globe"></span>' +
         '</div>' +
         '</a>' +
         '</li>' +
@@ -535,7 +535,7 @@ function buildJoyride(){
         '</li>' +
         '<li data-id="number4" data-text="Volgende" class="custom4">' +
         '<h2>Dagelijkse uitdaging</h2>' +
-        '<p>Iedere dag staat er een nieuwe uitdaging voor je klaar. Als je de uitdaging hebt gehaald staat er een leuke belonign voor je klaar!</p>' +
+        '<p>Iedere dag staat er een nieuwe uitdaging voor je klaar. Als je de uitdaging hebt gehaald staat er een leuke beloning voor je klaar!</p>' +
         '</li>' +
         '<li data-id="number5" data-text="Volgende" class="custom5" data-options="tipLocation:top;">' +
         '<h2>Home</h2>' +

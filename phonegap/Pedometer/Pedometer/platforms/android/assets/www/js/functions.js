@@ -566,7 +566,7 @@ function buildJoyride(){
         '<li data-text="Volgende">' +
         '<h2>Nieuwe punten</h2>' +
         '<img src="img/moves-logo.png">'+
-        '<p>Maar geen zorgen, je kunt zelf nieuwe punten te verdienen! Download de Moves app en houd bij hoeveel stappen je zet!</p>' +
+        '<p>Maar geen zorgen, je kunt zelf nieuwe punten verdienen! Download de Moves app en houd bij hoeveel stappen je zet!</p>' +
         '</li>' +
         '<li data-id="number22" data-text="Volgende" data-prev-text="Prev" class="custom2">' +
         '<h2>Energie punten toevoegen</h2>' +

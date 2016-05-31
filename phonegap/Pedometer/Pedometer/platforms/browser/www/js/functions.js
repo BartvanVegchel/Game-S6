@@ -487,7 +487,7 @@ function createElements() {
         '<li>' +
         '<a href="worlds.html">' +
         '<div id="number6" class="circle">' +
-        '<span class="fa fa-rocket"></span>' +
+        '<span class="fa fa-globe"></span>' +
         '</div>' +
         '</a>' +
         '</li>' +
@@ -535,7 +535,7 @@ function buildJoyride(){
         '</li>' +
         '<li data-id="number4" data-text="Volgende" class="custom4">' +
         '<h2>Dagelijkse uitdaging</h2>' +
-        '<p>Iedere dag staat er een nieuwe uitdaging voor je klaar. Als je de uitdaging hebt gehaald staat er een leuke belonign voor je klaar!</p>' +
+        '<p>Iedere dag staat er een nieuwe uitdaging voor je klaar. Als je de uitdaging hebt gehaald staat er een leuke beloning voor je klaar!</p>' +
         '</li>' +
         '<li data-id="number5" data-text="Volgende" class="custom5" data-options="tipLocation:top;">' +
         '<h2>Home</h2>' +
@@ -563,10 +563,21 @@ function buildJoyride(){
         '<h2>Oh nee!</h2>' +
         '<p>Je Energie punten zijn bijna op!</p>' +
         '</li>' +
-        '<li data-id="number22" data-text="Ik snap het!" data-prev-text="Prev" class="custom2">' +
+        '<li data-text="Volgende">' +
+        '<h2>Nieuwe punten</h2>' +
+        '<img src="img/moves-logo.png">'+
+        '<p>Maar geen zorgen, je kunt zelf nieuwe punten verdienen! Download de Moves app en houd bij hoeveel stappen je zet!</p>' +
+        '</li>' +
+        '<li data-id="number22" data-text="Volgende" data-prev-text="Prev" class="custom2">' +
         '<h2>Energie punten toevoegen</h2>' +
-        '<p>Klik hier om nieuwe energiepunten toe te voegen vanuit de stappenteller.</p>' +
+        '<p>Klik op deze knop om nieuwe energiepunten toe te voegen vanuit de stappenteller.</p>' +
+        '</li>'+
+        '<li data-text="Ik snap het!">' +
+        '<h2>Stappenteller</h2>' +
+        '<img src="img/tutorialimg.png">'+
+        '<p>Zometeen krijg je een soortgelijk scherm als hierboven. Klik op "ALLOW" om verder te gaan.</p>' +
         '</li>';
+
     $($tutorailElements3).appendTo($(".tip3"));
 
     // Joyride tip intro

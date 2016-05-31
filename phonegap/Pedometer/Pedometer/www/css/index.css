@@ -541,6 +541,7 @@ section.containerlogin{
     width: 100%;
     background-color: #fff;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 section.containerlogin .loginheader{
@@ -966,6 +967,7 @@ input[type="password"]:focus{
 
 /* monster detail page & challenge page & user page */
 .buttonbar button,
+.containerlogin .buttonbar input[type= 'submit'],
 .monster-detail .buttonbar button,
 .challenge .buttonbar button,
 .ranking .desc,
@@ -1341,6 +1343,12 @@ div.sweet-alert p{
     font-size: 14px;
     color: #333 !important;
     margin-bottom: 25px;
+}
+
+div.sweet-alert .sa-icon{
+    height: 125px !important;
+    width: 125px !important;
+    margin: 0 auto !important;
 }
 
 .sync .fa-add-points{
