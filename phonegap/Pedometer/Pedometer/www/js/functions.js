@@ -518,7 +518,7 @@ function buildJoyride(){
     $tutorailElements = ''+
         '<li data-text="Volgende">' +
         '<h2>Welkom!</h2>' +
-        '<p>Welkom bij MovingMonsters! Je bent zojuist geland op een onbekende wereld. Op iedere wereld zitten een aantal monsters verstopt. Ontdek de wereld en verzamel alle monsters!</p>' +
+        '<p>Je bent zojuist geland in de eerste wereld! In deze wereld zitten een aantal monsters verstopt. Ontdek de wereld en verzamel alle monsters!</p>' +
         '</li>' +
         '<li data-text="Volgende">' +
         '<h2>Ontdekken</h2>' +
@@ -527,55 +527,55 @@ function buildJoyride(){
         '</li>' +
         '<li data-id="number1" data-text="Volgende" class="custom1">' +
         '<h2>Energie punten</h2>' +
-        '<p>Hier kun je zien hoeveel Energie punten je hebt</p>' +
+        '<p>Hier kun je zien hoeveel <span class="fa fa-bolt"></span> energiepunten je nog hebt</p>' +
         '</li>' +
         '<li data-id="number3" data-text="Volgende" class="custom3">' +
         '<h2>Voortgang wereld</h2>' +
-        '<p>Hier zie je het aantal ontdekte gebieden van de wereld waar je op dit moment bent.</p>' +
+        '<p>Hier zie je hoeveel wolken er zijn ontgrendeld in deze wereld.</p>' +
         '</li>' +
         '<li data-id="number4" data-text="Volgende" class="custom4">' +
         '<h2>Dagelijkse uitdaging</h2>' +
-        '<p>Iedere dag staat er een nieuwe uitdaging voor je klaar. Als je de uitdaging hebt gehaald staat er een leuke beloning voor je klaar!</p>' +
+        '<p>Met deze uitdaging kun je eens per dag, extra energiepunten winnen!</p>' +
         '</li>' +
         '<li data-id="number5" data-text="Volgende" class="custom5" data-options="tipLocation:top;">' +
         '<h2>Home</h2>' +
-        '<p>Wanneer je hier op klikt ga je terug naar de wereld die je op dit moment aan het verkennen bent.</p>' +
+        '<p>Klik hier om terug te gaan naar de wereld.</p>' +
         '</li>' +
         '<li data-id="number8" data-text="Ik snap het!" class="custom8" data-options="tipLocation:top;">' +
         '<h2>Profiel</h2>' +
-        '<p>Op deze pagina kun je eigen prestaties bekijken. Ook kun je vanuit hier vrienden uitnodigen, zodat jullie tegen elkaar kunnen strijden om de eerste plek!</p>' +
+        '<p>Bekijk hier je profiel en nodig je vrienden uit! Strijd tegen je vrienden om de eerste plaats te behalen!</p>' +
         '</li>';
     $($tutorailElements).appendTo($(".tip1"));
 
     $tutorailElements2 = ''+
         '<li data-text="Volgende">' +
         '<h2>Goedzo!</h2>' +
-        '<p>Je hebt een monster ei ontdekt! breek het ei open en kijk welk monster er in zit!</p>' +
+        '<p>Je hebt een monster ei ontdekt! breek het ei open, kijk welk monster er in zit en speel de uitdaging!</p>' +
         '</li>' +
         '<li data-id="number77" data-text="Ik snap het!" data-options="tipLocation:top;" class="custom7">' +
         '<h2>Monsterdex</h2>' +
-        '<p>Alle ontdekte monsters worden verzameld in jouw eigen monsterdex. Klik op een monster voor meer informatie, of als je de monsterchallenge opnieuw wilt doen.</p>' +
+        '<p>Alle monsters worden hier verzameld, Speel de monster-uitdaging opnieuw om drie sterren te behalen!.</p>' +
         '</li>';
     $($tutorailElements2).appendTo($(".tip2"));
 
     $tutorailElements3 = ''+
         '<li data-text="Volgende">' +
         '<h2>Oh nee!</h2>' +
-        '<p>Je Energie punten zijn bijna op!</p>' +
+        '<p>Je energiepunten zijn bijna op!</p>' +
         '</li>' +
         '<li data-text="Volgende">' +
         '<h2>Nieuwe punten</h2>' +
         '<img src="img/moves-logo.png">'+
-        '<p>Maar geen zorgen, je kunt zelf nieuwe punten verdienen! Download de Moves app en houd bij hoeveel stappen je zet!</p>' +
+        '<p>Je kunt zelf energiepunten verdienen! Download de Moves app en houd bij hoeveel stappen je zet!</p>' +
         '</li>' +
         '<li data-id="number22" data-text="Volgende" data-prev-text="Prev" class="custom2">' +
-        '<h2>Energie punten toevoegen</h2>' +
-        '<p>Klik op deze knop om nieuwe energiepunten toe te voegen vanuit de stappenteller.</p>' +
+        '<h2>Energiepunten toevoegen</h2>' +
+        '<p>Klik nadat je de Moves app hebt aangezet op <span class="fa fa-add-points"></span> om de nieuwe energiepunten toe te voegen.</p>' +
         '</li>'+
         '<li data-text="Ik snap het!">' +
         '<h2>Stappenteller</h2>' +
         '<img src="img/tutorialimg.png">'+
-        '<p>Zometeen krijg je een soortgelijk scherm als hierboven. Klik op "ALLOW" om verder te gaan.</p>' +
+        '<p>Zometeen krijg je een soortgelijk scherm als hierboven. Klik op "Open" en daarna op "ALLOW" om verder te gaan.</p>' +
         '</li>';
 
     $($tutorailElements3).appendTo($(".tip3"));
