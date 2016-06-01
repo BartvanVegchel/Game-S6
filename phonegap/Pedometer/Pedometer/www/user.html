@@ -47,6 +47,7 @@
     <title>Moving Monsters</title>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
+
     <script src="js/sweetalert-dev.js"></script>
     <script src="js/tabs.js"></script>
 </head>
@@ -212,7 +213,7 @@
                         }
                     },
                     error: function () {
-                        alert("Er gaat iets verkeerd, neem contact met ons op!");
+                        swal("Er gaat iets verkeerd, probeer het opnieuw!");
                     }
                 }).done(function (result) {
                     swiper();

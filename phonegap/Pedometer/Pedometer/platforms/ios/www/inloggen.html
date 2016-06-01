@@ -80,24 +80,23 @@
                     crossDomain: true,
                     cache: false,
                     dataType: 'json',
-                    beforeSend: function(){ $("#loginBtn").val('Connecting...');},
                     success: function(data){
                         //alert(data['error']);
                         if(data['error']=="succesfull")
                         {// if register is succesfull
-                            alert("Welkom " + data['username']);
-                            $("#loginBtn").val('Succesvol ingelogd');
+                            //alert("Welkom " + data['username']);
+                            //$("#loginBtn").val('Succesvol ingelogd');
                             window.location.href = "index.html?tutorial=true";
                             localStorage.setItem('userInfo', data['username']);
                         }
                         else if(data['error']=="error")
                         {//if somterhing goes wrong
                             alert("Inloggen mislukt");
-                            $("#loginBtn").val('Probeer het nog eens');
+//                            $("#loginBtn").val('Probeer het nog eens');
                         }
                     },
                     error: function () {
-                        alert("Er gaat iets verkeerd, neem contact met ons op");
+                        alert("Er gaat iets verkeerd, probeer het opnieuw!");
                     }
                 })
             }return false;

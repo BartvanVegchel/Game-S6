@@ -38,9 +38,12 @@
     -->
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 
+    <link rel="stylesheet" href="css/sweetalert.css">
     <link rel="stylesheet" type="text/css" href="css/index.css" />
     <title>Moving Monsters</title>
-	<script src="js/jquery.js"></script>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/sweetalert-dev.js"></script>
 </head>
 
 <body>
@@ -84,19 +87,19 @@
                         //alert(data['error']);
                         if(data['error']=="succesfull")
                         {// if register is succesfull
-                            alert("Welkom " + data['username']);
-                            $("#loginBtn").val('Succesvol ingelogd');
+                            //alert("Welkom " + data['username']);
+                            //$("#loginBtn").val('Succesvol ingelogd');
                             window.location.href = "index.html?tutorial=true";
                             localStorage.setItem('userInfo', data['username']);
                         }
                         else if(data['error']=="error")
                         {//if somterhing goes wrong
-                            alert("Inloggen mislukt");
+                            swal("Inloggen mislukt, probeer het opnieuw!");
 //                            $("#loginBtn").val('Probeer het nog eens');
                         }
                     },
                     error: function () {
-                        alert("Er gaat iets verkeerd, neem contact met ons op");
+                        swal("Er gaat iets verkeerd, probeer het opnieuw!");
                     }
                 })
             }return false;

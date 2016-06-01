@@ -34,7 +34,7 @@ function getEnergypoints() {
                 }
             },
             error: function () {
-                alert("Er gaat iets verkeerd, neem contact met ons op!");
+                swal("Er gaat iets verkeerd, probeer het opnieuw!");
             }
         });
     }
@@ -60,7 +60,7 @@ function getUnlockedFields() {
                 }
             },
             error: function () {
-                alert("Er gaat iets verkeerd, neem contact met ons op!");
+                swal("Er gaat iets verkeerd, probeer het opnieuw!");
             }
         })
     }
@@ -284,7 +284,7 @@ function getMonsterChallengeInfo(monstername, clicktype) {
                 $description = data['description'];
                 $time = data['timelimit'];
                 $challengeId = data['challengeid'];
-                alert('id is' + $challengeId);
+                //alert('id is' + $challengeId);
                 //alert($name);
             }
         }
@@ -366,7 +366,7 @@ function buildMap() {
                 });
             },
             error: function () {
-                alert("Er gaat iets verkeerd, neem contact met ons op!");
+                swal("Er gaat iets verkeerd, probeer het opnieuw!");
             }
         }).done(function(){
             $mapWidth = $('.map').width();

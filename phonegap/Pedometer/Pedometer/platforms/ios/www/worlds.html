@@ -137,8 +137,9 @@
 										$dinges = ($worldSize[i-1]/100) * $unlockLimit;
 										$dinges2 = Math.ceil($dinges);
 										$slideItem = $slideItem +
-												"<div class='img'>" +
-												"<img src='img/custom-fog.png'>"+
+												"<div class='img' style='background-image: url(\"img/custom-fog_rounded.png\");'>" +
+//												"<span class='fa fa-locked'></span>"+
+//												"<img src='img/custom-fog_rounded.png'>"+
 												"</div>" +
 												"<h1 class='ribbon'>" +
 												"<strong class='ribbon-content'>??</strong>" +
@@ -177,7 +178,7 @@
 												"<div class='item'>" +
 												"<span class='icon'>" +
 												"<span class='tooltipIcon'>Ontdekte gebieden</span>" +
-												"<i class='fa fa-globe'></i>" +
+												"<i class='fa fa-unlock'></i>" +
 												"</span>" +
 												"<span class='stat'>" + $unlockFieldWorlds[i] + " / " + $worldSize[i] + "</span>" +
 												"</div>" +
