@@ -151,16 +151,16 @@
                     }
                 },
                 error: function () {
-                    alert("Er gaat iets verkeerd, neem contact met ons op!");
+                    swal("Er gaat iets verkeerd, probeer het opnieuw!");
                 }
             }).done(function (result) {
-                alert($username + ' had ' + $stepsbefore + ' en heeft nu ' + $stepsafter + ' de dailychallengestatus is ' + $challengestatus);
+                //alert($username + ' had ' + $stepsbefore + ' en heeft nu ' + $stepsafter + ' de dailychallengestatus is ' + $challengestatus);
                 window.location.href = "index.html?challengecomplete=daily&challengestatus="+ $challengestatus + "&username=" + $userName  + "&reward=" + $reward;
             })
     }
 
     function handleMonsterChallenge(){
-        alert('handlemonsterChallenge');
+        //alert('handlemonsterChallenge');
         $challengeId = localStorage.getItem('monsterChallenge');
 
         //alert($challengeId);
@@ -188,10 +188,10 @@
                 }
             },
             error: function () {
-                alert("Er gaat iets verkeerd, neem contact met ons op!");
+                swal("Er gaat iets verkeerd, probeer het opnieuw!");
             }
         }).done(function (result) {
-            alert($username + ' heeft challenge ' + $challengeId + 'gedaan, hij had ' + $stepsbefore + ' en heeft nu ' + $stepsafter + ' het aantal sterren is ' + $challengestatus);
+            //alert($username + ' heeft challenge ' + $challengeId + 'gedaan, hij had ' + $stepsbefore + ' en heeft nu ' + $stepsafter + ' het aantal sterren is ' + $challengestatus);
             window.location.href = "index.html?challengecomplete=monster&challengestatus="+ $challengestatus + "&challengeid="+$challengeId+"&username=" + $userName;
         })
 
@@ -224,7 +224,7 @@
                     }
                 },
                 error: function () {
-                    alert("Er gaat iets verkeerd, neem contact met ons op!");
+                    swal("Er gaat iets verkeerd, probeer het opnieuw!");
                 }
             }).done(function (result) {
                 myCounter.start();
@@ -232,7 +232,7 @@
         }
 
         function startMonsterChallenge(){
-            alert('startMonsterChallenge');
+            //alert('startMonsterChallenge');
             var dataString = "username=" + $userName + "&submitMonsterBefore=";
             $.ajax({
                 type: "POST",
@@ -249,11 +249,11 @@
                         $username = data['username'];
                         $('.stepsBefore').html($stepsbefore);
                         localStorage.setItem('stepsBefore', $stepsbefore);
-                        alert($username + ' heeft ' + $stepsbefore);
+                        //alert($username + ' heeft ' + $stepsbefore);
                     }
                 },
                 error: function () {
-                    alert("Er gaat iets verkeerd, neem contact met ons op!");
+                    swal("Er gaat iets verkeerd, probeer het opnieuw!");
                 }
             }).done(function (result) {
                 myCounter.start();
@@ -264,7 +264,6 @@
            function buildChallenge() {
                 //get localstorage dailyChallenge
                 $challengeId = localStorage.getItem('dailyChallenge');
-               //alert($challengeId);
 
                 //check if is dailyChallenge or monsterChallenge
                 if ($challengeId == null) {
@@ -385,7 +384,7 @@
                             }
                         },
                         error: function () {
-                            alert("Er gaat iets verkeerd, neem contact met ons op!");
+                            swal("Er gaat iets verkeerd, probeer het opnieuw!");
                         }
                     }).done(function (result) {
                         if($challenge == 'dailyChallenge'){

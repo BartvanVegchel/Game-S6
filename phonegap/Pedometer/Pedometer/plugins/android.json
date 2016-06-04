@@ -70,6 +70,9 @@
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-health": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         }
     },
     "dependent_plugins": {}

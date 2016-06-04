@@ -446,6 +446,22 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-health/www/ios/HealthKit.js",
+        "id": "cordova-plugin-health.HealthKit",
+        "pluginId": "cordova-plugin-health",
+        "clobbers": [
+            "window.plugins.healthkit"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-health/www/ios/health.js",
+        "id": "cordova-plugin-health.health",
+        "pluginId": "cordova-plugin-health",
+        "clobbers": [
+            "navigator.health"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
         "id": "cordova-plugin-inappbrowser.inappbrowser",
         "pluginId": "cordova-plugin-inappbrowser",
@@ -585,6 +601,7 @@ module.exports.metadata =
     "cordova-plugin-file-transfer": "1.5.1",
     "cordova-plugin-geolocation": "2.1.0",
     "cordova-plugin-globalization": "1.0.3",
+    "cordova-plugin-health": "0.5.4",
     "cordova-plugin-inappbrowser": "1.3.0",
     "cordova-plugin-media": "2.2.0",
     "cordova-plugin-media-capture": "1.2.0",

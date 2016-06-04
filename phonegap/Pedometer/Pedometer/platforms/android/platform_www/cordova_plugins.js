@@ -424,6 +424,13 @@ module.exports = [
         ]
     },
     {
+        "file": "plugins/cordova-plugin-pedometer/www/pedometer.js",
+        "id": "cordova-plugin-pedometer.Pedometer",
+        "clobbers": [
+            "pedometer"
+        ]
+    },
+    {
         "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
         "id": "cordova-plugin-splashscreen.SplashScreen",
         "clobbers": [
@@ -459,6 +466,13 @@ module.exports = [
             "cordova.InAppBrowser.open",
             "window.open"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-health/www/android/health.js",
+        "id": "cordova-plugin-health.health",
+        "clobbers": [
+            "navigator.health"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -479,12 +493,14 @@ module.exports.metadata =
     "cordova-plugin-media": "2.2.0",
     "cordova-plugin-media-capture": "1.2.0",
     "cordova-plugin-network-information": "1.2.1",
+    "cordova-plugin-pedometer": "0.4.1",
     "cordova-plugin-splashscreen": "3.2.2",
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.1",
     "cordova-plugin-whitelist": "1.2.2",
     "cordova-plugin-customurlscheme": "4.1.5",
-    "cordova-plugin-inappbrowser": "1.3.0"
+    "cordova-plugin-inappbrowser": "1.3.0",
+    "cordova-plugin-health": "0.5.4"
 };
 // BOTTOM OF METADATA
 });
