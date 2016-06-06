@@ -238,27 +238,54 @@ function monsterChallenge(monstername, name, challengeid, description, time, cli
     $time = time;
     $clickType = clicktype;
 
-    if($clickType == 'monsterEgg'){
-        $titel = $monsterName;
-        $text = "Speel " + $monsterName + " nu vrij";
-    } else if($clickType == 'monsterdetail'){
-        $titel = $monsterName;
-        $text = "Voer de challenge nog een keer uit!";
-    }
-
     //check if clicktype is from monsterEgg or monster-detail page
     swal({
-            title: $titel,
-            text: $text,
-            imageUrl: "img/monster_" + $monsterNameLowerCase + ".png",
-            confirmButtonText: "Start",
-            showCancelButton: true,
-            cancelButtonText: "Nu niet",
-        },
-        function () {
-            localStorage.setItem('monsterChallenge', $challengeId);
-            window.location.href = 'challenge.html';
-        });
+        title: $monsterName,
+        text: "Je hebt " + $monsterName + " gevonden",
+        imageUrl: "img/monster_" + $monsterNameLowerCase + ".png",
+        confirmButtonText: "Oke",
+        showCancelButton: false
+    },
+    function () {
+        // localStorage.setItem('monsterChallenge', $challengeId);
+        // window.location.href = 'challenge.html';
+        $.ajax(
+            {
+                type: "get",
+                url: "http://game.onlineops.nl/phonegap_php/unlockMonsters.php",
+                data: {'monstername': $monsterName, 'username': $userName},
+                success: function (data) {
+                }
+            }
+        )
+            .done(function (data) {
+                $("img[src$='egg_"+ $monstername + ".png']").attr("src","egg_" + $monstername + "_broken.png");
+            });
+    });
+
+    // if($clickType == 'monsterEgg'){
+    //     $titel = $monsterName;
+    //     $text = "Speel " + $monsterName + " nu vrij";
+    // } else if($clickType == 'monsterdetail'){
+    //     $titel = $monsterName;
+    //     $text = "Voer de challenge nog een keer uit!";
+    // }
+    //
+    //
+    //
+    // //check if clicktype is from monsterEgg or monster-detail page
+    // swal({
+    //         title: $titel,
+    //         text: $text,
+    //         imageUrl: "img/monster_" + $monsterNameLowerCase + ".png",
+    //         confirmButtonText: "Start",
+    //         showCancelButton: true,
+    //         cancelButtonText: "Nu niet",
+    //     },
+    //     function () {
+    //         localStorage.setItem('monsterChallenge', $challengeId);
+    //         window.location.href = 'challenge.html';
+    //     });
 
 } //end function monsterChallenge
 
@@ -592,51 +619,6 @@ function getSteps(stepsDb, stepsLastUpdate){
     }
 } //end function getSteps
 
-function checkDailyChallenge(requirement){
-    $requirement = requirement;
-    alert('requirement');
-    alert('requirement is ' + $requirement);
-    // navigator.health.isAvailable(successCallback, errorCallback);
-    // function errorCallback() {
-    //     alert('health is NOT available');
-    // }
-    //
-    // function successCallback() {
-    //     alert('health is available');
-    //
-    //     var date = new Date();
-    //     var day = date.getDate();
-    //     var month = date.getMonth();
-    //     var year = date.getFullYear();
-    //
-    //     var currentTimer = new Date(year, month, day, 00, 00, 00, 0);
-    //     var now = new Date();
-    //
-    //     navigator.health.query({
-    //         startDate: currentTimer, // three days ago
-    //         endDate: now, // now
-    //         dataType: 'steps'
-    //     }, successMessage, errorMessage)
-    //
-    //     function successMessage(data) {
-    //         $stepsUpdate = 0;
-    //         for (i = 0; i < data.length; i++) {
-    //             //alert(data[i]['value']);
-    //             $stepsUpdate += data[i]['value'];
-    //         }
-    //
-    //         //alert('stepdsDB is ' + $stepsDb + '  '$stepsUpdate);
-    //         //alert("Oude stappen is " + $stepsDb + "Nieuwe stappen is " + $stepsUpdate);
-    //
-    //         alert("stepsupdate is " + $stepsUpdate);
-    //     }
-    //
-    //     function errorMessage(data) {
-    //         alert('geen stappen beschikbaar' + data);
-    //     }
-    // }
-} // end checkDailyChallenge
-
 function buildJoyride(){
     $tutorailElements = ''+
         '<li data-text="Volgende">' +
@@ -829,7 +811,7 @@ function clickEvents() {
                             }
 
                             $percentCompleted = ($currentSteps / $requirement) *100;
-                            //$percentCompleted = 15;
+                            
                             alert("currentSteps is " + $currentSteps);
                             alert("percentCompleted is " + $percentCompleted);
 

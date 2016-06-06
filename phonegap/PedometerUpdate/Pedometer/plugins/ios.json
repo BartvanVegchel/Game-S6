@@ -26,9 +26,6 @@
         "cordova-plugin-device": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
-        "cordova-plugin-device-motion": {
-            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
-        },
         "cordova-plugin-device-orientation": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
@@ -50,9 +47,6 @@
         "cordova-plugin-health": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
-        "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
-        },
         "cordova-plugin-media": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
@@ -65,14 +59,20 @@
         "cordova-plugin-splashscreen": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
-        "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
-        },
         "cordova-plugin-vibration": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqer"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqerty"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqerty"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "edu.fontys.sm.testiugyadfcasdrqerty"
         }
     },
     "dependent_plugins": {}

@@ -201,29 +201,29 @@ function addGiftReward(giftElementId, giftCategory , giftValue){
     }
     //check if clicktype is from monsterEgg or monster-detail page
     swal({
-        title: $title,
-        text: $text,
-        confirmButtonText: "Oke",
-        showCancelButton: false,
-        cancelButtonText: "",
-    },
-    function () {
-        $.ajax(
-            {
-                type: "get",
-                url: "http://game.onlineops.nl/phonegap_php/addGiftValues.php",
-                data: {'giftelementid': $giftElementId, 'giftvalue': $giftValue, 'giftcategory': $giftCategory, 'username': $userName},
-                timer: 2000,
-                success: function (data) {
+            title: $title,
+            text: $text,
+            confirmButtonText: "Oke",
+            showCancelButton: false,
+            cancelButtonText: "",
+        },
+        function () {
+            $.ajax(
+                {
+                    type: "get",
+                    url: "http://game.onlineops.nl/phonegap_php/addGiftValues.php",
+                    data: {'giftelementid': $giftElementId, 'giftvalue': $giftValue, 'giftcategory': $giftCategory, 'username': $userName},
+                    timer: 2000,
+                    success: function (data) {
+                    }
                 }
-            }
-        )
-        .done(function (data) {
-            //refresh page on done
-            window.location.href = 'index.html';
-        });
+            )
+                .done(function (data) {
+                    //refresh page on done
+                    window.location.href = 'index.html';
+                });
 
-    });
+        });
 } //end addGiftReward
 
 
@@ -238,27 +238,54 @@ function monsterChallenge(monstername, name, challengeid, description, time, cli
     $time = time;
     $clickType = clicktype;
 
-    if($clickType == 'monsterEgg'){
-        $titel = $monsterName;
-        $text = "Speel " + $monsterName + " nu vrij";
-    } else if($clickType == 'monsterdetail'){
-        $titel = $monsterName;
-        $text = "Voer de challenge nog een keer uit!";
-    }
-
     //check if clicktype is from monsterEgg or monster-detail page
-        swal({
-                title: $titel,
-                text: $text,
-                imageUrl: "img/monster_" + $monsterNameLowerCase + ".png",
-                confirmButtonText: "Start",
-                showCancelButton: true,
-                cancelButtonText: "Nu niet",
-            },
-            function () {
-                localStorage.setItem('monsterChallenge', $challengeId);
-                window.location.href = 'challenge.html';
+    swal({
+        title: $monsterName,
+        text: "Je hebt " + $monsterName + " gevonden",
+        imageUrl: "img/monster_" + $monsterNameLowerCase + ".png",
+        confirmButtonText: "Oke",
+        showCancelButton: false
+    },
+    function () {
+        // localStorage.setItem('monsterChallenge', $challengeId);
+        // window.location.href = 'challenge.html';
+        $.ajax(
+            {
+                type: "get",
+                url: "http://game.onlineops.nl/phonegap_php/unlockMonsters.php",
+                data: {'monstername': $monsterName, 'username': $userName},
+                success: function (data) {
+                }
+            }
+        )
+            .done(function (data) {
+                $("img[src$='egg_"+ $monstername + ".png']").attr("src","egg_" + $monstername + "_broken.png");
             });
+    });
+
+    // if($clickType == 'monsterEgg'){
+    //     $titel = $monsterName;
+    //     $text = "Speel " + $monsterName + " nu vrij";
+    // } else if($clickType == 'monsterdetail'){
+    //     $titel = $monsterName;
+    //     $text = "Voer de challenge nog een keer uit!";
+    // }
+    //
+    //
+    //
+    // //check if clicktype is from monsterEgg or monster-detail page
+    // swal({
+    //         title: $titel,
+    //         text: $text,
+    //         imageUrl: "img/monster_" + $monsterNameLowerCase + ".png",
+    //         confirmButtonText: "Start",
+    //         showCancelButton: true,
+    //         cancelButtonText: "Nu niet",
+    //     },
+    //     function () {
+    //         localStorage.setItem('monsterChallenge', $challengeId);
+    //         window.location.href = 'challenge.html';
+    //     });
 
 } //end function monsterChallenge
 
@@ -457,10 +484,10 @@ function createElements() {
         '</div>' +
         '</div>';
     $($elementsAccelerometer).insertAfter($(".bottom-bar"));
-    
+
     //get Pagetitle of div on page 
     $pageTitle = $("#pageTitle").html();
-    
+
     //if is no pageTitle set Moving monsters as title
     if($pageTitle !== ""){
         $title = $pageTitle;
@@ -468,7 +495,6 @@ function createElements() {
         $title = 'Moving Monsters';
     }
 
-    $('.sync a').attr( "href", "http://game.onlineops.nl/phonegap_php/startEnergypointsUpdate.php?username="+ $userName);
     $('.syncforChallenge').attr( "href", "http://game.onlineops.nl/phonegap_php/updateBeforeChallenge.php?username="+ $userName);
 
 
@@ -513,6 +539,85 @@ function createElements() {
 $(window).load(function(){
     buildJoyride();
 });
+
+function getSteps(stepsDb, stepsLastUpdate){
+    $stepsDb = stepsDb;
+    $stepsLastUpdateVal = parseInt(stepsLastUpdate);
+    //$stepsLastUpdateVal = stepsLastUpdate;
+    alert($stepsLastUpdateVal);
+
+    $stepsLastUpdate = new Date($stepsLastUpdateVal);
+
+    alert($stepsDb);
+    alert($stepsLastUpdate);
+
+    navigator.health.isAvailable(successCallback, errorCallback);
+    function errorCallback() {
+        alert('health is NOT available');
+    }
+
+    function successCallback() {
+        alert('health is available');
+
+        // var date = new Date();
+        // var day = date.getDate();
+        // var month = date.getMonth();
+        // var year = date.getFullYear();
+        // var wholeDay = new Date(year, month, day, 06, 00, 00, 0);
+
+        // var challengeTime = date;
+        // var challengeTimeinMinutes = 5;
+        // challengeTime.setMinutes(date.getMinutes() - challengeTimeinMinutes);
+
+        //var currentTimer = wholeDay;
+        //var currentTimer =$stepsLastUpdate;
+        var currentTimer = new Date($stepsLastUpdate);
+        var now = new Date();
+        $updateNow = now.getTime();
+        navigator.health.query({
+            startDate: currentTimer, // three days ago
+            endDate: now, // now
+            dataType: 'steps'
+        }, successMessage, errorMessage)
+
+        function successMessage(data) {
+            $stepsUpdate = 0;
+            for (i = 0; i < data.length; i++) {
+                //alert(data[i]['value']);
+                $stepsUpdate += data[i]['value'];
+            }
+
+            //alert('stepdsDB is ' + $stepsDb + '  '$stepsUpdate);
+            //alert("Oude stappen is " + $stepsDb + "Nieuwe stappen is " + $stepsUpdate);
+
+            alert("stepsupdate is " + $stepsUpdate);
+            alert("newdate is " + $updateNow);
+            alert("userName is " + $userName);
+
+            var dataString = "stepsupdate=" + $stepsUpdate + "&newdate=" + $updateNow + "&username=" + $userName + "&submit=";
+            $.ajax({
+                type: "POST",
+                url: "http://game.onlineops.nl/phonegap_php/setNewSteps.php",
+                data: dataString,
+                crossDomain: true,
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    alert('success');
+                    if (data['alert'] == "true") {
+                        alert('is geupdate');
+                    } else{
+                        alert('niet geupdate');
+                    }
+                }
+            })
+        }
+
+        function errorMessage(data) {
+            alert('geen stappen beschikbaar' + data);
+        }
+    }
+} //end function getSteps
 
 function buildJoyride(){
     $tutorailElements = ''+
@@ -631,33 +736,129 @@ function buildJoyride(){
 }
 
 function clickEvents() {
-    $('.dailyChallenge').click("click", function () {
-        $date = new Date();
-        $day = $date.getDate();
+    // $('.dailyChallenge').click("click", function () {
+    //     $date = new Date();
+    //     $day = $date.getDate();
+    //
+    //     var dataString = "currentday=" + $day + "&submitDaily=";
+    //     $.ajax({
+    //         type: "POST",
+    //         url: "http://game.onlineops.nl/phonegap_php/getDailyChallenge.php",
+    //         data: dataString,
+    //         crossDomain: true,
+    //         cache: false,
+    //         dataType: 'json',
+    //         success: function (data) {
+    //             if (data['error'] == "error") {
+    //                 //do nothing
+    //             } else if (data['description'] !== "") {
+    //                 //get the data
+    //                 $name = data['name'];
+    //                 $description = data['description'];
+    //                 $time = data['timelimit'];
+    //                 $reward = data['reward'];
+    //             }
+    //         }
+    //     }).done(function (data) {
+    //         dailyChallenge($name, $day, $description, $time, $reward);
+    //     })
+    // }); // end .dailyChallenge click
 
-        var dataString = "currentday=" + $day + "&submitDaily=";
+
+    $('.dailyChallenge').click("click", function () {
+            alert('dailyChallenge');
+            $thisdate = new Date();
+            $day = $thisdate.getDate();
+
+            var dataString = "currentday=" + $day + "&submitDaily=";
+            $.ajax({
+                type: "POST",
+                async: false,
+                url: "http://game.onlineops.nl/phonegap_php/getDailyChallenge2.php",
+                data: dataString,
+                crossDomain: true,
+                cache: false,
+                dataType: 'json',
+                success: function (data) {
+                    $requirement = data['requirement'];
+                    alert($requirement);
+                    navigator.health.isAvailable(successCallback, errorCallback);
+                    function errorCallback() {
+                        alert('health is NOT available');
+                    }
+
+                    function successCallback() {
+                        alert('health is available');
+
+                        var date = new Date();
+                        var day = date.getDate();
+                        var month = date.getMonth();
+                        var year = date.getFullYear();
+
+                        var currentTimer = new Date(year, month, day, 00, 00, 00, 0);
+                        var now = new Date();
+
+                        navigator.health.query({
+                            startDate: currentTimer, // three days ago
+                            endDate: now, // now
+                            dataType: 'steps'
+                        }, successMessage, errorMessage)
+
+                        function successMessage(data) {
+                            $currentSteps = 0;
+                            for (i = 0; i < data.length; i++) {
+                                $currentSteps += data[i]['value'];
+                            }
+
+                            $percentCompleted = ($currentSteps / $requirement) *100;
+                            
+                            alert("currentSteps is " + $currentSteps);
+                            alert("percentCompleted is " + $percentCompleted);
+
+                            if($percentCompleted >= 100){
+                                alert('dailychallenge gehaald');
+                            } else{
+                                alert('dailychallenge nog niet gehaald');t
+                            }
+                        }
+
+                        function errorMessage(data) {
+                            alert('geen stappen beschikbaar' + data);
+                        }
+                    }
+                },
+                error: function () {
+                    swal("Er gaat iets verkeerd, probeer het opnieuw!");
+                }
+            })
+        });//end .dailyChallenge clcik
+
+    $('.sync a').click("click", function () {
+        var dataString = "username=" + $userName + "&submit=";
         $.ajax({
             type: "POST",
-            url: "http://game.onlineops.nl/phonegap_php/getDailyChallenge.php",
+            async: false,
+            url: "http://game.onlineops.nl/phonegap_php/getCurrentSteps.php",
             data: dataString,
             crossDomain: true,
             cache: false,
             dataType: 'json',
             success: function (data) {
-                if (data['error'] == "error") {
-                    //do nothing
-                } else if (data['description'] !== "") {
-                    //get the data
-                    $name = data['name'];
-                    $description = data['description'];
-                    $time = data['timelimit'];
-                    $reward = data['reward'];
-                }
+                $stepsDb = data['stepsdb'];
+                $stepsLastUpdate = data['stepslastupdate'];
+
+                var date = new Date();
+                var day = date.getDate();
+                var month = date.getMonth();
+                var year = date.getFullYear();
+                //$stepsLastUpdate = new Date(year, month, day, 06, 00, 00, 0);
+                getSteps($stepsDb, $stepsLastUpdate);
+            },
+            error: function () {
+                swal("Er gaat iets verkeerd, probeer het opnieuw!");
             }
-        }).done(function (data) {
-            dailyChallenge($name, $day, $description, $time, $reward);
         })
-    }); // end .dailyChallenge click
+    }); // end .sync a click
 
     $('a, input[type="submit"], button').on('click', function(){
         var snd = new Audio("sounds/square_pop.wav");
