@@ -60,11 +60,11 @@ module.exports.metadata =
 // TOP OF METADATA
 {
     "cordova-plugin-whitelist": "1.2.1",
-    "cordova-plugin-device-motion": "1.2.1",
     "cordova-plugin-console": "1.0.3",
     "cordova-plugin-customurlscheme": "4.1.5",
-    "cordova-plugin-inappbrowser": "1.3.0",
     "cordova-plugin-health": "0.5.4",
+    "cordova-plugin-device-motion": "1.2.1",
+    "cordova-plugin-inappbrowser": "1.3.0",
     "cordova-plugin-statusbar": "2.1.3"
 }
 // BOTTOM OF METADATA

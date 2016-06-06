@@ -4,7 +4,7 @@
     "AVFoundation.framework": 1,
     "AddressBook.framework": 1,
     "AddressBookUI.framework": 1,
-    "CoreMotion.framework": 1,
+    "CoreMotion.framework": 2,
     "AudioToolbox.framework": 2,
     "HealthKit.framework": 1,
     "SystemConfiguration.framework": 1,

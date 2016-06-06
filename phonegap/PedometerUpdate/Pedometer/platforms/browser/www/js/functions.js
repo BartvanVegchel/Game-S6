@@ -205,7 +205,7 @@ function addGiftReward(giftElementId, giftCategory , giftValue){
             text: $text,
             confirmButtonText: "Oke",
             showCancelButton: false,
-            cancelButtonText: "",
+            cancelButtonText: ""
         },
         function () {
             $.ajax(
@@ -219,8 +219,10 @@ function addGiftReward(giftElementId, giftCategory , giftValue){
                 }
             )
                 .done(function (data) {
-                    //refresh page on done
-                    window.location.href = 'index.html';
+                    var url = 'img/giftbox_open.png';
+                    var urlgift = '#' + $giftElementId + ' .giftbackground img';
+                    var gift = $(urlgift);
+                    $(gift).attr("src", url);
                 });
 
         });
@@ -259,7 +261,15 @@ function monsterChallenge(monstername, name, challengeid, description, time, cli
             }
         )
             .done(function (data) {
-                $("img[src$='egg_"+ $monstername + ".png']").attr("src","egg_" + $monstername + "_broken.png");
+                var urlbefore = "img/egg_";
+                var urlafter = "_broken.png";
+                var url = urlbefore + $monsterName + urlafter;
+                var ei = $('img.monsterEgg');
+
+                if($(ei).attr('monster-name') == $monsterName){
+                    $(ei).removeClass('monsterEgg');
+                    $(ei).attr("src", url);
+                }
             });
     });
 

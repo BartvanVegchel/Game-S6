@@ -53,9 +53,9 @@
 		F7BDE413366442AFB958D727 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B169E74864C477E9374FE3B /* AVFoundation.framework */; };
 		F7EE11DF0548426ABD7F0552 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = F49E70260E014614A60BBE87 /* CDVViewController+SplashScreen.m */; };
 		FACF8D7B75D343B8958CCB3F /* CDVCapture.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8DCB6344E33B4578A0F1F3B7 /* CDVCapture.bundle */; };
-		59C351309E7C4722BB52A23D /* CDVAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 51634D1882AC4EB48561A4E9 /* CDVAccelerometer.m */; };
-		FB2C8669069147DDBDD6210E /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = D1C7269B125D400DBEF921FA /* CDVInAppBrowser.m */; };
-		A0C093F215FA4337940F9316 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = C43B37A2F0B9479E86872B8C /* CDVStatusBar.m */; };
+		BCF1394852DC4EC8A3E1CEDF /* CDVAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EF66A57CD9341F69660E721 /* CDVAccelerometer.m */; };
+		3BA9FA0AF62E4583B2FE1E96 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EFDDB5646DE4FED92666FE2 /* CDVInAppBrowser.m */; };
+		0A101AE2E9EC48959C93F63D /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C29061C6C5E48C6AE4CCBBC /* CDVStatusBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,12 +161,12 @@
 		F49E70260E014614A60BBE87 /* CDVViewController+SplashScreen.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "CDVViewController+SplashScreen.m"; path = "cordova-plugin-splashscreen/CDVViewController+SplashScreen.m"; sourceTree = "<group>"; };
 		F73A8C694C954E8E8B4C4017 /* CoreMotion.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Moving Monsters/config.xml"; sourceTree = "<group>"; };
-		51634D1882AC4EB48561A4E9 /* CDVAccelerometer.m */ = {isa = PBXFileReference; name = "CDVAccelerometer.m"; path = "cordova-plugin-device-motion/CDVAccelerometer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		6C8C50076E304D88ACFD0865 /* CDVAccelerometer.h */ = {isa = PBXFileReference; name = "CDVAccelerometer.h"; path = "cordova-plugin-device-motion/CDVAccelerometer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		D1C7269B125D400DBEF921FA /* CDVInAppBrowser.m */ = {isa = PBXFileReference; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		C7A24B37817041C0A9D68771 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
-		C43B37A2F0B9479E86872B8C /* CDVStatusBar.m */ = {isa = PBXFileReference; name = "CDVStatusBar.m"; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
-		E4D24DB5D218439C860887EE /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		5EF66A57CD9341F69660E721 /* CDVAccelerometer.m */ = {isa = PBXFileReference; name = "CDVAccelerometer.m"; path = "cordova-plugin-device-motion/CDVAccelerometer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		ADC89DC007FC42869C0864A4 /* CDVAccelerometer.h */ = {isa = PBXFileReference; name = "CDVAccelerometer.h"; path = "cordova-plugin-device-motion/CDVAccelerometer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		6EFDDB5646DE4FED92666FE2 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		D371F165733E476996A5B697 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		9C29061C6C5E48C6AE4CCBBC /* CDVStatusBar.m */ = {isa = PBXFileReference; name = "CDVStatusBar.m"; path = "cordova-plugin-statusbar/CDVStatusBar.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		9E40061A4BC74A6B8F6485D4 /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,12 +345,12 @@
 				D8CC6E043B3F48EEA1D34545 /* CDVViewController+SplashScreen.h */,
 				E5732DA15F8E4BDBA8BDA496 /* CDVVibration.m */,
 				4D1B94A642974585874FA65C /* CDVVibration.h */,
-				51634D1882AC4EB48561A4E9 /* CDVAccelerometer.m */,
-				6C8C50076E304D88ACFD0865 /* CDVAccelerometer.h */,
-				D1C7269B125D400DBEF921FA /* CDVInAppBrowser.m */,
-				C7A24B37817041C0A9D68771 /* CDVInAppBrowser.h */,
-				C43B37A2F0B9479E86872B8C /* CDVStatusBar.m */,
-				E4D24DB5D218439C860887EE /* CDVStatusBar.h */,
+				5EF66A57CD9341F69660E721 /* CDVAccelerometer.m */,
+				ADC89DC007FC42869C0864A4 /* CDVAccelerometer.h */,
+				6EFDDB5646DE4FED92666FE2 /* CDVInAppBrowser.m */,
+				D371F165733E476996A5B697 /* CDVInAppBrowser.h */,
+				9C29061C6C5E48C6AE4CCBBC /* CDVStatusBar.m */,
+				9E40061A4BC74A6B8F6485D4 /* CDVStatusBar.h */,
 			);
 			name = Plugins;
 			path = "Moving Monsters/Plugins";
@@ -506,9 +506,9 @@
 				AF4095806FD742E0B1750A47 /* CDVSplashScreen.m in Sources */,
 				F7EE11DF0548426ABD7F0552 /* CDVViewController+SplashScreen.m in Sources */,
 				818A1731A4A746348A6B5CEE /* CDVVibration.m in Sources */,
-				59C351309E7C4722BB52A23D /* CDVAccelerometer.m in Sources */,
-				FB2C8669069147DDBDD6210E /* CDVInAppBrowser.m in Sources */,
-				A0C093F215FA4337940F9316 /* CDVStatusBar.m in Sources */,
+				BCF1394852DC4EC8A3E1CEDF /* CDVAccelerometer.m in Sources */,
+				3BA9FA0AF62E4583B2FE1E96 /* CDVInAppBrowser.m in Sources */,
+				0A101AE2E9EC48959C93F63D /* CDVStatusBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
