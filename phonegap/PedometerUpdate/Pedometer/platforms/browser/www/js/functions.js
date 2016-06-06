@@ -205,7 +205,7 @@ function addGiftReward(giftElementId, giftCategory , giftValue){
             text: $text,
             confirmButtonText: "Oke",
             showCancelButton: false,
-            cancelButtonText: ""
+            cancelButtonText: "",
         },
         function () {
             $.ajax(
@@ -219,6 +219,7 @@ function addGiftReward(giftElementId, giftCategory , giftValue){
                 }
             )
                 .done(function (data) {
+                    //refresh page on done
                     var url = 'img/giftbox_open.png';
                     var urlgift = '#' + $giftElementId + ' .giftbackground img';
                     var gift = $(urlgift);
@@ -264,6 +265,7 @@ function monsterChallenge(monstername, name, challengeid, description, time, cli
                 var urlbefore = "img/egg_";
                 var urlafter = "_broken.png";
                 var url = urlbefore + $monsterName + urlafter;
+
                 var ei = $('img.monsterEgg');
 
                 if($(ei).attr('monster-name') == $monsterName){
@@ -553,34 +555,17 @@ $(window).load(function(){
 function getSteps(stepsDb, stepsLastUpdate){
     $stepsDb = stepsDb;
     $stepsLastUpdateVal = parseInt(stepsLastUpdate);
-    //$stepsLastUpdateVal = stepsLastUpdate;
-    alert($stepsLastUpdateVal);
+    //alert($stepsLastUpdateVal);
 
     $stepsLastUpdate = new Date($stepsLastUpdateVal);
 
-    alert($stepsDb);
-    alert($stepsLastUpdate);
-
     navigator.health.isAvailable(successCallback, errorCallback);
     function errorCallback() {
-        alert('health is NOT available');
+        swal("Probleem", "De Gezondheid app is niet goed ingesteld", "error");
     }
 
     function successCallback() {
-        alert('health is available');
 
-        // var date = new Date();
-        // var day = date.getDate();
-        // var month = date.getMonth();
-        // var year = date.getFullYear();
-        // var wholeDay = new Date(year, month, day, 06, 00, 00, 0);
-
-        // var challengeTime = date;
-        // var challengeTimeinMinutes = 5;
-        // challengeTime.setMinutes(date.getMinutes() - challengeTimeinMinutes);
-
-        //var currentTimer = wholeDay;
-        //var currentTimer =$stepsLastUpdate;
         var currentTimer = new Date($stepsLastUpdate);
         var now = new Date();
         $updateNow = now.getTime();
@@ -593,16 +578,8 @@ function getSteps(stepsDb, stepsLastUpdate){
         function successMessage(data) {
             $stepsUpdate = 0;
             for (i = 0; i < data.length; i++) {
-                //alert(data[i]['value']);
                 $stepsUpdate += data[i]['value'];
             }
-
-            //alert('stepdsDB is ' + $stepsDb + '  '$stepsUpdate);
-            //alert("Oude stappen is " + $stepsDb + "Nieuwe stappen is " + $stepsUpdate);
-
-            alert("stepsupdate is " + $stepsUpdate);
-            alert("newdate is " + $updateNow);
-            alert("userName is " + $userName);
 
             var dataString = "stepsupdate=" + $stepsUpdate + "&newdate=" + $updateNow + "&username=" + $userName + "&submit=";
             $.ajax({
@@ -613,18 +590,24 @@ function getSteps(stepsDb, stepsLastUpdate){
                 cache: false,
                 dataType: 'json',
                 success: function (data) {
-                    alert('success');
                     if (data['alert'] == "true") {
-                        alert('is geupdate');
+                        swal("Goed zo!", "Je hebt " + $stepsUpdate + " nieuwe energiepunten verdiend!", "");
+
+                        $newSteps = parseInt($stepsUpdate);
+                        $personalEnergy = $('.personalEnergypoints'); // get personal energypoints box
+                        $personalEnergyValue =  parseInt($($personalEnergy).text()); // get personal energypoints value
+
+                        $updatedEnergyPoints = $personalEnergyValue + $stepsUpdate; //the new energypoints value
+                        $personalEnergy.text($updatedEnergyPoints); //set the new value
                     } else{
-                        alert('niet geupdate');
+                        swal("Helaas!", "Je hebt geen nieuwe energiepunten verdiend, ga eerst bewegen.", "");
                     }
                 }
             })
         }
 
         function errorMessage(data) {
-            alert('geen stappen beschikbaar' + data);
+            swal("Er gaat iets verkeerd, probeer het opnieuw!");
         }
     }
 } //end function getSteps
@@ -680,12 +663,11 @@ function buildJoyride(){
         '</li>' +
         '<li data-text="Volgende">' +
         '<h2>Nieuwe punten</h2>' +
-        '<img src="img/moves-logo.png">'+
-        '<p>Je kunt zelf energiepunten verdienen! Download de Moves app en houd bij hoeveel stappen je zet!</p>' +
+        '<p>Je kunt zelf energiepunten verdienen! Zorg ervoor dat de Gezondheid app je stappen bijhoudt. Dit doe je door een aanbevolen plugin te installeren.</p>' +
         '</li>' +
         '<li data-id="number22" data-text="Volgende" data-prev-text="Prev" class="custom2">' +
         '<h2>Energiepunten toevoegen</h2>' +
-        '<p>Klik nadat je de Moves app hebt aangezet op <span class="fa fa-add-points"></span> om de nieuwe energiepunten toe te voegen.</p>' +
+        '<p>Klik nadat je de Gezondheid app hebt gekoppeld met Pacer (of een andere app) op <span class="fa fa-add-points"></span> om de nieuwe energiepunten toe te voegen.</p>' +
         '</li>'+
         '<li data-text="Ik snap het!">' +
         '<h2>Stappenteller</h2>' +
@@ -776,7 +758,6 @@ function clickEvents() {
 
 
     $('.dailyChallenge').click("click", function () {
-            alert('dailyChallenge');
             $thisdate = new Date();
             $day = $thisdate.getDate();
 
@@ -791,15 +772,14 @@ function clickEvents() {
                 dataType: 'json',
                 success: function (data) {
                     $requirement = data['requirement'];
-                    alert($requirement);
+                    $reward = data['reward'];
+
                     navigator.health.isAvailable(successCallback, errorCallback);
                     function errorCallback() {
-                        alert('health is NOT available');
+                        swal("Probleem", "De Gezondheid app is niet goed ingesteld", "error");
                     }
 
                     function successCallback() {
-                        alert('health is available');
-
                         var date = new Date();
                         var day = date.getDate();
                         var month = date.getMonth();
@@ -821,19 +801,44 @@ function clickEvents() {
                             }
 
                             $percentCompleted = ($currentSteps / $requirement) *100;
-                            
-                            alert("currentSteps is " + $currentSteps);
-                            alert("percentCompleted is " + $percentCompleted);
+                            $simplePercent = Math.round($percentCompleted);
 
                             if($percentCompleted >= 100){
-                                alert('dailychallenge gehaald');
+                                swal({
+                                    title: "<small>Voltooid uitdaging</small>",
+                                    text: "Je hebt de uitdaging van vandaag voltooid!<br><br> <div class='processbar'><div class='processbarinner' style='width:100%;'></div></div></div><br>",
+                                    html: true,
+
+                                }, function () {
+                                    $today = new Date();
+                                    $day = $today.getDate();//zero based
+                                    $month = $today.getMonth() + 1;//zero based
+                                    $year = $today.getFullYear();
+                                    $today = $year.toString() + $month.toString() + $day.toString();
+                                        $.ajax(
+                                            {
+                                                type: "get",
+                                                url: "http://game.onlineops.nl/phonegap_php/completeDailyChallenge2.php",
+                                                data: {'reward': $reward, 'username': $userName, 'date': $today},
+                                                success: function (data) {
+                                                }
+                                            }
+                                        )
+                                            .done(function (data) {
+                                                window.location.href = "index.html";
+                                            });
+                                    });
                             } else{
-                                alert('dailychallenge nog niet gehaald');t
+                                swal({
+                                    title: "<small>Dagelijkse uitdaging</small>",
+                                    text: "Zet vandaag " + $requirement + " stappen en verdien " + $reward + " energie punten extra!<br><br> <div class='processbar'><div class='processbarinner' style='width:"+$percentCompleted+"%;'></div></div></div><br>",
+                                    html: true
+                                });
                             }
                         }
 
                         function errorMessage(data) {
-                            alert('geen stappen beschikbaar' + data);
+                            swal("De Gezondheid app is niet goed ingesteld");
                         }
                     }
                 },
@@ -861,7 +866,7 @@ function clickEvents() {
                 var day = date.getDate();
                 var month = date.getMonth();
                 var year = date.getFullYear();
-                //$stepsLastUpdate = new Date(year, month, day, 06, 00, 00, 0);
+
                 getSteps($stepsDb, $stepsLastUpdate);
             },
             error: function () {
