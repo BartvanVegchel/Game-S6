@@ -970,6 +970,7 @@ input[type="password"]:focus{
 .containerlogin .buttonbar input[type= 'submit'],
 .monster-detail .buttonbar button,
 .challenge .buttonbar button,
+.user .buttonbar a,
 .ranking .desc,
 .user .desc{
     margin-bottom: 10%;
