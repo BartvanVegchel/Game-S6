@@ -161,6 +161,7 @@
                                         "</div>" +
                                         "<div class='buttonbar'>"+
                                         "<a href='add-friends.html' class='buttonfull buttongreen button'>Vriend toevoegen</a>" +
+                                        "<a href='#' id='logoutBtn' class='buttonfull buttonred button'>Uitloggen</a>" +
                                         $acceptInvite +
                                         '</div>' +
                                         "</div>";
@@ -211,6 +212,21 @@
                 }).done(function (result) {
                     swiper();
                     $('.desc .item .icon').click(tooltiponClick);
+
+                    $("#logoutBtn").click(function () {
+                        swal({
+                            title: "Uitloggen",
+                            text: "Weet je zeker dat je wilt uitloggen?",
+                            showCancelButton: true,
+                            closeOnConfirm: true,
+                            showLoaderOnConfirm: true,
+                            confirmButtonText: "Ja",
+                            cancelButtonText: "Nee"
+                        }, function () {
+                            localStorage.clear();
+                            window.location.href = "inloggen.html";
+                        });
+                    });
                 })
             }
         }

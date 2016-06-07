@@ -888,12 +888,11 @@ function clickEvents() {
         snd.currentTime=0;
         return true;
     });
-
-
-    $(".world-name").click(function () {
-        localStorage.clear();
-        window.location.href = "inloggen.html";
-    }); //end .world-name click
+    
+    // $(".world-name").click(function () {
+    //     localStorage.clear();
+    //     window.location.href = "inloggen.html";
+    // }); //end .world-name click
 
 } //end function clickEvents
 
