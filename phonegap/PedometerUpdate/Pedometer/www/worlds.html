@@ -116,7 +116,10 @@
 								$totalMonsters = data['totalmonsters'];
 								$yourmonsters = data['yourmonsters'];
 								$yourstars = data['yourstars'];
+								$unlockedGifts = data['unlockedGifts'];
+								$totalGifts = data['totalGifts'];
 								console.log($totalMonsters);
+								console.log($unlockedGifts);
 								console.log($yourmonsters);
 								console.log($yourstars);
 								console.log('numWorlds is' + $numWorlds);
@@ -147,15 +150,15 @@
 												"<div class='desc'>" +
 												"<div class='item'>" +
 												"<span class='icon'><i class='fa fa-monster'></i></span>" +
-												"<span class='stat'>" + $yourmonsters[i] + " / " + $totalMonsters[i] + "</span>" +
+												"<span class='stat'>?? / ??</span>" +
 												"</div>" +
 												"<div class='item'>" +
 												"<span class='icon'><i class='fa fa-unlock'></i></span>" +
-												"<span class='stat'>" + $unlockFieldWorlds[i] + " / " + $worldSize[i] + "</span>" +
+												"<span class='stat'>?? / ??</span>" +
 												"</div>" +
 												"<div class='item'>" +
-												"<span class='icon'><i class='fa fa-star'></i></span>" +
-												"<span class='stat'>0/0</span>" +
+												"<span class='icon'><i class='fa fa-gift'></i></span>" +
+												"<span class='stat'>?? / ??</span>" +
 												"</div>" +
 												"<div class='monsterstory'>Je kunt dit level nog niet spelen! Speel minimaal "+ $dinges2 +" velden vrij in de vorige wereld</div>" +
 												"</div>" +
@@ -185,9 +188,9 @@
 												"<div class='item'>" +
 												"<span class='icon'>" +
 												"<span class='tooltipIcon'>Verzamelde sterren</span>" +
-												"<i class='fa fa-star'></i>" +
+												"<i class='fa fa-gift'></i>" +
 												"</span>" +
-												"<span class='stat'>" + $yourstars[i] + " / " + $totalStars + "</span>" +
+												"<span class='stat'>" + $unlockedGifts[i] + " / " + $totalGifts[i] + "</span>" +
 												"</div>" +
 												"</div>" +
 												"<div class='buttonbar'>"+

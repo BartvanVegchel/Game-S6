@@ -115,6 +115,7 @@
                             $yourstars = data['yourstars'];
                             $requestCount = data['requestcount'];
                             $frienddata = data['frienddata'];
+                            $completedChallenges = data['totalCompletedDailyChallenges'];
 
                             $swiperContainer = $('.swiper-wrapper');
 
@@ -153,10 +154,10 @@
                                         "</div>" +
                                         "<div class='item'>" +
                                         "<span class='icon'>" +
-                                        "<span class='tooltipIcon'>Totaal behaalde sterren</span>" +
-                                        "<i class='fa fa-star'></i>" +
+                                        "<span class='tooltipIcon'>Voltooide dagelijkse uitdagingen</span>" +
+                                        "<i class='fa fa-trophy'></i>" +
                                         "</span>" +
-                                        "<span class='stat'>" + $yourstars + "</span>" +
+                                        "<span class='stat'>" + $completedChallenges + "</span>" +
                                         "</div>" +
                                         "</div>" +
                                         "<div class='buttonbar'>"+
