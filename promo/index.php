@@ -61,7 +61,7 @@
 	<div class="row explore_push no-margin">
 
 		<div class="monsters_text">
-			<h2>Vang alle monsters die je tegen komt!</h2>
+			<h2>Vang alle monsters die je tegenkomt!</h2>
 			<p>Probeer alle monsters te vangen door ze uit te dagen voor een challenge!</p>
 			<a href="monsterdex.php" class="btn">Bekijk de Monsterdex!</a>
 		</div>
