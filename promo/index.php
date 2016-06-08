@@ -10,6 +10,13 @@
 		</div>
 	</div>
 
+	<div class="row payoff">
+		<div class="col-xs-12 col-xs-offset-0 text-center">
+			<h2>Moving Monsters</h2>
+			<h3>Beweeg, verdien, speel!</h3>
+		</div>
+	</div>
+
 	<div class="intro_bg">
 		<img src="img/header_bg.png" alt="" />
 	</div>

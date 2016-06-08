@@ -34,11 +34,27 @@ div.page_intro     { position: relative; padding: 0; margin: 0; }
 div.intro_bg       { width: 100%; }
 div.intro_bg img   { width: 100%; }
 
-div.playbtn         { position: absolute; top: 40%; width: 100%; cursor: pointer; transition: opacity 0.2s; }
+div.playbtn         { position: absolute; top: 30%; width: 100%; cursor: pointer; transition: opacity 0.2s; }
 div.playbtn:hover   { opacity: 0.5; }
 div.playbtn img     { width: 120px; height: auto; }
 
 
+
+div.payoff{ position:absolute; left: 0%; top: 50%; width:100%;}
+div.payoff h2 { color: #FFFFFF; font-size: 4.5vw; font-family: 'Righteous', cursive; text-shadow: 6px 6px 0px rgba(0,0,0,0.2); }
+div.payoff h3 { color: #FFFFFF; font-size: 3vw; font-family: 'Righteous', cursive; text-shadow: 6px 6px 0px rgba(0,0,0,0.2); }
+div.payoff p  { color: #FFFFFF; font-size: 1.5vw; width: 400px; }
+
+
+@media(max-width:900px) {
+    div.playbtn img     { width: 80px; margin-top:20px; height: auto; }
+    div.payoff{ position:absolute; left: 30%; top: 50%; width:100%;}
+}
+@media(max-width:500px) {
+    div.playbtn img     { width: 50px; margin-top:30px; height: auto; }
+
+
+}
 /* Explore */
 
 div.page_explore   { position: relative; }

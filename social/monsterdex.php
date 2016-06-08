@@ -45,7 +45,7 @@
 				</div>
 			</section>
 		</div>
-			<div class="row">
+			<div class="row text-center"">
 				<section class="col-lg-12">
 					<div class="water-section">
 							<h1 class="section-title">Sea Side</h1>
@@ -89,7 +89,7 @@
 				</section>
 			</div>
 
-			<div class="row">
+			<div class="row text-center"">
 				<section class="col-lg-12">
 					<div class="fire-section">
 						<h1 class="section-title">Vulcano Island</h1>
@@ -131,7 +131,7 @@
 					</div>
 				</section>
 			</div>
-			<div class="row">
+			<div class="row text-center"">
 				<section class="col-lg-12">
 					<div class="desert-section">
 						<h1 class="section-title">Desert Valley</h1>
@@ -139,7 +139,7 @@
 					</div>
 				</section>
 			</div>
-			<div class="row">
+			<div class="row text-center"">
 				<section class="col-lg-12">
 					<div class="ice-section">
 						<h1 class="section-title">Ice Cave</h1>
